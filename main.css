@@ -1484,8 +1484,8 @@ transition-duration: 0.5s;}
 	}
 
 	/* Classes */
-	.nav-tabs {
-		margin: 0% 5%;
+	#classhead .nav-tabs {
+		margin: 0 5%;
 		padding-top: 20px;
 	}
 
@@ -1774,6 +1774,66 @@ transition-duration: 0.5s;}
 		padding-bottom: 16px;
 		font-size: 17px;
 	}
+
+	/*class pages*/
+	.classheader {
+		margin: 0% 7%;
+		padding: 50px 0px 10px 0px;
+	}
+
+	.classbody .nav-tabs {
+		margin: 0;
+	}
+
+	.classbody {
+		margin: 0% 6%;
+		padding: 10px 0px 40px 0px;
+	}
+
+	.classbody h3 {
+		font-size: 25px;
+		margin: 25px 0px 15px 0px;
+	}
+
+	.classbody h4 {
+		font-size: 22px;
+	}
+
+	.classbody p {
+		font-size: 17px;
+		padding: 7px 0px;
+	}
+
+	.classbody ol {
+		padding-bottom: 20px;
+	}
+
+	.classbody li {
+		font-size: 17px;
+		margin-left: 3%;
+		color: #666;
+	}
+
+	.classbody .nav-tabs li {
+		margin: 0px;
+	}
+
+	.classbody h5 {
+		font-size: 20px;
+	}
+
+	.classbody .tab-pane {
+		margin: 0px 0px 0px 3%;
+		padding-bottom: 10px;
+	}
+
+	.classbody .carousel {
+		width: 90%;
+	}
+
+	.signup {
+		font-size: 20px;
+	}
 }
 
 
@@ -1961,7 +2021,7 @@ transition-duration: 0.5s;}
 
 	/* Classes */
 	.nav-tabs {
-		margin: 0% 4%;
+		margin: 0% 5%;
 		padding-top: 20px;
 	}
 
@@ -1970,7 +2030,7 @@ transition-duration: 0.5s;}
 	}
 
 	.nav-item .nav-link {
-		padding: 8px 5px;
+		padding: 8px;
 	}
 
 	#sorter {
@@ -1978,18 +2038,20 @@ transition-duration: 0.5s;}
 	}
 
 	#myTabContent {
-		padding: 40px 0px 60px 0px;
-		margin: 0% 7% 0% 8%;
+		padding: 0px 0px 60px 0px;
+		margin: 0% 7% 0% 9%;
 	}
 
 	#sorter p {
 		font-size: 16px;
-		float: left;
+		float: none;
+		margin: 10px;
+
 	}
 
 	.dropdown {
-		float: left;
-		margin: 0px 4px;
+		float: none;
+		margin: 10px;
 	}
 
 	.dropdown .btn {
@@ -2009,6 +2071,7 @@ transition-duration: 0.5s;}
 	#myTabContent li {
 		padding: 5px 0px;
 		font-size: 15px;
+		margin-left: 4%;
 	}
 
 	/* Mission */
@@ -2135,6 +2198,10 @@ transition-duration: 0.5s;}
 		margin: 0 5%;
 	}
 
+	.col-xs-1 {
+		margin-bottom: 10px 0px 40px 0px;
+	}
+
 	#resourcesbody {
 		margin: 0% 7%;
 	}
@@ -2240,6 +2307,45 @@ transition-duration: 0.5s;}
 
 	#eventsprogress {
 		display: none;
+	}
+
+	/*Class pages */
+	.classheader .title {
+		font-size: 28px;
+	}
+
+	.classheader {
+		margin: 0% 2%;
+	}
+
+	.classbody h3 {
+		font-size: 23px;
+	}
+
+	.classbody h4 {
+		font-size: 20px;
+	}
+
+	.classbody p {
+		font-size: 16px;
+	}
+
+	.classbody li {
+		font-size: 16px;
+		margin-left: 5%;
+	}
+
+	.classbody .tab-pane {
+		margin: 0px 5%;
+		width: 90%;
+	}
+
+	.classbody .carousel {
+		width: 100%;
+	}
+
+	.signup {
+		font-size: 20px;
 	}
 
 }
