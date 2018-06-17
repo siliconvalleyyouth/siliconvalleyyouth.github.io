@@ -535,6 +535,7 @@ h1 {
 
 .nav-item {
 	font-size: 20px;
+	display: block;
 }
 
 .nav-item .nav-link {
@@ -1186,7 +1187,7 @@ li ul {
 
 .classbody .tab-pane {
 	margin: 0px 0px 0px 2%;
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 
 .classbody .carousel {
@@ -1207,6 +1208,14 @@ li ul {
 .classbody p strong {
 	color: black;
 }
+
+.signup {
+	font-size: 22px;
+	color: maroon;
+	transition-duration: 0.2s;
+}
+
+
 
 
 .slideanim {visibility:hidden;}
