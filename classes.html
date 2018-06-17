@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<title>Classes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lato:300|Raleway:300" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+<link rel="stylesheet" href="main.css">
+<body>
+<div id="menu" onclick="rotate(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+<a href="index.html"><img id="logo" src="images/logo.jpg"></a>
+<div class="navcontainer">
+  <a href="index.html"><h1 class="title">SILICON VALLEY YOUTH</h1></a>
+  <ul id="mainnav">
+    <li class="navig"><a href="classes.html">CLASSES</a></li>
+    <div id="abt">
+      <li class="navig"><a>ABOUT US &#9662;</a></li>
+      <ul id="dropdown">
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="commendation.html">Commendations</a></li>
+      </ul>
+    </div>
+    <li class="navig"><a href="service.html">SERVICE</a></li>
+    <li class="navig"><a href="resources.html">RESOURCES</a></li>
+    <li class="navig"><a href="donate.html">DONATE</a></li>
+    <li class="navig"><a href="events.html">NEWS/EVENTS</a></li>
+  </ul>
+  <div id="social">
+    <a href="https://www.facebook.com/SiliconValleyYouth/" class="fab fa-facebook"></a>
+    <a href="#" class="fab fa-snapchat-ghost"></a>
+    <a href="#" class="fab fa-linkedin-in"></a>
+    <a href="#" class="fab fa-instagram"></a>
+  </div>
+</div>
+<div id="maincontainer">
+  <div id="classhead">
+    <h1 class="title">Classes</h1>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item active">
+        <a class="nav-link" id="fall18-tab" data-toggle="tab" href="#fall18" role="tab" aria-controls="fall18" aria-selected="true">Fall 2018</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="spring18-tab" data-toggle="tab" href="#spring18" role="tab" aria-controls="spring18" aria-selected="false">Spring 2018</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="fall17-tab" data-toggle="tab" href="#fall17" role="tab" aria-controls="fall17" aria-selected="false">Fall 2017</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="spring17-tab" data-toggle="tab" href="#spring17" role="tab" aria-controls="spring17" aria-selected="false">Spring 2017</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="fall16-tab" data-toggle="tab" href="#fall16" role="tab" aria-controls="fall16" aria-selected="false">Fall 2016</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="spring16-tab" data-toggle="tab" href="#spring16" role="tab" aria-controls="spring16" aria-selected="false">Spring 2016</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="fall15-tab" data-toggle="tab" href="#fall15" role="tab" aria-controls="fall15" aria-selected="false">Fall 2015</a>
+      </li>
+    </ul>
+  </div>
+  <div id="sorter">
+    <p>Select By:</p>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="byLocation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location <i class="fas fa-caret-down"></i></button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" id="all">All</a>
+        <a class="dropdown-item" id="ghs">Gunn High School</a>
+        <a class="dropdown-item" id="sfs">Saratoga Fire Station</a>
+        <a class="dropdown-item" id="mms">Miller Middle School</a>
+        <a class="dropdown-item" id="omei">Omei Academy</a>
+        <a class="dropdown-item" id="dilw">Dilworth</a>
+        <a class="dropdown-item" id="palo">Palo Alto</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="bySubject" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Subject <i class="fas fa-caret-down"></i></button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" id="all2">All</a>
+        <a class="dropdown-item" id="humanities">Humanities & Social Sciences</a>
+        <a class="dropdown-item" id="stem">STEM</a>
+        <a class="dropdown-item" id="sports">Sports</a>
+      </div>
+    </div>
+  </div>
+  <div class="tab-content" id="myTabContent">
+      <div class="tab-pane active" id="fall18" role="tabpanel" aria-labelledby="fall18-tab">Fall 2018</div>
+      <div class="tab-pane fade" id="spring18" role="tabpanel" aria-labelledby="spring18-tab">
+        <div class="row">
+          <li id="ps-spr-2018"><a href="/classes/2018/spring/business.php">Public Speaking</a>, grades 5-7</li>
+          <li id="webd2-spr-2018"><a href="/classes/2018/spring/intro_web2.php">Introduction to Website Design (2)</a>, grades 6-8</li>
+          <li id="java2-spr-2018"><a href="/classes/2018/spring/intro_java2.php">Introduction to Java (2)</a>, grades 6-8</li>
+          <li id="mathc-spr-2018"><a href="/classes/2018/spring/mathcounts.php">MathCounts</a>, grades 6-8</li>
+          <li id="psce-spr-2018"><a href="/classes/2018/spring/ps_current.php">Public Speaking and Current Events</a>, grades 6-8</li>
+          <li id="world-spr-2018"><a href="/classes/2018/spring/world_history.php">World History</a>, grades 6-8</li>
+          <li id="chess-spr-2018"><a href="/classes/2018/spring/chess.php">Chess</a>, grades 4+</li>
+          <li id="bridge-spr-2018"><a href="/classes/2018/spring/bridge.php">Bridge</a>, grades 6+</li>
+          <li id="advweb-spr-2018"><a href="/classes/2018/spring/advanced_web.php">Advanced Website Design</a>, grades 6-10</li>
+          <li id="phys2-spr-2018"><a href="/classes/2018/spring/physics.php">AP Physics 2</a>, grades 8-11</li>
+          <li id="science-spr-2018"><a href="/classes/2018/spring/science_bowl.php">Science Bowl</a>, grades 6-8</li>
+          <li id="usaco-spr-2018"><a href="/classes/2018/spring/usaco.php">USACO Bronze</a>, grades 7-10</li>
+          <li id="threed-spr-2018"><a href="/classes/2018/spring/3D.php">3D Design</a>, grades 5-7</li>
+          <li id="psdeb-spr-2018"><a href="/classes/2018/spring/ps_debate.php">Public Speaking and Debate</a>, grades 5-8</li>
+          <li id="java3-spr-2018"><a href="/classes/2018/spring/inter_java.php">Intermediate Java</a>, grades 6-10</li>
+          <li id="deb-spr-2018"><a href="/classes/2018/spring/debate.php">Debate</a>, grades 6-8</li>
+          <li id="advmath-spr-2018"><a href="/classes/2018/spring/advanced_math.php">Advanced Mathcounts</a>, grades 6-8</li>
+          <li id="webd-spr-2018"><a href="/classes/2018/spring/intro_web1.php">Introduction to Website Design (1)</a>, grades 6-10</li>
+          <li id="java-spr-2018"><a href="/classes/2018/spring/intro_java1.php">Introduction to Java (1)</a>, grades 6-8</li>
+          <li id="ios-spr-2018"><a href="/classes/2018/spring/ios.php">iOS App Development</a>, grades 7-11</li>
+          <li id="bball-spr-2018"><a href="/classes/2018/spring/basketball.php">Basketball</a>, grades 3-6</li>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="fall17" role="tabpanel" aria-labelledby="fall17-tab">
+        <div class="row">
+          <li id="bus-fall-2017"><a href="classes/2017/fall/business.html">Business and Entrepreneurship</a></li>
+          <li id="psce-fall-2017"><a href="classes/2017/fall/ps_ce.html">Public Speaking and Current Events</a></li>
+          <li id="psdeb-fall-2017"><a href="classes/2017/fall/ps_debate.html">Public Speaking and Debate</a></li>
+          <li id="speech-fall-2017" ><a href="classes/2017/fall/speech.html">Speech</a></li>
+          <li id="ushist1-fall-2017"><a href="classes/2017/fall/ushistory1.html">US History (Elementary School)</a></li>
+          <li id="ushist2-fall-2017"><a href="classes/2017/fall/ushistory2.html">US History (Middle School)</a></li>
+          <li id="world-fall-2017"><a href="classes/2017/fall/worldhistory.html">World History</a></li>
+          <li id="mathc-fall-2017"><a href="classes/2017/fall/amc8_1.html">AMC 8/Mathcounts</a></li>
+          <li id="amc8-fall-2017"><a href="classes/2017/fall/amc8_2.html">AMC 8</a></li>
+          <li id="amc10-fall-2017"><a href="classes/2017/fall/amc10.html">AMC 10</a></li>
+          <li id="game-fall-2017"><a href="classes/2017/fall/gamedesign_1.html">Game Design</a></li>
+          <li id="java-fall-2017"><a href="classes/2017/fall/javaintro.html">Introduction to Java</a></li>
+          <li id="java2-fall-2017"><a href="classes/2017/fall/javaintermediate.html">Intermediate Java</a></li>
+          <li id="ios-fall-2017"><a href="classes/2017/fall/ios.html">iOS App Development</a></li>
+          <li id="webd-fall-2017"><a href="classes/2017/fall/webdesign.html">Website Design</a></li>
+          <li id="phys-fall-2017"><a href="classes/2017/fall/physics.html">Physics</a></li>
+          <li id="science-fall-2017"><a href="classes/2017/fall/sciencebowl.html">Science Bowl</a></li>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="spring17" role="tabpanel" aria-labelledby="spring17-tab">
+        <div class="row">
+          <li id="bus-spr-2017"><a href="classes/2017/spring/business.html">Business:</a> one class for grade 7, 8; one class for grade 9, 10</li>
+          <li id="ce-spr-2017"><a href="classes/2017/spring/currentevents.html">Current Events and Public Speaking:</a> grade 7, 8</li>
+          <li id="deb-spr-2017"><a href="classes/2017/spring/debate.html">Debate:</a> grade 7, 8</li>
+          <li id="gram-spr-2017"><a href="classes/2017/spring/grammar.html">English Grammar:</a> one class for grade 7, 8; one class for grade 9, 10</li>
+          <li id="ushist-spr-2017"><a href="classes/2017/spring/ushistory.html">U.S. History:</a> grade 6, 7</li>
+          <li id="ushist2-spr-2017"><a href="classes/2017/spring/ushistory2.html">U.S. History:</a> grade 5</li>
+          <li id="world-spr-2017"><a href="classes/2017/spring/worldhistory.html">World History:</a> grade 7, 8</a></li>
+          <li id="advmath-spr-2017"><a href="classes/2017/spring/math.html">Advanced Math:</a> grade 7, 8</li>
+          <li id="java-spr-2017"><a href="classes/2017/spring/java.html">Java:</a> grade 6, 7</li>
+          <li id="science-spr-2017"><a href="classes/2017/spring/sciencebowl.html">Science Bowl:</a> grade 6, 7</li>
+          <li id="webd1-spr-2017"><a href="classes/2017/spring/webdesign1.html">Website Design Level 1:</a> one class for grade 6, 7; one class for grade 7, 8</li>
+          <li id="webd2-spr-2017"><a href="classes/2017/spring/webdesign2.html">Website Design Level 2:</a> grade 7, 8</li>
+          <li id="bball-spr-2017"><a href="classes/2017/spring/basketball.html">Basketball:</a> grade 5</li>
+          <li id="taichi-spr-2017"><a href="classes/2017/spring/taichi.html">TaiChi:</a> anyone is welcome</li>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="fall16" role="tabpanel" aria-labelledby="fall16-tab">
+        <div class="row">
+            <li id="econ-fall-2016"><a href="classes/2016/fall/econ.html">Economics</a> (two classes)</li>
+            <li id="java-fall-2016"><a href="classes/2016/fall/java.html">Java</a> (three classes)</li>
+            <li id="math-fall-2016"><a href="classes/2016/fall/math.html">Math</a></li>
+            <li id="ushist-fall-2016"><a href="classes/2016/fall/history.html">U.S. History</a> (two classes)</li>
+            <li id="webd-fall-2016"><a href="classes/2016/fall/webdesign.html">Website Design</a> (two classes)</li>
+          </div>
+      </div>
+      <div class="tab-pane fade" id="spring16" role="tabpanel" aria-labelledby="spring16-tab">
+        <div class="row">
+        <li id="ushist-spr-2016"><a href="classes/2016/spring/history.html">U.S. History</a>
+                        <ul style="list-style-type: circle">
+                            <li>Middle School Class</li>
+                            <li>High School Class</li>
+                        </ul>
+                    </li>
+                    <li id="webd-spr-2016"><a href="classes/2016/spring/webdesign.html">Website Design</a>
+                        <ul style="list-style-type: circle">
+                            <li>Middle School Class</li>
+                            <li>High School Class</li>
+                        </ul>
+                    </li>
+          </div>
+      </div>
+      <div class="tab-pane fade" id="fall15" role="tabpanel" aria-labelledby="fall15-tab">
+        <div class="row">
+          <li id="ce-fall-2015"><a href="classes/2015/fall/currentevents.html">Current Events</a></li>
+        </div>
+      </div>
+    </div>
+        <div id="footer">
+          <div id="footerlinks">
+            <a href="team.html">Our Team</a>
+            <a href="contact.html">Contact</a>
+            <a href="donate.html">Donate</a>
+            <a href="mission.html">Mission</a>
+          </div>
+          <div id="copyright">
+            <p> &#169; 2016-2018. Silicon Valley Youth</p>
+          </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="index.js">
+    </script>
+    <script src="classes.js">
+    </script>
+</body>
+</html>
+
+
+
