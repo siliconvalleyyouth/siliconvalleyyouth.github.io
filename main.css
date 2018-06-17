@@ -23,19 +23,20 @@ h1 {
 }
 
 .navcontainer {
-	width: 0;
 	height: 100%;
 	position: fixed;
 	z-index: 80;
 	top: 0;
-	right: 0;
+	right: -100%;
 	background-color: #ed5f5f;
-	transition-duration: 0.4s;
+	transition-duration: 0.6s;
 	overflow-y: hidden;
 }
 
 .in {
+	right: 0;
 	width: 100%;
+	transition-duration: 0.6s;
 }
 
 #mainnav {
