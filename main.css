@@ -1127,13 +1127,12 @@ li ul {
 /*Class Pages*/
 .classheader {
 	margin: 0% 10%;
-	padding: 60px 0px 30px 0px;
-	border-bottom: 1px solid #ccc;
+	padding: 60px 0px 20px 0px;
 }
 
 .classbody {
 	margin: 0% 10%;
-	padding: 40px 0px 60px 0px;
+	padding: 20px 0px 60px 0px;
 }
 
 .classbody h3 {
@@ -1807,7 +1806,7 @@ transition-duration: 0.5s;}
 	}
 
 	.navcontainer .title {
-		padding: 15px 30px 10px 30px;
+		padding: 15px 50px 10px 20px;
 		font-size: 25px;
 	}
 
