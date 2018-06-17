@@ -1794,6 +1794,10 @@ transition-duration: 0.5s;}
 		right: 5px;
 	}
 
+	#mainnav {
+		padding-top: 70px;
+	}
+
 	#logo {
 		display: none;
 	}
@@ -1803,7 +1807,7 @@ transition-duration: 0.5s;}
 	}
 
 	.navcontainer .title {
-		padding: 30px 80px 10px 80px;
+		padding: 15px 30px 10px 30px;
 		font-size: 25px;
 	}
 
