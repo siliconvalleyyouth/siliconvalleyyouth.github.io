@@ -56,6 +56,17 @@ $(window).scroll(function() {
   });
 
 $(window).scroll(function() {
+    $(".slideanim3").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos <= winTop + 600) {
+          $(this).addClass("slide6");
+        }
+    });
+  });
+
+$(window).scroll(function() {
     var winTop2 = $(window).scrollTop() + $(window).height();
     var footTop = $(document).height();
     var width = $(window).width();

@@ -1224,6 +1224,8 @@ li ul {
 .slideanim2 {visibility:hidden;
 transition-duration: 0.5s;}
 
+.slideanim3 {visibility:hidden;}
+
   .slide2 {
       animation-name: slide;
       -webkit-animation-name: slide;
@@ -1231,6 +1233,15 @@ transition-duration: 0.5s;}
       -webkit-animation-duration: 1s;
       visibility: visible;
   }
+
+  .slide6 {
+      animation-name: slider;
+      -webkit-animation-name: slider;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+
   @keyframes slide {
     0% {
       opacity: 0;
@@ -1249,6 +1260,27 @@ transition-duration: 0.5s;}
     100% {
       opacity: 1;
       -webkit-transform: translateY(0%);
+    }
+  }
+
+  @keyframes slider {
+    0% {
+      opacity: 0;
+      transform: translateX(-40%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  @-webkit-keyframes slider {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-40%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0%);
     }
   }
 
