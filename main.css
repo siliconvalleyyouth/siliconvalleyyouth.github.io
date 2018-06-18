@@ -2213,7 +2213,7 @@ transition-duration: 0.5s;}
 
 	#frenchbody ol {
 		font-size: 16px;
-		margin-left: 5%;
+		margin: 0 7%;
 	}
 
 	#frenchbody li {
@@ -2255,11 +2255,11 @@ transition-duration: 0.5s;}
 	}
 
 	#summerbody {
-	margin-left: 5%;
+		margin: 0 7%;
 	}
 
 	#olympiadsbody ul {
-		margin-left: 5%;
+		margin: 0 7%;
 	}
 
 	/*Donate */
