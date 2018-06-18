@@ -2196,6 +2196,11 @@ transition-duration: 0.5s;}
 	/*Resources */
 	#resourceshead {
 		margin: 0 5%;
+		padding: 50px 0px 10px 0px;
+	}
+
+	#resourceshead .subtitle {
+		padding: 0px;
 	}
 
 	.col-xs-1 {
