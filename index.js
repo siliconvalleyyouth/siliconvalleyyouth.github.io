@@ -31,7 +31,6 @@ $(document).ready(function(){
                 	$(".titleslide").addClass("toright");
                     $(".carousel-caption").addClass("block");
                     $(".carousel-indicators").addClass("block");
-                	document.getElementById("myCarousel1").style.opacity = 1;
                 });
             });
 
@@ -40,7 +39,6 @@ $(document).ready(function(){
                 	$(".titleslide").removeClass("toright");
                     $(".carousel-caption").removeClass("block");
                     $(".carousel-indicators").removeClass("block");
-                	document.getElementById("myCarousel1").style.opacity = 0.6;
                 });
             });
 
