@@ -2215,6 +2215,10 @@ transition-duration: 0.5s;}
 	#teambody h3 {
 		font-size: 28px;
 	}
+	
+	.bio {
+		height: auto;
+	}
 
 	.bio h2 {
 		font-size: 32px;
