@@ -299,8 +299,7 @@ h1 {
 }
 
 #titleleft {
-	right: 1%;
-	font-size: 34px;
+	right: 0.7%;
 }
 
 #myCarousel1 {
@@ -315,9 +314,10 @@ h1 {
 }
 
 .titleslide a {
-	color: #ed4e4e;
-	background-color: white;
+	color: white;
 	border-radius: 5px;
+	background-color: transparent;
+	border: 2px solid white;
 	padding: 10px 20px;
 	font-size: 26px;
 	transition-duration: 0.2s;
