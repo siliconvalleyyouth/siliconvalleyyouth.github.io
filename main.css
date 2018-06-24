@@ -988,6 +988,10 @@ li ul {
 	transform: rotate(45deg);
 }
 
+.rotateplus:hover {
+	transform: rotate(45deg);
+}
+
 /* Donate */
 
 #donatemodule {
