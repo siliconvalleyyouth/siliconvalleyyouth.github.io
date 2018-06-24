@@ -1269,7 +1269,7 @@ transition-duration: 0.5s;}
   @keyframes slider {
     0% {
       opacity: 0;
-      transform: translateX(-40%);
+      transform: translateX(-20%);
     } 
     100% {
       opacity: 1;
@@ -1279,7 +1279,7 @@ transition-duration: 0.5s;}
   @-webkit-keyframes slider {
     0% {
       opacity: 0;
-      -webkit-transform: translateX(-40%);
+      -webkit-transform: translateX(-20%);
     } 
     100% {
       opacity: 1;
