@@ -243,7 +243,7 @@ h1 {
 	width: 103%;
 	margin: 0 auto;
 	text-align: center; 
-	bottom: 35%;
+	bottom: 30%;
 	z-index: 7;
 	padding: 55px 60px;
 	background: linear-gradient(135deg, #EE7752, #E73C7E, #c67cb7, #ff1313);
@@ -342,7 +342,7 @@ h1 {
 	float: left;
 	width: 100%;
 	background-color: white;
-	margin-top: 630px;
+	margin-top: 720px;
 	padding: 60px 0px 0px 0px;
 }
 
@@ -1399,6 +1399,11 @@ transition-duration: 0.5s;}
 	.titleslide {
 		bottom: 55%;
 		padding: 40px 0px;
+		width: 104%;
+	}
+
+	#titleright {
+		right: 5%;
 	}
 
 	.titleslide button {
