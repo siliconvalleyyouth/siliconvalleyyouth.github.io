@@ -300,6 +300,7 @@ h1 {
 
 #titleleft {
 	right: 0.7%;
+	animation: changesize 1s linear 0s infinite; 
 }
 
 #myCarousel1 {
