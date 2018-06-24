@@ -245,14 +245,14 @@ h1 {
 	text-align: center; 
 	bottom: 30%;
 	z-index: 7;
-	padding: 55px 60px;
+	padding: 80px 60px;
 	background: linear-gradient(135deg, #EE7752, #E73C7E, #c67cb7, #ff1313);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
 	animation: Gradient 15s ease infinite;
 	border-radius: 0px 10px 10px 0px;
-	transition-duration: 0.4s;
+	transition-duration: 0.2s;
 }
 
 .toright {
