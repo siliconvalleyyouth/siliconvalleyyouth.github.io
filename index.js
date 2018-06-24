@@ -3,6 +3,7 @@ function rotate(x) {
     $(".navcontainer").toggleClass("in");
 }
 
+
 $(document).ready(function(){
                 $("#abt").click(function(){
                     $("#dropdown").slideToggle(250);
@@ -230,10 +231,13 @@ $(document).ready(function(){
             });
 
 
+//adding email button
+
+$("#social").html("<a href=\"https://www.facebook.com/SiliconValleyYouth/\" class=\"fab fa-facebook\"></a><a href=\"https://www.instagram.com/siliconvyouth/\" class=\"fab fa-instagram\"></a><a href=\"mailto:svyouth1@gmail.com\" class=\"fas fa-envelope\"></a>");
 
 
+//getting rid of contact link
 
-
-
+$("#footerlinks").html("<a href=\"team.html\">Our Team</a> <a href=\"donate.html\">Donate</a> <a href=\"mission.html\">Mission</a>");
 
 

@@ -189,7 +189,7 @@ h1 {
 	color: #ffb038;
 }
 
-#social .fab {
+#social .fab, #social .fas {
 	color: white;
 	font-size: 40px;
 	border: 0;
@@ -201,6 +201,11 @@ h1 {
 }
 
 #social .fab:hover {
+	transform: scale(1.1);
+	color: #ffb038;
+}
+
+#social .fas:hover {
 	transform: scale(1.1);
 	color: #ffb038;
 }
