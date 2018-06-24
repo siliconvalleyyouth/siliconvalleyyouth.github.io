@@ -513,6 +513,10 @@ h1 {
 	font-size: 19px;
 }
 
+#description a:hover {
+	color: #ed5f5f;
+}
+
 #footerlinks, #copyright {
 	text-align: center;
 	background-color: white;
@@ -540,32 +544,44 @@ h1 {
 }
 
 /*Classes */
+#classhead {
+	background-color: #ed5f5f;
+}
 
 #classhead .title {
 	padding-top: 50px;
+	color: white;
 }
 
 #classhead .nav-tabs {
-	margin: 0% 12%;
+	margin: 0% 10% 0% 14%;
 	padding-top: 30px;
+	border-bottom: 0;
 }
 
 .nav-item {
 	font-size: 20px;
 	display: block;
+	border-bottom: 0;
 }
 
 .nav-item .nav-link {
 	color: #ed4e4e;
+	background-color: #eee;
+	border-bottom: 0;
+}
+
+.nav-item .nav-link:hover {
+	background-color: white;
 }
 
 #sorter {
-	margin: 20px 13%;
+	margin: 20px 15%;
 }
 
 #myTabContent {
 	padding: 50px 0px 100px 0px;
-	margin: 0% 10% 0% 14%;
+	margin: 0% 10% 0% 16%;
 }
 
 #sorter p {
@@ -2096,6 +2112,14 @@ transition-duration: 0.5s;}
 	}
 
 	/* Classes */
+	#classhead {
+		background-color: white;
+	}
+
+	#classhead .title {
+		color: #ed5f5f;
+	}
+
 	.nav-tabs {
 		margin: 0% 5%;
 		padding-top: 20px;
@@ -2107,6 +2131,7 @@ transition-duration: 0.5s;}
 
 	.nav-item .nav-link {
 		padding: 8px;
+		background-color: white;
 	}
 
 	#sorter {
