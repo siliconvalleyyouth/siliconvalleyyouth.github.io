@@ -1103,7 +1103,7 @@ li ul {
 }
 
 /*Commendations*/
-#commendationshead, #newshead {
+#commendationshead {
 	padding: 70px 0px 15px 0px;
 	border-bottom: 1px solid #ccc;
 	margin: 0% 10%;
@@ -1112,7 +1112,7 @@ li ul {
 .evententry {
 	border-bottom: 1px solid #ccc;
 	margin: 0% 10%;
-	padding: 38px 0px;
+	padding: 50px 60px;
 }
 
 .evententry h2 {
@@ -1177,8 +1177,20 @@ li ul {
 }
 
 /*News and Events*/
+#newshead {
+	background-color: #ed4e4e;
+	padding: 70px 10% 70px 10%;
+	color: white;
+}
 
+#newshead .title {
+	color: white;
+}
 
+#firstevententry {
+	margin-top: -50px;
+	background-color: white;
+}
 
 
 /*Class Pages*/
@@ -1284,16 +1296,16 @@ transition-duration: 0.5s;}
   .slide2 {
       animation-name: slide;
       -webkit-animation-name: slide;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
+      animation-duration: 0.8s;
+      -webkit-animation-duration: 0.8s;
       visibility: visible;
   }
 
   .slide6 {
       animation-name: slider;
       -webkit-animation-name: slider;
-      animation-duration: 1s;
-      -webkit-animation-duration: 1s;
+      animation-duration: 0.8s;
+      -webkit-animation-duration: 0.8s;
       visibility: visible;
   }
 
@@ -1850,7 +1862,7 @@ transition-duration: 0.5s;}
 
 	.evententry {
 		margin: 0% 8%;
-		padding: 30px 0px;
+		padding: 30px;
 	}
 
 	.evententry h2 {
@@ -2403,10 +2415,18 @@ transition-duration: 0.5s;}
 		margin: 0% 6%;
 	}
 
+	#newshead {
+		padding: 60px 0px 40px 0px;
+	}
+
 	.evententry {
-		margin: 0% 6%;
-		padding: 25px 0px;
+		margin: 0% 3%;
+		padding: 25px 5%;
 		text-align: center;
+	}
+
+	#firstevententry {
+		margin-top: -30px;
 	}
 
 	.evententry h3 {
