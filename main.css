@@ -28,7 +28,11 @@ h1 {
 	z-index: 80;
 	top: 0;
 	right: -100%;
-	background-color: #ed5f5f;
+	background: linear-gradient(135deg, #EE7752, #E73C7E, #c67cb7, #ff1313);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
 	transition-duration: 0.6s;
 	overflow-y: hidden;
 }
@@ -60,6 +64,8 @@ h1 {
 
 .navig a:hover {
 	color: #ffb038;
+	border-bottom: 2px solid #ffb038;
+	width: 100px;
 }
 
 #mainnav li:hover {
@@ -133,15 +139,17 @@ h1 {
 }
 
 #menu:hover .bar1, #menu:hover .bar2, #menu:hover .bar3 {
-	background-color: #ed4e4e;
+	background-position: left;
 }
 
 .bar1, .bar2, .bar3 {
 	width: 30px;
 	margin: 10px 0px;
+	background: linear-gradient(to left, #666 50%, #ed4e4e 50%);
+	background-size: 200%;
+	background-position: right;
 	height: 3px;
-	background-color: #666;
-	transition-duration: 0.3s;
+	transition-duration: 0.2s;
 }
 
 .change .bar1 {
@@ -203,7 +211,7 @@ h1 {
 	position: fixed;
 	padding-bottom: 30px;
 	bottom: 0;
-	background-color: #ed5f5f;
+	background: transparent;
 }
 
 /* Homepage */
@@ -322,7 +330,9 @@ h1 {
 .titleslide a {
 	color: white;
 	border-radius: 5px;
-	background-color: transparent;
+	background: linear-gradient(to left, transparent 50%, #ffb038 50%);
+	background-size: 200%;
+	background-position: right;
 	border: 2px solid white;
 	padding: 10px 20px;
 	font-size: 26px;
@@ -332,8 +342,7 @@ h1 {
 
 .titleslide a:hover {
 	text-decoration: none;
-	background-color: #ffb038;
-	color: white;
+	background-position: left;
 }
 
 #indexbody {
@@ -379,7 +388,9 @@ h1 {
 
 #indexcol a {
 	color: white;
-	background-color: #ed4e4e;
+	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
+	background-size: 200%;
+	background-position: right;
 	border-radius: 5px;
 	padding: 10px 20px;
 	font-size: 26px;
@@ -391,7 +402,7 @@ h1 {
 #indexcol a:hover {
 	text-decoration: none;
 	color: white;
-	background-color: #ffb038;
+	background-position: left;
 }
 
 #indexcol a i {
@@ -470,7 +481,9 @@ h1 {
 
 .formbutton {
 	color: white;
-	background-color: #ed4e4e;
+	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
+	background-size: 200%;
+	background-position: right;
 	display: block;
 	margin: auto;
 	margin-top: 30px;
@@ -483,8 +496,7 @@ h1 {
 }
 
 .formbutton:hover {
-	background-color: #ffb038;
-	transform: scale(1.03);
+	background-position: left;
 }
 
 #footer {
@@ -1023,7 +1035,9 @@ li ul {
 
 #paypalimg {
 	width: 180px;
-	background-color: gold;
+	background: linear-gradient(to right, #ed5f5f 50%, gold 50%);
+	background-size: 200%;
+	background-position: right;
 	padding: 10px 30px;
 	border-radius: 10px;
 	transition-duration: 0.2s;
@@ -1033,7 +1047,7 @@ li ul {
 }
 
 #paypalimg:hover {
-	background-color: #ed5f5f;
+	background-position: left;
 }
 
 
@@ -1044,7 +1058,9 @@ li ul {
 }
 
 #donateservice {
-	background-color: #ed5f5f;
+	background: linear-gradient(to left, #ed5f5f 50%, gold 50%);
+	background-size: 200%;
+	background-position: right;
 	color: white;
 	padding: 10px 20px;
 	transition-duration: 0.3s;
@@ -1054,7 +1070,7 @@ li ul {
 }
 
 #donateservice:hover {
-	background-color: #ffb038;
+	background-position: left;
 	text-decoration: none;
 }
 
@@ -1118,6 +1134,11 @@ li ul {
 	margin-bottom: 20px;
 	border-radius: 5px;
 	max-height: 500px;
+	transition-duration: 0.2s;
+}
+
+.evententry img:hover {
+	opacity: 0.9;
 }
 
 #eventsprogress {
