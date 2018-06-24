@@ -66,6 +66,11 @@ h1 {
 	transform: scale(1.01);
 }
 
+.carousel-control.left, .carousel-control.right {
+   background-image:none !important;
+   filter:none !important;
+}
+
 #abt {
 	margin: auto;
 	display: block;
@@ -860,21 +865,31 @@ li ul {
 	transition-duration: 0.3s;
 	position: relative;
 	border-radius: 20px;
+	overflow: hidden;
 }
 
 .officer:hover {
 	box-shadow: 12px 12px 20px #bbb;
-	transform: scale(1.03);
 	cursor: pointer;
+}
+
+.officer:hover img {
+	transform: scale(1.05);
+	opacity: 0.9;
 }
 
 .officer img {
 	width: 100%;
 	border-radius: 10px 10px 0px 0px;
+	transition-duration: 0.2s;
+	position: relative;
+	z-index: 4;
 }
 
 .bio {
 	background-color: white;
+	position: relative;
+	z-index: 20;
 	text-align: center;
 	padding: 15px;
 	transition-duration: 0.4s;
