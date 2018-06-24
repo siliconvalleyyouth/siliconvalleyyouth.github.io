@@ -1429,7 +1429,7 @@ transition-duration: 0.5s;}
 		font-size: 25px;
 	}
 
-	#social .fab {
+	#social .fab, #social .fas {
 		font-size: 35px;
 		border: 0;
 		margin: 10px 15px;
@@ -1993,7 +1993,7 @@ transition-duration: 0.5s;}
 		font-size: 23px;
 	}
 
-	#social .fab {
+	#social .fab, #social .fas {
 		font-size: 25px;
 		border: 0;
 		margin: 0px 10px;
