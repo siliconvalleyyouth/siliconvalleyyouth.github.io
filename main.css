@@ -457,6 +457,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 
 #row1, #row2 {
 	padding: 0px 4% 100px 4%;
+	width: 108%;
 }
 
 #indexbody .title {
@@ -493,11 +494,11 @@ now override the 3.3 new styles for modern browsers & apply opacity
 }
 
 #indexcol1 {
-	margin-right: -5%;
+	margin-right: -7%;
 }
 
 #indexcol4 {
-	margin-left: -5%;
+	margin-left: -7%;
 }
 
 #indexcol2, #indexcol3 {
