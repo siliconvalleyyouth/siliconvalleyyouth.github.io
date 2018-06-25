@@ -25,7 +25,7 @@ h1 {
 .navcontainer {
 	height: 100%;
 	position: fixed;
-	z-index: 80;
+	z-index: 83;
 	top: 0;
 	right: -100%;
 	background: linear-gradient(135deg, #EE7752, #E73C7E, #c67cb7, #ff1313);
@@ -222,11 +222,11 @@ h1 {
 /* Homepage */
 
 #carcontain {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 	width: 100%;
 	left: 0;
-	margin-top: 0px;
+	top: 0;
 }
 
 .defaultimg {
@@ -249,17 +249,17 @@ h1 {
 	transform: scale(1.1);
 }
 
-.titleslide {
+/*.titleslide {
 	position: absolute;
 	right: -3%;
-	left: 0%;
+	left: -200%;
 	width: 103%;
 	margin: 0 auto;
 	text-align: center; 
 	bottom: 30%;
 	z-index: 7;
 	padding: 80px 60px;
-	background: linear-gradient(135deg, #EE7752, #E73C7E, #c67cb7, #ff1313);
+	background: transparent;
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 15s ease infinite;
 	-moz-animation: Gradient 15s ease infinite;
@@ -269,12 +269,12 @@ h1 {
 }
 
 .toright {
-	left: -200%;
-}
+	left: 0%;
+}*/
 
 .carousel-caption {
-	opacity: 0;
 	transition-duration: 0.3s;
+	opacity: 0;
 }
 
 .carousel-caption h3 {
@@ -282,13 +282,15 @@ h1 {
 }
 
 .carousel-indicators {
-	opacity: 0;
 	transition-duration: 0.3s;
+	opacity: 0;
 }
 
 .block {
-	opacity: 1;
+	opacity: 0;
 }
+
+/*
 
 .titleslide button {
 	background-color: transparent;
@@ -319,11 +321,62 @@ h1 {
 #titleleft {
 	right: 0.7%;
 	animation: changesize 1s linear 0s infinite; 
-}
+}*/
 
 #myCarousel1 {
 	position: relative;
 	transition-duration: 0.4s;
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+now override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
 }
 
 .titleslide h1 {
@@ -332,32 +385,65 @@ h1 {
 	padding-bottom: 25px;
 }
 
-.titleslide a {
+#mainslide {
+	position: absolute;
+	margin: 0px;
+	z-index: 50;
+	padding: 120px 0px 0px 12%;
+	width: 40%;
+}
+
+#mainslide h1 {
+	color: white;
+	font-size: 75px;
+}
+
+#mainslide .bold {
+	font-size: 90px;
+	font-family: 'Work Sans';
+	margin: -10px 0px;
+}
+
+#lastbold {
+	padding-bottom: 30px;
+}
+
+#mainmask {
+	width: 100%;
+	background-color: #444;
+	opacity: 0.3;
+	position: absolute;
+	height: 720px;
+	margin-left: 0;
+	z-index: 2;
+}
+
+#mainslide a {
 	color: white;
 	border-radius: 5px;
+	border: 2px solid white;
 	background: linear-gradient(to left, transparent 50%, #ffb038 50%);
 	background-size: 200%;
 	background-position: right;
-	border: 2px solid white;
 	padding: 10px 20px;
-	font-size: 26px;
+	font-size: 35px;
 	transition-duration: 0.2s;
 	text-align: left;
 }
 
-.titleslide a:hover {
+#mainslide a:hover {
 	text-decoration: none;
 	background-position: left;
 }
 
 #indexbody {
 	position: relative;
-	z-index: 25;
+	z-index: 80;
 	float: left;
 	width: 100%;
 	background-color: white;
-	margin-top: 720px;
 	padding: 60px 0px 0px 0px;
+	margin-top: 720px;
 }
 
 #indexbody #row1 {
@@ -385,7 +471,7 @@ h1 {
 
 #indexcol p {
 	text-align: left;
-	color: #999;
+	color: #666;
 	font-size: 20px;
 	line-height: 30px;
 	margin-bottom: 40px;

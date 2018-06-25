@@ -3,7 +3,7 @@
 <title>Silicon Valley Youth</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Lato:300|Raleway:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300|Raleway:300|Work+Sans:700" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -11,10 +11,10 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-<link rel="stylesheet" href="main.css">
-<script src="index.js">
-</script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="index.js">
+    </script>
 <body>
 <div id="menu" onclick="rotate(this)">
   <div class="bar1"></div>
@@ -46,14 +46,23 @@
   </div>
 </div>
 <div id="maincontainer">
-  <div class="titleslide">
+  <!--<div class="titleslide">
     <h1 class="slide6">We are Silicon Valley Youth.</h1>
     <a href="classes.html" class="progress slide6">See Our Classes</a>
     <button id="titleright"><i class="fas fa-angle-double-left"></i></button>
     <button id="titleleft"><i class="fas fa-angle-double-right"></i></button>
+  </div>-->
+  <div id="mainmask">
+  </div>
+  <div id="mainslide">
+    <h1>We are</h1>
+    <h1 class="bold">SILICON</h1>
+    <h1 class="bold">VALLEY</h1>
+    <h1 class="bold" id="lastbold">YOUTH</h1>
+    <a href="classes.html" class="progress slide6">Our Classes <i class="fas fa-angle-double-right"></i></a>
   </div>
   <div id="carcontain">
-    <div id="myCarousel1" class="carousel slide" data-ride="carousel" data-pause="false">
+    <div id="myCarousel1" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
     <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>

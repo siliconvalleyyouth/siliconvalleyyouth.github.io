@@ -3,6 +3,18 @@ function rotate(x) {
     $(".navcontainer").toggleClass("in");
 }
 
+$(window).resize(function() {
+    $("#indexbody").css({
+    'margin-top' : $("#myCarousel1").height()
+        });
+    $("#mainmask").css({
+    'height' : $("#myCarousel1").height()
+        });
+    $("#mainslide").css({
+    'padding-top' : $("#myCarousel1").height() * 0.17
+        });
+    });
+
 
 $(document).ready(function(){
                 $("#abt").click(function(){
@@ -12,7 +24,7 @@ $(document).ready(function(){
 
 $(window).scroll(function() {
 	$("#carcontain").css({
-    'margin-top': -($(this).scrollTop())/2
+    'margin-top': ($(this).scrollTop())/2
     });
     $("#line").css({
     'height': 70 + ($(this).scrollTop())
@@ -27,19 +39,20 @@ $(document).ready(function() {
       });
     });
 
+
 $(document).ready(function(){
                 $("#titleright").click(function(){
-                	$(".titleslide").addClass("toright");
-                    $(".carousel-caption").addClass("block");
-                    $(".carousel-indicators").addClass("block");
+                	$(".titleslide").removeClass("toright");
+                    $(".carousel-caption").removeClass("block");
+                    $(".carousel-indicators").removeClass("block");
                 });
             });
 
 $(document).ready(function(){
                 $("#titleleft").click(function(){
-                	$(".titleslide").removeClass("toright");
-                    $(".carousel-caption").removeClass("block");
-                    $(".carousel-indicators").removeClass("block");
+                	$(".titleslide").addClass("toright");
+                    $(".carousel-caption").addClass("block");
+                    $(".carousel-indicators").addClass("block");
                 });
             });
 
