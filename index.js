@@ -32,7 +32,7 @@ $(window).scroll(function() {
     });
 
     $("#circle2").css({
-    'top' : 30 - ($(this).scrollTop())/200 + "%"
+    'top' : 35 - ($(this).scrollTop())/170 + "%"
     });
 
     $("#line").css({
