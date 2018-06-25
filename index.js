@@ -26,6 +26,15 @@ $(window).scroll(function() {
 	$("#carcontain").css({
     'margin-top': ($(this).scrollTop())/2
     });
+
+     $("#circle1").css({
+    'top' : 2 + ($(this).scrollTop())/300 + "%"
+    });
+
+    $("#circle2").css({
+    'top' : 30 - ($(this).scrollTop())/200 + "%"
+    });
+
     $("#line").css({
     'height': 70 + ($(this).scrollTop())
     });

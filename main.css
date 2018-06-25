@@ -396,12 +396,14 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #mainslide h1 {
 	color: white;
 	font-size: 75px;
+	color: #ed4e4e;
 }
 
 #mainslide .bold {
 	font-size: 90px;
 	font-family: 'Work Sans';
 	margin: -10px 0px;
+	color: white;
 }
 
 #lastbold {
@@ -421,8 +423,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #mainslide a {
 	color: white;
 	border-radius: 5px;
-	border: 2px solid white;
-	background: linear-gradient(to left, transparent 50%, #ffb038 50%);
+	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
 	background-size: 200%;
 	background-position: right;
 	padding: 10px 20px;
@@ -450,26 +451,71 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	position: relative;
 }
 
-#indexbody .title {
-	padding: 20px 0px 20px 0px;
+#row1 {
+	padding-bottom: 200px;
 }
 
-#indexcol {
+#row1, #row2 {
+	padding: 0px 4% 100px 4%;
+}
+
+#indexbody .title {
+	padding: 20px 0px 50px 0px;
+}
+
+#indexcol1, #indexcol4 {
 	text-align: center;
-	padding: 10px 7% 90px 7%;
+	padding: 30px 4% 50px 4%;
+	background-color: white;
+	position: relative;
+	z-index: 9;
+	margin-top: 30px;
+	border-radius: 7px;
+}
+
+#indexbody .fa-circle {
+	font-size: 600px;
+	position: absolute;
+	z-index: 1;
+	transition-duration: 0.2s;
+}
+
+#circle1 {
+	color: #ed4e4e;
+	top: 2%;
+	left: -25%;
+}
+
+#circle2 {
+	color: #ffb038;
+	top: 20%;
+	right: -25%;
+}
+
+#indexcol1 {
+	margin-right: -5%;
+}
+
+#indexcol4 {
+	margin-left: -5%;
+}
+
+#indexcol2, #indexcol3 {
+	position: relative;
+	z-index: 3;
 }
 
 #bodyfas {
-	font-size: 70px;
+	font-size: 60px;
 	color: #555;
 }
 
-#indexcol h1 {
+#indexbody .col-sm-5 h1 {
 	color: #555;
 	padding: 10px 0px 20px 0px;
 }
 
-#indexcol p {
+#indexbody .col-sm-5 p {
 	text-align: left;
 	color: #666;
 	font-size: 20px;
@@ -477,7 +523,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	margin-bottom: 40px;
 }
 
-#indexcol a {
+#indexbody .col-sm-5 a {
 	color: white;
 	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
 	background-size: 200%;
@@ -489,19 +535,24 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	text-align: left;
 }
 
+#indexbody .col-sm-7 img {
+	width: 100%;
+	border-radius: 7px;
+}
 
-#indexcol a:hover {
+
+#indexbody .col-sm-5 a:hover {
 	text-decoration: none;
 	color: white;
 	background-position: left;
 }
 
-#indexcol a i {
+#indexbody .col-sm-5 a i {
 	color: white;
 	font-size: 23px;
 }
 
-#arrowright {
+/*#arrowright {
 	position: absolute;
 	text-align: center;
 	left: 0%;
@@ -510,7 +561,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	top: 50%;
 	color: #ed4e4e;
 	font-size: 40px;
-}
+}*/
 
 #stats {
 	padding: 50px 0px;
@@ -1532,6 +1583,8 @@ transition-duration: 0.5s;}
 		font-size: 24px;
 	}
 
+	/*
+
 	.titleslide {
 		bottom: 55%;
 		padding: 40px 0px;
@@ -1549,16 +1602,28 @@ transition-duration: 0.5s;}
 	.titleslide h1 {
 		font-size: 40px;
 		padding-bottom: 20px;
+	}*/
+
+	#mainslide h1 {
+		font-size: 40px;
 	}
 
-	.titleslide a {
+	#mainslide .bold {
+		font-size: 50px;
+	}
+
+	#lastbold {
+		padding-bottom: 30px;
+	}
+
+	#mainslide a {
 		padding: 8px 18px;
 		font-size: 23px;
 	}
 
 	#indexbody {
-		margin-top: 430px;
 		padding: 60px 0px 0px 0px;
+		margin-top: 430px;
 	}
 
 	#indexbody #row1 {
@@ -1569,30 +1634,25 @@ transition-duration: 0.5s;}
 		padding: 20px 0px 20px 0px;
 	}
 
-	#indexcol {
-		text-align: center;
-		padding: 10px 7% 90px 7%;
-	}
-
 	#bodyfas {
-		font-size: 60px;
+		font-size: 50px;
 	}
 
-	#indexcol h1 {
+	#indexbody .col-sm-5 h1 {
 		color: #555;
 		padding: 10px 0px 20px 0px;
 	}
 
-	#indexcol p {
+	#indexbody .col-sm-5 p {
 		font-size: 17px;
 		line-height: 26px;
 	}
 
-	#indexcol a {
+	#indexbody .col-sm-5 a {
 		font-size: 23px;
 	}
 
-	#indexcol a i {
+	#indexbody .col-sm-5 a i {
 		color: white;
 		font-size: 20px;
 	}
@@ -2093,21 +2153,36 @@ transition-duration: 0.5s;}
 	}
 
 	.carousel-indicators li, .carousel-indicators .active {
-		width: 15px;
+		/* width: 15px;
 		height: 15px;
 		border-radius: 50%;
-		margin: 0px 1px;
+		margin: 0px 1px;*/
+		display: none;
 	}
 
 	.carousel-caption h3 {
 		font-size: 20px;
+		display: none;
 	}
 
 	#myCarousel1, .carousel-indicators, .carousel-caption {
 		opacity: 1;
 	}
 
-	.titleslide {
+	#mainslide {
+		width: 80%;
+		padding: 40px 7%;
+	}
+
+	#mainslide h1 {
+		font-size: 28px;
+	}
+
+	#mainslide .bold {
+		font-size: 35px;
+	}
+
+	#mainslide a {
 		display: none;
 	}
 
@@ -2120,27 +2195,39 @@ transition-duration: 0.5s;}
 		padding: 20px 0px 20px 0px;
 	}
 
-	#indexcol {
-		text-align: center;
-		padding: 10px 7% 90px 7%;
+	#indexbody .fa-circle {
+		display: none;
+	}
+
+	#indexcol1, #indexcol4 {
+		padding: 20px 5%;
+		margin: 0;
 	}
 
 	#bodyfas {
 		font-size: 45px;
 	}
 
-	#indexcol h1 {
+	#row1 {
+		padding-bottom: 40px;
+	}
+
+	#indexbody .col-sm-5 h1 {
 		font-size: 30px;
 	}
 
-	#indexcol p {
+	#indexbody .col-sm-5 p {
 		font-size: 16px;
 		padding: 0px 5%;
 	}
 
-	#indexcol a i {
+	#indexbody .col-sm-5 a i {
 		color: white;
 		font-size: 20px;
+	}
+
+	#indexbody .col-sm-7 {
+		display: none;
 	}
 
 	#arrowright {
