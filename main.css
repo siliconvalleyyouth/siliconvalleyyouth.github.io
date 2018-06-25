@@ -1276,6 +1276,7 @@ li ul {
 #firstevententry {
 	margin-top: -50px;
 	background-color: white;
+	border-radius: 10px 10px 0px 0px;
 }
 
 
