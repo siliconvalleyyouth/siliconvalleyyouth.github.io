@@ -424,10 +424,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	transition-duration: 0.3s;
 }
 
-#mainslide:hover #mainmask {
-	transform: scale(1.2);
-}
-
 #mainslide a {
 	color: white;
 	border-radius: 5px;
@@ -485,20 +481,20 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	font-size: 600px;
 	position: absolute;
 	z-index: 1;
-	opacity: 0.8;
+	opacity: 0.9;
 	transition-duration: 0.2s;
 }
 
 #circle1 {
 	color: #ed4e4e;
 	top: 2%;
-	left: -25%;
+	left: -20%;
 }
 
 #circle2 {
 	color: #ffb038;
 	top: 20%;
-	right: -25%;
+	right: -20%;
 }
 
 #indexcol1 {
@@ -576,11 +572,13 @@ now override the 3.3 new styles for modern browsers & apply opacity
 
 
 #stats {
-	padding: 180px 0px 160px 0px;
+	padding: 180px 0px 190px 0px;
 	background: url("images/rounded.jpg");
 	background-size: 100% 100%;
 	text-align: center;
 	margin-top: -50px;
+	position: relative;
+	z-index: 12;
 }
 
 #stats .title {
@@ -615,7 +613,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 }
 
 #emailformbody {
-	padding: 100px 0px;
+	padding: 60px 0px 100px 0px;
 	background-color: white;
 	text-align: center;
 }
@@ -797,13 +795,10 @@ li ul {
 
 /* Service */
 #timelinehead {
-	background: linear-gradient(135deg, #EE7752, #E73C7E, #c67cb7, #ff1313);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
+	background: url("images/rounded2.jpg");
+	background-size: 100% 100%;
 	width: 100%;
-	padding: 100px 0px 50px 0px;
+	padding: 100px 0px 120px 0px;
 	color: white;
 	text-align: center;
 }
@@ -855,7 +850,7 @@ li ul {
 
 #timelinebody {
 	background-color: white;
-	padding: 50px 0px 60px 0px;
+	padding: 40px 0px 60px 0px;
 }
 
 #line {
@@ -1653,6 +1648,10 @@ transition-duration: 0.5s;}
 		font-size: 50px;
 	}
 
+	#indexcol4 {
+		margin-top: -150px;
+	}
+
 	#indexbody .col-sm-5 h1 {
 		color: #555;
 		padding: 10px 0px 20px 0px;
@@ -1812,7 +1811,7 @@ transition-duration: 0.5s;}
 
 	/* Service */
 	#timelinehead {
-		padding: 80px 0px 40px 0px;
+		padding: 80px 0px 100px 0px;
 	}
 
 	#timelinehead .title {
@@ -2255,7 +2254,7 @@ transition-duration: 0.5s;}
 	}
 
 	#stats {
-		padding: 60px 40px 100px 40px;
+		padding: 60px 40px 180px 40px;
 		background-size: 200% 100%; 
 		background-position: right;
 	}
@@ -2283,6 +2282,7 @@ transition-duration: 0.5s;}
 		padding: 0px 0px 60px 0px;
 		background-color: white;
 		text-align: center;
+		margin-top: -50px;
 	}
 
 	#emailform h1 {
@@ -2392,7 +2392,7 @@ transition-duration: 0.5s;}
 	/*Service */
 
 	#timelinehead {
-		padding: 70px 0px 40px 0px;
+		padding: 70px 0px 80px 0px;
 	}
 
 	#timelinehead .title {
