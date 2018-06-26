@@ -42,6 +42,10 @@ $(window).scroll(function() {
     $("#line").css({
     'height': 70 + ($(this).scrollTop())
     });
+
+    $("#teamliner1").css({
+    'top': ($(this).scrollTop())/3 - 330
+    });
 });
 
 $(document).ready(function() {
