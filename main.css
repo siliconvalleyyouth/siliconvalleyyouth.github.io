@@ -1088,6 +1088,8 @@ li ul {
 	padding: 20px 0px;
 	text-align: center;
 	color: #666;
+	position: relative;
+	z-index: 12;
 }
 
 #teamliner1 {
