@@ -12,7 +12,6 @@ $(window).resize(function() {
         });
     });
 
-
 $(document).ready(function(){
                 $("#abt").click(function(){
                     $("#dropdown").slideToggle(250);

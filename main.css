@@ -496,7 +496,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	border-radius: 7px;
 }
 
-#indexbody .fa-circle {
+.fa-circle {
 	font-size: 600px;
 	position: absolute;
 	z-index: 1;
@@ -739,7 +739,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .nav-item {
 	font-size: 20px;
 	display: block;
-	border-bottom: 0;
 }
 
 .nav-item .nav-link {
@@ -806,14 +805,37 @@ li ul {
 }
 
 /* Mission */
+#mission {
+	position: relative;
+	z-index: 12;
+}
+
 #mission .title {
 	padding-top: 70px;
 }
 
+#missioncircles .fa-circle {
+	font-size: 300px;
+	opacity: 0.9;
+}
+
+#missioncircles #circle1 {
+	left: -13%;
+	top: -15%;
+	color: #ffb038;
+	border: 30px solid #ed5f5f;
+}
+
+#missioncircles #circle2 {
+	right: -13%;
+	top: 5%;
+	color: #ed5f5f;
+	border: 30px solid #ffb038;
+}
+
 #mission p {
-	padding: 40px 10% 60px 10%;
+	padding: 20px 15% 60px 15%;
 	font-size: 23px;
-	text-align: center;
 }
 
 /* Service */
@@ -1036,13 +1058,19 @@ li ul {
 /* Team */
 #teamhead {
 	text-align: center;
-	padding: 80px 0 30px 0;
+	padding: 80px 0 10px 0;
 	margin: 0px 10%;
 	border-bottom: 1px solid #ccc;
+	position: relative;
+	z-index: 12;
 }
 
 #teamhead .title {
 	font-size: 60px;
+}
+
+#teamhead .subtitle {
+	color: black;
 }
 
 .founders {
@@ -1052,6 +1080,7 @@ li ul {
 
 #teambody {
 	margin: 30px 10% 50px 10%;
+	position: relative;
 }
 
 #teambody h3 {
@@ -1061,18 +1090,26 @@ li ul {
 	color: #666;
 }
 
+#teamliner1 {
+	position: absolute;
+	top: -330px;
+	z-index: 3;
+	right: -15%;
+	height: 115%;
+	width: 30%;
+}
+
 .officer {
-	box-shadow: 5px 5px 10px #bbb;
 	width: 94%;
 	margin: 20px 3%;
 	transition-duration: 0.3s;
 	position: relative;
 	border-radius: 20px;
 	overflow: hidden;
+	z-index: 20;
 }
 
 .officer:hover {
-	box-shadow: 12px 12px 20px #bbb;
 	cursor: pointer;
 }
 
@@ -1977,6 +2014,10 @@ transition-duration: 0.5s;}
 		font-size: 35px;
 	}
 
+	#teamliner1 {
+		height: 118%;
+	}
+
 	.officer {
 		margin: 25px 3%;
 	}
@@ -2264,7 +2305,7 @@ transition-duration: 0.5s;}
 		padding: 20px 0px 20px 0px;
 	}
 
-	#indexbody .fa-circle {
+	.fa-circle {
 		display: none;
 	}
 
@@ -2538,6 +2579,10 @@ transition-duration: 0.5s;}
 
 	#teambody h3 {
 		font-size: 28px;
+	}
+
+	#teamliner1 {
+		height: 108%;
 	}
 	
 	.bio {
