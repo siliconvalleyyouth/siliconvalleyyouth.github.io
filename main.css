@@ -510,12 +510,16 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	color: #ed4e4e;
 	top: 2%;
 	left: -20%;
+	border: 30px solid #ffb038;
+	border-radius: 100%;
 }
 
 #circle2 {
 	color: #ffb038;
 	top: 20%;
 	right: -20%;
+	border: 30px solid #ed4e4e;
+	border-radius: 100%;
 }
 
 #indexcol1 {
