@@ -7,9 +7,6 @@ $(window).resize(function() {
     $("#indexbody").css({
     'margin-top' : $("#myCarousel1").height()
         });
-    $("#mainmask").css({
-    'height' : $("#myCarousel1").height()
-        });
     $("#mainslide").css({
     'padding-top' : $("#myCarousel1").height() * 0.17
         });
@@ -33,6 +30,14 @@ $(window).scroll(function() {
 
     $("#circle2").css({
     'top' : 35 - ($(this).scrollTop())/170 + "%"
+    });
+
+    $("#indexcol2").css({
+    'margin-top':  50 - ($(this).scrollTop())/15
+    });
+
+    $("#indexcol3").css({
+    'margin-top':  ($(this).scrollTop())/15 - 100
     });
 
     $("#line").css({

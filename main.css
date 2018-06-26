@@ -413,11 +413,19 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #mainmask {
 	width: 100%;
 	background-color: #444;
-	opacity: 0.3;
+	opacity: 0.5;
+	left: -50%;
 	position: absolute;
-	height: 720px;
+	height: 1440px;
+	top: -360px;
+	border-radius: 100%;
 	margin-left: 0;
 	z-index: 2;
+	transition-duration: 0.3s;
+}
+
+#mainslide:hover #mainmask {
+	transform: scale(1.2);
 }
 
 #mainslide a {
@@ -470,7 +478,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	background-color: white;
 	position: relative;
 	z-index: 9;
-	margin-top: 30px;
 	border-radius: 7px;
 }
 
@@ -478,6 +485,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	font-size: 600px;
 	position: absolute;
 	z-index: 1;
+	opacity: 0.8;
 	transition-duration: 0.2s;
 }
 
@@ -495,10 +503,12 @@ now override the 3.3 new styles for modern browsers & apply opacity
 
 #indexcol1 {
 	margin-right: -7%;
+	margin-top: 50px;
 }
 
 #indexcol4 {
 	margin-left: -7%;
+	margin-top: 50px;
 }
 
 #indexcol2, #indexcol3 {
@@ -564,10 +574,13 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	font-size: 40px;
 }*/
 
+
 #stats {
-	padding: 50px 0px;
-	background-color: #ed5f5f;
+	padding: 180px 0px 160px 0px;
+	background: url("images/rounded.jpg");
+	background-size: 100% 100%;
 	text-align: center;
+	margin-top: -50px;
 }
 
 #stats .title {
@@ -875,6 +888,7 @@ li ul {
 	border: 1px solid #ccc;
 	box-shadow: 5px 5px 20px #ddd;
 	position: relative;
+	border-radius: 10px;
 }
 
 .firstevent {
@@ -1663,7 +1677,7 @@ transition-duration: 0.5s;}
 	}
 
 	#stats {
-		padding: 30px 40px;
+		padding: 100px 40px;
 		background-color: #ed5f5f;
 		text-align: center;
 	}
@@ -2187,6 +2201,11 @@ transition-duration: 0.5s;}
 		display: none;
 	}
 
+	#mainmask {
+		background-color: #555;
+		width: 300%;
+	}
+
 	#indexbody {
 		margin-top: 220px;
 		padding: 30px 0px 0px 0px;
@@ -2236,7 +2255,9 @@ transition-duration: 0.5s;}
 	}
 
 	#stats {
-		padding: 30px 40px;
+		padding: 60px 40px 100px 40px;
+		background-size: 200% 100%; 
+		background-position: right;
 	}
 
 	#stats .title {
@@ -2259,7 +2280,7 @@ transition-duration: 0.5s;}
 	}
 
 	#emailformbody {
-		padding: 60px 0px;
+		padding: 0px 0px 60px 0px;
 		background-color: white;
 		text-align: center;
 	}
