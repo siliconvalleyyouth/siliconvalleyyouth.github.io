@@ -474,17 +474,13 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	margin-top: 720px;
 }
 
-#indexbody #row1 {
-	position: relative;
-}
-
-#row1 {
-	padding-bottom: 200px;
-}
-
 #row1, #row2 {
 	padding: 0px 4% 100px 4%;
 	width: 108%;
+}
+
+#row1 {
+	padding-bottom: 150px;
 }
 
 #indexbody .title {
