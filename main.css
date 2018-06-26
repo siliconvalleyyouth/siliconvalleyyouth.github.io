@@ -421,7 +421,28 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	border-radius: 100%;
 	margin-left: 0;
 	z-index: 2;
-	transition-duration: 0.3s;
+	animation-name: scale;
+    -webkit-animation-name: scale;
+    animation-duration: 0.8s;
+    -webkit-animation-duration: 0.8s;
+}
+
+@-webkit-keyframes scale {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 #mainslide a {
@@ -1441,6 +1462,8 @@ transition-duration: 0.5s;}
 
 .slideanim3 {visibility:hidden;}
 
+.slideanim4 {visibility:hidden;}
+
   .slide2 {
       animation-name: slide;
       -webkit-animation-name: slide;
@@ -1454,6 +1477,14 @@ transition-duration: 0.5s;}
       -webkit-animation-name: slider;
       animation-duration: 0.8s;
       -webkit-animation-duration: 0.8s;
+      visibility: visible;
+  }
+
+  .sizer {
+      animation-name: sizer;
+      -webkit-animation-name: sizer;
+      animation-duration: 0.6s;
+      -webkit-animation-duration: 0.6s;
       visibility: visible;
   }
 
@@ -1496,6 +1527,23 @@ transition-duration: 0.5s;}
     100% {
       opacity: 1;
       -webkit-transform: translateX(0%);
+    }
+  }
+
+  @keyframes sizer {
+    0% {
+      transform: scale(0);
+    } 
+    100% {
+      transform: scale(1.0);
+    }
+  }
+  @-webkit-keyframes sizer{
+    0% {
+      transform: scale(0);
+    } 
+    100% {
+      transform: scale(1.0);
     }
   }
 

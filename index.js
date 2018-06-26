@@ -93,6 +93,17 @@ $(window).scroll(function() {
   });
 
 $(window).scroll(function() {
+    $(".slideanim4").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos <= winTop + 600) {
+          $(this).addClass("sizer");
+        }
+    });
+  });
+
+$(window).scroll(function() {
     var winTop2 = $(window).scrollTop() + $(window).height();
     var footTop = $(document).height();
     var width = $(window).width();
