@@ -419,6 +419,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	height: 1440px;
 	top: -360px;
 	border-radius: 100%;
+	border: 30px solid #444;
 	margin-left: 0;
 	z-index: 2;
 	animation-name: scale;
@@ -426,6 +427,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
     animation-duration: 0.8s;
     -webkit-animation-duration: 0.8s;
 }
+
 
 @-webkit-keyframes scale {
 	0% {
