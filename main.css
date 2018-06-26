@@ -2293,7 +2293,10 @@ transition-duration: 0.5s;}
 
 	#mainmask {
 		background-color: #555;
-		width: 300%;
+		width: 100%;
+		border-radius: 0;
+		left: 0;
+		top: 0;
 	}
 
 	#indexbody {
@@ -2582,7 +2585,7 @@ transition-duration: 0.5s;}
 	}
 
 	#teamliner1 {
-		height: 108%;
+		height: 106%;
 	}
 	
 	.bio {
