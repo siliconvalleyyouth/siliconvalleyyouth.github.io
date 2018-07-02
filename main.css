@@ -1109,6 +1109,7 @@ li ul {
 	border-radius: 20px;
 	overflow: hidden;
 	z-index: 20;
+	box-shadow: 3px 3px 40px #555;
 }
 
 .officer:hover {
