@@ -282,3 +282,5 @@ $("#social").html("<a href=\"https://www.facebook.com/SiliconValleyYouth/\" clas
 $("#footerlinks").html("<a href=\"team.html\">Our Team</a> <a href=\"donate.html\">Donate</a> <a href=\"mission.html\">Mission</a>");
 
 
+
+
