@@ -2333,6 +2333,7 @@ transition-duration: 0.5s;}
 	#indexcol1, #indexcol4 {
 		padding: 20px 5%;
 		margin: 0;
+		box-shadow: 0px 0px 0px white;
 	}
 
 	#bodyfas {
