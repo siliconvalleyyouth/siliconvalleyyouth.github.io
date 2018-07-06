@@ -1586,7 +1586,7 @@ transition-duration: 0.5s;}
       transform: scale(0);
     } 
     60% {
-      transform: scale(1.1);
+      transform: scale(1.03);
     }
     100% {
       transform: scale(1.0);
@@ -1597,7 +1597,7 @@ transition-duration: 0.5s;}
       transform: scale(0);
     } 
     60% {
-      transform: scale(1.1);
+      transform: scale(1.03);
     }
     100% {
       transform: scale(1.0);
