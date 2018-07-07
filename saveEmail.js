@@ -7,17 +7,22 @@ $(document).ready(function() {
 			email:email
 		}
 		console.log(email);
-		$.ajax({
-			url: "http://siliconvalleyyouth.herokuapp.com/email",
-			method: "POST",
-			Content-Type: "application/json",
-			data: data,
-			success: function( data, status, jqxhr ){
-				console.log( "Request received:", data );
-			},
-			error: function( jqxhr, status, error ){
-				console.log( "Something went wrong!" );
-			}
-		});
+		// $.ajax({
+		// 	url: "http://localhost:3000/email",
+		// 	method: "POST",
+		// 	contentType: "application/x-www-form-urlencoded",
+		// 	data: "email=tonyjiang02@gmail.com",
+		// 	success: function( data, status, jqxhr ){
+		// 		console.log( "Request received:", data );
+		// 	},
+		// 	error: function( jqxhr, status, error ){
+		// 		console.log(error);
+		// 	}
+		// });
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "http://localhost:3000/email", true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.withCredentials=true;
+		xhr.send("email=tonyjiang02@gmail.com");
 	})
 })
