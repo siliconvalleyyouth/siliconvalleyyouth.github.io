@@ -14,9 +14,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
+    <script src = "saveEmail.js" crossorigin="anonymous"></script>
     <script src="index.js">
     </script>
-    <script src = "saveEmail.js"></script>
 <body>
 <div id="menu" onclick="rotate(this)">
   <div class="bar1"></div>
@@ -198,9 +198,9 @@
             <h3  class="slideanim3">Sign up for email notifications!</h3>
             <form class="form-inline">
               <div class="input-group">
-                <input type="email" class="form-control slideanim" size="60" id ="email-input" placeholder="Email Address" required>
+                <input type="text" class="form-control slideanim" size="60" id ="email-input" placeholder="Email Address" required>
               </div>
-              <button class="formbutton slideanim4" id ="submit-email">Sign Up</button>
+              <input type = "button" class="formbutton slideanim4" id ="submit-email" onclick="run()" value="Sign Up">
             </form>
           </div>
         </div>
