@@ -8,26 +8,16 @@ $(document).ready(function() {
 		}
 		console.log(email);
 		$.ajax({
-			type:"POST",
-			url:serverAddress,
-			contentType:"application/json",
-			data:JSON.stringify(data),
-			error:function(xhr,status,error) {
-				console.log(xhr);
+			url: "http://siliconvalleyyouth.herokuapp.com/email",
+			method: "POST",
+			dataType: "json",
+			data: data,
+			success: function( data, status, jqxhr ){
+				console.log( "Request received:", data );
+			},
+			error: function( jqxhr, status, error ){
+				console.log( "Something went wrong!" );
 			}
-		})
-		// $.ajax({
-		// 	type:"POST",
-		// 	url:"http://localhost:3000/email",
-		// 	crossDomain:true
-		// 	// contentType:"application/json",
-		// 	// data:JSON.stringify(data),
-		// 	// error:function(xhr,status,error) {
-		// 	// 	console.log(xhr);
-		// 	// }
-		// })
-		// $.post(serverAddress, JSON.stringify(data), function(d, status,xhr) {
-		// 	console.log(xhr);
-		// })
+		});
 	})
 })
