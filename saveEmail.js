@@ -20,7 +20,7 @@ $(document).ready(function() {
 		// 	}
 		// });
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST", "http://localhost:3000/email", true);
+		xhr.open("POST", serverAddress, true);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.withCredentials=true;
 		xhr.send("email=tonyjiang02@gmail.com");
