@@ -10,7 +10,7 @@ $(document).ready(function() {
 		$.ajax({
 			url: "http://siliconvalleyyouth.herokuapp.com/email",
 			method: "POST",
-			dataType: "json",
+			Content-Type: "application/json",
 			data: data,
 			success: function( data, status, jqxhr ){
 				console.log( "Request received:", data );
