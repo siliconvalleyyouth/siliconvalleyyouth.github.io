@@ -1515,6 +1515,7 @@ transition-duration: 0.5s;}
 
 .slideanim4 {visibility:hidden;}
 
+
   .slide2 {
       animation-name: slide;
       -webkit-animation-name: slide;
@@ -1536,6 +1537,14 @@ transition-duration: 0.5s;}
       -webkit-animation-name: sizer;
       animation-duration: 0.6s;
       -webkit-animation-duration: 0.6s;
+      visibility: visible;
+  }
+
+  .slideright {
+      animation-name: slideright;
+      -webkit-animation-name: slideright;
+      animation-duration: 0.8s;
+      -webkit-animation-duration: 0.8s;
       visibility: visible;
   }
 
@@ -1601,6 +1610,27 @@ transition-duration: 0.5s;}
     }
     100% {
       transform: scale(1.0);
+    }
+  }
+
+  @keyframes slideright {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(40%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0%);
+    }
+  }
+  @-webkit-keyframes slideright {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(40%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0%);
     }
   }
 
