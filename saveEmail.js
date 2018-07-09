@@ -7,28 +7,13 @@ $(document).ready(function() {
 			email:email
 		}
 		console.log(email);
-		// $.ajax({
-		// 	type:"POST",
-		// 	url:"https://siliconvalleyyouth.herokuapp.com/email",
-		// 	contentType:"application/json",
-		// 	data:JSON.stringify(data),
-		// 	error:function(xhr,status,error) {
-		// 		console.log(xhr);
-		// 	}
-		// })
-		jQuery.support.cors=true;
-		$.ajax({
-			type:"POST",
-			url:"http://localhost:3000/email",
-			crossDomain:true
-			// contentType:"application/json",
-			// data:JSON.stringify(data),
-			// error:function(xhr,status,error) {
-			// 	console.log(xhr);
-			// }
-		})
-		// $.post(serverAddress, JSON.stringify(data), function(d, status,xhr) {
-		// 	console.log(xhr);
-		// })
+		
 	})
 })
+function run() {
+	var xhr = new XMLHttpRequest();
+	var email = $("#email-input").val();
+	xhr.open("POST", "https://siliconvalleyyouth.herokuapp.com/email",true);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.send("email="+email);
+}
