@@ -499,7 +499,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	position: relative;
 	z-index: 9;
 	border-radius: 7px;
-	box-shadow: 2px 2px 30px #777;
+	box-shadow: 1px 1px 20px #777;
 }
 
 .fa-circle {
