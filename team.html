@@ -39,6 +39,14 @@
   </div>
 </div>
 <div id="maincontainer">
+  <div id="cover" onclick="cancel()">
+  </div>
+  <div id="bio">
+    <div id="cancel" onclick="cancel()"><i class="fas fa-times"></i></div>
+    <h2>Name</h2>
+    <h3>Position</h3>
+    <p>BIOOOO</p>
+  </div>
   <div id="teamhead">
     <h1 class="title slide6">Our Team</h1>
     <h3 class="subtitle slide2">SVY was founded in 2015 by Ben and Bryan Owens. Since then, our leadership team has grown every semester.  These are our officers.</h3>    
@@ -73,7 +81,7 @@
     <h3 class="slideanim3">Current Officers</h3>
     <div class="row">
       <div class="col-sm-4">
-        <div class="officer slideanim">
+        <div class="officer slideanim" onclick="openBio(sam)">
           <img src="images/team/sam.jpg">
           <div class="bio">
             <h2>Sam Yang</h2>
@@ -218,7 +226,7 @@
     </div>
   </div>
   <a class="back2top" href="#"><i class="fas fa-chevron-up"></i></a>
-        <div id="footer" style="position: relative; z-index: 12">
+        <div id="footer" style="position: relative; z-index: 4">
           <div id="footerlinks">
             <a href="team.html">Our Team</a>
             <a href="donate.html">Donate</a>

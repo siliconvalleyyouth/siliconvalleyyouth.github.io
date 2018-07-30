@@ -56,6 +56,21 @@ $(document).ready(function() {
       });
     });
 
+var sam = ["Sam Yang", "Co-President", "Sam Yang is a senior at Monta Vista High School.  He has previously taught World History and Website Design at Silicon Valley Youth, and has served as co-president since May 2017.  He is an avid web developer and programmer, with experience in HTML, CSS, Javascript, jQuery, Bootstrap, Node.js, Firebase and Python.  His web design work includes Silicon Valley Youth, DeltaHacks Institute, InstaTutors, EngAcademy, Silicon Valley Forensics, and Senior Tech Assistance Initiative.  Outside of his work, he enjoys playing the guitar, singing and playing baseball."]
+
+function openBio(name) {
+    $("#bio").fadeIn();
+    $("#cover").fadeIn();
+    $("#bio h2").html(name[0]);
+    $("#bio h3").html(name[1]);
+    $("#bio p").html(name[2]);
+}
+
+function cancel() {
+    $("#bio").fadeOut();
+    $("#cover").fadeOut();
+}
+
 
 $(document).ready(function(){
                 $("#titleright").click(function(){
@@ -282,7 +297,6 @@ $("#mainnav").html("<li class=\"navig\"><a href=\"https://www.siliconvalleyyouth
 //getting rid of contact link
 
 $("#footerlinks").html("<a href=\"team.html\">Our Team</a> <a href=\"donate.html\">Donate</a> <a href=\"mission.html\">Mission</a>");
-
 
 
 
