@@ -57,7 +57,7 @@ $(document).ready(function() {
     });
 
 var sam = ["Sam Yang", "Co-President", "Sam Yang is a senior at Monta Vista High School.  He has previously taught World History and Website Design at Silicon Valley Youth, and has served as co-president since May 2017.  He is an avid web developer and programmer, with experience in HTML, CSS, Javascript, jQuery, Bootstrap, Node.js, Firebase and Python.  His web design work includes Silicon Valley Youth, DeltaHacks Institute, InstaTutors, EngAcademy, Silicon Valley Forensics, and Senior Tech Assistance Initiative.  Outside of his work, he enjoys playing the guitar, singing and playing baseball."]
-
+var ben = ["Benjamin Owens", "Co-Founder & Board Member", "Benjamin Owens is currently an undergraduate student studying computer science at Harvard University. He founded Silicon Valley Youth with his twin brother Bryan while attending Henry M. Gunn High School in 2015 as a way to give back to his surrounding community. He has taught Java, Website Design, and Grammar for SVY, and together with Bryan established SVY's relationship with the Ravenswood City School District. He enjoys programming, browsing reddit, and learning new things."]
 
 function openBio(name) {
     $("#bio").fadeIn();
