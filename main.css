@@ -758,6 +758,15 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	background-color: white;
 }
 
+.newclass {
+	font-size: 16px;
+	padding: 3px 6px;
+	color: white;
+	background-color: #ed5f5f;
+	border-radius: 3px;
+	margin-left: 10px;
+}
+
 #sorter {
 	margin: 20px 15%;
 }
