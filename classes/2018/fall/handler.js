@@ -36,6 +36,7 @@ if(selector=="3d") {
 	console.log(selector);
 	curr = classes.get(selector);
 	$(document).ready(function() {
+		$("#title").text(curr.classname);
 		$("#class-name").text(curr.classname);
 		$("#class-description").text(curr.description);
 		$("#dates").html("<strong>Dates:</strong>"+curr.datesstr);
