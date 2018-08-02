@@ -56,6 +56,24 @@ $(document).ready(function() {
       });
     });
 
+var sam = ["Sam Yang", "Co-President", "Sam Yang is a senior at Monta Vista High School.  He has previously taught World History and Website Design at Silicon Valley Youth, and has served as co-president since May 2017.  He is an avid web developer and programmer, with experience in HTML, CSS, Javascript, jQuery, Bootstrap, Node.js, Firebase, Java and Python.  His web design work includes Silicon Valley Youth, DeltaHacks Institute, InstaTutors, EngAcademy, Silicon Valley Forensics, and Senior Tech Assistance Initiative.  Outside of his work, he enjoys playing the guitar, singing and playing baseball."]
+var ben = ["Benjamin Owens", "Co-Founder & Board Member", "Benjamin Owens is currently an undergraduate student studying computer science at Harvard University. He founded Silicon Valley Youth with his twin brother Bryan while attending Henry M. Gunn High School in 2015 as a way to give back to his surrounding community. He has taught Java, Website Design, and Grammar for SVY, and together with Bryan established SVY's relationship with the Ravenswood City School District. He enjoys programming, browsing reddit, and learning new things."]
+var brandon = ["Brandon Fu", "Co-President", "Brandon Fu is a senior at Homestead High School in Cupertino, California. He has previously taught Web Design, Public Speaking, and Business at Silicon Valley Youth, and has served as co-president since May 2017. He has strong interests in business, competing in the Future Business Leaders of America club for over three years on both a state and national level. Besides that, Brandon is an avid graphic designer and loves video production. His work has been featured multiple times and he is experienced in both Adobe’s photography suite and video editing softwares. Outside of his work, he enjoys playing various sports including tennis, water polo, and basketball."]
+var oliver = ["Oliver Ye", "Vice President of Science", "Oliver Ye is a Sophomore at Saratoga High School. He has previously taught US History and Science Bowl at Silicon Valley Youth, and has served as the Vice President of Science since May 2017. He has strong interests in biotechnology, competing in RISE at a regional and national level. In addition, he has lab experience running real time PCR, Flow Cytometry, and Western Blot experiments. Outside of his work, he enjoys drawing, cooking, and playing volleyball."]
+
+function openBio(name) {
+    $("#bio").fadeIn();
+    $("#cover").fadeIn();
+    $("#bio h2").html(name[0]);
+    $("#bio h3").html(name[1]);
+    $("#bio p").html(name[2]);
+}
+
+function cancel() {
+    $("#bio").fadeOut();
+    $("#cover").fadeOut();
+}
+
 
 $(document).ready(function(){
                 $("#titleright").click(function(){
@@ -277,12 +295,11 @@ $(document).ready(function(){
 $("#social").html("<a href=\"https://www.facebook.com/SiliconValleyYouth/\" class=\"fab fa-facebook\"></a><a href=\"https://www.instagram.com/siliconvyouth/\" class=\"fab fa-instagram\"></a><a href=\"mailto:svyouth1@gmail.com\" class=\"fas fa-envelope\"></a>");
 
 //navigation
-$("#mainnav").html("<li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/classes\">CLASSES</a></li> <div id=\"abt\"> <li class=\"navig\"><a>ABOUT US &#9662;</a></li> <ul id=\"dropdown\"><li><a href=\"https://www.siliconvalleyyouth.com/team\">Our Team</a></li> <li><a href=\"https://www.siliconvalleyyouth.com/mission\">Our Mission</a></li> <li><a href=\"https://www.siliconvalleyyouth.com/commendations\">Commendations</a></li> </ul> </div> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/service\">SERVICE</a></li> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/resources\">RESOURCES</a></li> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/donate\">DONATE</a></li> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/events\">NEWS/EVENTS</a></li>");
+$("#mainnav").html("<li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/classes\">CLASSES</a></li> <div id=\"abt\"> <li class=\"navig\"><a>ABOUT US &#9662;</a></li> <ul id=\"dropdown\"><li><a href=\"https://www.siliconvalleyyouth.com/team\">Our Team</a></li> <li><a href=\"https://www.siliconvalleyyouth.com/mission\">Our Mission</a></li> <li><a href=\"https://www.siliconvalleyyouth.com/commendation\">Commendations</a></li> </ul> </div> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/service\">SERVICE</a></li> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/resources\">RESOURCES</a></li> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/donate\">DONATE</a></li> <li class=\"navig\"><a href=\"https://www.siliconvalleyyouth.com/events\">NEWS/EVENTS</a></li>");
 
 //getting rid of contact link
 
 $("#footerlinks").html("<a href=\"team.html\">Our Team</a> <a href=\"donate.html\">Donate</a> <a href=\"mission.html\">Mission</a>");
-
 
 
 

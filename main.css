@@ -1063,13 +1063,63 @@ li ul {
 }
 
 /* Team */
+#cover {
+	width: 100%;
+	position: fixed;
+	background-color: #444;
+	opacity: 0.5;
+	z-index: 5;
+	height: 100vh;
+	display: none;
+}
+
+#bio {
+	position: fixed;
+	top: 15%;
+	width: 50%;
+	margin: 0px 25%;
+	background-color: white;
+	z-index: 60;
+	padding: 50px;
+	border-radius: 10px;
+	display: none;
+}
+
+#bio h2 {
+	font-size: 38px;
+}
+
+#bio h3 {
+	font-size: 30px;
+	color: #ed5f5f;
+}
+
+#bio p {
+	font-size: 20px;
+	padding: 20px 0px;
+}
+
+#cancel {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	font-size: 30px;
+	color: #444;
+	transition-duration: 0.2s;
+}
+
+#cancel:hover {
+	color: #ed4e4e;
+	cursor: pointer;
+}
+
 #teamhead {
 	text-align: center;
 	padding: 80px 0 10px 0;
 	margin: 0px 10%;
 	border-bottom: 1px solid #ccc;
 	position: relative;
-	z-index: 12;
+	z-index: 4;
 }
 
 #teamhead .title {
@@ -1077,7 +1127,7 @@ li ul {
 }
 
 #teamhead .subtitle {
-	color: black;
+	color: #333;
 }
 
 .founders {
@@ -1115,7 +1165,7 @@ li ul {
 	position: relative;
 	border-radius: 20px;
 	overflow: hidden;
-	z-index: 20;
+	z-index: 4;
 	box-shadow: 3px 3px 40px #555;
 }
 
@@ -2045,6 +2095,31 @@ transition-duration: 0.5s;}
 	}
 
 	/*Our team */
+	#bio {
+		position: fixed;
+		top: 10%;
+		width: 60%;
+		margin: 0px 20%;
+		padding: 40px;
+	}
+
+	#bio h2 {
+		font-size: 30px;
+	}
+
+	#bio h3 {
+		font-size: 25px;
+	}
+
+	#bio p {
+		font-size: 18px;
+		padding: 15px 0px;
+	}
+
+	#cancel {
+		font-size: 25px;
+	}
+
 	#teamhead {
 		padding: 70px 0 20px 0;
 		margin: 0px 8%;
@@ -2616,6 +2691,36 @@ transition-duration: 0.5s;}
 	}
 
 	/*Our Team*/
+	#bio {
+		position: fixed;
+		overflow-y: scroll;
+		top: 3%;
+		box-shadow: 10px 10px 20px #444;
+		width: 90%;
+		margin: 0px 5%;
+		padding: 20px 5%;
+		z-index: 99;
+	}
+
+	#bio h2 {
+		font-size: 25px;
+	}
+
+	#bio h3 {
+		font-size: 20px;
+	}
+
+	#bio p {
+		font-size: 15px;
+		padding: 10px 0px;
+	}
+
+	#cancel {
+		font-size: 25px;
+		top: 10px;
+		right: 10px;
+	}
+
 	#teamhead {
 		padding: 60px 0 20px 0;
 		margin: 0px 5%;
