@@ -9,6 +9,7 @@ function getParam(name){
     }
 }
 var selector = getParam('query');
+
 if(selector=="3d") {
 	console.log(selector);
 	curr = classes.get(selector);
@@ -30,6 +31,7 @@ if(selector=="3d") {
 		$("#bio3").text("I am an incoming 7th grader at Joaquin Miller Middle School. I have taken a few SVY classes before, one of them being a Tinkercad class. I got really interested in 3D design, so I also took a different class for Fusion 360. I usually get the hang of the classwork pretty fast and I always help other classmates when I’m done with my work. I have taken many other classes that have to do with computer softwares so I know lots of the material. I’m really interested in 3D design, game design, and programming, and I’m pretty good at it. I think as a teacher I can help out in the class and help people learn what I learned before.");
 		$("#teacher2label").text("Teacher's Assistant");
 		$("#teacher3label").text("Teacher's Assistant");
+		$("#forms-link").attr("href", curr.link);
 	})
 
 }else{
@@ -58,5 +60,6 @@ if(selector=="3d") {
 		}else{
 			$("#teacher2label").text("Teacher");
 		}
+		$("#forms-link").attr("href", curr.link);
 	})
 }
