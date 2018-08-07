@@ -17,7 +17,7 @@ var classes = [
     ["SFS", "Humanities", $("#psce2-fall-2018")],
     ["SFS", "Humanities", $("#worldhist-fall-2018")],
     ["SFS", "sports", $("#chess-fall-2018")],
-    ["SFS", "sports", $("#bridge-fall-2018")],
+    ["Miller", "sports", $("#bridge-fall-2018")],
     ["SFS", "stem", $("#amc8_2-fall-2018")],
     ["SFS", "stem", $("#science-fall-2018")],
     ["SFS", "stem", $("#phys-fall-2018")],
