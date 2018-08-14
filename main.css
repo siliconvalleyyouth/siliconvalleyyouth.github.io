@@ -652,9 +652,23 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	font-size: 45px;
 }
 
-#emailform h3 {
+#emailform h4 {
+	color: #444;
+	font-size: 25px;
+	padding: 20px 0px 10px 0px; 
+}
+
+#emailform h4 a {
 	color: #ed4e4e;
-	font-size: 30px;
+}
+
+#emailform h4 a:hover {
+	color: gold;
+	text-decoration: none;
+}
+
+#emailform h3 {
+	font-size: 25px;
 	padding: 0px 10% 35px 10%;
 }
 
