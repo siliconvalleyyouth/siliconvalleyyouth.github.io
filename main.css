@@ -701,6 +701,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	background-color: #f7f7f7;
 	border-top: 1px solid #ddd;
 	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 #description {
