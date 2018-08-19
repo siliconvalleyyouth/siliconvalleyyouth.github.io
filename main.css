@@ -1184,7 +1184,7 @@ li ul {
 	width: 30%;
 }
 
-.officer, .teacher {
+.officer, #teambody .teacher {
 	width: 94%;
 	margin: 20px 3%;
 	transition-duration: 0.3s;
@@ -1223,7 +1223,7 @@ li ul {
 	border-radius: 0px 0px 10px 10px;
 }
 
-.teacher {
+#teambody .teacher {
 	margin: 20px 0;
 	width: 100%;
 	overflow: hidden;
@@ -1244,22 +1244,22 @@ li ul {
 	padding-top: 100px;
 }
 
-.teacher .bio {
+#teambody .teacher .bio {
 	height: 100px;
 }
 
-.teacher .bio h2 {
+#teambody .teacher .bio h2 {
 	font-size: 20px;
 	margin: 0;
 	padding: 0;
 }
 
-.teacher .bio h4 {
+#teambody .teacher .bio h4 {
 	font-size: 16px;
 	padding: 0px;
 }
 
-.teacher img {
+#teambody .teacher img {
 	height: auto;
 	margin: 0px auto;
 	display: block;
@@ -2814,16 +2814,16 @@ transition-duration: 0.5s;}
 		font-size: 22px;
 	}
 
-	.teacher {
+	#teambody .teacher {
 		width: 80%;
 		margin: 20px 10%;
 	}
 
-	.teacher .bio {
+	#teambody .teacher .bio {
 		height: 80px;
 	}
 
-	.teacher img {
+	#teambody .teacher img {
 		height: auto;
 		margin: 0px auto;
 		display: block;
