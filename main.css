@@ -700,6 +700,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #footer {
 	background-color: #f7f7f7;
 	border-top: 1px solid #ddd;
+	width: 100%;
 }
 
 #description {
