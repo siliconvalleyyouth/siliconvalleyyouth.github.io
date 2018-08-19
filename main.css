@@ -1180,11 +1180,11 @@ li ul {
 	top: -330px;
 	z-index: 3;
 	right: -15%;
-	height: 84%;
+	height: 77%;
 	width: 30%;
 }
 
-.officer {
+.officer, .teacher {
 	width: 94%;
 	margin: 20px 3%;
 	transition-duration: 0.3s;
@@ -1204,7 +1204,7 @@ li ul {
 	opacity: 0.9;
 }
 
-.officer img {
+.officer img, .teacher img {
 	width: 100%;
 	border-radius: 10px 10px 0px 0px;
 	transition-duration: 0.2s;
@@ -1223,6 +1223,12 @@ li ul {
 	border-radius: 0px 0px 10px 10px;
 }
 
+.teacher {
+	margin: 20px 0;
+	width: 100%;
+	overflow: hidden;
+}
+
 .bio h2 {
 	font-size: 32px;
 	color: #333;
@@ -1232,6 +1238,34 @@ li ul {
 	color: #888;
 	font-size: 22px;
 	margin-top: 10px;
+}
+
+#teambody #teacherstas {
+	padding-top: 100px;
+}
+
+.teacher .bio {
+	height: 100px;
+}
+
+.teacher .bio h2 {
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+.teacher .bio h4 {
+	font-size: 16px;
+	padding: 0px;
+}
+
+.teacher img {
+	height: auto;
+	margin: 0px auto;
+	display: block;
+	width: auto;
+	max-height: 210px;
+	overflow: hidden;
 }
 
 /* Resources */
@@ -2164,7 +2198,7 @@ transition-duration: 0.5s;}
 	}
 
 	#teamliner1 {
-		height: 85%;
+		height: 79%;
 	}
 
 	.officer {
@@ -2765,7 +2799,7 @@ transition-duration: 0.5s;}
 	}
 
 	#teamliner1 {
-		height: 73%;
+		height: 69.5%;
 	}
 	
 	.bio {
@@ -2778,6 +2812,24 @@ transition-duration: 0.5s;}
 
 	.bio h4 {
 		font-size: 22px;
+	}
+
+	.teacher {
+		width: 80%;
+		margin: 20px 10%;
+	}
+
+	.teacher .bio {
+		height: 80px;
+	}
+
+	.teacher img {
+		height: auto;
+		margin: 0px auto;
+		display: block;
+		width: 100%;
+		max-height: 600px;
+		overflow: hidden;
 	}
 
 	/*Resources */
