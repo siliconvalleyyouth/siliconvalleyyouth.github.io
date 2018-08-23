@@ -794,6 +794,15 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	margin-left: 10px;
 }
 
+.full {
+	font-size: 16px;
+	padding: 3px 6px;
+	color: white;
+	background-color: navy;
+	border-radius: 3px;
+	margin-left: 10px;
+}
+
 #sorter {
 	margin: 20px 15%;
 }
