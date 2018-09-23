@@ -88,7 +88,7 @@ h1 {
 }
 
 #dropdown {
-	padding: 0px 0px 20px;
+	padding: 0px;
 	display: none;
 }
 
@@ -1455,6 +1455,37 @@ li ul {
 	font-size: 19px;
 }
 
+#testimonialshead {
+	padding: 100px 0px 30px 0px;
+	margin: 0px 15%;
+	border-bottom: 1px solid #ccc;
+}
+
+#testimonialsbody {
+	padding: 50px 8%;
+}
+
+#text-carousel {
+	margin: 50px 0px 100px 0px;
+}
+
+#text-carousel p {
+	font-size: 24px;
+	color: #666;
+}
+
+#text-carousel h3 {
+	padding: 10px 0px;
+	font-size: 24px;
+	color: #ed5f5f;
+	text-align: center;
+}
+
+#text-carousel .carousel-control {
+	color: #ed5f5f;
+	transition-duration: 0.2s;
+}
+
 /*Commendations*/
 #commendationshead, #newshead {
 	background-color: #ed4e4e;
@@ -1772,7 +1803,7 @@ transition-duration: 0.5s;}
 	}
 
 	.navig {
-		font-size: 26px;
+		font-size: 23px;
 		margin: 25px 0px;
 		letter-spacing: 2px;
 	}
