@@ -249,6 +249,20 @@ $(document).ready(function(){
             });
 
 $(document).ready(function(){
+                $("#showmore13").click(function(){
+                    $("#hid13").slideToggle("fast");
+                    $("#showmore13 i").toggleClass("flip");
+                });
+            });
+
+$(document).ready(function(){
+                $("#showmore14").click(function(){
+                    $("#hid14").slideToggle("fast");
+                    $("#showmore14 i").toggleClass("flip");
+                });
+            });
+
+$(document).ready(function(){
                 $("#foreignlanguageplus").click(function(){
                     $("#foreignlanguagebody").slideToggle(500);
                     $("#foreignlanguageplus").toggleClass("rotateplus");

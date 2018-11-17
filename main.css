@@ -651,12 +651,13 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #emailform h1 {
 	color: #ed4e4e;
 	font-size: 45px;
+	padding-bottom: 40px;
 }
 
 #emailform h4 {
 	color: #444;
 	font-size: 25px;
-	padding: 20px 0px 10px 0px; 
+	padding: 30px 0px 10px 0px; 
 }
 
 #emailform h4 a {
@@ -666,11 +667,6 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #emailform h4 a:hover {
 	color: gold;
 	text-decoration: none;
-}
-
-#emailform h3 {
-	font-size: 25px;
-	padding: 0px 10% 35px 10%;
 }
 
 #emailform input {
@@ -1070,14 +1066,6 @@ li ul {
 .leftside2 {
 	right: -13%;
 	top: 80px;
-}
-
-#special {
-	margin-bottom: 40px;
-}
-
-#special2 {
-	margin-top: 640px;
 }
 
 .hid .carousel {
