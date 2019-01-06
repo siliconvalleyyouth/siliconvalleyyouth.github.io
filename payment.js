@@ -31,9 +31,7 @@ function calcPrice() {
     }
     var sessions = noDisabled[index].attributes[0].nodeValue;
     console.log(sessions);
-    priceDisplay.innerHTML = "Cost: "+ parseInt(sessions,10) * 15 + "$";
-    document.getElementById("priceVar").value = parseInt(sessions,10) * 15;
-    priceDisplay.innerHTML = "Cost " + parseInt(sessions, 10) * 15 + "$";
+    priceDisplay.innerHTML = "Cost: " + parseInt(sessions, 10) * 15 + "$";
     document.getElementById("priceVar").value = parseInt(sessions, 10) * 15;
     console.log(noDisabled[index].attributes[1].nodeValue);
     document.getElementById("selector").value = noDisabled[index].attributes[1].nodeValue;
@@ -106,7 +104,7 @@ function stripeTokenHandler(token) {
         data: $('#payment-form').serialize(),
         success: function (response) {
             if (response == "Success") {
-                alert("Payment Succeeded, you may now close the page");
+                writeThankYou()
             }
             if (response == "Failed") {
                 alert("Payment failed, please check your credit card credentials or try again later.")
@@ -118,3 +116,11 @@ function stripeTokenHandler(token) {
 function createElements() {
     card.mount('#card-element');
 }
+function writeThankYou() {
+    var classname = $("#ClassSelect").val().split(",")[0];
+    $("#thankyoubody").fadeIn();
+    $("#paymentbody").hide();
+    $("#classname2").html(classname);
+}
+
+

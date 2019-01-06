@@ -52,6 +52,32 @@
 	background-position: left;
 }
 
+#thankyoubody {
+	padding: 60px 8%;
+	text-align: center;
+	display: none;
+}
+
+#check {
+	display: block;
+	margin: auto;
+	width: 35%;
+	opacity: 0.85;
+}
+
+#thankyoubody h1 {
+	font-size: 40px;
+	color: #ed4e4e;
+}
+
+#thankyoubody h3 {
+	font-size: 24px;
+}
+
+#thankyoubody p {
+	font-size: 18px;
+}
+
 @media only screen and (max-width: 768px) {
 	#paymentbody {
 		padding: 60px 6%;
@@ -72,5 +98,21 @@
 
 	#costDisplay {
 		font-size: 18px;
+	}
+
+	#check {
+		width: 60%;
+	}
+
+	#thankyoubody h1 {
+		font-size: 30px;
+	}
+
+	#thankyoubody h3 {
+		font-size: 20px;
+	}
+
+	#thankyoubody p {
+		font-size: 16px;
 	}
 }

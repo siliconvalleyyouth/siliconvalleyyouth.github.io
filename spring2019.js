@@ -28,5 +28,5 @@ classArray.push(new Class2018("Grammar and Vocab", "Friday 7-8:30pm", "Miller Mi
 classArray.push(new Class2018("Bridge", "Friday 7-8:30pm", "Miller Middle School", 8, ""));
 classArray.push(new Class2018("Public Speaking and Debate", "Friday 7-8:30pm", "Miller Middle School", 6, ""));
 classArray.push(new Class2018("Public Speaking and Current Events", "Friday 7-8:30pm", "Miller Middle School", 8, ""));
-classArray.push(new Class2018("Basketball", "Friday 5-7pm", "", 8, ""));
+classArray.push(new Class2018("Basketball", "Friday 5-7pm", "Dilworth Elementary School", 8, ""));
 classArray.push(new Class2018("Tennis", "Sunday 3:30-5pm", "Saratoga Oaks Tennis Courts", 8, ""));
