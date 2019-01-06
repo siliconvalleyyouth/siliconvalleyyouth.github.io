@@ -9,7 +9,7 @@
     <script src="https://js.stripe.com/v3/"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <script src="./spring2019.js"></script>
+    <script src= "./spring2019s.js"></script>
     <script src="./payment.js"></script>
     <link rel="stylesheet" href= "main.css"></style>
     <link rel="stylesheet" href= "paymentStyling.css"></style>
@@ -64,11 +64,11 @@
         </div>
         <div class="form-group">
             <label for="parentWeChat">Parent WeChat ID</label>
-            <input type="email" class="form-control" name="parentWeChat" id="parentWeChat" placeholder="Enter parent weChat ID (optional)">
+            <input class="form-control" name="parentWeChat" id="parentWeChat" placeholder="Enter parent weChat ID (optional)">
         </div>
         <div class="form-group">
             <label for="parentPhone">Parent Phone Number</label>
-            <input type="email" class="form-control" name="parentPhone" id="parentPhone" placeholder="Enter parent phone number" required>
+            <input class="form-control" name="parentPhone" id="parentPhone" placeholder="Enter parent phone number" required>
         </div>
         <div class="form-group">
             <label for="studentName">Student Name</label>
@@ -87,6 +87,7 @@
             <input type="text" class="form-control" name="studentSchool" id="studentSchool" placeholder="Enter student's school" required>
         </div>
         <input type="hidden" name="price" id = "priceVar" value = "">
+        <input type="hidden" name="selector" id = "selector" value = "">
         <div class="form-group">
             <label for="card-element">
                 Credit or debit card.
