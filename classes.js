@@ -3,6 +3,30 @@ var sub = "all";
 
 /*Data for class select function*/
 var classes = [
+    ["Saratoga", "sports", $("#tennis-spring-2019")],
+    ["Dilworth", "sports", $("#bball-spring-2019")],
+    ["Miller", "Humanities", $("#psce-spring-2019")],
+    ["Miller", "Humanities", $("#psdeb2-spring-2019")],
+    ["Miller", "sports", $("#bridge-spring-2019")],
+    ["Miller", "Humanities", $("#grammar-spring-2019")],
+    ["Gunn", "stem", $("#python-spring-2019")],
+    ["Gunn", "stem", $("#amc8adv-spring-2019")],
+    ["SFS", "Humanities", $("#worldhist-spring-2019")], 
+    ["SFS", "Humanities", $("#compspeech-spring-2019")],  
+    ["SFS", "Humanities", $("#ps1-spring-2019")],  
+    ["SFS", "stem", $("#advweb-spring-2019")],
+    ["SFS", "stem", $("#science-spring-2019")],
+    ["SFS", "stem", $("#mathcounts-spring-2019")],
+    ["Omei", "stem", $("#java2-spring-2019")],
+    ["Omei", "stem", $("#ml-spring-2019")],
+    ["Omei", "stem", $("#usaco-spring-2019")],
+    ["Omei", "Humanities", $("#psdeb1-spring-2019")],
+    ["Omei", "stem", $("#interjava-spring-2019")],
+    ["Omei", "stem", $("#bio-spring-2019")],
+    ["Omei", "stem", $("#java1-spring-2019")],
+    ["Omei", "stem", $("#introweb-spring-2019")],
+    ["Omei", "stem", $("#physics-spring-2019")],
+    ["Omei", "stem", $("#amc8_1-spring-2019")],
     ["Omei", "Humanities", $("#psce1-fall-2018")],
     ["Omei", "stem", $("#bio-fall-2018")],
     ["Omei", "stem", $("#python-fall-2018")],
@@ -164,6 +188,12 @@ function palo() {
     selectClass("Palo Alto", sub);
 }
 
+function sara() {
+    $("#byLocation").html("Saratoga <i class=\"fas fa-caret-down\"></i>");
+    loc = "Saratoga";
+    selectClass("Saratoga", sub);
+}
+
 function all2() {
     $("#bySubject").html("All <i class=\"fas fa-caret-down\"></i>");
     sub = "all";
@@ -196,6 +226,7 @@ document.getElementById("mms").onclick = mms;
 document.getElementById("omei").onclick = omei;
 document.getElementById("dilw").onclick = dilworth;
 document.getElementById("palo").onclick = palo;
+document.getElementById("sara").onclick = sara;
 document.getElementById("all2").onclick = all2;
 document.getElementById("humanities").onclick = humanities;
 document.getElementById("stem").onclick = stem;
