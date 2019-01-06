@@ -33,6 +33,8 @@ function calcPrice() {
     console.log(sessions);
     priceDisplay.innerHTML = "Cost " + parseInt(sessions, 10) * 15 + "$";
     document.getElementById("priceVar").value = parseInt(sessions, 10) * 15;
+    console.log(noDisabled[index].attributes[1].nodeValue);
+    document.getElementById("selector").value = noDisabled[index].attributes[1].nodeValue;
 }
 function initSelector() {
     console.log("initializing Selector")
@@ -58,6 +60,7 @@ function initSelector() {
         var option = document.createElement('option');
         var inner = classArray[i].classname + ", " + classArray[i].locationstr + ", " + classArray[i].datestr + ", " + classArray[i].classNumber + " sessions";
         option.setAttribute("data-class-number", classArray[i].classNumber);
+        option.setAttribute("data-selector-str", classArray[i].selector);
         console.log("set classno")
         option.innerHTML = inner;
         selector.appendChild(option);
