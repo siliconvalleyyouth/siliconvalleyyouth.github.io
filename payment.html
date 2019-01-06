@@ -7,16 +7,21 @@
         crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="./spring2018.js"></script>
     <script src="./payment.js"></script>
-    <link rel="stylesheet" href= "paymentStyling.css"></style>
+    <link rel="stylesheet" href="paymentStyling.css">
+    </style>
 </head>
+<!-- https://siliconvalleyyouth.herokuapp.com/payment
+http://localhost:3000 -->
 <div class="container">
     <h1>THIS IS CURRENTLY A TEST PAGE, PLEASE DO NOT ENTER ANY INFORMATION HERE!</h1>
-    <form action="https://siliconvalleyyouth.herokuapp.com/payment" method="post" id="payment-form">
+    <form target="_blank" action="https://siliconvalleyyouth.herokuapp.com/payment" method="post" id="payment-form">
         <div class="form-group">
             <label for="ClassSelect">Select Class</label>
-            <select class="form-control" name="ClassSelect" id="ClassSelect"  onchange = "calcPrice()">
+            <select class="form-control" name="ClassSelect" id="ClassSelect" onchange="calcPrice()">
             </select>
         </div>
         <div class="form-group">
@@ -25,7 +30,8 @@
         </div>
         <div class="form-group">
             <label for="parentEmail">Parent Email Address</label>
-            <input type="email" class="form-control" name="parentEmail" id="parentEmail" placeholder="Enter email" required>
+            <input type="email" class="form-control" name="parentEmail" id="parentEmail" placeholder="Enter email"
+                required>
         </div>
         <div class="form-group">
             <label for="studentName">Student Name</label>
@@ -33,7 +39,8 @@
         </div>
         <div class="form-group">
             <label for="studentEmail">Student Email Address</label>
-            <input type="email" class="form-control" name="studentEmail" id="studentEmail" placeholder="Enter email" required>
+            <input type="email" class="form-control" name="studentEmail" id="studentEmail" placeholder="Enter email"
+                required>
         </div>
         <div class="form-inline">
             <label for="studentGrade">Student Grade</label>
@@ -41,7 +48,7 @@
             <label for="studentSchool">Student School</label>
             <input type="text" class="form-control" name="studentSchool" id="studentSchool" required>
         </div>
-        <input type="hidden" name="price" id = "priceVar" value = "">
+        <input type="hidden" name="price" id="priceVar" value="">
         <div class="form-group">
             <label for="card-element">
                 Credit or debit card.
@@ -49,8 +56,9 @@
             <div id="card-element" class="form-control">
             </div>
             <div id="card-errors" role="alert" style="color:red"></div>
-            <h4 id = "costDisplay">Cost: Please choose a class</h4>
-            <p>Class cost is 15$ per class. This payment can be refunded at any time before the second class. The student can
+            <h4 id="costDisplay">Cost: Please choose a class</h4>
+            <p>Class cost is 15$ per class. This payment can be refunded at any time before the second class. The
+                student can
                 try out the first class, and refund if you so choose.</p>
             <p>This payment is secured and processed by Stripe</p>
         </div>

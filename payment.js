@@ -1,5 +1,6 @@
 var classArray = classArray;
-var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
+// var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
@@ -21,17 +22,17 @@ function calcPrice() {
     var index = select.selectedIndex;
     var noDisabled = [];
     console.log(select.childNodes);
-    for(var i =0; i<select.childNodes.length; i++) {
-        if(typeof select.childNodes[i].attributes != 'undefined') {
+    for (var i = 0; i < select.childNodes.length; i++) {
+        if (typeof select.childNodes[i].attributes != 'undefined') {
             noDisabled.push(select.childNodes[i]);
-        }else {
+        } else {
             console.log("disabled option");
         }
     }
     var sessions = noDisabled[index].attributes[0].nodeValue;
     console.log(sessions);
-    priceDisplay.innerHTML = "Cost "+ parseInt(sessions,10) * 15 + "$";
-    document.getElementById("priceVar").value = parseInt(sessions,10) * 15;
+    priceDisplay.innerHTML = "Cost " + parseInt(sessions, 10) * 15 + "$";
+    document.getElementById("priceVar").value = parseInt(sessions, 10) * 15;
 }
 function initSelector() {
     console.log("initializing Selector")
@@ -51,14 +52,14 @@ function initSelector() {
             location = classArray[i].locationstr;
             var disabledLocation = document.createElement('option');
             disabledLocation.setAttribute('disabled', "");
-            disabledLocation.innerHTML=location;
+            disabledLocation.innerHTML = location;
             selector.appendChild(disabledLocation);
         }
         var option = document.createElement('option');
-        var inner = classArray[i].classname + ", " + classArray[i].locationstr + ", " + classArray[i].datestr + ", " + classArray[i].classNumber+ " sessions";
+        var inner = classArray[i].classname + ", " + classArray[i].locationstr + ", " + classArray[i].datestr + ", " + classArray[i].classNumber + " sessions";
         option.setAttribute("data-class-number", classArray[i].classNumber);
         console.log("set classno")
-        option.innerHTML= inner;
+        option.innerHTML = inner;
         selector.appendChild(option);
     }
 }
@@ -86,6 +87,7 @@ function formHandler() {
         });
     });
 }
+
 function stripeTokenHandler(token) {
     var form = document.getElementById('payment-form');
     var hiddenInput = document.createElement('input');
@@ -93,8 +95,20 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('name', 'stripeToken');
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
-
-    form.submit();
+    $.ajax({
+        url: $('#payment-form').attr('action'),
+        type: 'POST',
+        data: $('#payment-form').serialize(),
+        success: function (response) {
+            if (response == "Success") {
+                alert("Payment Succeeded, you may now close the page");
+            }
+            if (response == "Failed") {
+                alert("Payment failed, please check your credit card credentials or try again later.")
+            }
+        }
+    });
+    return false;
 }
 function createElements() {
     card.mount('#card-element');
