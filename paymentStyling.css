@@ -3,3 +3,74 @@
     color:black;
     font-size:20px;
 }
+
+#paymentbody {
+	padding: 70px 9%;
+}
+
+#paymentbody h1 {
+	font-size: 50px;
+	color: #ed4e4e;
+}
+
+#paymentbody h3 {
+	font-size: 25px;
+	color: #777;
+}
+
+#costDisplay {
+	color: #ed4e4e;
+	font-size: 22px;
+	padding: 0px;
+}
+
+#classcost {
+	margin-top: 15px;
+}
+
+#stripeprocess {
+	padding: 10px 0px 0px 0px;
+}
+
+#submitpayment {
+	color: white;
+	border: 0;
+	border-radius: 5px;
+	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
+	background-size: 220%;
+	background-position: right;
+	padding: 10px 30px;
+	font-size: 22px;
+	transition-duration: 0.2s;
+	text-align: left;
+	margin-top: -5px;
+	box-shadow: 3px 3px 5px #aaa;
+}
+
+#submitpayment:hover {
+	text-decoration: none;
+	background-position: left;
+}
+
+@media only screen and (max-width: 768px) {
+	#paymentbody {
+		padding: 60px 6%;
+	}
+
+	#paymentbody h1 {
+		font-size: 35px;
+	}
+
+	#paymentbody h3 {
+		font-size: 21px;
+	}
+
+	#submitpayment {
+		font-size: 20px;
+		padding: 8px 18px;
+	}
+
+	#costDisplay {
+		font-size: 18px;
+	}
+}

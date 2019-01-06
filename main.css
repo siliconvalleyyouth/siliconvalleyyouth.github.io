@@ -149,7 +149,7 @@ h1 {
 	width: 30px;
 	margin: 10px 0px;
 	background: linear-gradient(to left, #666 50%, #ed4e4e 50%);
-	background-size: 200%;
+	background-size: 220%;
 	background-position: right;
 	height: 3px;
 	transition-duration: 0.2s;
@@ -455,7 +455,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	color: white;
 	border-radius: 5px;
 	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
-	background-size: 200%;
+	background-size: 220%;
 	background-position: right;
 	padding: 10px 20px;
 	font-size: 35px;
@@ -562,13 +562,14 @@ now override the 3.3 new styles for modern browsers & apply opacity
 #indexbody .col-sm-5 a {
 	color: white;
 	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
-	background-size: 200%;
+	background-size: 220%;
 	background-position: right;
 	border-radius: 5px;
 	padding: 10px 20px;
 	font-size: 26px;
 	transition-duration: 0.2s;
 	text-align: left;
+	box-shadow: 3px 3px 5px #aaa;
 }
 
 #indexbody .col-sm-7 img {
@@ -675,7 +676,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 .formbutton {
 	color: white;
 	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
-	background-size: 200%;
+	background-size: 220%;
 	background-position: right;
 	display: block;
 	margin: auto;
@@ -1390,7 +1391,7 @@ li ul {
 #paypalimg {
 	width: 180px;
 	background: linear-gradient(to right, #ed5f5f 50%, gold 50%);
-	background-size: 200%;
+	background-size: 220%;
 	background-position: right;
 	padding: 10px 30px;
 	border-radius: 10px;
@@ -1414,7 +1415,7 @@ li ul {
 
 #donateservice {
 	background: linear-gradient(to left, #ed5f5f 50%, gold 50%);
-	background-size: 200%;
+	background-size: 220%;
 	background-position: right;
 	color: white;
 	padding: 10px 20px;

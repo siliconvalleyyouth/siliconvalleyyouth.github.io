@@ -1,18 +1,53 @@
+<!doctype html>
+<html>
 <head>
     <title>Payment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Raleway:300" rel="stylesheet">
     <script src="https://js.stripe.com/v3/"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <script src="./spring2018.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="./spring2019.js"></script>
     <script src="./payment.js"></script>
+    <link rel="stylesheet" href= "main.css"></style>
     <link rel="stylesheet" href= "paymentStyling.css"></style>
 </head>
-<div class="container">
-    <h1>THIS IS CURRENTLY A TEST PAGE, PLEASE DO NOT ENTER ANY INFORMATION HERE!</h1>
+<body>
+<div id="menu" onclick="rotate(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+<a href="index.html"><img id="logo" src="images/logo.jpg"></a>
+<div class="navcontainer">
+  <a href="index.html"><h1 class="title">SILICON VALLEY YOUTH</h1></a>
+  <ul id="mainnav">
+    <li class="navig"><a href="classes.html">CLASSES</a></li>
+    <div id="abt">
+      <li class="navig"><a>ABOUT US &#9662;</a></li>
+      <ul id="dropdown">
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="commendation.html">Commendations</a></li>
+      </ul>
+    </div>
+    <li class="navig"><a href="service.html">SERVICE</a></li>
+    <li class="navig"><a href="resources.html">RESOURCES</a></li>
+    <li class="navig"><a href="donate.html">DONATE</a></li>
+    <li class="navig"><a href="events.html">NEWS/EVENTS</a></li>
+  </ul>
+  <div id="social">
+    <a href="https://www.facebook.com/SiliconValleyYouth/" class="fab fa-facebook"></a>
+    <a href="https://www.instagram.com/siliconvyouth/" class="fab fa-instagram"></a>
+    <a href="mailto:svyouth1@gmail.com" class="fas fa-envelope"></a>
+  </div>
+</div>
+<div id="paymentbody">
+    <h1>SVY Class Payment</h1>
+    <h3>Please complete the form below, and submit payment to register for a SVY class.</h3>
+    <hr />
     <form action="https://siliconvalleyyouth.herokuapp.com/payment" method="post" id="payment-form">
         <div class="form-group">
             <label for="ClassSelect">Select Class</label>
@@ -21,25 +56,35 @@
         </div>
         <div class="form-group">
             <label for="parentName">Parent Name</label>
-            <input type="text" class="form-control" name="parentName" id="parentName" required>
+            <input type="text" class="form-control" name="parentName" id="parentName" placeholder="Enter parent name" required>
         </div>
         <div class="form-group">
             <label for="parentEmail">Parent Email Address</label>
-            <input type="email" class="form-control" name="parentEmail" id="parentEmail" placeholder="Enter email" required>
+            <input type="email" class="form-control" name="parentEmail" id="parentEmail" placeholder="Enter parent email" required>
+        </div>
+        <div class="form-group">
+            <label for="parentWeChat">Parent WeChat ID</label>
+            <input type="email" class="form-control" name="parentWeChat" id="parentWeChat" placeholder="Enter parent weChat ID (optional)">
+        </div>
+        <div class="form-group">
+            <label for="parentPhone">Parent Phone Number</label>
+            <input type="email" class="form-control" name="parentPhone" id="parentPhone" placeholder="Enter parent phone number" required>
         </div>
         <div class="form-group">
             <label for="studentName">Student Name</label>
-            <input type="text" class="form-control" name="studentName" id="studentName" required>
+            <input type="text" class="form-control" name="studentName" id="studentName" placeholder="Enter student name" required>
         </div>
         <div class="form-group">
             <label for="studentEmail">Student Email Address</label>
-            <input type="email" class="form-control" name="studentEmail" id="studentEmail" placeholder="Enter email" required>
+            <input type="email" class="form-control" name="studentEmail" id="studentEmail" placeholder="Enter student email" required>
         </div>
-        <div class="form-inline">
+        <div class="form-group">
             <label for="studentGrade">Student Grade</label>
-            <input type="number" class="form-control" name="studentGrade" id="studentGrade" required>
+            <input type="number" class="form-control" name="studentGrade" id="studentGrade" placeholder="Enter student grade" required>
+        </div>
+        <div class="form-group">
             <label for="studentSchool">Student School</label>
-            <input type="text" class="form-control" name="studentSchool" id="studentSchool" required>
+            <input type="text" class="form-control" name="studentSchool" id="studentSchool" placeholder="Enter student's school" required>
         </div>
         <input type="hidden" name="price" id = "priceVar" value = "">
         <div class="form-group">
@@ -49,12 +94,28 @@
             <div id="card-element" class="form-control">
             </div>
             <div id="card-errors" role="alert" style="color:red"></div>
-            <h4 id = "costDisplay">Cost: Please choose a class</h4>
-            <p>Class cost is 15$ per class. This payment can be refunded at any time before the second class. The student can
-                try out the first class, and refund if you so choose.</p>
-            <p>This payment is secured and processed by Stripe</p>
+            <p id="classcost">Class cost is 15$ per class. This payment can be refunded at any time before the second class. The student can try out the first class, and your payment can be refunded if you so choose.</p>
+            <h4 id = "costDisplay">Cost: Please Choose a Class</h4>
+            <p id="stripeprocess">This payment is secured and processed by Stripe.  Please wait for a confirmation page before closing the tab. Thank You.</p>
         </div>
-        <button>Submit Payment</button>
-        <p>Please wait for a confirmation page before closing the tab. Thank You.</p>
+        <button id="submitpayment">SUBMIT PAYMENT</button>
     </form>
 </div>
+<div id="footer">
+          <div id="footerlinks">
+            <a href="team.html">Our Team</a>
+            <a href="donate.html">Donate</a>
+            <a href="mission.html">Mission</a>
+          </div>
+          <div id="copyright">
+            <p> &#169; 2016-2018. Silicon Valley Youth</p>
+          </div>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="index.js">
+    </script>
+</body>
+</html>

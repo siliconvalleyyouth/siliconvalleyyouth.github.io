@@ -30,7 +30,7 @@ function calcPrice() {
     }
     var sessions = noDisabled[index].attributes[0].nodeValue;
     console.log(sessions);
-    priceDisplay.innerHTML = "Cost "+ parseInt(sessions,10) * 15 + "$";
+    priceDisplay.innerHTML = "Cost: "+ parseInt(sessions,10) * 15 + "$";
     document.getElementById("priceVar").value = parseInt(sessions,10) * 15;
 }
 function initSelector() {
