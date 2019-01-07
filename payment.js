@@ -1,6 +1,6 @@
 var classArray = classArray;
 //var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+var stripe = Stripe('sk_live_qLvnp0xJ5Rz9ADxK9dRzkZSB');
 var elements = stripe.elements();
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
