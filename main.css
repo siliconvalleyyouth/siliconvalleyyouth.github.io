@@ -757,8 +757,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	border-bottom: 0;
 }
 
-.nav-item {
-	font-size: 20px;
+.nav-tabs .nav-item {
+	font-size: 18px;
 	display: block;
 }
 
@@ -2034,11 +2034,14 @@ transition-duration: 0.5s;}
 	/* Classes */
 	#classhead .nav-tabs {
 		margin: 0 5%;
+		width: 90%;
+		overflow-x: scroll;
 		padding-top: 20px;
 	}
 
-	.nav-item {
-		font-size: 18px;
+	.nav-tabs .nav-item {
+		font-size: 15px;
+		display: inline;
 	}
 
 	.nav-item .nav-link {
