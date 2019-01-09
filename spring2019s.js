@@ -30,4 +30,4 @@ classArray.push(new Class2018('bridge',"Bridge", "Friday 7-8:30pm", "Miller Midd
 classArray.push(new Class2018('psd2',"Public Speaking and Debate", "Friday 7-8:30pm", "Miller Middle School", 6, ""));
 classArray.push(new Class2018('psce2',"Public Speaking and Current Events", "Friday 7-8:30pm", "Miller Middle School", 8, ""));
 classArray.push(new Class2018('basketball',"Basketball", "Friday 5-7pm", "Dilworth Elementary School", 8, ""));
-classArray.push(new Class2018('tennis',"Tennis", "Sunday 3:30-5pm", "Saratoga Oaks Tennis Courts", 8, ""));
+classArray.push(new Class2018('tennis',"Tennis", "Friday 3:30-5pm", "Saratoga Oaks Tennis Courts", 8, ""));
