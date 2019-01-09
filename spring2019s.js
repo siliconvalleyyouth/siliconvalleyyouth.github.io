@@ -23,7 +23,7 @@ classArray.push(new Class2018('advancedweb',"Advanced Web Design", "Saturday 5:3
 classArray.push(new Class2018('ps',"Public Speaking", "Saturday 6:45-8pm", "Saratoga Fire Station", 8, ""));
 classArray.push(new Class2018('csce',"Competitive Speech and Current Events", "Sunday 2:45-4:15pm", "Saratoga Fire Station", 8, ""));
 classArray.push(new Class2018('whistory',"World History", "Sunday 4:30-5:30", "Saratoga Fire Station", 8, ""));
-classArray.push(new Class2018('amc8advanced',"AMC 8 Advanced", "Saturday 4-5:30pm", "Gunn High School", 7, ""));
+classArray.push(new Class2018('amc8advanced',"AMC 8 Advanced", "Saturday 4-5:30pm", "Gunn High School", 8, ""));
 classArray.push(new Class2018('intropython',"Intro to Python", "Saturday 4-5:30pm", "Gunn High School", 8, ""));
 classArray.push(new Class2018('grammar',"Grammar and Vocab", "Friday 7-8:30pm", "Miller Middle School", 8, ""));
 classArray.push(new Class2018('bridge',"Bridge", "Friday 7-8:30pm", "Miller Middle School", 8, ""));
