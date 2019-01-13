@@ -19,7 +19,7 @@ classArray.push(new Class2018('psd1',"Public Speaking and Debate", "Saturday 7-8
 classArray.push(new Class2018('bio',"Biology", "Saturday 7-8:30pm", "Omei Academy", 8, ""));
 classArray.push(new Class2018('mathcounts',"MathCounts", "Saturday 2:45-4:15pm", "Saratoga Fire Station", 8, ""));
 classArray.push(new Class2018('sb',"Science Bowl", "Saturday 5:30-6:30pm", "Saratoga Fire Station", 6, ""));
-classArray.push(new Class2018('advancedweb',"Advanced Web Design", "Saturday 5:30-6:30pm", "Saratoga Fire Station", 6, ""));
+classArray.push(new Class2018('advancedweb',"Advanced Web Design", "Saturday 1:00-2:30pm", "Saratoga Fire Station", 6, ""));
 classArray.push(new Class2018('ps',"Public Speaking", "Saturday 6:45-8pm", "Saratoga Fire Station", 8, ""));
 classArray.push(new Class2018('csce',"Competitive Speech and Current Events", "Sunday 2:45-4:15pm", "Saratoga Fire Station", 8, ""));
 classArray.push(new Class2018('whistory',"World History", "Sunday 4:30-5:30", "Saratoga Fire Station", 8, ""));
