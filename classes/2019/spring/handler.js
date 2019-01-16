@@ -35,6 +35,6 @@ $(document).ready(function() {
 		$("#teacher2label").text("Teacher");
 	}
 	if(curr.isFull) {
-		$("#isFull").html("This class is currently FULL, and no longer accepting signups.  Please consider looking through the other classes SVY offers, or sign up at this link to secure a waitlist spot: https://goo.gl/forms/8BevKzhox310ju0W2")
+		$("#isFull").html("This class is currently FULL, and no longer accepting signups.  Please consider looking through the other classes SVY offers, or sign up at <a href=\"https://goo.gl/forms/8BevKzhox310ju0W2\">this link</a> to secure a waitlist spot.")
 	}
 })
