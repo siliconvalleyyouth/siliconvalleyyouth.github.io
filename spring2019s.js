@@ -1,15 +1,16 @@
-function Class2018(selector,classname, datestr, locationstr, classNumber, spreadsheetURL) {
+function Class2018(selector,classname, datestr, locationstr, classNumber, spreadsheetURL, full) {
     this.selector = selector;
     this.classname      = classname;
     this.datestr        = datestr;
     this.locationstr    = locationstr;
     this.classNumber    = classNumber;
     this.spreadsheetURL = spreadsheetURL;
+    this.full = full;
 }
 var classArray = [];
 classArray.push(new Class2018('introweb',"Intro to Web Design", "Sunday 5-6:30pm", "Omei Academy", 8, ""));
 classArray.push(new Class2018('introjava1',"Intro to Java", "Sunday 5-6:30pm", "Omei Academy", 8, ""));
-classArray.push(new Class2018('amc8',"AMC 8", "Sunday 5-6:30pm", "Omei Academy", 10, ""));
+classArray.push(new Class2018('amc8',"AMC 8", "Sunday 5-6:30pm", "Omei Academy", 10, "", true));
 classArray.push(new Class2018('ml',"Intro to Machine Learning", "Sunday 6:45-8:15pm", "Omei Academy", 9, ""));
 classArray.push(new Class2018('physics',"Physics", "Sunday 6:45-8:15pm", "Omei Academy", 8, ""));
 classArray.push(new Class2018('introjava2',"Intro to Java", "Saturday 5:15-6:45pm", "Omei Academy", 8, ""));

@@ -34,4 +34,7 @@ $(document).ready(function() {
 	}else{
 		$("#teacher2label").text("Teacher");
 	}
+	if(curr.isFull) {
+		$("#isFull").html("This class is currently FULL.  Please consider the other classes SVY offers, or contact svyouth1@gmail.com to setup a waitlist spot.")
+	}
 })

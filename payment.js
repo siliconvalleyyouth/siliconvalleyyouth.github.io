@@ -62,6 +62,11 @@ function initSelector() {
         option.setAttribute("data-class-number", classArray[i].classNumber);
         option.setAttribute("data-selector-str", classArray[i].selector);
         console.log("set classno")
+        if(classArray[i].full) {
+            console.log(option)
+            option.setAttribute('disabled', "")
+            inner += ", FULL"
+        }
         option.innerHTML = inner;
         selector.appendChild(option);
     }
