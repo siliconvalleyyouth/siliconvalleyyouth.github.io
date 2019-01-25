@@ -8,7 +8,7 @@ function Class2018(selector,classname, datestr, locationstr, classNumber, spread
     this.full = full;
 }
 var classArray = [];
-classArray.push(new Class2018('introweb',"Intro to Web Design", "Sunday 5-6:30pm", "Omei Academy", 8, ""));
+classArray.push(new Class2018('introweb',"Intro to Web Design", "Sunday 5-6:30pm", "Omei Academy", 8, "",true));
 classArray.push(new Class2018('introjava1',"Intro to Java", "Sunday 5-6:30pm", "Omei Academy", 8, ""));
 classArray.push(new Class2018('amc8',"AMC 8", "Sunday 5-6:30pm", "Omei Academy", 10, "", true));
 classArray.push(new Class2018('ml',"Intro to Machine Learning", "Sunday 6:45-8:15pm", "Omei Academy", 9, "",true));
