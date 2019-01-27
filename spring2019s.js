@@ -13,7 +13,7 @@ classArray.push(new Class2018('introjava1',"Intro to Java", "Sunday 5-6:30pm", "
 classArray.push(new Class2018('amc8',"AMC 8", "Sunday 5-6:30pm", "Omei Academy", 10, "", true));
 classArray.push(new Class2018('ml',"Intro to Machine Learning", "Sunday 6:45-8:15pm", "Omei Academy", 9, "",true));
 classArray.push(new Class2018('physics',"Physics", "Sunday 6:45-8:15pm", "Omei Academy", 8, "",true));
-classArray.push(new Class2018('introjava2',"Intro to Java", "Saturday 5:15-6:45pm", "Omei Academy", 8, ""));
+classArray.push(new Class2018('introjava2',"Intro to Java", "Saturday 5:15-6:45pm", "Omei Academy", 8, "",true));
 classArray.push(new Class2018('usaco',"USACO Bronze", "Saturday 5:15-6:45pm", "Omei Academy", 8, ""));
 classArray.push(new Class2018('interjava',"Intermediate Java", "Saturday 5:15-6:45pm", "Omei Academy", 8, ""));
 classArray.push(new Class2018('psd1',"Public Speaking and Debate", "Saturday 7-8:30pm", "Omei Academy", 8, "", true));
