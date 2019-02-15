@@ -57,13 +57,17 @@ h1 {
 
 .navig a {
 	text-decoration: none;
-	color: white;
-	transition-duration: 0.2s;
+	font-weight: 700;
+	background: linear-gradient(135deg, #ffb038 50%, white 50%);
+	background-position: right;
+	background-size: 250% 250%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition-duration: 0.4s;
 }
 
 .navig a:hover {
-	color: #ffb038;
-	border-bottom: 2px solid #ffb038;
+	background-position: left;
 	width: 100px;
 }
 
@@ -182,35 +186,43 @@ h1 {
 }
 
 .navcontainer .title {
-	color: white;
+	background: linear-gradient(135deg, #ffb038 50%, white 50%);
+	background-position: right;
+	background-size: 250% 250%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition-duration: 1s;
 	z-index: 66;
 	position: fixed;
 	padding: 20px 0px 5px 20px;
 }
 
 .navcontainer .title:hover {
-	color: #ffb038;
+	background-position: left;
 }
 
 #social .fab, #social .fas {
-	color: white;
 	font-size: 40px;
 	border: 0;
 	margin: 10px 20px;
 	padding: 0px;
-	background-color: inherit;
+	background: linear-gradient(135deg, #ffb038 50%, white 50%);
+	background-position: right;
+	background-size: 300% 300%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition-duration: 0.4s;
 	text-decoration: none;
-	transition-duration: 0.2s;
 }
 
 #social .fab:hover {
 	transform: scale(1.1);
-	color: #ffb038;
+	background-position: left;
 }
 
 #social .fas:hover {
 	transform: scale(1.1);
-	color: #ffb038;
+	background-position: left;
 }
 
 #social {
