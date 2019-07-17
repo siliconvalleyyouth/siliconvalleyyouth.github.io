@@ -1,3 +1,13 @@
+$(document).ready(function() {
+  $(".navcontainer").empty()
+  $(".navcontainer").load("navbar.html", addDropdown)
+})
+
+function addDropdown(){
+  $("#abt").on('click', function(){
+    $("#dropdown").slideToggle(250);
+});
+}
 function rotate(x) {
     x.classList.toggle("change");
     $(".navcontainer").toggleClass("in");
@@ -13,10 +23,10 @@ $(window).resize(function() {
     });
 
 $(document).ready(function(){
-                $("#abt").click(function(){
-                    $("#dropdown").slideToggle(250);
-                });
-            });
+    $("#abt").on('click', function(){
+        $("#dropdown").slideToggle(250);
+    });
+});
 
 $(window).scroll(function() {
 	$("#carcontain").css({
