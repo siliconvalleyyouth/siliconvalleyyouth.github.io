@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $(".navcontainer").empty()
-  $(".navcontainer").load("navbar.html", addDropdown)
+  $(".navcontainer").load("/navbar.html", addDropdown)
 })
 
 function addDropdown(){
