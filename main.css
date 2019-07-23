@@ -1,7 +1,9 @@
 /* #ed4e4e */
-body {
-	width: 100%;
-	overflow-x: hidden;
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 body, h1, body, div, a, ol, ul, li, h2, p, em, img, button {
 	padding: 0;
