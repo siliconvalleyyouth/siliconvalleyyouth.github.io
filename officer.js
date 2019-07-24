@@ -72,7 +72,8 @@ var teachers = [
     {"name": "Tristan Cooper", "imgurl":"tristan.jpg"},
     {"name": "Victor Shen", "imgurl":"victor.jpg"},
     {"name": "Viola Zhao", "imgurl":"viola.jpg"},
-    {"name": "Zachary Wang", "imgurl":"zachary.jpg"}
+    {"name": "Zachary Wang", "imgurl":"zachary.jpg"},
+    {"name": "Winnie Zhao", "imgurl":"../classes/2017/spring/webd2/winnie1.jpg"}
 ]
 var Officers20192020 = [
     ["Eric Yang", "Co-President"],
@@ -94,39 +95,57 @@ var Officers20192020 = [
     ["Max Zhang", "Miller Facility Coordinator"],
     ["Cindy Li", "Saratoga Facility Coordinator"],
 ];
-var container = document.getElementById("2019-2020")
-for(var i =0; i<Officers20192020.length; i++) {
-    if (i%3 == 0) {
-        var row = document.createElement('div')
-        row.className += " row"
-        container.appendChild(row)
+var Officers20172018 = [
+    ["Brandon Fu", "Co-President"],
+    ["Sam Yang", "Co-President"],
+    ["Oliver Ye", "VP of Science"],
+    ["Andrew Zhao", "VP of Math, VP of Computer Science"],
+    ["Arthur Ji", "Assistant VP of Computer Science"],
+    ["Ansh Chaurasia", "Secretary"],
+    ["Winnie Zhao", "Gunn Facility Coordinator"],
+    ["Leo Yang", "Miller Facility Coordinator"],
+];
+for (var m =0; m<2; m++) {
+    var container;
+    var Officers;
+    if(m==0) {
+        Officers = Officers20192020;
+        container = document.getElementById("2019-2020")
+    }else if (m==1) {
+        Officers = Officers20172018;
+        container = document.getElementById("2017-2018")
     }
-    var name = Officers20192020[i][0];
-    var position = Officers20192020[i][1];
-    console.log(name)
-    console.log(position)
-    var imgurl = ""
-    for (var k = 0; k<teachers.length; k++){
-        if(teachers[k].name === name) {
-            imgurl = teachers[k].imgurl;
+    for(var i =0; i<Officers.length; i++) {
+        if (i%3 == 0) {
+            var row = document.createElement('div')
+            row.className += " row"
+            container.appendChild(row)
         }
+        var name = Officers[i][0];
+        var position = Officers[i][1];
+        var imgurl = ""
+        for (var k = 0; k<teachers.length; k++){
+            if(teachers[k].name === name) {
+                imgurl = teachers[k].imgurl;
+            }
+        }
+        var column = document.createElement('div')
+        column.className += " col-sm-4"
+        var card = document.createElement('div')
+        var img = document.createElement('img')
+        var div = document.createElement('div')
+        var h2 = document.createElement('h2')
+        var h4 = document.createElement('h4')
+        card.className += " officer slideanim"
+        img.setAttribute('src', 'images/team/' + imgurl)
+        div.className += " bio"
+        h2.innerHTML = name
+        h4.innerHTML = position
+        div.appendChild(h2)
+        div.appendChild(h4)
+        card.appendChild(img)
+        card.appendChild(div)
+        column.appendChild(card)
+        container.lastChild.appendChild(column)
     }
-    var column = document.createElement('div')
-    column.className += " col-sm-4"
-    var card = document.createElement('div')
-    var img = document.createElement('img')
-    var div = document.createElement('div')
-    var h2 = document.createElement('h2')
-    var h4 = document.createElement('h4')
-    card.className += " officer slideanim"
-    img.setAttribute('src', 'images/team/' + imgurl)
-    div.className += " bio"
-    h2.innerHTML = name
-    h4.innerHTML = position
-    div.appendChild(h2)
-    div.appendChild(h4)
-    card.appendChild(img)
-    card.appendChild(div)
-    column.appendChild(card)
-    container.lastChild.appendChild(column)
 }
