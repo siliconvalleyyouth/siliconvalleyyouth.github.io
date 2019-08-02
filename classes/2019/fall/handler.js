@@ -33,7 +33,7 @@ function renderSite(res) {
     $("#class-description").text(mainteacher[0]["description"]);
     $("#dates").html("<strong>Dates: </strong>"+mainteacher[0]["datestr"]);
     $("#time").html("<strong>Time: </strong>"+mainteacher[0]["time"]);
-	$("#location").html("<strong>Location: </strong>"+mainteacher[0]["datestr"]);
+	$("#location").html("<strong>Location: </strong>"+mainteacher[0]["location"]);
 	$("#grades").html("<strong>Grades: </strong>" + mainteacher[0]["grades"]);
     $("#teacher1").text(mainteacher[0]["name"]);
     $("#bio1").text(mainteacher[0]["bio"]);
