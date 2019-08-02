@@ -5,8 +5,18 @@ var elements = stripe.elements();
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
     formHandler();
-    initSelector();
+    var id = getParam("id")
+    getData(id)
 });
+function getParam(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return decodeURI(results[1]) || 0;
+    }
+}
 // Custom styling can be passed to options when creating an Element.
 var style = {
     base: {
@@ -15,61 +25,25 @@ var style = {
         color: "#32325d",
     }
 };
-function calcPrice() {
-    console.log("get price");
-    var priceDisplay = document.getElementById("costDisplay");
-    var select = document.getElementById("ClassSelect");
-    var index = select.selectedIndex;
-    var noDisabled = [];
-    console.log(select.childNodes);
-    for (var i = 0; i < select.childNodes.length; i++) {
-        if (typeof select.childNodes[i].attributes != 'undefined') {
-            noDisabled.push(select.childNodes[i]);
-        } else {
-            console.log("disabled option");
+function getData(id) {
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json',
+        url : "http://localhost:3000/class2019?id="+id,
+        dataType: "json",
+        success: function(res) {
+            console.log("success")
+            createForm(res);
         }
-    }
-    var sessions = noDisabled[index].attributes[0].nodeValue;
-    console.log(sessions);
-    priceDisplay.innerHTML = "Cost: " + parseInt(sessions, 10) * 15 + "$";
-    document.getElementById("priceVar").value = parseInt(sessions, 10) * 15;
-    console.log(noDisabled[index].attributes[1].nodeValue);
-    document.getElementById("selector").value = noDisabled[index].attributes[1].nodeValue;
+    })
 }
-function initSelector() {
-    console.log("initializing Selector")
-    var selector = document.getElementById("ClassSelect");
-    var location = classArray[0].locationstr;
-    //Location marker
-    var blank = document.createElement('option');
-    selector.appendChild(blank);
-    var disabledLocation = document.createElement('option');
-    disabledLocation.setAttribute('disabled', "");
-    disabledLocation.innerHTML = location;
-    selector.appendChild(disabledLocation);
-    for (var i = 0; i < classArray.length; i++) {
-        if (classArray[i].locationstr == location) {
+function createForm(res) {
+    var data = res["data"].teachers[0];
+    var className = data["classname"]
+    var numClasses = data["classnumber"]
+    $("#priceVar").attr('value', numClasses*15)
+    $("#className").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
 
-        } else {
-            location = classArray[i].locationstr;
-            var disabledLocation = document.createElement('option');
-            disabledLocation.setAttribute('disabled', "");
-            disabledLocation.innerHTML = location;
-            selector.appendChild(disabledLocation);
-        }
-        var option = document.createElement('option');
-        var inner = classArray[i].classname + ", " + classArray[i].locationstr + ", " + classArray[i].datestr + ", " + classArray[i].classNumber + " sessions";
-        option.setAttribute("data-class-number", classArray[i].classNumber);
-        option.setAttribute("data-selector-str", classArray[i].selector);
-        console.log("set classno")
-        if(classArray[i].full) {
-            console.log(option)
-            option.setAttribute('disabled', "")
-            inner += ", FULL"
-        }
-        option.innerHTML = inner;
-        selector.appendChild(option);
-    }
 }
 var card = elements.create('card', { style: style });
 card.addEventListener('change', function (event) {

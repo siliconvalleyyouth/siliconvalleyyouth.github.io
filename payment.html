@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <script src= "./spring2019s.js"></script>
-    <script src="./payment.js"></script>
+    
     <link rel="stylesheet" href= "main.css"></style>
     <link rel="stylesheet" href= "paymentStyling.css"></style>
 </head>
@@ -49,11 +49,7 @@
     <h3>Please complete the form below, and submit payment to register for a SVY class.</h3>
     <hr />
     <form action="https://siliconvalleyyouth.herokuapp.com/payment" method="post" id="payment-form">
-        <div class="form-group">
-            <label for="ClassSelect">Select Class</label>
-            <select class="form-control" name="ClassSelect" id="ClassSelect"  onchange = "calcPrice()">
-            </select>
-        </div>
+        <h2 id = "className"></h2>
         <div class="form-group">
             <label for="parentName">Parent Name</label>
             <input type="text" class="form-control" name="parentName" id="parentName" placeholder="Enter parent name" required>
@@ -86,7 +82,7 @@
             <label for="studentSchool">Student School</label>
             <input type="text" class="form-control" name="studentSchool" id="studentSchool" placeholder="Enter student's school" required>
         </div>
-        <input type="hidden" name="price" id = "priceVar" value = "">
+        <input name="price" id = "priceVar" value = "">
         <input type="hidden" name="selector" id = "selector" value = "">
         <div class="form-group">
             <label for="card-element">
@@ -115,7 +111,7 @@
             <a href="mission.html">Mission</a>
           </div>
           <div id="copyright">
-            <p> &#169; 2016-2018. Silicon Valley Youth</p>
+            <p> &#169; 2016-2019. Silicon Valley Youth</p>
           </div>
         </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -124,5 +120,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="index.js">
     </script>
+    <script src="./payment.js"></script>
 </body>
+<script>
+
+</script>
 </html>
