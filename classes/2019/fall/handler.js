@@ -28,6 +28,7 @@ function renderSite(res) {
     if(ta[0]) {
         $("#img3").attr("src", "https://drive.google.com/thumbnail?id="+ta[0]["photoid"]);
     }
+    $("#signupLink").attr("href", "/payment.html?id=" + getParam("id"))
     $("#title").text(mainteacher[0]["classname"]);
     $("#class-name").text(mainteacher[0]["classname"]);
     $("#class-description").text(mainteacher[0]["description"]);

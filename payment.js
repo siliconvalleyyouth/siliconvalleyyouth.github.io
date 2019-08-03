@@ -1,8 +1,9 @@
 var classArray = classArray;
-var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-// var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+// var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
+var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var id;
+var data;
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
     formHandler();
@@ -30,7 +31,7 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : "http://localhost:3000/class2019?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/class2019?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
@@ -39,7 +40,7 @@ function getData(id) {
     })
 }
 function createForm(res) {
-    var data = res["data"].teachers[0];
+    data = res["data"].teachers[0];
     var className = data["classname"]
     var numClasses = data["classnumber"]
     $("#costDisplay").text("$"+numClasses*15)
@@ -80,12 +81,14 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
     $.ajax({
-        // url: $('#payment-form').attr('action')+ "?id="+id,
-        url: "http://localhost:3000/payment?id="+id,
+        url: $('#payment-form').attr('action')+ "?id="+id,
+        // url: "http://localhost:3000/payment?id="+id,
         type: 'POST',
         data: $('#payment-form').serialize(),
         success: function (response) {
-            if (response == "Success") {
+            console.log("got response from server")
+            console.log(response);
+            if (response === "Success") {
                 writeThankYou()
             }
             if (response == "Failed") {
@@ -99,10 +102,10 @@ function createElements() {
     card.mount('#card-element');
 }
 function writeThankYou() {
-    var classname = $("#ClassSelect").val().split(",")[0];
+    console.log("asdkfjhalskdjhf");
     $("#thankyoubody").fadeIn();
     $("#paymentbody").hide();
-    $("#classname2").html(classname);
+    $("#classname2").html(data["classname"]);
 }
 
 
