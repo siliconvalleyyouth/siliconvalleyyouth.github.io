@@ -1,11 +1,12 @@
 var classArray = classArray;
-//var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
+// var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
+var id;
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
     formHandler();
-    var id = getParam("id")
+    id = getParam("id")
     getData(id)
 });
 function getParam(name){
@@ -41,8 +42,8 @@ function createForm(res) {
     var data = res["data"].teachers[0];
     var className = data["classname"]
     var numClasses = data["classnumber"]
-    $("#priceVar").attr('value', numClasses*15)
-    $("#className").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
+    $("#costDisplay").text("$"+numClasses*15)
+    $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
 
 }
 var card = elements.create('card', { style: style });
@@ -71,6 +72,7 @@ function formHandler() {
 }
 
 function stripeTokenHandler(token) {
+    console.log(token);
     var form = document.getElementById('payment-form');
     var hiddenInput = document.createElement('input');
     hiddenInput.setAttribute('type', 'hidden');
@@ -78,7 +80,8 @@ function stripeTokenHandler(token) {
     hiddenInput.setAttribute('value', token.id);
     form.appendChild(hiddenInput);
     $.ajax({
-        url: $('#payment-form').attr('action'),
+        // url: $('#payment-form').attr('action')+ "?id="+id,
+        url: "http://localhost:3000/payment?id="+id,
         type: 'POST',
         data: $('#payment-form').serialize(),
         success: function (response) {

@@ -49,7 +49,7 @@
     <h3>Please complete the form below, and submit payment to register for a SVY class.</h3>
     <hr />
     <form action="https://siliconvalleyyouth.herokuapp.com/payment" method="post" id="payment-form">
-        <h2 id = "className"></h2>
+        <h3 id = "classTitle" style = "font-weight: bold">You have not selected a class. Please navigate to this payment page from the class you want to attend.</h3>
         <div class="form-group">
             <label for="parentName">Parent Name</label>
             <input type="text" class="form-control" name="parentName" id="parentName" placeholder="Enter parent name" required>
@@ -82,8 +82,6 @@
             <label for="studentSchool">Student School</label>
             <input type="text" class="form-control" name="studentSchool" id="studentSchool" placeholder="Enter student's school" required>
         </div>
-        <input name="price" id = "priceVar" value = "">
-        <input type="hidden" name="selector" id = "selector" value = "">
         <div class="form-group">
             <label for="card-element">
                 Credit or debit card.
