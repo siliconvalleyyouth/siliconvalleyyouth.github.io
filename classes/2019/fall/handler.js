@@ -20,13 +20,13 @@ function renderSite(res) {
             ta.push(teachers[i])
         }
     }
-    // https://drive.google.com/uc?export=view&id=IMAGEID
-    $("#img1").attr("src","https://drive.google.com/uc?export=view&id="+mainteacher[0]["photoid"]);
+    
+    $("#img1").attr("src","../../../images/2019fall/"+mainteacher[0]["photoid"].substring(0,5)+".jpg");
     if(mainteacher[1]) {
-        $("#img2").attr("src","https://drive.google.com/uc?export=view&id="+mainteacher[1]["photoid"]);
+        $("#img2").attr("src","../../../images/2019fall/"+mainteacher[1]["photoid"].substring(0,5)+".jpg");
     }
     if(ta[0]) {
-        $("#img3").attr("src", "https://drive.google.com/thumbnail?id="+ta[0]["photoid"]);
+        $("#img3").attr("src", "../../../images/2019fall/"+ta[0]["photoid"].substring(0,5)+".jpg");
     }
     $("#signupLink").attr("href", "/payment.html?id=" + getParam("id"))
     $("#title").text(mainteacher[0]["classname"]);
