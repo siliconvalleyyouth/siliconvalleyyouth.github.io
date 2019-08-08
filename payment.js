@@ -45,6 +45,7 @@ function createForm(res) {
     var numClasses = data["classnumber"]
     $("#costDisplay").text("$"+numClasses*15)
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
+    $("#className").setAttribute('value', className);
 
 }
 var card = elements.create('card', { style: style });
