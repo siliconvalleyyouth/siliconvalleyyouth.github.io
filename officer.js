@@ -91,9 +91,9 @@ var Officers20192020 = [
     ["Steven Long", "VP of Computer Science"],
     ["Sean Yang", "Assistant VP of Computer Science"],
     ["Ansh Chaurasia", "Secretary"],
-    ["Leo Yang", "Omei Facility Coordinator"],
-    ["Max Zhang", "Miller Facility Coordinator"],
-    ["Cindy Li", "Saratoga Facility Coordinator"],
+    ["Leo Yang", "Omei Business Operations Manager"],
+    ["Max Zhang", "Miller Business Operations Manager"],
+    ["Cindy Li", "Saratoga Business Operations Manager"],
 ];
 var Officers20172018 = [
     ["Brandon Fu", "Co-President"],
