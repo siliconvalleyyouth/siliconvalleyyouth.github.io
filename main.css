@@ -4,6 +4,7 @@ html,body
     width: 100%;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 body, h1, body, div, a, ol, ul, li, h2, p, em, img, button {
 	padding: 0;
@@ -308,39 +309,6 @@ h1 {
 	opacity: 0;
 }
 
-/*
-
-.titleslide button {
-	background-color: transparent;
-	border: 0;
-	outline: 0;
-	color: white;
-	position: absolute;
-	font-size: 28px;
-	top: 10px;
-	transition-duration: 0.2s;
-}
-
-.titleslide button:hover {
-	transform: scale(1.2);
-}
-
-#titleright {
-	right: 4%;
-	animation: changesize 1s linear 0s infinite; 
-}
-
-@keyframes changesize {
-    0%   {transform: scale(0.9);}
-    50%  {transform: scale(1.15);}
-    100% {transform: scale(0.9);}
-}
-
-#titleleft {
-	right: 0.7%;
-	animation: changesize 1s linear 0s infinite; 
-}*/
-
 #myCarousel1 {
 	position: relative;
 	transition-duration: 0.4s;
@@ -371,10 +339,6 @@ h1 {
   z-index: 2;
 }
 
-/*
-WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
-now override the 3.3 new styles for modern browsers & apply opacity
-*/
 @media all and (transform-3d), (-webkit-transform-3d) {
     .carousel-fade .carousel-inner > .item.next,
     .carousel-fade .carousel-inner > .item.active.right {
@@ -407,7 +371,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	position: absolute;
 	margin: 0px;
 	z-index: 50;
-	padding: 120px 0px 0px 12%;
+	padding: 15vh 0px 0px 12%;
 	width: 40%;
 }
 
@@ -434,8 +398,8 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	opacity: 0.5;
 	left: -50%;
 	position: absolute;
-	height: 1440px;
-	top: -360px;
+	height: 200vh;
+	top: -50vh;
 	border-radius: 100%;
 	border: 30px solid #444;
 	margin-left: 0;
@@ -475,7 +439,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	font-size: 35px;
 	transition-duration: 0.2s;
 	text-align: left;
-	box-shadow: 2px 2px 30px #222;
+	box-shadow: 0px 0px 30px #444;
 }
 
 #mainslide a:hover {
@@ -490,7 +454,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	width: 100%;
 	background-color: white;
 	padding: 60px 0px 0px 0px;
-	margin-top: 720px;
+	margin-top: 100vh;
 }
 
 #row1, #row2 {
