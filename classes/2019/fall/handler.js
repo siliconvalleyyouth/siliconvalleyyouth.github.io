@@ -9,6 +9,14 @@ function getParam(name){
     }
 }
 function renderSite(res) {
+    var id = getParam("id");
+    if (parseInt(id)===10){
+        $("#signupLink").attr("href", "/");
+        console.log("closed")
+        $("#signupText").text("SIGNUPS ARE CLOSED")
+    }else {
+        $("#signupLink").attr("href", "/payment.html?id=" + getParam("id"))
+    }
     var data = res["data"];
     teachers = data.teachers;
     var mainteacher = [];
@@ -28,7 +36,6 @@ function renderSite(res) {
     if(ta[0]) {
         $("#img3").attr("src", "../../../images/2019fall/"+ta[0]["photoid"].substring(0,5)+".jpg");
     }
-    $("#signupLink").attr("href", "/payment.html?id=" + getParam("id"))
     $("#title").text(mainteacher[0]["classname"]);
     $("#class-name").text(mainteacher[0]["classname"]);
     $("#class-description").text(mainteacher[0]["description"]);
