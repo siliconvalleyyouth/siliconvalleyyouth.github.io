@@ -10,7 +10,7 @@ function getParam(name){
 }
 function renderSite(res) {
     var id = getParam("id");
-    if (parseInt(id)===10){
+    if (parseInt(id)===10 || parseInt(id)===2 || parseInt(id)===3 || parseInt(id)===4 || parseInt(id)===5 || parseInt(id)===7 || parseInt(id)===11 || parseInt(id)===12 || parseInt(id)===13 || parseInt(id)===16 || parseInt(id)===18 || parseInt(id)===19 || parseInt(id)===20){
         $("#signupLink").attr("href", "/");
         console.log("closed")
         $("#signupText").text("SIGNUPS ARE CLOSED")
