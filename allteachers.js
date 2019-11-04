@@ -31,6 +31,7 @@ var teachers = [
     {"name": "Eric Yang", "imgurl":"eric.jpg"},
     {"name": "Eric Ren", "imgurl":"ericren.jpg"},
     {"name": "Ethan Chen", "imgurl":"ethan.jpg"},
+    {"name": "Frances Zhuang", "imgurl": "frances.JPG"},
     {"name": "Henry Huang", "imgurl":"henry.jpg"},
     {"name": "Henry Ying", "imgurl":"henryying.jpg"},
     {"name": "Isaac Li", "imgurl":"isaac.jpg"},
@@ -72,6 +73,7 @@ var teachers = [
     {"name": "Tristan Cooper", "imgurl":"tristan.jpg"},
     {"name": "Victor Shen", "imgurl":"victor.jpg"},
     {"name": "Viola Zhao", "imgurl":"viola.jpg"},
+    {"name": "Winnie Zhao", "imgurl":"winnie.JPG"},
     {"name": "Zachary Wang", "imgurl":"zachary.jpg"}
 ]
 //images under base path ./images/team

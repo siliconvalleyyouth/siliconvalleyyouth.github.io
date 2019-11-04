@@ -32,10 +32,14 @@ function getData(id) {
         type: "GET",
         contentType: 'application/json',
         url : "https://siliconvalleyyouth.herokuapp.com/class2019?id="+id,
+        // url : "http://localhost:3000/class2019?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
             createForm(res);
+        },
+        error: function(err) {
+            console.log(err);
         }
     })
 }
@@ -103,7 +107,6 @@ function createElements() {
     card.mount('#card-element');
 }
 function writeThankYou() {
-    console.log("asdkfjhalskdjhf");
     $("#thankyoubody").fadeIn();
     $("#paymentbody").hide();
     $("#classname2").html(data["classname"]);
