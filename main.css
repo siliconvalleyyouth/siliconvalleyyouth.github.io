@@ -244,9 +244,12 @@ h1 {
 /* Homepage */
 
 #carcontain {
-	position: absolute;
+	position: relative;
 	left: 0;
 	top: 0;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
 }
 
 .carousel-indicators li, .carousel-indicators .active {
@@ -283,28 +286,17 @@ h1 {
 
 #myCarousel1 {
 	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
 	height: 100vh;
-	transition-duration: 0.4s;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.carousel-fade .carousel-inner {
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
+	min-width: 1600px;
 }
 
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;
-  width: 120%;
-  min-height: 100%;
-  min-width: 1300px;
-  margin-right: 0;
+  width: 100%;
 }
 
 .defaultimg {
@@ -438,11 +430,11 @@ h1 {
 #indexbody {
 	position: relative;
 	z-index: 80;
-	float: left;
 	width: 100%;
+	top: 0;
 	background-color: white;
 	padding: 60px 0px 0px 0px;
-	margin-top: 100vh;
+
 }
 
 #row1, #row2 {
@@ -1832,8 +1824,13 @@ transition-duration: 0.5s;}
 	}
 
 	/*Homepage */ 
-	.carousel-fade .carousel-inner .item {
-	  width: 1250px;
+	#carcontain {
+		height: 80vh;
+	}
+	#myCarousel1 {
+		width: 100%;
+		height: 80vh;
+		min-width: 1250px;
 	}
 
 	.carousel-indicators li:hover {
@@ -1866,7 +1863,6 @@ transition-duration: 0.5s;}
 
 	#indexbody {
 		padding: 60px 0px 0px 0px;
-		margin-top: 80vh;
 	}
 
 	#indexbody #row1 {
@@ -2455,6 +2451,9 @@ transition-duration: 0.5s;}
 	.defaultimg {
 		width: 0;
 	}
+	#myCarousel1 {
+		min-width: 1000px;
+	}
 
 	.phoneimg {
 		width: 100%;
@@ -2484,11 +2483,6 @@ transition-duration: 0.5s;}
 
 	#mainslide .bold {
 		font-size: 55px;
-	}
-
-	.carousel-fade .carousel-inner .item {
-	  width: 900px;
-	  margin-left: -25%;
 	}
 
 	#mainmask {

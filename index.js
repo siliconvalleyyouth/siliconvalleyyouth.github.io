@@ -23,7 +23,7 @@ rotate = x => {
 }
 
 $(window).scroll(function() {
-	$("#carcontain").css({
+	$("#myCarousel1").css({
     'margin-top': ($(this).scrollTop())/5
     });
 
