@@ -87,7 +87,7 @@ for (var i = 0; i<teachers.length; i++) {
         container.appendChild(row)
     }
     var column = document.createElement('div')
-    column.className += " col-md-2 teacher-div"
+    column.className += " col-lg-2 teacher-div"
     column.innerHTML = teachers[i].name
     var imgContainer = document.createElement('div')
     imgContainer.className += ' img-container'

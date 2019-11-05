@@ -66,7 +66,7 @@ h1 {
 	font-weight: 700;
 	background: linear-gradient(135deg, #ffb038 50%, white 50%);
 	background-position: right;
-	background-size: 250% 250%;
+	background-size: 240% 250%;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	transition-duration: 0.4s;
@@ -189,6 +189,7 @@ h1 {
 	font-size: 28px;
 	text-align: center;
 	padding: 10px 0px;
+	line-height: 40px;
 }
 
 .navcontainer .title {
@@ -244,18 +245,8 @@ h1 {
 
 #carcontain {
 	position: absolute;
-	z-index: 1;
-	width: 100%;
 	left: 0;
 	top: 0;
-}
-
-.defaultimg {
-	width: 100%;
-}
-
-.phoneimg {
-	width: 0;
 }
 
 .carousel-indicators li, .carousel-indicators .active {
@@ -270,29 +261,6 @@ h1 {
 	transform: scale(1.1);
 }
 
-/*.titleslide {
-	position: absolute;
-	right: -3%;
-	left: -200%;
-	width: 103%;
-	margin: 0 auto;
-	text-align: center; 
-	bottom: 30%;
-	z-index: 7;
-	padding: 80px 60px;
-	background: transparent;
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
-	border-radius: 0px 10px 10px 0px;
-	transition-duration: 0.2s;
-}
-
-.toright {
-	left: 0%;
-}*/
-
 .carousel-caption {
 	transition-duration: 0.3s;
 	opacity: 0;
@@ -303,7 +271,8 @@ h1 {
 }
 
 .carousel-indicators {
-	margin-left: 2%;
+	position: absolute;
+	left: 70%;
 	transition-duration: 0.3s;
 	opacity: 1;
 }
@@ -314,12 +283,36 @@ h1 {
 
 #myCarousel1 {
 	position: relative;
+	height: 100vh;
 	transition-duration: 0.4s;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-fade .carousel-inner {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
 }
 
 .carousel-fade .carousel-inner .item {
   opacity: 0;
   transition-property: opacity;
+  width: 120%;
+  min-height: 100%;
+  min-width: 1300px;
+  margin-right: 0;
+}
+
+.defaultimg {
+   width: 100%;
+}
+
+.phoneimg {
+	width: 0;
 }
 
 .carousel-fade .carousel-inner .active {
@@ -364,28 +357,22 @@ h1 {
     }
 }
 
-.titleslide h1 {
-	color: white;
-	font-size: 50px;
-	padding-bottom: 25px;
-}
-
 #mainslide {
 	position: absolute;
 	margin: 0px;
 	z-index: 50;
-	padding: 15vh 0px 0px 12%;
-	width: 40%;
+	padding: 15vh 0px 0px 10%;
+	width: 42%;
 }
 
 #mainslide h1 {
 	color: white;
-	font-size: 75px;
+	font-size: 70px;
 	color: #ed4e4e;
 }
 
 #mainslide .bold {
-	font-size: 90px;
+	font-size: 95px;
 	font-family: 'Work Sans';
 	margin: -10px 0px;
 	color: white;
@@ -397,14 +384,12 @@ h1 {
 
 #mainmask {
 	width: 100%;
-	background-color: #444;
-	opacity: 0.5;
+	background: rgba(50,50,50,0.4);
 	left: -50%;
 	position: absolute;
 	height: 200vh;
 	top: -50vh;
 	border-radius: 100%;
-	border: 30px solid #444;
 	margin-left: 0;
 	z-index: 2;
 	animation-name: scale;
@@ -436,7 +421,7 @@ h1 {
 	color: white;
 	border-radius: 5px;
 	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
-	background-size: 220%;
+	background-size: 250%;
 	background-position: right;
 	padding: 10px 20px;
 	font-size: 35px;
@@ -543,7 +528,7 @@ h1 {
 #indexbody .col-sm-5 a {
 	color: white;
 	background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);
-	background-size: 220%;
+	background-size: 250%;
 	background-position: right;
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -569,17 +554,6 @@ h1 {
 	color: white;
 	font-size: 23px;
 }
-
-/*#arrowright {
-	position: absolute;
-	text-align: center;
-	left: 0%;
-	right: 0%;
-	margin: 0 auto;
-	top: 50%;
-	color: #ed4e4e;
-	font-size: 40px;
-}*/
 
 
 #stats {
@@ -733,7 +707,7 @@ h1 {
 }
 
 #classhead .nav-tabs {
-	margin: 0% 10% 0% 14%;
+	margin: 0% 0% 0% 10%;
 	padding-top: 30px;
 	border-bottom: 0;
 }
@@ -745,7 +719,7 @@ h1 {
 
 .nav-item .nav-link {
 	color: #ed4e4e;
-	background-color: #eee;
+	background-color: #fafafa;
 	border-bottom: 0;
 }
 
@@ -1168,11 +1142,11 @@ li ul {
 	top: -330px;
 	z-index: 3;
 	right: -15%;
-	height: 77%;
+	height: 72%;
 	width: 30%;
 }
 
-.officer, #teambody .teacher {
+.officer {
 	width: 94%;
 	margin: 20px 3%;
 	transition-duration: 0.3s;
@@ -1188,16 +1162,31 @@ li ul {
 }
 
 .officer:hover img {
-	transform: scale(1.05);
+	transform: scale(1.05) translateX(-50%);
 	opacity: 0.9;
 }
 
-.officer img, .teacher img {
-	width: 100%;
+.officer img {
+	height: 450px;
 	border-radius: 10px 10px 0px 0px;
 	transition-duration: 0.2s;
-	position: relative;
 	z-index: 4;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	margin: auto;
+}
+
+.teacher-div .img-container {
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px #aaa;
+	padding: 0;
+	background-size: cover;
+	height: 250px;
+	width: 100%;
+	margin: 10px auto;
+	background-position: center;
 }
 
 .bio {
@@ -1766,7 +1755,7 @@ transition-duration: 0.5s;}
 /* Media Queries */
 
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1100px) {
 	#mainnav {
 		padding-top: 100px;
 	}
@@ -1843,10 +1832,8 @@ transition-duration: 0.5s;}
 	}
 
 	/*Homepage */ 
-
-	.carousel-indicators li, .carousel-indicators .active {
-		width: 34px;
-		margin: 0px 2px;
+	.carousel-fade .carousel-inner .item {
+	  width: 1250px;
 	}
 
 	.carousel-indicators li:hover {
@@ -1856,34 +1843,16 @@ transition-duration: 0.5s;}
 	.carousel-caption h3 {
 		font-size: 24px;
 	}
-
-	/*
-
-	.titleslide {
-		bottom: 55%;
-		padding: 40px 0px;
-		width: 104%;
+	#mainmask {
+		left: -40%;
 	}
-
-	#titleright {
-		right: 5%;
-	}
-
-	.titleslide button {
-		font-size: 25px;
-	}
-
-	.titleslide h1 {
-		font-size: 40px;
-		padding-bottom: 20px;
-	}*/
 
 	#mainslide h1 {
-		font-size: 40px;
+		font-size: 50px;
 	}
 
 	#mainslide .bold {
-		font-size: 50px;
+		font-size: 70px;
 	}
 
 	#lastbold {
@@ -1897,7 +1866,7 @@ transition-duration: 0.5s;}
 
 	#indexbody {
 		padding: 60px 0px 0px 0px;
-		margin-top: 430px;
+		margin-top: 80vh;
 	}
 
 	#indexbody #row1 {
@@ -1918,12 +1887,13 @@ transition-duration: 0.5s;}
 
 	#indexbody .col-sm-5 h1 {
 		color: #555;
+		font-size: 30px;
 		padding: 10px 0px 20px 0px;
 	}
 
 	#indexbody .col-sm-5 p {
-		font-size: 17px;
-		line-height: 26px;
+		font-size: 15px;
+		line-height: 24px;
 	}
 
 	#indexbody .col-sm-5 a {
@@ -1935,8 +1905,28 @@ transition-duration: 0.5s;}
 		font-size: 20px;
 	}
 
-	#arrowright {
-		font-size: 32px;
+	.fa-circle {
+		font-size: 500px;
+		position: absolute;
+		z-index: 1;
+		opacity: 0.9;
+		transition-duration: 0.2s;
+	}
+
+	#circle1 {
+		color: #ed4e4e;
+		top: 2%;
+		left: -25%;
+		border: 30px solid #ffb038;
+		border-radius: 100%;
+	}
+
+	#circle2 {
+		color: #ffb038;
+		top: 20%;
+		right: -25%;
+		border: 30px solid #ed4e4e;
+		border-radius: 100%;
 	}
 
 	#stats {
@@ -1978,12 +1968,6 @@ transition-duration: 0.5s;}
 		font-size: 35px;
 	}
 
-	#emailform h3 {
-		color: #ed4e4e;
-		font-size: 25px;
-		padding: 0px 10% 35px 10%;
-	}
-
 	#emailform input {
 		font-size: 20px;
 	}
@@ -2014,7 +1998,7 @@ transition-duration: 0.5s;}
 
 	/* Classes */
 	#classhead .nav-tabs {
-		margin: 0 5%;
+		margin: 0 0 0 5%;
 		width: 90%;
 		overflow-x: scroll;
 		padding-top: 20px;
@@ -2220,19 +2204,33 @@ transition-duration: 0.5s;}
 	}
 
 	#teamliner1 {
-		height: 79%;
+		height: 73%;
 	}
 
 	.officer {
-		margin: 25px 3%;
+		margin: 25px 4%;
+	}
+	.officer img {
+		height: auto;
+		width: 100%;
 	}
 
 	.bio h2 {
-		font-size: 27px;
+		font-size: 22px;
 	}
 
 	.bio h4 {
-		font-size: 19px;
+		font-size: 17px;
+	}
+
+	.teacher-div {
+		width: 40%;
+		margin: 10px 5%;
+		float: left;
+	}
+	.teacher-div .img-container {
+		width: 90%;
+		margin: 10px 5%;
 	}
 
 	/*Resources */
@@ -2339,7 +2337,7 @@ transition-duration: 0.5s;}
 	}
 
 	.classbody .nav-tabs {
-		margin: 0;
+		width: ;
 	}
 
 	.classbody {
@@ -2463,10 +2461,6 @@ transition-duration: 0.5s;}
 	}
 
 	.carousel-indicators li, .carousel-indicators .active {
-		/* width: 15px;
-		height: 15px;
-		border-radius: 50%;
-		margin: 0px 1px;*/
 		display: none;
 	}
 
@@ -2481,23 +2475,23 @@ transition-duration: 0.5s;}
 
 	#mainslide {
 		width: 80%;
-		padding: 40px 7%;
+		padding: 10vh 10%;
 	}
 
 	#mainslide h1 {
-		font-size: 28px;
+		font-size: 40px;
 	}
 
 	#mainslide .bold {
-		font-size: 35px;
+		font-size: 55px;
 	}
 
-	#mainslide a {
-		display: none;
+	.carousel-fade .carousel-inner .item {
+	  width: 900px;
+	  margin-left: -25%;
 	}
 
 	#mainmask {
-		background-color: #555;
 		width: 100%;
 		border-radius: 0;
 		left: 0;
@@ -2505,7 +2499,6 @@ transition-duration: 0.5s;}
 	}
 
 	#indexbody {
-		margin-top: 220px;
 		padding: 30px 0px 0px 0px;
 	}
 
@@ -2532,11 +2525,10 @@ transition-duration: 0.5s;}
 	}
 
 	#indexbody .col-sm-5 h1 {
-		font-size: 30px;
+		font-size: 28px;
 	}
 
 	#indexbody .col-sm-5 p {
-		font-size: 16px;
 		padding: 0px 5%;
 	}
 
@@ -2549,50 +2541,44 @@ transition-duration: 0.5s;}
 		display: none;
 	}
 
-	#arrowright {
-		display: none;
-	}
-
 	#stats {
-		padding: 100px 40px 180px 40px;
+		padding: 120px 40px 180px 40px;
 		background-size: 200% 100%; 
 		background-position: right;
 	}
 
 	#stats .title {
-		padding: 30px 10% 0px 10%;
+		padding: 40px 6% 0px 6%;
 	}
 
 	#stats h3 {
 		color: white;
-		font-size: 25px;
+		font-size: 24px;
 		padding: 10px 5% 30px 5%;
 	}
 
 	#stats .fas {
-		font-size: 45px;
+		font-size: 40px;
 		padding-bottom: 20px;
 	}
 
 	#stats h2 {
-		font-size: 25px;
+		font-size: 20px;
 	}
 
 	#emailformbody {
 		padding: 0px 0px 60px 0px;
-		background-color: white;
-		text-align: center;
-		margin-top: -50px;
+		margin-top: -60px;
 	}
 
 	#emailform h1 {
-		font-size: 32px;
+		font-size: 28px;
 		margin: 0 10%;
 	}
-
-	#emailform h3 {
-		font-size: 25px;
-		margin: 20px 10%;
+	
+	#emailform h4 {
+		font-size: 20px;
+		padding: 20px 0px 10px 0px; 
 	}
 
 	#emailform input {
@@ -2603,7 +2589,7 @@ transition-duration: 0.5s;}
 
 	#description p {
 		padding: 0px 0 18px 0;
-		font-size: 16px;
+		font-size: 15px;
 	}
 
 	#footerlinks a {
@@ -2624,18 +2610,24 @@ transition-duration: 0.5s;}
 		color: #ed5f5f;
 	}
 
-	.nav-tabs {
-		margin: 0% 5%;
+	#classhead .nav-tabs {
+		overflow-x: scroll;
 		padding-top: 20px;
+		position: relative;
 	}
 
-	.nav-item {
-		font-size: 16px;
-	}
-
-	.nav-item .nav-link {
-		padding: 8px;
+	#classhead .nav-item .nav-link {
+		padding: 5px;
 		background-color: white;
+		border: 0;
+	}
+	#classhead .nav-item {
+		border: 1px solid white;
+		margin: 5px 0px;
+		border-radius: 5px;
+	}
+	#classhead .active {
+		border: 1px solid #aaa;
 	}
 
 	#sorter {
@@ -2784,14 +2776,6 @@ transition-duration: 0.5s;}
 		z-index: 99;
 	}
 
-	#bio h2 {
-		font-size: 25px;
-	}
-
-	#bio h3 {
-		font-size: 20px;
-	}
-
 	#bio p {
 		font-size: 15px;
 		padding: 10px 0px;
@@ -2821,37 +2805,25 @@ transition-duration: 0.5s;}
 	}
 
 	#teamliner1 {
-		height: 69.5%;
+		height: 68%;
 	}
 	
 	.bio {
 		height: auto;
 	}
 
-	.bio h2 {
-		font-size: 32px;
+	.officer {
+		margin: 20px 15%;
+		width: 70%;
 	}
 
-	.bio h4 {
-		font-size: 22px;
-	}
-
-	#teambody .teacher {
+	.teacher-div {
 		width: 80%;
-		margin: 20px 10%;
+		margin: 10px 10%;
+		float: left;
 	}
-
-	#teambody .teacher .bio {
-		height: 80px;
-	}
-
-	#teambody .teacher img {
-		height: auto;
-		margin: 0px auto;
-		display: block;
+	.teacher-div .img-container {
 		width: 100%;
-		max-height: 600px;
-		overflow: hidden;
 	}
 
 	/*Resources */

@@ -130,7 +130,7 @@ for (var m =0; m<2; m++) {
             }
         }
         var column = document.createElement('div')
-        column.className += " col-sm-4"
+        column.className += " col-md-4"
         var card = document.createElement('div')
         var img = document.createElement('img')
         var div = document.createElement('div')
