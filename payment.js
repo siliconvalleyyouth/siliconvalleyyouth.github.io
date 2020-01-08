@@ -1,6 +1,6 @@
 var classArray = classArray;
-// var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
+// var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var id;
 var data;
@@ -31,8 +31,8 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : "https://siliconvalleyyouth.herokuapp.com/class2019?id="+id,
-        // url : "http://localhost:3000/class2019?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/class2020spring?id="+id,
+        // url : "http://localhost:3000/class2020spring?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
@@ -44,9 +44,12 @@ function getData(id) {
     })
 }
 function createForm(res) {
-    data = res["data"].teachers[0];
+    data = res["data"]
+    console.log(data)
     var className = data["classname"]
-    var numClasses = data["classnumber"]
+    var numClasses = data["numberclasses"]
+    console.log(className)
+    console.log(numClasses)
     $("#costDisplay").text("$"+numClasses*15)
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").setAttribute('value', className);
