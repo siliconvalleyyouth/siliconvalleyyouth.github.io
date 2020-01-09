@@ -18,7 +18,7 @@ function renderSite(res) {
     $("#dates").html("<strong>Dates: </strong>"+data["dates"]);
     $("#time").html("<strong>Time: </strong>"+data["time"]);
 	$("#location").html("<strong>Location: </strong>"+data["location"]);
-	// $("#grades").html("<strong>Grades: </strong>" + mainteacher[0]["grades"]);
+	$("#grades").html("<strong>Grades: </strong>" + data["graderange"]);
     $("#teacher1").text(data["teacher1"]);
     $("#bio1").text(data["t1bio"]);
     $("#img1").attr("src", "../../../images/Spring2020Headshots/"+data["teacher1img"]+".jpg")
