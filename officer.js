@@ -20,6 +20,8 @@ var teachers = [
     {"name": "Ashok Sheridan", "imgurl":"ashok.jpg"},
     {"name": "Brandon Fu", "imgurl":"brandon.jpg"},
     {"name": "Carter Bian", "imgurl":"carter.jpg"},
+    {"name": "Cayden Gu", "imgurl":"cayden.jpg"},
+    {"name": "Charles Li", "imgurl":"charles.jpg"},
     {"name": "Chris Lee", "imgurl":"chris.jpg"},
     {"name": "Cindy Li", "imgurl":"cindyli.jpg"},
     {"name": "Cindy Xu", "imgurl":"cindyxu.jpg"},
@@ -41,6 +43,8 @@ var teachers = [
     {"name": "Joshua Si", "imgurl":"joshua.jpg"},
     {"name": "Joshua Zhu", "imgurl":"joshuazhu.jpg"},
     {"name": "Julia Zhao", "imgurl":"julia.jpg"},
+    {"name": "Justin Gu", "imgurl":"justin.jpg"},
+    {"name": "Kevin Wang", "imgurl":"kevin.jpg"},
     {"name": "Leo Yang", "imgurl":"leo.jpg"},
     {"name": "Mallika Parulekar", "imgurl":"mallika.jpg"},
     {"name": "Martin Cooper", "imgurl":"martin.jpg"},
@@ -58,6 +62,7 @@ var teachers = [
     {"name": "Raymond Feng", "imgurl":"raymond.jpg"},
     {"name": "Royce Ren", "imgurl":"royce.jpg"},
     {"name": "Sam Yang", "imgurl":"sam.jpg"},
+    {"name": "Samika Swamny", "imgurl":"samika.jpg"},
     {"name": "Samuel Yang", "imgurl":"samuel.jpg"},
     {"name": "Sean Yang", "imgurl":"sean.jpg"},
     {"name": "Shawn Huang", "imgurl":"shawn.jpg"},
@@ -75,6 +80,22 @@ var teachers = [
     {"name": "Zachary Wang", "imgurl":"zachary.jpg"},
     {"name": "Winnie Zhao", "imgurl":"../classes/2017/spring/webd2/winnie1.jpg"}
 ]
+var Officers20202021 = [
+    ["Oliver Ye", "President"],
+    ["Leo Yang", "EVP of Business Operations"],
+    ["Michael Ma", "EVP of Marketing"],
+    ["Cynthia Jia", "EVP of Human Resources"],
+    ["Cayden Gu", "Co-VP of Technology <br> Los Altos Site Co-Director"],
+    ["Justin Gu", "Co-VP of Technology <br> Los Altos Site Co-Director"],
+    ["Royce Ren", "VP of Debate"],
+    ["Andy Xu", "VP of Public Speaking"],
+    ["Sean Yang", "VP of Science and CS"],
+    ["Samika Swamny","Assistant VP of Science and CS"],
+    ["Kevin Wang", "VP of Math"],
+    ["Max Zhang", "VP of Humanities <br> Miller Site Director"],
+    ["Michael Song", "Bandley Center Site Director"],
+    ["Charles Li", "Saratoga Site Director"],
+];
 var Officers20192020 = [
     ["Eric Yang", "Co-President"],
     ["Oliver Ye", "Co-President"],
@@ -105,13 +126,16 @@ var Officers20172018 = [
     ["Winnie Zhao", "Gunn Facility Coordinator"],
     ["Leo Yang", "Miller Facility Coordinator"],
 ];
-for (var m =0; m<2; m++) {
+for (var m =0; m<3; m++) {
     var container;
     var Officers;
     if(m==0) {
+        Officers = Officers20202021;
+        container = document.getElementById("2020-2021")
+    }else if (m==1){
         Officers = Officers20192020;
         container = document.getElementById("2019-2020")
-    }else if (m==1) {
+    }else if (m==2) {
         Officers = Officers20172018;
         container = document.getElementById("2017-2018")
     }
