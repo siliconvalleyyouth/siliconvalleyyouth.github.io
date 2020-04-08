@@ -364,9 +364,10 @@ h1 {
 }
 
 #mainslide .bold {
-	font-size: 95px;
+	font-size: 60px;
+	/* font-sixe back to 95px after applications */
 	font-family: 'Work Sans';
-	margin: -10px 0px;
+	margin: 0px;
 	color: white;
 }
 
@@ -1431,7 +1432,7 @@ li ul {
 }
 
 #text-carousel {
-	margin: 50px 0px 100px 0px;
+	margin: 50px 0px 60px 0px;
 }
 
 #text-carousel p {
@@ -2497,7 +2498,7 @@ transition-duration: 0.5s;}
 	}
 
 	#mainslide .bold {
-		font-size: 55px;
+		font-size: 65px;
 	}
 
 	#mainmask {
