@@ -1431,6 +1431,13 @@ li ul {
 	padding: 50px 8%;
 }
 
+#testimonialslink {
+	font-size: 30px;
+	color: #ed4e4e;
+	text-align: center;
+	text-decoration: none;
+}
+
 #text-carousel {
 	margin: 50px 0px 60px 0px;
 }
@@ -1450,6 +1457,10 @@ li ul {
 #text-carousel .carousel-control {
 	color: #ed5f5f;
 	transition-duration: 0.2s;
+}
+
+
+
 }
 
 /*Commendations*/
