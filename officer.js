@@ -62,7 +62,7 @@ var teachers = [
     {"name": "Raymond Feng", "imgurl":"raymond.jpg"},
     {"name": "Royce Ren", "imgurl":"royce.jpg"},
     {"name": "Sam Yang", "imgurl":"sam.jpg"},
-    {"name": "Samika Swamny", "imgurl":"samika.jpg"},
+    {"name": "Samika Swamy", "imgurl":"samika.jpg"},
     {"name": "Samuel Yang", "imgurl":"samuel.jpg"},
     {"name": "Sean Yang", "imgurl":"sean.jpg"},
     {"name": "Shawn Huang", "imgurl":"shawn.jpg"},
