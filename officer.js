@@ -90,7 +90,7 @@ var Officers20202021 = [
     ["Royce Ren", "VP of Debate"],
     ["Andy Xu", "VP of Public Speaking"],
     ["Sean Yang", "VP of Science and CS"],
-    ["Samika Swamny","Assistant VP of Science and CS"],
+    ["Samika Swamy","Assistant VP of Science and CS"],
     ["Kevin Wang", "VP of Math"],
     ["Max Zhang", "VP of Humanities <br> Miller Site Director"],
     ["Michael Song", "Bandley Center Site Director"],
