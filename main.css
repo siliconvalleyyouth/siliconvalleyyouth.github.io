@@ -372,7 +372,7 @@ h1 {
 }
 
 #lastbold {
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 }
 
 #mainmask {
@@ -1461,7 +1461,7 @@ li ul {
 
 
 
-}
+
 
 /*Commendations*/
 #commendationshead, #newshead {
@@ -1549,6 +1549,47 @@ li ul {
 	border-radius: 10px 10px 0px 0px;
 }
 
+/*COVID-19*/
+
+.accordion {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+  }
+  
+  .minus, .accordion:hover {
+	background-color: #ccc;
+  }
+  
+  .accordion:after {
+	content: '\002B';
+	color: #777;
+	font-weight: bold;
+	float: left;
+	margin-right: 8px;
+  }
+  
+  .minus:after {
+	content: "\2212";
+  }
+  
+  .panel {
+	border: 20px;
+	padding: 0px;
+	background-color: white;
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	margin-left: 5%;
+	margin-right: 5%;
+  }  
 
 /*Class Pages*/
 .classheader {
@@ -1880,7 +1921,7 @@ transition-duration: 0.5s;}
 	}
 
 	#lastbold {
-		padding-bottom: 30px;
+		padding-bottom: 10px;
 	}
 
 	#mainslide a {
@@ -3017,6 +3058,28 @@ transition-duration: 0.5s;}
 	body, h1, body, div, a, ol, ul, li, h2, p, em, img, button {
 		word-wrap: break-word;
 	}
+	/*testing*/
+	.center {
+		position: absolute;
+		margin: auto;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		
+	}
+	#button {
+		color: white;
+		border-radius: 5px;
+		/*background: linear-gradient(to left, #ed4e4e 50%, #ffb038 50%);*/
+		background-color: #ed4e4e;
+		padding: 10px 20px;
+		font-size: 35px;
+	}
+	#cvhead {
+		padding: 100px 0px 30px 0px;
+		margin: 0px 15%;
+		border-bottom: 1px solid #ccc;
+}
 }
 
 
