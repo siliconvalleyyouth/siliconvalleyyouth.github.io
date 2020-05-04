@@ -1552,8 +1552,8 @@ li ul {
 /*COVID-19*/
 
 .accordion {
-	background-color: #eee;
-	color: #444;
+	background-color: red;
+	color: white;
 	cursor: pointer;
 	padding: 18px;
 	width: 100%;
@@ -1562,15 +1562,17 @@ li ul {
 	outline: none;
 	font-size: 15px;
 	transition: 0.4s;
+	border-radius: 5px;
+	font-size: 20px;
   }
   
   .minus, .accordion:hover {
-	background-color: #ccc;
+	background-color: #ffb038;
   }
   
   .accordion:after {
 	content: '\002B';
-	color: #777;
+	color: white;
 	font-weight: bold;
 	float: left;
 	margin-right: 8px;
@@ -1590,6 +1592,11 @@ li ul {
 	margin-left: 5%;
 	margin-right: 5%;
   }  
+
+  .posters {
+	  margin-left: 2.5%;
+	  margin-right: 2.5%;
+  }
 
 /*Class Pages*/
 .classheader {
