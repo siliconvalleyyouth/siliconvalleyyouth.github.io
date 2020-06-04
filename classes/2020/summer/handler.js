@@ -14,6 +14,7 @@ function renderSite(res) {
     $("#title").text(data["classname"]);
     $("#class-name").text(data["classname"]);
     $("#class-description").text(data["classdescription"]);
+    $("#prerequisites").html("Prerequisites: " + data["prerequisites"]);
     $("#dates").html("<strong>Dates: </strong>"+data["dates"]);
     $("#time").html("<strong>Time: </strong>"+data["time"]);
 	$("#location").html("<strong>Location: </strong>"+data["location"]);
