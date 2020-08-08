@@ -4,6 +4,28 @@ var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var id;
 var data;
+
+// var nodemailer = require('nodemailer');
+// const { getMaxListeners } = require('process');
+
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'svyouth1@gmail.com',
+//     pass: 'svyouth123'
+//   }
+// });
+
+var mailOptions = {
+  from: 'svyouth1@gmail.com',
+  to: 'justingu.us@gmail.com',
+  // to: $("#parentEmail"),
+  subject: 'SVY' + className + 'Class Registration Confirmation',
+  text: '***That was easy!'
+};
+
+
+
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
     formHandler();
@@ -43,6 +65,7 @@ function getData(id) {
             console.log(err);
         }
     })
+    sendEmail()
 }
 function createForm(res) {
     data = res["data"]
@@ -54,8 +77,9 @@ function createForm(res) {
     $("#costDisplay").text("$"+numClasses*15)
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").setAttribute('value', className);
-
+    sendEmail()
 }
+
 var card = elements.create('card', { style: style });
 card.addEventListener('change', function (event) {
     var displayError = document.getElementById('card-errors');
@@ -79,6 +103,7 @@ function formHandler() {
             }
         });
     });
+    sendEmail()
 }
 
 function stripeTokenHandler(token) {
@@ -99,6 +124,7 @@ function stripeTokenHandler(token) {
             console.log(response);
             if (response === "Success") {
                 writeThankYou()
+                // sendEmail()
             }
             if (response == "Failed") {
                 alert("Payment failed, please check your credit card credentials or try again later.")
