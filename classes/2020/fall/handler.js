@@ -25,10 +25,11 @@ function renderSite(res) {
     $("#bio1").text(data["t1bio"]);
     $("#img1").attr("src", "../../../images/Fall2020Headshots/"+data["teacher1img"]+".jpg")
     if(data["isfull"] == 'yes') {
-        $("#classFullText").css('display', 'block')
+        $("#classFullText").css('display', 'block');
+        $("#waitlist").attr("href", "https://docs.google.com/forms/d/e/" + data["waitlist"] + "/viewform");    
     }else {
         $("#signupText").css('display', 'block')
-        $("#signupLink").attr("href", "/payment.html?id=" + getParam("id"))
+        $("#signup").attr("href", "/payment.html?id=" + getParam("id"));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
