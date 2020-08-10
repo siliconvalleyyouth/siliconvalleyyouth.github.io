@@ -115,4 +115,7 @@
 	#thankyoubody p {
 		font-size: 16px;
 	}
+	#checkbox {
+		border: 30px;
+	}
 }
