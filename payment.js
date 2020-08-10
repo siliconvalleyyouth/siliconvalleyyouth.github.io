@@ -1,30 +1,9 @@
 var classArray = classArray;
-// var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
+// var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var id;
 var data;
-
-// var nodemailer = require('nodemailer');
-// const { getMaxListeners } = require('process');
-
-// var transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: 'svyouth1@gmail.com',
-//     pass: 'svyouth123'
-//   }
-// });
-
-var mailOptions = {
-  from: 'svyouth1@gmail.com',
-  to: 'justingu.us@gmail.com',
-  // to: $("#parentEmail"),
-  subject: 'SVY' + className + 'Class Registration Confirmation',
-  text: '***That was easy!'
-};
-
-
 
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
@@ -53,7 +32,7 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : "https://siliconvalleyyouth.herokuapp.com/class2020summer?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/class2020fall?id="+id,
         // Don't forget to change url to match teaching semester ^
         // url : "http://localhost:3000/class2020spring?id="+id,
         dataType: "json",
@@ -65,7 +44,7 @@ function getData(id) {
             console.log(err);
         }
     })
-    sendEmail()
+    //sendEmail()
 }
 function createForm(res) {
     data = res["data"]
@@ -77,7 +56,7 @@ function createForm(res) {
     $("#costDisplay").text("$"+numClasses*15)
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").setAttribute('value', className);
-    sendEmail()
+    //sendEmail()
 }
 
 var card = elements.create('card', { style: style });
@@ -103,10 +82,11 @@ function formHandler() {
             }
         });
     });
-    sendEmail()
+    //sendEmail()
 }
 
 function stripeTokenHandler(token) {
+    console.log("--- in github strip");
     console.log(token);
     var form = document.getElementById('payment-form');
     var hiddenInput = document.createElement('input');
