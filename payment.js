@@ -1,6 +1,6 @@
 var classArray = classArray;
-var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-// var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+// var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
+var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var id;
 var data;
@@ -86,7 +86,7 @@ function formHandler() {
 }
 
 function stripeTokenHandler(token) {
-    console.log("--- in github strip");
+    console.log("--- in github stripe");
     console.log(token);
     var form = document.getElementById('payment-form');
     var hiddenInput = document.createElement('input');
