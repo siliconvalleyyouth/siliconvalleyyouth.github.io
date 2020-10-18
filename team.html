@@ -6,292 +6,153 @@
 <link rel="icon" href="logo.png">
 <link href="https://fonts.googleapis.com/css?family=Lato:300|Raleway:300" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+  integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 <link rel="stylesheet" href="main.css">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <body>
-<div id="menu" onclick="rotate(this)">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div>
-<a href="index.html"><img id="logo" src="images/logo.jpg"></a>
-<div class="navcontainer">
-  <a href="index.html"><h1 class="title">SILICON VALLEY YOUTH</h1></a>
-  <ul id="mainnav">
-    <li class="navig"><a href="classes.html">CLASSES</a></li>
-    <div id="abt">
-      <li class="navig"><a>ABOUT US &#9662;</a></li>
-      <ul id="dropdown">
-        <li><a href="team.html">Our Team</a></li>
-        <li><a href="mission.html">Our Mission</a></li>
-        <li><a href="commendation.html">Commendations</a></li>
+  <div id="menu" onclick="rotate(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <a href="index.html"><img id="logo" src="images/logo.jpg"></a>
+  <div class="navcontainer">
+    <a href="index.html">
+      <h1 class="title">SILICON VALLEY YOUTH</h1>
+    </a>
+    <ul id="mainnav">
+      <li class="navig"><a href="classes.html">CLASSES</a></li>
+      <div id="abt">
+        <li class="navig"><a>ABOUT US &#9662;</a></li>
+        <ul id="dropdown">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="commendation.html">Commendations</a></li>
+        </ul>
+      </div>
+      <li class="navig"><a href="service.html">SERVICE</a></li>
+      <li class="navig"><a href="resources.html">RESOURCES</a></li>
+      <li class="navig"><a href="donate.html">DONATE</a></li>
+      <li class="navig"><a href="events.html">NEWS/EVENTS</a></li>
+    </ul>
+    <div id="social">
+      <a href="https://www.facebook.com/SiliconValleyYouth/" class="fab fa-facebook"></a>
+      <a href="https://www.instagram.com/siliconvyouth/" class="fab fa-instagram"></a>
+      <a href="mailto:svyouth1@gmail.com" class="fas fa-envelope"></a>
+    </div>
+  </div>
+  <div id="maincontainer">
+    <div id="teamhead">
+      <h1 class="title slide6">Our Team</h1>
+      <h3 class="subtitle slide2">SVY was founded in 2015 by Ben and Bryan Owens. Since then, our leadership team has
+        grown every semester. These are our officers.</h3>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item active">
+          <a class="nav-link slide2" id="currentofficers-tab" data-toggle="tab" href="#currentofficers" role="tab"
+            aria-controls="currentofficers" aria-selected="true">Current Officers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link slide2" id="founders-tab" data-toggle="tab" href="#founders" role="tab"
+            aria-controls="founders" aria-selected="true">Founders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link slide2" id="board-tab" data-toggle="tab" href="#board" role="tab" aria-controls="board"
+            aria-selected="true">Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link slide2" id="pastofficers-tab" data-toggle="tab" href="#pastofficers" role="tab"
+            aria-controls="pastofficers" aria-selected="true">Past Officers</a>
+        </li>
       </ul>
     </div>
-    <li class="navig"><a href="service.html">SERVICE</a></li>
-    <li class="navig"><a href="resources.html">RESOURCES</a></li>
-    <li class="navig"><a href="donate.html">DONATE</a></li>
-    <li class="navig"><a href="events.html">NEWS/EVENTS</a></li>
-  </ul>
-  <div id="social">
-    <a href="https://www.facebook.com/SiliconValleyYouth/" class="fab fa-facebook"></a>
-    <a href="https://www.instagram.com/siliconvyouth/" class="fab fa-instagram"></a>
-    <a href="mailto:svyouth1@gmail.com" class="fas fa-envelope"></a>
-  </div>
-</div>
-<div id="maincontainer">
-  <div id="cover" onclick="cancel()">
-  </div>
-  <div id="bio">
-    <div id="cancel" onclick="cancel()"><i class="fas fa-times"></i></div>
-    <h2>Name</h2>
-    <h3>Position</h3>
-    <p>BIOOOO</p>
-  </div>
-  <div id="teamhead">
-    <h1 class="title slide6">Our Team</h1>
-    <h3 class="subtitle slide2">SVY was founded in 2015 by Ben and Bryan Owens. Since then, our leadership team has grown every semester.  These are our officers.</h3>    
-  </div>
-  <div id="teambody">
-    <img src="images/team/teamliner.jpg" id="teamliner1" class="slideright">
-     <h3 class="slide6">Co-Founders</h3>
-    <div class="row founders">
-      <div class="col-sm-2">
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slide2" onclick="openBio(ben)">
-          <img src="images/team/ben.jpg">
-          <div class="bio">
-            <h2>Benjamin Owens</h2>
-            <h4>Co-Founder & Board Member</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane active" id="currentofficers" role="tabpanel" aria-labelledby="currentofficers-tab">
+        <h3 class="slide6" style="text-align:center;"><b>President</b></h3>
+
         <div class="officer slide2">
-          <img src="images/team/bryan.jpg">
-          <div class="bio">
-            <h2>Bryan Owens</h2>
-            <h4>Co-Founder & Board Member</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-2">
-      </div>
-    </div> 
-
-    <h3 class = "slideanim3">Officers 2020-2021</h3>
-    <div id = "2020-2021"></div>
-
-    <h3 class = "slideanim3">Officers 2019-2020</h3>
-    <div id = "2019-2020"></div>
-
-    <h3 class="slideanim3">Officers 2018-2019</h3>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="officer slideanim" onclick="openBio(sam)">
-          <img src="images/team/sam.jpg">
-          <div class="bio">
-            <h2>Sam Yang</h2>
-            <h4>Co-President</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim" onclick="openBio(brandon)">
-          <img src="images/team/brandon.jpg">
-          <div class="bio">
-            <h2>Brandon Fu</h2>
-            <h4>Co-President</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim" onclick="openBio(oliver)">
           <img src="images/team/oliver.jpg">
           <div class="bio">
             <h2>Oliver Ye</h2>
-            <h4>Vice President of Science</h4>
+            <h4>President</h4>
           </div>
         </div>
+
+        <div id="2020-2021"></div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="officer slideanim" onclick="openBio(arthur)">
-          <img src="images/team/arthur.jpg">
-          <div class="bio">
-            <h2>Arthur Ji</h2>
-            <h4>Vice President of Computer Science</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/andrew.jpg">
-          <div class="bio">
-            <h2>Andrew Zhao</h2>
-            <h4>Vice President of Math</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/steven.jpg">
-          <div class="bio">
-            <h2>Steven Long</h2>
-            <h4>Assistant Vice President of Computer Science</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-         <div class="officer slideanim">
-          <img src="images/team/stefan.jpg">
-          <div class="bio">
-            <h2>Stefan Meier</h2>
-            <h4>Vice President of Humanities & Social Sciences</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/andy.jpg">
-          <div class="bio">
-            <h2>Andy Li</h2>
-            <h4>Vice President of Public Speaking</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/cindyxu.jpg">
-          <div class="bio">
-            <h2>Cindy Xu</h2>
-            <h4>Vice President of Debate</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/leo.jpg">
-          <div class="bio">
-            <h2>Leo Yang</h2>
-            <h4>Secretary</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/eric.jpg">
-          <div class="bio">
-            <h2>Eric Yang</h2>
-            <h4>Public Relations Officer</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/tony.jpg">
-          <div class="bio">
-            <h2>Tony Jiang</h2>
-            <h4>Webmaster</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/cindyli.jpg">
-          <div class="bio">
-            <h2>Cindy Li</h2>
-            <h4>Saratoga Facility Coordinator</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/max.jpg">
-          <div class="bio">
-            <h2>Max Zhang</h2>
-            <h4>Miller Facility Coordinator</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="officer slideanim">
-          <img src="images/team/julia.jpg">
-          <div class="bio">
-            <h2>Julia Zhao</h2>
-            <h4>Gunn Facility Coordinator</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h3 class = "slideanim3">Officers 2017-2018</h3>
-    <div id = "2017-2018">
-      
-    </div>
-    <h3 class = "slideanim3">Officers 2015-2017 </h3>
-      <div class = "row">
-          <div class="col-sm-4">
-              <div class="officer slideanim" onclick="openBio(ben)">
-                <img src="images/team/ben.jpg">
-                <div class="bio">
-                  <h2>Ben Owens</h2>
-                  <h4>Co-President</h4>
-                </div>
+      <div class="tab-pane" id="founders" role="tabpanel" aria-labelledby="founders-tab">
+        <h3 class="slide6"><b>Co-Founders</b></h3>
+        <div class="row founders">
+          <div class="col-sm-6">
+            <div class="officer slide2">
+              <img src="images/team/bryan.jpg">
+              <div class="bio">
+                <h2>Bryan Owens</h2>
+                <h4>Co-Founder & Board Member</h4>
               </div>
             </div>
-            <div class="col-sm-4">
-                <div class="officer slideanim" onclick="openBio(bryan)">
-                  <img src="images/team/bryan.jpg">
-                  <div class="bio">
-                    <h2>Ben Owens</h2>
-                    <h4>Co-President</h4>
-                  </div>
-                </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="officer slide2">
+              <img src="images/team/ben.jpg">
+              <div class="bio">
+                <h2>Benjamin Owens</h2>
+                <h4>Co-Founder & Board Member</h4>
               </div>
-              <div class="col-sm-4">
-                  <div class="officer slideanim" onclick="openBio(oliver)">
-                    <img src="images/team/oliver.jpg">
-                    <div class="bio">
-                      <h2>Oliver Ye</h2>
-                      <h4>Secretary</h4>
-                    </div>
-                  </div>
-                </div>
-
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="tab-pane" id="board" role="tabpanel" aria-labelledby="board-tab">
+        <h3 class="slide6"><b>Board</b></h3>
+        <div id="board-names"></div>
+      </div>
+      <div class="tab-pane" id="pastofficers" role="tabpanel" aria-labelledby="pastofficers-tab">
+        <h3 class="slide6"><b>Past Officers</b></h3>
+        <h3 class="slideanim3" style="text-align:center;">Officers 2019-2020</h3>
+        <div id = "2019-2020"></div>
 
-    <a class="back2top" href="#"><i class="fas fa-chevron-up"></i></a>
+        <h3 class="slideanim3" style="text-align:center;">Officers 2018-2019</h3>
+        <div id = "2018-2019"></div>
+
+        <h3 class="slideanim3" style="text-align:center;">Officers 2017-2018</h3>
+        <div id = "2017-2018"></div>
+
+        <h3 class="slideanim3" style="text-align:center;">Officers 2016-2017</h3>
+        <div id = "2016-2017"></div>
+
+        <h3 class="slideanim3" style="text-align:center;">Officers 2015-2016</h3>
+        <div id = "2015-2016"></div>
+      </div>
+      <a class="back2top" href="#"><i class="fas fa-chevron-up"></i></a>
     </div>
   </div>
 
-    <div id="footer" style="position: relative; z-index: 4">
-          <div id="footerlinks">
-            <a href="team.html">Our Team</a>
-            <a href="donate.html">Donate</a>
-            <a href="mission.html">Mission</a>
-          </div>
-          <div id="copyright">
-            <p> &#169; 2016-2020. Silicon Valley Youth</p>
-          </div>
-        </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <div id="footer" style="position: relative; z-index: 4">
+    <div id="footerlinks">
+      <a href="team.html">Our Team</a>
+      <a href="donate.html">Donate</a>
+      <a href="mission.html">Mission</a>
+    </div>
+    <div id="copyright">
+      <p> &#169; 2016-2020. Silicon Valley Youth</p>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src = "officer.js"> </script>
-    <script src="index.js">
-    </script>
-    <script src="classes.js">
-    </script>
-    
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="teachers.js"></script>
+  <script src="board.js"> </script>
+  <script src="current-officers.js"> </script>
+  <script src="past-officers.js"> </script>
+  <script src="index.js">
+  </script>
+  <script src="classes.js">
+  </script>
+
 </body>
+
 </html>
