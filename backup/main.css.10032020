@@ -1190,24 +1190,7 @@ li ul {
 	left: 50%;
 	transform: translateX(-50%);
 	display: block;
-}
-
-.pastofficer .bio {
-	height: 70px;
-}
-.pastofficer img {
-	height: 210px;
-}
-
-.pastofficer .bio h2 {
-	font-size: 16px;
-	color: #333;
-}
-
-.pastofficer .bio h4 {
-	color: #888;
-	font-size: 11px;
-	margin-top: 10px;
+	margin: auto;
 }
 
 .teacher-div .img-container {
@@ -2473,7 +2456,7 @@ transition-duration: 0.5s;}
 	}
 
 	.classbody .tab-pane {
-		margin: 0px 0px 0px 0px;
+		margin: 0px 0px 0px 3%;
 		padding-bottom: 10px;
 	}
 
@@ -3071,6 +3054,11 @@ transition-duration: 0.5s;}
 	.classbody li {
 		font-size: 16px;
 		margin-left: 5%;
+	}
+
+	.classbody .tab-pane {
+		margin: 0px 5%;
+		width: 90%;
 	}
 
 	.classbody .carousel {
