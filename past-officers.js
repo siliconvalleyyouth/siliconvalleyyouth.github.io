@@ -89,7 +89,7 @@ for (var m=0; m<5; m++) {
             }
         }
         var column = document.createElement('div')
-        column.className += " col-lg-3"
+        column.className += " col-md-3"
         var card = document.createElement('div')
         var img = document.createElement('img')
         var div = document.createElement('div')
