@@ -45,6 +45,14 @@
     </div>
   </div>
   <div id="maincontainer">
+    <div id="cover" onclick="cancel()">
+    </div>
+    <div id="bio">
+      <div id="cancel" onclick="cancel()"><i class="fas fa-times"></i></div>
+      <h2>Name</h2>
+      <h3>Position</h3>
+      <p>BIOOOO</p>
+    </div>
     <div id="teamhead">
       <h1 class="title slide6">Our Team</h1>
       <h3 class="subtitle slide2">SVY was founded in 2015 by Ben and Bryan Owens. Since then, our leadership team has
@@ -71,7 +79,7 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane active" id="currentofficers" role="tabpanel" aria-labelledby="currentofficers-tab">
         <h3 class="slide6" style="text-align:center;"><b>President</b></h3>
-          <div class="officer slide2" style="width:70%; margin-left: 15%">
+          <div class="officer slide2" style="width:70%; margin-left: 15%" onclick="openBio(oliver)">
             <img src="images/team/oliver.jpg">
             <div class="bio">
               <h2>Oliver Ye</h2>
