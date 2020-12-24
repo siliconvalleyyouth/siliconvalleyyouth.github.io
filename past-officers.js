@@ -1,5 +1,5 @@
 var Officers20192020 = [
-    ["Eric Yang", "VP of Debate"],
+    ["Eric Yang", "Co-President"],
     ["Oliver Ye", "Co-President"],
     ["Cindy Xu", "Executive Vice-President"],
     ["Arthur Ji", "Executive Vice-President"],
@@ -7,7 +7,7 @@ var Officers20192020 = [
     ["Zachary Wang", "VP of Communications"],
     ["Andy Li", "VP of Public Speaking"],
     ["Anouk Yeh", "Assistant VP of Public Speaking"],
-    ["Royce Ren", "Assistant VP of Computer Science"],
+    ["Royce Ren", "VP of Debate"],
     ["Cynthia Jia", "VP of Science"],
     ["Alex Wang", "VP of Math"],
     ["Stefan Meier", "VP of Humanities and Social Sciences"],
