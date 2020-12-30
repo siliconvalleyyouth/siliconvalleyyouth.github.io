@@ -3109,10 +3109,10 @@ transition-duration: 0.5s;}
 }
 /* Dropdown Button */
 .dropbtn {
-	background-color: white;
+	background-color: #fafafa;
 	color: #ed5f5f;
 	padding: 10px;
-	font-size: 18px;
+	font-size: 18.5px;
 	border: none;
 	border-radius: 3px;
 	margin-bottom: 10px;
