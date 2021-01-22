@@ -852,8 +852,16 @@ li ul {
 }
 
 #mission p {
-	padding: 20px 15% 60px 15%;
+	padding: 10px 15% 20px 15%;
 	font-size: 23px;
+}
+
+#mission #top {
+	padding-top:60px;
+}
+
+#mission #bottom {
+	padding-bottom:60px;
 }
 
 /* Service */
@@ -2151,7 +2159,7 @@ transition-duration: 0.5s;}
 	}
 
 	#mission p {
-		padding: 30px 10% 50px 10%;
+		padding: 10px 10% 20px 10%;
 		font-size: 20px;
 	}
 
@@ -2770,7 +2778,7 @@ transition-duration: 0.5s;}
 	}
 
 	#mission p {
-		padding: 30px 10% 50px 10%;
+		padding: 10px 10% 20px 10%;
 		font-size: 20px;
 	}
 
