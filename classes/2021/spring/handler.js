@@ -25,10 +25,10 @@ function renderSite(res) {
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").text(data["t1bio"]);
     $("#img1").attr("src", "../../../images/2021Headshots/Spring/"+data["teacher1img"]+".jpg")
-    if(data["isfull"] == 'closed') {
+    if(data["status"] == 'closed') {
         $("#registrationEnd").css('display', 'block');
     }    
-    else if(data["isfull"] == 'yes') {
+    else if(data["status"] == 'full') {
         $("#classFullText").css('display', 'block');
         $("#waitlist").attr("href", "https://docs.google.com/forms/d/e/" + waitlist + "/viewform");    
     }else {
