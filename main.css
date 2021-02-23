@@ -3162,5 +3162,11 @@ transition-duration: 0.5s;}
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #ffffff;}
 
-
+/* Report Formatting */
+#report {
+	margin-left:20%;
+	margin-right:20%; 
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
 
