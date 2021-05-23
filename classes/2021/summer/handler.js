@@ -10,7 +10,7 @@ function getParam(name){
 }
 function renderSite(res) {
     var data = res["data"];
-    var waitlist = "1FAIpQLSe2AAos4WJHEAxGQHbUsGa_-tkVUzwKNDAC2cuOH0V1ss2VUg";
+    var waitlist = "1FAIpQLSdHL2V-KP-2o7TBUt6UxiWoxmdWXzvoGD7WLMAX--rSK_kr_g";
     $("#extramessage").text(data["extramessage"])
     $("#title").text(data["classname"]);
     $("#class-name").text(data["classname"]);
