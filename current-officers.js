@@ -36,8 +36,8 @@ var Officers20212022 = [
 
 var container;
 var Officers;
-Officers = Officers20202021;
-container = document.getElementById("2020-2021")
+Officers = Officers20212022;
+container = document.getElementById("2021-2022")
 for (var i = 0; i < Officers.length; i++) {
     if (i % 3 == 0) {
         var row = document.createElement('div')

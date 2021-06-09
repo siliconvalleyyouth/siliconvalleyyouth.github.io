@@ -24,6 +24,7 @@ var teachers = [
     {"name": "Brandon Fu", "imgurl":"brandon.jpg"},
     {"name": "Carter Bian", "imgurl":"carter.jpg"},
     {"name": "Cayden Gu", "imgurl":"cayden.jpg"},
+    {"name": "Charles Li", "imgurl":"charles.jpg"},
     {"name": "Chloe Lee", "imgurl":"chloelee.jpg"},
     {"name": "Chris Lee", "imgurl":"chris.jpg"},
     {"name": "Cindy Li", "imgurl":"cindyli.jpg"},
