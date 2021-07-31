@@ -1,4 +1,5 @@
 var Officers20202021 = [
+    ["Oliver Ye", "President", "As the President of Silicon Valley Youth, Oliver Ye oversees internal and external operations of the organization. Over the past five years, Oliver has helped expand SVY from 3 to over 60 teachers, also collaborating with superintendents from the Ravenswood and Franklin McKinley districts to plan projects. At SVY, he has been teaching for 10 semesters now, focusing mainly on science bowl. Oliver's favorite part of SVY is seeing both students and teachers grow, learning lessons and stepping up to become leaders in their own community."],    
     ["Cynthia Jia", "EVP of Human Resources", "As the Executive Vice President of Human Resources, Cynthia Jia oversees the teacher interview process, establishes teacher training, and integrates class evaluation plans to ensure course quality. She has been teaching Biology for five sessions. Cynthia is passionate about working with young learners and inspiring students with scientific knowledge, creating a positive and fun environment for them to thrive."],
     ["Leo Yang", "EVP of Operations", "As the Executive Vice President of Operations, Leo Yang supervises all of the internal functionalities of SVY from classes to financials. He has taught classes such as US History and Basketball and is currently teaching Introduction to Java. Leo loves sharing interesting as well as fun experiences with students and enjoys his time teaching at Silicon Valley Youth. He hopes to help inspire students, as well as introduce them to new and useful ideas."],
     ["Michael Ma", "EVP of Marketing", "As the Executive Vice President of Marketing, Michael Ma oversees advertising for classes at the beginning of semesters as well as handles general public relations. He has been teaching various Public Speaking classes at SVY for seven sessions. Michael enjoys being able to share his public speaking passion with younger students as well as having the opportunity to teach and work in a classroom environment."],
@@ -71,7 +72,7 @@ var Officers20152016 = [
     ["Benjamin Owens", "Co-President"],
     ["Oliver Ye", "Secretary"],
 ];
-for (var m=0; m<5; m++) {
+for (var m=0; m<6; m++) {
     var container;
     var Officers;
     if(m==0) {
