@@ -29,6 +29,7 @@ var Officers20212022 = [
     ["Kevin Wang", "VP of Math", "As the Vice President of Math, Kevin Wang oversees the marketing and course management of the math department. Over the course of a year, Kevin has expanded the math department from two classes to five classes, ranging from Geometry to AMC 8 to Mathcounts. At SVY, he has taught AMC 8 and USACO Bronze for two years. Kevin’s favorite part of SVY is watching young math and CS competitors flourish under his guidance."],
     ["Kaitlyn Wang", "Assisstant VP of Math", ""],
     ["Michael Song", "Facilities Director", ""],
+    ["Charles Li", "Facilities Director", ""],
     ["Chloe Lee", "Facilities Manager", ""],
     ["Rachel Chan", "Facilities Manager", "As a site director, Rachel Chan oversees the logistics of the organization’s facilities secures designated time slots for each class. Rachel has been Intermediate Java for the past three semesters and enjoys sharing her love for programming with others. Not only does she appreciate having the opportunity to expand the capabilities of youth through this organization, but she’s also very excited to see the impacts SVY will make in the upcoming future."],
     ["Sudithi Manthati", "Facilities Manager", ""],
