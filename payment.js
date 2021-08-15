@@ -13,11 +13,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    console.log("payment.getParam: results="+results);
     if (results==null){
        return null;
     }
     else{
-       return decodeURI(results[1]) || 0;
+        final_result = decodeURI(results[1]) || 0;
+        console.log("payment.getParam: final_result="+final_result);
+        return final_result;
     }
 }
 // Custom styling can be passed to options when creating an Element.
