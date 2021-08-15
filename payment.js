@@ -47,7 +47,8 @@ function getData(id) {
     //sendEmail()
 }
 function createForm(res) {
-    data = res["data"]
+    var raw_data = res["data"]
+    var data = raw_data[0]
     console.log(data)
     var className = data["classname"]
     var numClasses = data["numberclasses"]
