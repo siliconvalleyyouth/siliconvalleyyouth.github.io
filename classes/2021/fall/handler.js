@@ -15,8 +15,10 @@ function renderSite(res) {
 
     var waitlist = "1FAIpQLSe2AAos4WJHEAxGQHbUsGa_-tkVUzwKNDAC2cuOH0V1ss2VUg";
 
-    if(data["extramessage"] != '') {
-        $("#extramessage").attr("href", data["extramessage"])
+    $("#extramessage").attr("href", data["extramessage"]);
+    if(data["extramessage"] == '') {
+        $("#demovideo").css('display', 'none');
+        console.log("not empty")
     }
     $("#title").text(data["classname"]);
     $("#class-name").text(data["classname"]);
