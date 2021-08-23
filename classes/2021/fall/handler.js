@@ -13,7 +13,7 @@ function renderSite(res) {
     console.log("renderSite: rawdata="+JSON.stringify(raw_data));
     var data = raw_data[0]
 
-    var waitlist = "1FAIpQLSe2AAos4WJHEAxGQHbUsGa_-tkVUzwKNDAC2cuOH0V1ss2VUg";
+    var waitlist = "1FAIpQLSd4fdXmm5gB6_nlRCs9oAgsMsfryJxUNHyUsRvxYsEmIyddKQ";
 
     $("#extramessage").attr("href", data["extramessage"]);
     if(data["extramessage"] == '') {
