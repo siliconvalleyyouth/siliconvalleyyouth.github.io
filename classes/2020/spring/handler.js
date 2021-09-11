@@ -9,7 +9,11 @@ function getParam(name){
     }
 }
 function renderSite(res) {
-    var data = res["data"];
+    var raw_data = res["data"];
+    console.log("renderSite: rawdata="+JSON.stringify(raw_data));
+    var data = raw_data[0]
+    console.log("renderSite: rawdata="+JSON.stringify(raw_data));
+    var data = raw_data[0]
     $("#extramessage").text(data["extramessage"])
     $("#title").text(data["classname"]);
     $("#class-name").text(data["classname"]);

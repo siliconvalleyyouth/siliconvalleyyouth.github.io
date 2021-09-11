@@ -17,7 +17,9 @@ function renderSite(res) {
     }else {
         $("#signupLink").attr("href", "/payment.html?id=" + getParam("id"))
     }
-    var data = res["data"];
+    var raw_data = res["data"];
+    console.log("renderSite: rawdata="+JSON.stringify(raw_data));
+    var data = raw_data[0]
     teachers = data.teachers;
     var mainteacher = [];
     var ta = [];

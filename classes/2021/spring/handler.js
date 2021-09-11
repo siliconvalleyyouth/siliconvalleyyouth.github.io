@@ -9,7 +9,9 @@ function getParam(name){
     }
 }
 function renderSite(res) {
-    var data = res["data"];
+    var raw_data = res["data"];
+    console.log("renderSite: rawdata="+JSON.stringify(raw_data));
+    var data = raw_data[0]
     var waitlist = "1FAIpQLSe2AAos4WJHEAxGQHbUsGa_-tkVUzwKNDAC2cuOH0V1ss2VUg";
     $("#extramessage").text(data["extramessage"])
     $("#title").text(data["classname"]);
