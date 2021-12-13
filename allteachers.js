@@ -35,6 +35,7 @@ var Teachers2021 = [
     {"name": "Julie Chen", "imgurl": "JulieChen.jpg"},
     {"name": "Justin Gu", "imgurl": "JustinGu.jpg"},
     {"name": "Kaitlyn Wang", "imgurl": "KaitlynWang.jpg"},
+    {"name": "Kevin Shi", "imgurl": "KevinShi.jpg"},
     {"name": "Kevin Wang", "imgurl": "KevinWang.jpg"},
     {"name": "Kyleen Liao", "imgurl": "KyleenLiao.jpg"},
     {"name": "Leo Yang", "imgurl": "LeoYang.jpg"},
