@@ -11,8 +11,8 @@ function getParam(name){
 function renderSite(res) {
     var raw_data = res["data"];
     console.log("renderSite: rawdata="+JSON.stringify(raw_data));
-    var data = raw_data[0]
-
+    // var data = raw_data[0]
+    var data = JSON.parse(raw_data);
     var waitlist = "1FAIpQLSd4fdXmm5gB6_nlRCs9oAgsMsfryJxUNHyUsRvxYsEmIyddKQ";
 
     $("#extramessage").attr("href", data["extramessage"]);
