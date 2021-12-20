@@ -63,12 +63,12 @@ function renderSite(res) {
 }
 $(document).ready(function() {
     var id = getParam("id");
-    console.log("lili 1 -- Getting info for "+id)
+    console.log("Getting info for "+id)
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        // url : "http://localhost:3000/class2021fall?id="+id,
-        url : "https://siliconvalleyyouth-fall21.herokuapp.com/class2021fall?id="+id,
+        //url : "http://localhost:3000/class2021fall?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/class2021fall?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
