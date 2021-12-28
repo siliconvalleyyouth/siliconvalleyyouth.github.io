@@ -51,7 +51,8 @@ function getData(id) {
 }
 function createForm(res) {
     var raw_data = res["data"]
-    var data = raw_data[0]
+    // var data = raw_data[0]
+    var data = JSON.parse(raw_data);
     console.log(data)
     var className = data["classname"]
     var numClasses = data["numberclasses"]
