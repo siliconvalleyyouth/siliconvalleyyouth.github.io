@@ -35,7 +35,7 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : "https://siliconvalleyyouth-fall21.herokuapp.com/class2021fall?id="+id,
+        url : "https://siliconvalleyyouth-current.herokuapp.com/class2022spring?id="+id,
         // Don't forget to change url to match teaching semester ^
         // url : "http://localhost:3000/class2020spring?id="+id,
         dataType: "json",

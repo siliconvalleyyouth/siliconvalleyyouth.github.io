@@ -13,7 +13,7 @@ function renderSite(res) {
     console.log("renderSite: rawdata="+JSON.stringify(raw_data));
     // var data = raw_data[0]
     var data = JSON.parse(raw_data);
-    var waitlist = "1FAIpQLSd4fdXmm5gB6_nlRCs9oAgsMsfryJxUNHyUsRvxYsEmIyddKQ";
+    var waitlist = data["waitlistform"];
 
     $("#extramessage").attr("href", data["extramessage"]);
     if(data["extramessage"] == '') {
@@ -38,10 +38,10 @@ function renderSite(res) {
     }    
     else if(data["status"] == 'full') {
         $("#classFullText").css('display', 'block');
-        $("#waitlist").attr("href", "https://docs.google.com/forms/d/e/" + waitlist + "/viewform");    
+        $("#waitlist").attr("href", waitlist);    
     }else {
         $("#signupText").css('display', 'block')
-        $("#signup").attr("href", "/payment.html?id=" + getParam("id"));
+        $("#signup").attr("href", "www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
