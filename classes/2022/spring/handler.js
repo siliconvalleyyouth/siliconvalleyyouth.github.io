@@ -41,7 +41,7 @@ function renderSite(res) {
         $("#waitlist").attr("href", waitlist);    
     }else {
         $("#signupText").css('display', 'block')
-        $("#signup").attr("href", "www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
+        $("#signup").attr("href", "https://www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
