@@ -57,7 +57,7 @@ function createForm(res) {
     var className = data["classname"]
     var numClasses = data["numberclasses"]
     console.log("createForm:+"+className+",numClasses="+numClasses)
-    $("#costDisplay").text("$"+numClasses*15)
+    $("#costDisplay").text("$"+numClasses*12)
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").setAttribute('value', className);
     //sendEmail()
