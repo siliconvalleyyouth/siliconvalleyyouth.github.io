@@ -20,9 +20,9 @@ function renderSite(res) {
         $("#demovideo").css('display', 'none');
         console.log("not empty")
     }
-    $("#title").text(data["classname"]);
-    $("#class-name").text(data["classname"]);
-    $("#class-description").text(data["classdescription"]);
+    $("#title").html(data["classname"]);
+    $("#class-name").html(data["classname"]);
+    $("#class-description").html(data["classdescription"]);
     $("#class-syllabus").html(data["classsyllabus"]);
     $("#prerequisites").html("Prerequisites: " + data["prerequisites"]);
     $("#dates").html("<strong>Dates: </strong>"+data["dates"]);
