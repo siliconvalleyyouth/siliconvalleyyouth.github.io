@@ -20,9 +20,9 @@ function renderSite(res) {
         $("#demovideo").css('display', 'none');
         console.log("not empty")
     }
-    $("#title").text(data["classname"]);
-    $("#class-name").text(data["classname"]);
-    $("#class-description").text(data["classdescription"]);
+    $("#title").html(data["classname"]);
+    $("#class-name").html(data["classname"]);
+    $("#class-description").html(data["classdescription"]);
     $("#class-syllabus").html(data["classsyllabus"]);
     $("#prerequisites").html("Prerequisites: " + data["prerequisites"]);
     $("#dates").html("<strong>Dates: </strong>"+data["dates"]);
@@ -31,7 +31,7 @@ function renderSite(res) {
 	$("#grades").html("<strong>Grades: </strong>" + data["graderange"]);
     $("#teacher1").text(data["teacher1"]);
     $("#teacher1email").text(data['teacher1email'])
-    $("#bio1").text(data["t1bio"]);
+    $("#bio1").html(data["t1bio"]);
     $("#img1").attr("src", "../../../images/2022Headshots/Spring/"+data["teacher1img"]+".jpg")
     if(data["status"] == 'closed') {
         $("#registrationEnd").css('display', 'block');
@@ -48,7 +48,7 @@ function renderSite(res) {
         $("#teacher2").text(data["teacher2"]);	
         $("#teacher2email").text(data['teacher2email'])
         $("#img2").css("image-orientation", "from-image")
-        $("#bio2").text(data["t2bio"]);
+        $("#bio2").html(data["t2bio"]);
         $("#img2").attr("src", "../../../images/2022Headshots/Spring/"+data["teacher2img"]+".jpg")
     }
     if(data["teacher3"] != '') {
@@ -56,7 +56,7 @@ function renderSite(res) {
         $("#teacher3").text(data["teacher3"]);
         $("#teacher3email").text(data['teacher3email'])	
         $("#img3").css("image-orientation", "from-image")
-        $("#bio3").text(data["t3bio"]);
+        $("#bio3").html(data["t3bio"]);
         $("#img3").attr("src", "../../../images/2022Headshots/Spring/"+data["teacher3img"]+".jpg")
     }
     getExif()
