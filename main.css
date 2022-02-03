@@ -3115,6 +3115,8 @@ transition-duration: 0.5s;}
 		border-bottom: 1px solid #ccc;
 }
 }
+
+
 /* Dropdown Button */
 .dropbtn {
 	background-color: #fafafa;
@@ -3170,3 +3172,8 @@ transition-duration: 0.5s;}
 	margin-bottom: 80px;
 }
 
+
+ /* Science and Me Formatting */
+ .scienceandme {
+	 padding-right: 100px;
+ }
