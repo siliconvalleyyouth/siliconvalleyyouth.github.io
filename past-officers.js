@@ -116,7 +116,7 @@ for (var m=0; m<6; m++) {
         var h2 = document.createElement('h2')
         var h4 = document.createElement('h4')
         card.className += " officer slideanim pastofficer "
-        img.setAttribute('src', 'images/team/' + imgurl)
+        img.setAttribute('src', 'images/teamphoto/' + imgurl)
         div.className += " bio pastofficer "
         h2.innerHTML = name
         h4.innerHTML = position

@@ -403,19 +403,25 @@ for (var m=0; m<8; m++) {
             row.setAttribute("data-aos", "fade-up")
             container.appendChild(row)
         }
+    
+        imgurl = Teachers[i].imgurl
         var column = document.createElement('div')
-        column.className += " col-lg-3 teacher-div"
-        column.innerHTML = Teachers[i].name
-        var imgContainer = document.createElement('div')
-        imgContainer.className += ' img-container'
-        var link = "./images/ResizedTeamPhotos/" + Teachers[i].imgurl
-        imgContainer.style.backgroundImage = 'url(' + link  + ')'
-        column.appendChild(imgContainer)
-        // var img = document.createElement('img')
-        // img.className += ' teacher-img'
-        // img.setAttribute('src', "./images/team/" + teachers[i].imgurl)
-        // column.appendChild(img)
+        column.className += " col-md-3"
+    
+        var card = document.createElement('div')
+        var img = document.createElement('img')
+        var div = document.createElement('div')
+        var h2 = document.createElement('h2')
+       
+        card.className += " officer slideanim pastofficer "
+        img.setAttribute('src', 'images/teamphoto/' + imgurl)
+        div.className += " bio pastofficer "
+        h2.innerHTML = Teachers[i].name
+        
+        div.appendChild(h2)
+        card.appendChild(img)
+        card.appendChild(div)
+        column.appendChild(card)
         container.lastChild.appendChild(column)
-
     }
 }

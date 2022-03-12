@@ -62,7 +62,7 @@ for (var i = 0; i < Officers.length; i++) {
     var h2 = document.createElement('h2')
     var h4 = document.createElement('h4')
     card.className += " officer slideanim"
-    img.setAttribute('src', 'images/team/' + imgurl)
+    img.setAttribute('src', 'images/teamphoto/' + imgurl)
     div.className += " bio"
     h2.innerHTML = officer_name
     h4.innerHTML = officer_position
