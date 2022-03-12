@@ -27,12 +27,9 @@ var Officers20212022 = [
     ["Max Zhang", "VP of Humanities", "As the Vice President of Humanities, Max Zhang handles the course management of the Humanities department. He has taught US History for 8 semesters now, as well as Basketball and Grammar/Vocab in the past, for a total of 5 years now. Max enjoys passing on his knowledge to younger students and watching them learn and grow throughout the course in each semester."],
     ["Andy Xu", "VP of Public Speaking and Debate", ""],
     ["Eric Wang", "VP of Math", "Eric is a sophomore at Lynbrook High School, and this is his fourth semester teaching at SVY having taught both AMC 8 Basic and Advanced. He has been doing competition math since the start of 8th grade and has achieved numerous awards including being a 3-time AIME qualifier, an AMC 10 DHR member, and hopefully a USAJMO qualifier this year. Along with math, Eric also enjoys coding and playing soccer and is a member of his school junior varsity soccer team."],
-    ["Kaitlyn Wang", "Assisstant VP of Math", ""],
     ["Michael Song", "Facilities Director", ""],
     ["Charles Li", "Facilities Director", ""],
-    ["Chloe Lee", "Facilities Manager", ""],
     ["Rachel Chan", "Facilities Manager", "As a site director, Rachel Chan oversees the logistics of the organization’s facilities secures designated time slots for each class. Rachel has been Intermediate Java for the past three semesters and enjoys sharing her love for programming with others. Not only does she appreciate having the opportunity to expand the capabilities of youth through this organization, but she’s also very excited to see the impacts SVY will make in the upcoming future."],
-    ["Sudithi Manthati", "Facilities Manager", ""],
 ];
 
 var container;
