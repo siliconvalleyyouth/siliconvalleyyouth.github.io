@@ -4,7 +4,7 @@
 using namespace std;
 
 string year = "2022";
-string semester = "spring";
+string semester = "fall";
 string id, name, grade, timeslot, temp;
 
 int main()
@@ -24,8 +24,8 @@ int main()
 	{
 		getline(in, name, ',');
 		getline(in, grade, ',');
-		getline(in, timeslot, '\r');
-		getline(in, temp, '\n');
+		getline(in, timeslot, '\n');
+		// getline(in, temp, '\n');
 
 		out << "<li id = \"" << id << "-" << semester << "-" << year << "\"><a href = \"classes/" << year << "/" << semester << "/main.html?id=" << id << "\">" << name << ", Grades " << grade << ", " << timeslot << "</a></li>" << endl;
 	}
