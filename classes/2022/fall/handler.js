@@ -16,9 +16,9 @@ function renderSite(res) {
     var waitlist = data["waitlistform"];
 
     $("#extramessage").attr("href", data["extramessage"]);
-    if(data["extramessage"] == '') {
-        $("#demovideo").css('display', 'none');
-        console.log("not empty")
+    if(data["extramessage"] != '') {
+        $("#demovideo").css('display', 'block');
+        console.log("demovideo not empty")
     }
     $("#title").html(data["classname"]);
     $("#class-name").html(data["classname"]);

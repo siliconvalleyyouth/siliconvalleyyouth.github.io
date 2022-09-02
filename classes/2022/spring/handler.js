@@ -68,7 +68,7 @@ $(document).ready(function() {
         type: "GET",
         contentType: 'application/json',
         //url : "http://localhost:3000/class2022spring?id="+id,
-        url : "https://siliconvalleyyouth-current.herokuapp.com/class2022spring?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/class2022spring?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
