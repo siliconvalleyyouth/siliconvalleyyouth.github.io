@@ -3,7 +3,9 @@ var Board = [
     ["Benjamin Owens"],
     ["Brandon Fu"],
     ["Sam Yang"],
-    ["Eric Yang"]
+    ["Eric Yang"],
+    ["Oliver Ye"],
+    ["Leo Yang"]
 ];
 
 var container;
