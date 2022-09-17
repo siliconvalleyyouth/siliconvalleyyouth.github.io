@@ -1,7 +1,7 @@
 var Officers20212022 = [
+    ["Leo Yang", "President", ""],
     ["Justin Gu", "EVP of Operations", ""],
     ["Michael Ma", "EVP of Marketing", "As the Executive Vice President of Marketing, Michael Ma oversees advertising for classes at the beginning of semesters as well as handles general public relations. He has been teaching various Public Speaking classes at SVY for nine sessions. Michael enjoys being able to share his public speaking passion with younger students as well as having the opportunity to teach and work in a classroom environment."],
-    ["Leo Yang", "EVP of Operations", "As the Executive Vice President of Operations, Leo Yang supervises all of the internal functionalities of SVY from classes to financials. He has taught classes such as US History and Basketball and is currently teaching Introduction to Java. Leo loves sharing interesting as well as fun experiences with students and enjoys his time teaching at Silicon Valley Youth. He hopes to help inspire students, as well as introduce them to new and useful ideas."],
     ["Annli Zhu", "EVP of Human Resources", ""],
     ["Anping Zhu", "VP of Learning and Development", "As the VP of Learning and Development, Anping Zhu carries out teacher training sessions to improve teaching quality and assists in developing curriculum with new teachers. In the past, he has taught World History and Model United Nations, for a combined three semesters. SVY has been a valuable experience for him, improving his leadership and organizational skills."],
     ["Cayden Gu", "VP of Technology", ""],
