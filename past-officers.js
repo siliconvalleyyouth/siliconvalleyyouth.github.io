@@ -17,6 +17,7 @@ var Officers20212022 = [
     ["Michael Song", "Facilities Director", ""],
     ["Charles Li", "Facilities Director", ""],
     ["Rachel Chan", "Facilities Manager", "As a site director, Rachel Chan oversees the logistics of the organization’s facilities secures designated time slots for each class. Rachel has been Intermediate Java for the past three semesters and enjoys sharing her love for programming with others. Not only does she appreciate having the opportunity to expand the capabilities of youth through this organization, but she’s also very excited to see the impacts SVY will make in the upcoming future."],
+    ["Kaitlyn Wang", "Assistant VP of Math", ""],
 ];
 var Officers20202021 = [
     ["Oliver Ye", "President", "As the President of Silicon Valley Youth, Oliver Ye oversees internal and external operations of the organization. Over the past five years, Oliver has helped expand SVY from 3 to over 60 teachers, also collaborating with superintendents from the Ravenswood and Franklin McKinley districts to plan projects. At SVY, he has been teaching for 10 semesters now, focusing mainly on science bowl. Oliver's favorite part of SVY is seeing both students and teachers grow, learning lessons and stepping up to become leaders in their own community."],    
