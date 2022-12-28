@@ -59,6 +59,14 @@ function renderSite(res) {
         $("#bio3").html(data["t3bio"]);
         $("#img3").attr("src", "../../../images/2023Headshots/Spring/"+data["teacher3img"]+".jpg")
     }
+    if(data["teacher4"] != '') {
+        $("#teacher4label").text(data["teacher4position"]);
+        $("#teacher4").text(data["teacher4"]);
+        $("#teacher4email").text(data['teacher4email'])	
+        $("#img4").css("image-orientation", "from-image")
+        $("#bio4").html(data["t4bio"]);
+        $("#img4").attr("src", "../../../images/2023Headshots/Spring/"+data["teacher4img"]+".jpg")
+    }
     getExif()
 }
 $(document).ready(function() {
