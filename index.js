@@ -216,7 +216,7 @@ $("#mainnav").html("<li class=\"navig\"><a href=\"https://www.siliconvalleyyouth
 
 //getting rid of contact link
 
-$("#footerlinks").html("<a href=\"team.html\">Our Team</a> <a href=\"donate.html\">Donate</a> <a href=\"mission.html\">Mission</a>");
+$("#footerlinks").html("<a href=\"/team.html\">Our Team</a> <a href=\"donate.html\">Donate</a> <a href=\"mission.html\">Mission</a>");
 
 
 
