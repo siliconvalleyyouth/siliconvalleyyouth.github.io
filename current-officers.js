@@ -17,19 +17,19 @@ function makeOpenBioCallback(name, position, description) {
 	
 var Officers20232024 = [
     ["Alison Yang", "EVP of Marketing", ""],
-    ["Timothy Leung", "EVP of Academics", ""],
     ["Kevin Shi","EVP of Operations",""],
-    ["Minh Do", "VP of Media", ""],
-    ["Skyler Mao","VP of Technology",""],
-    ["Seabert Mao","VP of Technology",""],
-    ["Derek Li","VP of Finance & Site Director",""],
-    ["Isabella Watson","VP of Humanities",""],
-    ["Angeline Hu","VP of Events"],
-    ["Eric Wang","VP of Learning and Development"],
-    ["Thomas Wu","VP of Science",""],
+    ["Timothy Leung", "EVP of Academics", ""],
     ["Aarav Garai","VP of Math",""],
+    ["Angeline Hu","VP of Events"],
     ["Bryan Liu","VP of Public Speaking and Debate",""],
+    ["Derek Li","VP of Finance & Site Director",""],
+    ["Eric Wang","VP of Learning and Development"],
+    ["Isabella Watson","VP of Humanities",""],
     ["Kyleen Liao","VP of CS",""],
+    ["Minh Do", "VP of Media", ""],
+    ["Seabert Mao","VP of Technology",""],
+    ["Skyler Mao","VP of Technology",""],
+    ["Thomas Wu","VP of Science",""],
     ["Yash Ranjith","VP of CS (Assistant)",""],
 ];
 
