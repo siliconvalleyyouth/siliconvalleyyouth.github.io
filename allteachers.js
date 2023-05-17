@@ -1,3 +1,58 @@
+var Teachers2023 = [
+    {"name": "Aarav Garai", "imgurl": "AaravGarai.jpg"},
+    {"name": "Aiden Ye", "imgurl": "AidenYe.jpg"},
+    {"name": "Alan Yue", "imgurl": "AlanYue.jpg"},
+    {"name": "Alison Yang", "imgurl": "AlisonYang.jpg"},
+    {"name": "Amelia Yuan", "imgurl": "AmeliaYuan.jpg"},
+    {"name": "Angela Li", "imgurl": "AngelaLi.jpg"},
+    {"name": "Angeline Hu", "imgurl": "AngelineHu.jpg"},
+    {"name": "Anping Zhu", "imgurl": "AnpingZhu.jpg"},
+    {"name": "Annli Zhu", "imgurl": "AnnliZhu.jpg"},
+    {"name": "Anping Huang", "imgurl": "AnpingHuang.jpg"},
+    {"name": "Anthony Luo", "imgurl": "AnthonyLuo.jpg"},
+    {"name": "Arnav Swamy", "imgurl": "ArnavSwamy.jpg"},
+    {"name": "Austin Liu", "imgurl": "AustinLiu.jpg"},
+    {"name": "Bryan Liu", "imgurl": "BryanLiu.jpg"},
+    {"name": "Cayden Gu", "imgurl": "CaydenGu.jpg"},
+    {"name": "Charles Li", "imgurl": "CharlesLi.jpg"},
+    {"name": "Chiling Han", "imgurl": "ChilingHan.jpg"},
+    {"name": "Crystal Zhu", "imgurl": "CrystalZhu.jpg"},
+    {"name": "Danni Deng", "imgurl": "DanniDeng.jpg"},
+    {"name": "Derek Li", "imgurl": "DerekLi.jpg"},
+    {"name": "Edward Feng", "imgurl": "EdwardFeng.jpg"},
+    {"name": "Eileen Zhu", "imgurl": "EileenZhu.jpg"},
+    {"name": "Emily Chang", "imgurl": "EmilyChang.jpg"},
+    {"name": "Eric Wang", "imgurl": "EricWang.jpg"},
+    {"name": "Ewan Webster", "imgurl": "EwanWebster.jpg"},
+    {"name": "Gabrielle He", "imgurl": "GabrielleHe.jpg"},
+    {"name": "Grace Li", "imgurl": "GraceLi.jpg"},
+    {"name": "Isabella Shen", "imgurl": "IsabellaShen.jpg"},
+    {"name": "Isabella Wang", "imgurl": "IsabellaWang.jpg"},
+    {"name": "Isabella Watson", "imgurl": "IsabellaWatson.jpg"},
+    {"name": "Isaiah Sit", "imgurl": "IsaiahSit.jpg"},
+    {"name": "Jakin Shen", "imgurl": "JakinShen.jpg"},
+    {"name": "Jasmine Yuan", "imgurl": "JasmineYuan.jpg"},
+    {"name": "Justin Gu", "imgurl": "JustinGu.jpg"},
+    {"name": "Kevin Shi", "imgurl": "KevinShi.jpg"},
+    {"name": "Kyleen Liao", "imgurl": "KyleenLiao.jpg"},
+    {"name": "Lily Ogawa", "imgurl": "LilyOgawa.jpg"},
+    {"name": "Matthew Zhang", "imgurl": "MatthewZhang.jpg"},
+    {"name": "Michelle Choi", "imgurl": "MichelleChoi.jpg"},
+    {"name": "Minh Do", "imgurl": "MinhDo.jpg"},
+    {"name": "Raymond Feng", "imgurl": "RaymondFeng.jpg"},
+    {"name": "Samuel Chen", "imgurl": "SamuelChen.jpg"},
+    {"name": "Seabert Mao", "imgurl": "SeabertMao.jpg"},
+    {"name": "Sean Wu", "imgurl": "SeanWu.jpg"},
+    {"name": "Sharon Zhu", "imgurl": "SharonZhu.jpg"},
+    {"name": "Skyler Mao", "imgurl": "SkylerMao.jpg"},
+    {"name": "Sophie Yang", "imgurl": "SophieYang.jpg"},
+    {"name": "Tanay Parikh", "imgurl": "TanayParikh.jpg"},
+    {"name": "Thomas Wu", "imgurl": "ThomasWu.jpg"},
+    {"name": "Timothy Leung", "imgurl": "TimothyLeung.jpg"},
+    {"name": "Tony Zhou", "imgurl": "TonyZhou.jpg"},
+    {"name": "William Zhuang", "imgurl": "WilliamZhuang.jpg"},
+    {"name": "Yash Ranjith", "imgurl": "YashRanjith.jpg"},
+]
 var Teachers2022 = [
     {"name": "Aiden Ye", "imgurl": "AidenYe.jpg"},
     {"name": "Alison Yang", "imgurl": "AlisonYang.jpg"},
@@ -366,31 +421,34 @@ var Teachers2016 = [
 ];
 var Teachers2015 = [
     {"name": "Bryan Owens", "imgurl": "BryanOwens.jpg"},];
-for (var m=0; m<8; m++) {
+for (var m=0; m<9; m++) {
     var container;
     var Teachers;
     if(m==0) {
+        Teachers = Teachers2023;
+        container = document.getElementById("2023")
+    }else if(m==1) {
         Teachers = Teachers2022;
         container = document.getElementById("2022")
-    }else if(m==1) {
+    }else if(m==2) {
         Teachers = Teachers2021;
         container = document.getElementById("2021")
-    }else if(m==2) {
+    }else if(m==3) {
         Teachers = Teachers2020;
         container = document.getElementById("2020")
-    }else if (m==3){
+    }else if (m==4){
         Teachers = Teachers2019;
         container = document.getElementById("2019")
-    }else if (m==4) {
+    }else if (m==5) {
         Teachers = Teachers2018;
         container = document.getElementById("2018")
-    }else if (m==5) {
+    }else if (m==6) {
         Teachers = Teachers2017;
         container = document.getElementById("2017")
-    }else if (m==6) {
+    }else if (m==7) {
         Teachers = Teachers2016;
         container = document.getElementById("2016")
-    }else if (m==7) {
+    }else if (m==8) {
         Teachers = Teachers2015;
         container = document.getElementById("2015")
     }
