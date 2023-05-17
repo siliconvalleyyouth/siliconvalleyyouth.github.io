@@ -15,29 +15,28 @@ function makeOpenBioCallback(name, position, description) {
 	
 	
 	
-var Officers20222023 = [
-    ["Aiden Ye", "EVP of Marketing", ""],
-    ["Anping Zhu", "EVP of Academics", ""],
-    ["Cayden Gu","EVP of Operations",""],
-    ["Timothy Leung", "VP of Media", ""],
+var Officers20232024 = [
+    ["Alison Yang", "EVP of Marketing", ""],
+    ["Timothy Leung", "EVP of Academics", ""],
+    ["Kevin Shi","EVP of Operations",""],
     ["Minh Do", "VP of Media", ""],
-    ["Alison Yang", "VP of Teacher Development", ""],
-    ["Kevin Shi","VP of Technology",""],
-    ["Tony Zhou","VP of Technology",""],
-    ["Charles Li","VP of Finance & Site Director",""],
-    ["Jasmine Yuan","VP of Humanities",""],
-    ["Derek Li","VP of Humanities (Assistant)",""],
-    ["Grace Li","VP of Science",""],
-    ["Eric Wang","VP of Math",""],
-    ["Bryan Liu","VP of Debate & Speech",""],
-    ["Austin Liu","VP of CS",""],
-    ["Kyleen Liao","VP of CS (Assistant)",""],
+    ["Skyler Mao","VP of Technology",""],
+    ["Seabert Mao","VP of Technology",""],
+    ["Derek Li","VP of Finance & Site Director",""],
+    ["Isabella Watson","VP of Humanities",""],
+    ["Angeline Hu","VP of Events"],
+    ["Eric Wang","VP of Learning and Development"],
+    ["Thomas Wu","VP of Science",""],
+    ["Aarav Garai","VP of Math",""],
+    ["Bryan Liu","VP of Public Speaking and Debate",""],
+    ["Kyleen Liao","VP of CS",""],
+    ["Yash Ranjith","VP of CS (Assistant)",""],
 ];
 
 var container;
 var Officers;
-Officers = Officers20222023;
-container = document.getElementById("2022-2023")
+Officers = Officers20232024;
+container = document.getElementById("2023-2024")
 for (var i = 0; i < Officers.length; i++) {
     if (i % 3 == 0) {
         var row = document.createElement('div')

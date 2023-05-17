@@ -1,3 +1,23 @@
+var Officers20222023 = [
+    ["Justin Gu", "co-president", ""],
+    ["Annli Zhu", "co-president", ""],
+    ["Aiden Ye", "EVP of Marketing", ""],
+    ["Anping Zhu", "EVP of Academics", ""],
+    ["Cayden Gu","EVP of Operations",""],
+    ["Timothy Leung", "VP of Media", ""],
+    ["Minh Do", "VP of Media", ""],
+    ["Alison Yang", "VP of Teacher Development", ""],
+    ["Kevin Shi","VP of Technology",""],
+    ["Tony Zhou","VP of Technology",""],
+    ["Charles Li","VP of Finance & Site Director",""],
+    ["Jasmine Yuan","VP of Humanities",""],
+    ["Derek Li","VP of Humanities (Assistant)",""],
+    ["Grace Li","VP of Science",""],
+    ["Eric Wang","VP of Math",""],
+    ["Bryan Liu","VP of Debate & Speech",""],
+    ["Austin Liu","VP of CS",""],
+    ["Kyleen Liao","VP of CS (Assistant)",""],
+];
 var Officers20212022 = [
     ["Leo Yang", "President", ""],
     ["Justin Gu", "EVP of Operations", ""],
@@ -93,28 +113,31 @@ var Officers20152016 = [
     ["Benjamin Owens", "Co-President"],
     ["Oliver Ye", "Secretary"],
 ];
-for (var m=0; m<6; m++) {
+for (var m=0; m<7; m++) {
     var container;
     var Officers;
     if(m==0) {
+        Officers = Officers20222023;
+        container = document.getElementById("2022-2023")
+    }if(m==1) {
         Officers = Officers20212022;
         container = document.getElementById("2021-2022")
-    }if(m==1) {
+    }else if(m==2) {
         Officers = Officers20202021;
         container = document.getElementById("2020-2021")
-    }else if(m==2) {
+    }else if(m==3) {
         Officers = Officers20192020;
         container = document.getElementById("2019-2020")
-    }else if (m==3){
+    }else if (m==4){
         Officers = Officers20182019;
         container = document.getElementById("2018-2019")
-    }else if (m==4) {
+    }else if (m==5) {
         Officers = Officers20172018;
         container = document.getElementById("2017-2018")
-    }else if (m==5) {
+    }else if (m==6) {
         Officers = Officers20162017;
         container = document.getElementById("2016-2017")
-    }else if (m==6) {
+    }else if (m==7) {
         Officers = Officers20152016;
         container = document.getElementById("2015-2016")
     }
