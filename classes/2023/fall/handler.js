@@ -75,7 +75,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        //url : "http://localhost:3000/class2022spring?id="+id,
+        // url : "http://localhost:3000/class2023fall?id="+id,
         url : "https://siliconvalleyyouth-current.herokuapp.com/class2023fall?id="+id,
         dataType: "json",
         success: function(res) {
