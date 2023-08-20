@@ -26,7 +26,6 @@ var Officers20232024 = [
     ["Eric Wang","VP of Learning and Development"],
     ["Isabella Watson","VP of Humanities",""],
     ["Kyleen Liao","VP of CS",""],
-    ["Minh Do", "VP of Media", ""],
     ["Seabert Mao","VP of Technology",""],
     ["Skyler Mao","VP of Technology",""],
     ["Thomas Wu","VP of Science",""],
