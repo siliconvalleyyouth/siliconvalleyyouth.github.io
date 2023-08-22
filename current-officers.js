@@ -20,7 +20,7 @@ var Officers20232024 = [
     ["Kevin Shi","EVP of Operations",""],
     ["Timothy Leung", "EVP of Academics", ""],
     ["Aarav Garai","VP of Math",""],
-    ["Angeline Hu","VP of Events"],
+    ["Angeline Hu","VP of Media"],
     ["Bryan Liu","VP of Public Speaking and Debate",""],
     ["Derek Li","VP of Finance & Site Director",""],
     ["Eric Wang","VP of Learning and Development"],
