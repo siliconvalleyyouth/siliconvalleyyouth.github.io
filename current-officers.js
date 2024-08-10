@@ -15,27 +15,26 @@ function makeOpenBioCallback(name, position, description) {
 	
 	
 	
-var Officers20232024 = [
-    ["Alison Yang", "EVP of Marketing", ""],
-    ["Kevin Shi","EVP of Operations",""],
-    ["Timothy Leung", "EVP of Academics", ""],
+var Officers20242025 = [
+    ["Edward Feng", "EVP of Marketing", ""],
+    ["Skyler Mao","EVP of Operations",""],
+    ["Thomas Wu", "co-EVP of Academics", ""],
+    ["Isabella Shen", "co-EVP of Academics", ""],
     ["Aarav Garai","VP of Math",""],
-    ["Angeline Hu","VP of Media"],
-    ["Bryan Liu","VP of Public Speaking and Debate",""],
-    ["Derek Li","VP of Finance & Site Director",""],
-    ["Eric Wang","VP of Learning and Development"],
-    ["Isabella Watson","VP of Humanities",""],
-    ["Kyleen Liao","VP of CS",""],
+    ["Samuel Ma","VP of Public Speaking and Debate",""],
+    ["Florence Wei","VP of Events & Site Director",""],
+    ["Raymond Feng","VP of Learning and Development"],
+    ["Alan Yue","VP of Humanities",""],
+    ["Yash Ranjith","VP of STEM",""],
     ["Seabert Mao","VP of Technology",""],
-    ["Skyler Mao","VP of Technology",""],
     ["Thomas Wu","VP of Science",""],
-    ["Yash Ranjith","VP of CS (Assistant)",""],
+    ["Jason Kuo","Interim VP of Finance",""],
 ];
 
 var container;
 var Officers;
-Officers = Officers20232024;
-container = document.getElementById("2023-2024")
+Officers = Officers20242025;
+container = document.getElementById("2024-2025")
 for (var i = 0; i < Officers.length; i++) {
     if (i % 3 == 0) {
         var row = document.createElement('div')
