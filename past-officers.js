@@ -1,4 +1,6 @@
 var Officers20232024 = [
+    ["Aiden Ye", "co-president", ""],
+    ["Anping Zhu", "co-president", ""],
     ["Alison Yang", "EVP of Marketing", ""],
     ["Kevin Shi","EVP of Operations",""],
     ["Timothy Leung", "EVP of Academics", ""],
