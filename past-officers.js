@@ -1,3 +1,19 @@
+var Officers20232024 = [
+    ["Alison Yang", "EVP of Marketing", ""],
+    ["Kevin Shi","EVP of Operations",""],
+    ["Timothy Leung", "EVP of Academics", ""],
+    ["Aarav Garai","VP of Math",""],
+    ["Angeline Hu","VP of Media"],
+    ["Bryan Liu","VP of Public Speaking and Debate",""],
+    ["Derek Li","VP of Finance & Site Director",""],
+    ["Eric Wang","VP of Learning and Development"],
+    ["Isabella Watson","VP of Humanities",""],
+    ["Kyleen Liao","VP of CS",""],
+    ["Seabert Mao","VP of Technology",""],
+    ["Skyler Mao","VP of Technology",""],
+    ["Thomas Wu","VP of Science",""],
+    ["Yash Ranjith","VP of CS (Assistant)",""],
+];
 var Officers20222023 = [
     ["Justin Gu", "co-president", ""],
     ["Annli Zhu", "co-president", ""],
