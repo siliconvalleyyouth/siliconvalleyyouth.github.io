@@ -18,8 +18,8 @@ function makeOpenBioCallback(name, position, description) {
 var Officers20242025 = [
     ["Edward Feng", "EVP of Marketing", ""],
     ["Skyler Mao","EVP of Operations",""],
-    ["Thomas Wu", "co-EVP of Academics", ""],
     ["Isabella Shen", "co-EVP of Academics", ""],
+    ["Thomas Wu", "co-EVP of Academics", ""],
     ["Aarav Garai","VP of Math",""],
     ["Samuel Ma","VP of Public Speaking and Debate",""],
     ["Florence Wei","VP of Events & Site Director",""],
