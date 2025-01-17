@@ -82,22 +82,22 @@ function formHandler() {
         //         var errorElement = document.getElementById('card-errors');
         //         errorElement.textContent = result.error.message;
         //     } else {
-        //         stripeTokenHandler(result.token);
+         stripeTokenHandler();
         //     }
         // });
     });
     //sendEmail()
 }
 
-function stripeTokenHandler(token) {
-    console.log("--- in github stripe");
-    console.log(token);
-    var form = document.getElementById('payment-form');
-    var hiddenInput = document.createElement('input');
-    hiddenInput.setAttribute('type', 'hidden');
-    hiddenInput.setAttribute('name', 'stripeToken');
-    hiddenInput.setAttribute('value', token.id);
-    form.appendChild(hiddenInput);
+function stripeTokenHandler() {
+    // console.log("--- in github stripe");
+    // console.log(token);
+    // var form = document.getElementById('payment-form');
+    // var hiddenInput = document.createElement('input');
+    // hiddenInput.setAttribute('type', 'hidden');
+    // hiddenInput.setAttribute('name', 'stripeToken');
+    // hiddenInput.setAttribute('value', token.id);
+    // form.appendChild(hiddenInput);
     $.ajax({
         url: $('#payment-form').attr('action')+ "?id="+id,
         // url: "http://localhost:3000/payment?id="+id,
