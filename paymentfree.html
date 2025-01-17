@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+    <title>Payment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Raleway:300" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src= "./spring2019s.js"></script>
+    
+    <link rel="stylesheet" href= "main.css"></style>
+    <link rel="stylesheet" href= "paymentStyling.css"></style>
+</head>
+<head>
+  <!-- Global site tag (gtag.js) - Google Ads: 445448487 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-445448487"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-445448487');
+  </script>
+  <!-- Event snippet for Classes conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-445448487/gi_rCOi4lPEBEKeCtNQB'});
+  </script>
+</head>
+<body>
+<div id="menu" onclick="rotate(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+<a href="index.html"><img id="logo" src="images/logo.jpg"></a>
+<div class="navcontainer">
+  <a href="index.html"><h1 class="title">SILICON VALLEY YOUTH</h1></a>
+  <ul id="mainnav">
+    <li class="navig"><a href="classes.html">CLASSES</a></li>
+    <div id="abt">
+      <li class="navig"><a>ABOUT US &#9662;</a></li>
+      <ul id="dropdown">
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="commendation.html">Commendations</a></li>
+      </ul>
+    </div>
+    <li class="navig"><a href="service.html">SERVICE</a></li>
+    <li class="navig"><a href="donate.html">DONATE</a></li>
+    <li class="navig"><a href="events.html">NEWS/EVENTS</a></li>
+  </ul>
+  <div id="social">
+    <a href="https://www.facebook.com/svyouth1/" class="fab fa-facebook"></a>
+    <a href="https://www.instagram.com/siliconvyouth/" class="fab fa-instagram"></a>
+    <a href="mailto:svyouth1@gmail.com" class="fas fa-envelope"></a>
+  </div>
+</div>
+<div id="paymentbody">
+    <h1>SVY Class Registration + Payment</h1>
+    <h3>Please complete the form below, and submit payment to register for a SVY class.</h3>
+    <hr />
+    <form action="https://siliconvalleyyouth-current.herokuapp.com/payment2025spring" method="post" id="payment-form">
+                    <!-- STAGING CODE: <form action="http://localhost:3000/payment2021fall" method="post" id="payment-form"></form> -->
+                      <!-- Remember to change to current semesterˆˆ -->
+        <h3 id = "classTitle" style = "font-weight: bold">You have not selected a class. Please navigate to this payment page from the class you want to attend.</h3>
+        <div class="form-group">
+            <label for="parentName">Parent Name</label>
+            <input type="text" class="form-control" name="parentName" id="parentName" placeholder="Enter parent name" required>
+        </div>
+        <div class="form-group">
+            <label for="parentEmail">Parent Email Address</label>
+            <input type="email" class="form-control" name="parentEmail" id="parentEmail" placeholder="Enter parent email" required>
+        </div>
+        <div class="form-group">
+            <label for="parentWeChat">Parent WeChat ID</label>
+            <input class="form-control" name="parentWeChat" id="parentWeChat" placeholder="Enter parent weChat ID (optional)">
+        </div>
+        <div class="form-group">
+            <label for="parentPhone">Parent Phone Number</label>
+            <input class="form-control" name="parentPhone" id="parentPhone" placeholder="Enter parent phone number" required>
+        </div>
+        <div class="form-group">
+            <label for="studentName">Student Name</label>
+            <input type="text" class="form-control" name="studentName" id="studentName" placeholder="Enter student name" required>
+        </div>
+        <div class="form-group">
+            <label for="studentEmail">Student Email Address</label>
+            <input type="email" class="form-control" name="studentEmail" id="studentEmail" placeholder="Enter student email" required>
+        </div>
+        <div class="form-group">
+            <label for="studentGrade">Student Grade</label>
+            <input type="number" class="form-control" name="studentGrade" id="studentGrade" placeholder="Enter student grade" required>
+        </div>
+        <div class="form-group">
+            <label for="studentSchool">Student School</label>
+            <input type="text" class="form-control" name="studentSchool" id="studentSchool" placeholder="Enter student's school" required>
+        </div>
+        <div class="form-group">
+          <label for="hearFrom">Where did you hear about SVY?</label>
+          <input type="text" class="form-control" name="hearFrom" id="hearFrom" placeholder="Enter source you heard SVY from (ex: friends, flyer, Google Ads, etc.)" required>
+      </div>
+        <div class="form-group">
+          <table>
+            <tr>
+              <td><input type="checkbox" class="form-check-input" id="photoconsent" value="yes" required></td>
+              <td><label class="form-check-label" for="photoconsent" style="margin-left: 15px; margin-top: 3px">I acknowledge that I have read the <a href="https://drive.google.com/file/d/1Uu6wO0dq_3aVsmhEJAKQia6raXAnUU70/view" target="_blank">Accident Waiver and Release of Liability Form</a> and agree to its terms.</label><br></td>
+            </tr>
+          </table>
+        </div>
+        <input type = "hidden" id = "className" name = "className" value = "">
+        <div class="form-group">
+            <label for="card-element">
+                Credit or debit card.
+            </label>
+            <div id="card-element" class="form-control">
+            </div>
+            <div id="card-errors" role="alert" style="color:red"></div>
+            <p id="classcost">The total class cost is calculated by multiplying the total number of sessions by $10 per each session.  Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session. Teachers will email you with more class details (Zoom link, class expectations, required materials, etc.) within 1 week of the first class date.</p>
+            <h4 id = "costDisplay">Cost: Please Choose a Class</h4>
+            <p id="stripeprocess">This payment is secured and processed by Stripe.  Please wait for a confirmation page before closing the tab. Thank You.</p>
+            <br>
+            <h4><b>Join the Wechat group!</b></h4><br>
+            <p>SVY uses Wechat as its main form of communication between the community and our staff. Other parents and members of SVY, along with the officers and teachers will all be in the group. In the group, parents can converse with each other or ask questions about anything they want. Reminders and announcements will also be regularly sent out in the group by our staff’s parents, so feel free to join if you're interested! Scan the QR code below to join:</p><br>
+            <img src="images/resources/wechat.png" style="width:200px"><br>
+
+
+        </div>
+        <button id="submitpayment">SUBMIT PAYMENT</button>
+    </form>
+</div>
+<div id="thankyoubody">
+    <h1>Payment Successful.  Thank you for Registering for the SVY <span id="classname2"></span> class!</h1>
+    <h3>All proceeds from our classes will go towards serving students in underprivileged communities.</h3>
+    <img src="images/check.png" id="check">
+    <p>You will be emailed a Stripe receipt shortly.  All payments are refundable before the second class.</p>
+</div>
+<div id="footer">
+          <div id="footerlinks">
+            <a href="team.html">Our Team</a>
+            <a href="donate.html">Donate</a>
+            <a href="mission.html">Mission</a>
+          </div>
+          <div id="copyright">
+            <p> &#169; 2016-2023. Silicon Valley Youth</p>
+          </div>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="index.js">
+    </script>
+    <script src="./payment.js"></script>
+</body>
+<script>
+
+</script>
+</html>
