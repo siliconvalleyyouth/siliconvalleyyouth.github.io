@@ -1,12 +1,12 @@
 var classArray = classArray;
 // var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
-var elements = stripe.elements();
+// var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
+// var elements = stripe.elements();
 var id;
 var data;
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    createElements();
+    // createElements();
     formHandler();
     id = getParam("id")
     getData(id)
@@ -57,34 +57,34 @@ function createForm(res) {
     var className = data["classname"]
     var numClasses = data["numberclasses"]
     console.log("createForm:+"+className+",numClasses="+numClasses)
-    $("#costDisplay").text("$"+numClasses*10)
-    $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
+    $("#costDisplay").text("$0")
+    $("#classTitle").text("Registration for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").setAttribute('value', className);
     //sendEmail()
 }
 
-var card = elements.create('card', { style: style });
-card.addEventListener('change', function (event) {
-    var displayError = document.getElementById('card-errors');
-    if (event.error) {
-        displayError.textContent = event.error.message;
-    } else {
-        displayError.textContent = '';
-    }
-});
+// var card = elements.create('card', { style: style });
+// card.addEventListener('change', function (event) {
+//     var displayError = document.getElementById('card-errors');
+//     if (event.error) {
+//         displayError.textContent = event.error.message;
+//     } else {
+//         displayError.textContent = '';
+//     }
+// });
 
 function formHandler() {
     var form = document.getElementById('payment-form');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        stripe.createToken(card).then(function (result) {
-            if (result.error) {
-                var errorElement = document.getElementById('card-errors');
-                errorElement.textContent = result.error.message;
-            } else {
-                stripeTokenHandler(result.token);
-            }
-        });
+        // stripe.createToken(card).then(function (result) {
+        //     if (result.error) {
+        //         var errorElement = document.getElementById('card-errors');
+        //         errorElement.textContent = result.error.message;
+        //     } else {
+        //         stripeTokenHandler(result.token);
+        //     }
+        // });
     });
     //sendEmail()
 }
@@ -117,9 +117,9 @@ function stripeTokenHandler(token) {
     });
     return false;
 }
-function createElements() {
-    card.mount('#card-element');
-}
+// function createElements() {
+//     card.mount('#card-element');
+// }
 function writeThankYou() {
     $("#thankyoubody").fadeIn();
     $("#paymentbody").hide();
