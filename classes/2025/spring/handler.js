@@ -42,8 +42,10 @@ function renderSite(res) {
     }else {
 	if(data["location"] == 'Online') {
             $("#signupTextFree").css('display', 'block')
-    	}
-	$("#signupText").css('display', 'block')
+	    $("#signupTextFree2").css('display', 'block')
+    	}else {
+	    $("#signupText").css('display', 'block')
+	}
         $("#signup").attr("href", "https://www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
 	$("#signupfree").attr("href", "https://www.siliconvalleyyouth.com/paymentfree.html?id=" + getParam("id"));
     }
