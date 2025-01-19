@@ -48,6 +48,7 @@ function renderSite(res) {
 	}
         $("#signup").attr("href", "https://www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
 	$("#signupfree").attr("href", "https://www.siliconvalleyyouth.com/paymentfree.html?id=" + getParam("id"));
+	$("#signuppaid").attr("href", "https://www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
