@@ -21,7 +21,7 @@ var Teachers2024 = [
     {"name": "Florence Wei", "imgurl": "FlorenceWei.jpg"},
     {"name": "Gabrielle He", "imgurl": "GabrielleHe.jpg"},
     {"name": "Hannah Hu", "imgurl": "HannahHu.jpg"},
-    {"name": "Hanyu Zhang", "imgurl": "HanyuZhang.jpg"},
+    {"name": "Hannah Zhang", "imgurl": "HannahZhang.jpg"},
     {"name": "Isabella Shen", "imgurl": "IsabellaShen.jpg"},
     {"name": "Jason Kuo", "imgurl": "JasonKuo.jpg"},
     {"name": "Khadijah Ismail", "imgurl": "KhadijahIsmail.jpg"},
