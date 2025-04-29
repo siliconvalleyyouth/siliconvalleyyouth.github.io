@@ -29,6 +29,7 @@ var Officers20242025 = [
     ["Seabert Mao","VP of Technology",""],
     ["Thomas Wu","VP of Science",""],
     ["Jason Kuo","Interim VP of Finance",""],
+    ["Lucas Lum","Associate VP of Math",""]
 ];
 
 var container;
