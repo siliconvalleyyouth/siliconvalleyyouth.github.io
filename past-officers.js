@@ -1,3 +1,37 @@
+var Officers20252026 = [
+    ["Florence Wei", "EVP of Marketing", ""],
+    ["Seabert Mao","EVP of Operations",""],
+    ["Gabrielle He", "co-EVP of Academics", ""],
+    ["Angela Li", "co-EVP of Academics", ""],
+    ["Lucas Lum","VP of Math",""],
+    ["Kurn Sundaram","VP of Public Speaking and Debate",""],
+    ["Archer Jin","VP of Events & Site Director",""],
+    ["Elliot Seo","VP of Learning and Development"],
+    ["Sean Wu","VP of Humanities",""],
+    ["Jason Kuo","VP of Finance",""],
+    ["Bryan Han","Webmaster",""],
+    ["Anthony Zhou","Webmaster",""],
+    ["Crystal Zhu","Site Director",""],
+    ["Yashnil Mohanty","VP of Science/CS",""]
+];
+
+var Officers20242025 = [
+    ["Edward Feng", "EVP of Marketing", ""],
+    ["Skyler Mao","EVP of Operations",""],
+    ["Isabella Shen", "co-EVP of Academics", ""],
+    ["Thomas Wu", "co-EVP of Academics", ""],
+    ["Aarav Garai","VP of Math",""],
+    ["Samuel Ma","VP of Public Speaking and Debate",""],
+    ["Florence Wei","VP of Events & Site Director",""],
+    ["Raymond Feng","VP of Learning and Development"],
+    ["Alan Yue","VP of Humanities",""],
+    ["Yash Ranjith","VP of STEM",""],
+    ["Seabert Mao","VP of Technology",""],
+    ["Thomas Wu","VP of Science",""],
+    ["Jason Kuo","Interim VP of Finance",""],
+    ["Lucas Lum","Associate VP of Math",""]
+];
+
 var Officers20232024 = [
     ["Aiden Ye", "co-president", ""],
     ["Anping Zhu", "co-president", ""],
@@ -135,30 +169,40 @@ for (var m=0; m<8; m++) {
     var container;
     var Officers;
     if(m==0) {
+        Officers = Officers20252026;
+        container = document.getElementById("2025-2026")
+    }else if(m==2) {
+        Officers = Officers20242025;
+        container = document.getElementById("2024-2025")
+    }else if(m==2) {
         Officers = Officers20232024;
         container = document.getElementById("2023-2024")
-    }else if(m==1) {
+    }else if(m==2) {
         Officers = Officers20222023;
         container = document.getElementById("2022-2023")
-    }else if(m==2) {
+    }else if(m==3) {
         Officers = Officers20212022;
         container = document.getElementById("2021-2022")
-    }else if(m==3) {
+    }else if(m==4) {
         Officers = Officers20202021;
         container = document.getElementById("2020-2021")
-    }else if(m==4) {
+    }else if(m==5) {
         Officers = Officers20192020;
         container = document.getElementById("2019-2020")
-    }else if (m==5){
+    }else if (m==6){
         Officers = Officers20182019;
         container = document.getElementById("2018-2019")
-    }else if (m==6) {
+    }else if (m==7) {
         Officers = Officers20172018;
         container = document.getElementById("2017-2018")
-    }else if (m==7) {
+    }else if (m==8) {
         Officers = Officers20162017;
         container = document.getElementById("2016-2017")
-    }else if (m==8) {
+    }else if (m==9) {
+        Officers = Officers20152016;
+        container = document.getElementById("2015-2016")
+    }
+    }else if (m==10) {
         Officers = Officers20152016;
         container = document.getElementById("2015-2016")
     }
