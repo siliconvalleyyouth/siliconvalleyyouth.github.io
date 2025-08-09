@@ -13,29 +13,27 @@ function makeOpenBioCallback(name, position, description) {
 }
 	
 	
-	
-	
-var Officers20242025 = [
-    ["Edward Feng", "EVP of Marketing", ""],
-    ["Skyler Mao","EVP of Operations",""],
-    ["Isabella Shen", "co-EVP of Academics", ""],
-    ["Thomas Wu", "co-EVP of Academics", ""],
-    ["Aarav Garai","VP of Math",""],
-    ["Samuel Ma","VP of Public Speaking and Debate",""],
-    ["Florence Wei","VP of Events & Site Director",""],
-    ["Raymond Feng","VP of Learning and Development"],
-    ["Alan Yue","VP of Humanities",""],
-    ["Yash Ranjith","VP of STEM",""],
-    ["Seabert Mao","VP of Technology",""],
-    ["Thomas Wu","VP of Science",""],
-    ["Jason Kuo","Interim VP of Finance",""],
-    ["Lucas Lum","Associate VP of Math",""]
-];
+var Officers20252026 = [
+    ["Florence Wei", "EVP of Marketing", ""],
+    ["Seabert Mao","EVP of Operations",""],
+    ["Gabrielle He", "co-EVP of Academics", ""],
+    ["Angela Li", "co-EVP of Academics", ""],
+    ["Lucas Lum","VP of Math",""],
+    ["Kurn Sundaram","VP of Public Speaking and Debate",""],
+    ["Archer Jin","VP of Events & Site Director",""],
+    ["Elliot Seo","VP of Learning and Development"],
+    ["Sean Wu","VP of Humanities",""],
+    ["Jason Kuo","VP of Finance",""],
+    ["Bryan Han","Webmaster",""],
+    ["Anthony Zhou","Webmaster",""],
+    ["Crystal Zhu","Site Director",""],
+    ["Yashnil Mohanty","VP of Science/CS",""]
+];	
 
 var container;
 var Officers;
-Officers = Officers20242025;
-container = document.getElementById("2024-2025")
+Officers = Officers20252026;
+container = document.getElementById("2025-2026)
 for (var i = 0; i < Officers.length; i++) {
     if (i % 3 == 0) {
         var row = document.createElement('div')
