@@ -33,7 +33,7 @@ var Officers20252026 = [
 var container;
 var Officers;
 Officers = Officers20252026;
-container = document.getElementById("2025-2026)
+container = document.getElementById("2025-2026")
 for (var i = 0; i < Officers.length; i++) {
     if (i % 3 == 0) {
         var row = document.createElement('div')
