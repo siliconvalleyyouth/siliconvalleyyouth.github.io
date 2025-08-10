@@ -40,15 +40,8 @@ function renderSite(res) {
         $("#classFullText").css('display', 'block');
         $("#waitlist").attr("href", waitlist);    
     }else {
-	if(data["location"] == 'Online') {
-            $("#signupTextFree").css('display', 'block')
-	    $("#signupTextFree2").css('display', 'block')
-    	}else {
-	    $("#signupText").css('display', 'block')
-	}
+        $("#signupText").css('display', 'block')
         $("#signup").attr("href", "https://www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
-	$("#signupfree").attr("href", "https://www.siliconvalleyyouth.com/paymentfree.html?id=" + getParam("id"));
-	$("#signuppaid").attr("href", "https://www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
@@ -74,7 +67,7 @@ function renderSite(res) {
         $("#bio4").html(data["t4bio"]);
         $("#img4").attr("src", "../../../images/2025Headshots/fall/"+data["teacher4img"]+".jpg")
     }
-    getExif()
+    getExit()
 }
 $(document).ready(function() {
     var id = getParam("id");
@@ -82,8 +75,8 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        // url : "http://localhost:3000/class2025spring?id="+id,
-        url : "https://siliconvalleyyouth.herokuapp.com/fall?id="+id,
+        // url : "http://localhost:3000/class2025fall?id="+id,
+        url : "https://siliconvalleyyouth-current.herokuapp.com/class2025fall?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
