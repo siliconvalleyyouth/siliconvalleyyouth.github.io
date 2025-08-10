@@ -27,7 +27,7 @@ var Officers20252026 = [
     ["Bryan Han","Webmaster",""],
     ["Anthony Zhou","Webmaster",""],
     ["Crystal Zhu","Site Director",""],
-    ["Yashnil Mohanty","VP of Science/CS",""]
+    ["Yashnil Mohanty","VP of Science/CS",""],
 	["Saria Lum", "VP of Media",""]
 ];	
 
