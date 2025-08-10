@@ -169,7 +169,7 @@ var Officers20152016 = [
     ["Benjamin Owens", "Co-President"],
     ["Oliver Ye", "Secretary"],
 ];
-for (var m=0; m<12; m++) {
+for (var m=0; m<11; m++) {
     var container;
     var Officers;
     if(m==0) {
@@ -203,9 +203,6 @@ for (var m=0; m<12; m++) {
         Officers = Officers20162017;
         container = document.getElementById("2016-2017")
     }else if (m==10) {
-        Officers = Officers20152016;
-        container = document.getElementById("2015-2016")
-    }else if (m==11) {
         Officers = Officers20152016;
         container = document.getElementById("2015-2016")
     }
