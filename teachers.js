@@ -41,7 +41,7 @@ var teachers = [
     {"name": "Cindy Li", "imgurl":"CindyLi.jpg"},
     {"name": "Cindy Xu", "imgurl":"CindyXu.jpg"},
     {"name": "Claire Cheng", "imgurl":"ClaireCheng.jpg"},
-    {"name": "Crystal Zhu", "imgurl": "Crystal Zhu.jpg"},
+    {"name": "Crystal Zhu", "imgurl": "CrystalZhu.jpg"},
     {"name": "Cynthia Jia", "imgurl":"CynthiaJia.jpg"},
     {"name": "Darren Zhan", "imgurl":"DarrenZhan.jpg"},
     {"name": "Derrick Cai", "imgurl":"DerrickCai.jpg"},
@@ -124,6 +124,6 @@ var teachers = [
     {"name": "Viola Zhao", "imgurl":"ViolaZhao.jpg"},
     {"name": "Winnie Zhao", "imgurl":"WinnieZhao.jpg"},
     {"name": "Yash Ranjith", "imgurl":"YashRanjith.jpg"},
-    {"name": "Yashnil Mohanty", "imgurl": "Yashnil Mohanty.jpg"},
+    {"name": "Yashnil Mohanty", "imgurl": "YashnilMohanty.jpg"},
     {"name": "Zachary Wang", "imgurl":"ZacharyWang.jpg"}
 ]
