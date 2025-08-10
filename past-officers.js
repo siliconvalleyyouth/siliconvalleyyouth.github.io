@@ -1,4 +1,6 @@
 var Officers20252026 = [
+    ["Isabella Shen", "co-president", ""],
+    ["Edward Feng", "co-president", ""],
     ["Florence Wei", "EVP of Marketing", ""],
     ["Seabert Mao","EVP of Operations",""],
     ["Gabrielle He", "co-EVP of Academics", ""],
@@ -16,6 +18,8 @@ var Officers20252026 = [
 ];
 
 var Officers20242025 = [
+    ["Timothy Leung", "co-president", ""],
+    ["Alison Yang", "co-president", ""],
     ["Edward Feng", "EVP of Marketing", ""],
     ["Skyler Mao","EVP of Operations",""],
     ["Isabella Shen", "co-EVP of Academics", ""],
