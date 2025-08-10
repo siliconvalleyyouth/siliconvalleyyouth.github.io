@@ -150,13 +150,10 @@ var Officers20152016 = [
     ["Benjamin Owens", "Co-President"],
     ["Oliver Ye", "Secretary"],
 ];
-for (var m=0; m<11; m++) {
+for (var m=1; m<11; m++) {
     var container;
     var Officers;
-    if(m==0) {
-        Officers = Officers20252026;
-        container = document.getElementById("2025-2026")
-    }else if(m==1) {
+    if(m==1) {
         Officers = Officers20242025;
         container = document.getElementById("2024-2025")
     }else if(m==2) {
