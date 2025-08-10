@@ -201,7 +201,6 @@ for (var m=0; m<12; m++) {
     }else if (m==10) {
         Officers = Officers20152016;
         container = document.getElementById("2015-2016")
-    }
     }else if (m==11) {
         Officers = Officers20152016;
         container = document.getElementById("2015-2016")
