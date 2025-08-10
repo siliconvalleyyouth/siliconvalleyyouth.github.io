@@ -67,7 +67,7 @@ function renderSite(res) {
         $("#bio4").html(data["t4bio"]);
         $("#img4").attr("src", "../../../images/2025Headshots/fall/"+data["teacher4img"]+".jpg")
     }
-    getExif()
+    getExit()
 }
 $(document).ready(function() {
     var id = getParam("id");
@@ -76,7 +76,7 @@ $(document).ready(function() {
         type: "GET",
         contentType: 'application/json',
         // url : "http://localhost:3000/class2025fall?id="+id,
-        url : "https://siliconvalleyyouth.herokuapp.com/class2025fall?id="+id,
+        url : "https://siliconvalleyyouth-current.herokuapp.com/class2025fall?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
