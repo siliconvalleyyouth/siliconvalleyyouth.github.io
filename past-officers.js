@@ -1,22 +1,3 @@
-var Officers20252026 = [
-    ["Isabella Shen", "co-president", ""],
-    ["Edward Feng", "co-president", ""],
-    ["Florence Wei", "EVP of Marketing", ""],
-    ["Seabert Mao","EVP of Operations",""],
-    ["Gabrielle He", "co-EVP of Academics", ""],
-    ["Angela Li", "co-EVP of Academics", ""],
-    ["Lucas Lum","VP of Math",""],
-    ["Kurn Sundaram","VP of Public Speaking and Debate",""],
-    ["Archer Jin","VP of Events & Site Director",""],
-    ["Elliot Seo","VP of Learning and Development",""],
-    ["Sean Wu","VP of Humanities",""],
-    ["Jason Kuo","VP of Finance",""],
-    ["Bryan Han","Webmaster",""],
-    ["Anthony Zhou","Webmaster",""],
-    ["Crystal Zhu","Site Director",""],
-    ["Yashnil Mohanty","VP of Science/CS",""]
-];
-
 var Officers20242025 = [
     ["Timothy Leung", "co-president", ""],
     ["Alison Yang", "co-president", ""],
