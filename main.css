@@ -1964,8 +1964,12 @@ transition-duration: 0.5s;}
 	}
 
 	#mainslide a {
-		padding: 8px 18px;
-		font-size: 23px;
+		padding: 8px 15px;
+		font-size: 18px;
+		word-wrap: break-word;
+		text-align: center;
+		display: inline-block;
+		line-height: 1.2;
 	}
 
 	#indexbody {
@@ -2580,16 +2584,51 @@ transition-duration: 0.5s;}
 	}
 
 	#mainslide {
-		width: 80%;
-		padding: 10vh 10%;
+		width: 90%;
+		padding: 8vh 5%;
+		overflow-wrap: break-word;
+		word-break: break-word;
 	}
 
 	#mainslide h1 {
-		font-size: 40px;
+		font-size: 35px;
+		word-wrap: break-word;
+		line-height: 1.1;
 	}
 
 	#mainslide .bold {
-		font-size: 65px;
+		font-size: 50px;
+		word-wrap: break-word;
+		line-height: 1;
+	}
+
+	#mainslide a {
+		padding: 8px 15px !important;
+		font-size: 16px !important;
+		font-weight: bold !important;
+		word-wrap: break-word;
+		text-align: center;
+		display: inline-block;
+		line-height: 1.3;
+		margin: 5px 0;
+		max-width: 90%;
+		box-sizing: border-box;
+		white-space: normal;
+		cursor: pointer;
+		touch-action: manipulation;
+		position: relative;
+		z-index: 100;
+		-webkit-tap-highlight-color: rgba(255,255,0,0.3);
+		pointer-events: auto;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+
+	.main-cta-button {
+		font-size: 16px !important;
+		font-weight: bold !important;
+		text-decoration: none !important;
+		color: white !important;
 	}
 
 	#mainmask {
@@ -3091,6 +3130,8 @@ transition-duration: 0.5s;}
 
 	body, h1, body, div, a, ol, ul, li, h2, p, em, img, button {
 		word-wrap: break-word;
+		overflow-wrap: break-word;
+		word-break: break-word;
 	}
 	/*testing*/
 	.center {
