@@ -32,7 +32,7 @@ function renderSite(res) {
     $("#teacher1").text(data["teacher1"]);
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").html(data["t1bio"]);
-    $("#img1").attr("src", "../../../images/2025Headshots/fall/"+data["teacher1img"]+".jpg")
+    $("#img1").attr("src", "../../../images/2026Headshots/spring/"+data["teacher1img"]+".jpg")
     if(data["status"] == 'closed') {
         $("#registrationEnd").css('display', 'block');
     }    
@@ -56,7 +56,7 @@ function renderSite(res) {
         $("#teacher2email").text(data['teacher2email'])
         $("#img2").css("image-orientation", "from-image")
         $("#bio2").html(data["t2bio"]);
-        $("#img2").attr("src", "../../../images/2025Headshots/fall/"+data["teacher2img"]+".jpg")
+        $("#img2").attr("src", "../../../images/2026Headshots/spring/"+data["teacher2img"]+".jpg")
     }
     if(data["teacher3"] != '') {
         $("#teacher3label").text(data["teacher3position"]);
@@ -64,7 +64,7 @@ function renderSite(res) {
         $("#teacher3email").text(data['teacher3email'])	
         $("#img3").css("image-orientation", "from-image")
         $("#bio3").html(data["t3bio"]);
-        $("#img3").attr("src", "../../../images/2025Headshots/fall/"+data["teacher3img"]+".jpg")
+        $("#img3").attr("src", "../../../images/2026Headshots/spring/"+data["teacher3img"]+".jpg")
     }
     if(data["teacher4"] != '') {
         $("#teacher4label").text(data["teacher4position"]);
@@ -72,7 +72,7 @@ function renderSite(res) {
         $("#teacher4email").text(data['teacher4email'])	
         $("#img4").css("image-orientation", "from-image")
         $("#bio4").html(data["t4bio"]);
-        $("#img4").attr("src", "../../../images/2025Headshots/fall/"+data["teacher4img"]+".jpg")
+        $("#img4").attr("src", "../../../images/2026Headshots/spring/"+data["teacher4img"]+".jpg")
     }
     getExif()
 }
@@ -82,8 +82,8 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        // url : "http://localhost:3000/class2025fall?id="+id,
-        url : "https://siliconvalleyyouth-current.herokuapp.com/class2025fall?id="+id,
+        // url : "http://localhost:3000/class2026spring?id="+id,
+        url : "https://siliconvalleyyouth-current.herokuapp.com/class2026spring?id="+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
