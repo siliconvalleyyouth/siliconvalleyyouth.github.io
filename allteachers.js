@@ -624,7 +624,11 @@ for (var m=0; m<12; m++) {
         var h2 = document.createElement('h2')
        
         card.className += " officer slideanim pastofficer "
-        img.setAttribute('src', 'images/teamphoto/' + imgurl)
+        var basePath = 'images/teamphoto/'
+        if (Teachers === Teachers2026) {
+            basePath = 'images/2026Headshots/spring/'
+        }
+        img.setAttribute('src', basePath + imgurl)
         div.className += " bio pastofficer "
         h2.innerHTML = Teachers[i].name
         
