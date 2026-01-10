@@ -103,6 +103,11 @@
           <input type="text" class="form-control" name="hearFrom" id="hearFrom" placeholder="Enter source you heard SVY from (ex: friends, flyer, Google Ads, etc.)" required>
       </div>
         <div class="form-group">
+            <label for="couponCode">Coupon Code</label>
+            <input type="text" class="form-control" name="couponCode" id="couponCode" placeholder="Enter coupon code (optional)">
+            <p id="couponStatus" style="margin-top: 6px;"></p>
+        </div>
+        <div class="form-group">
           <table>
             <tr>
               <td><input type="checkbox" class="form-check-input" id="photoconsent" value="yes" required></td>
@@ -120,6 +125,7 @@
             <div id="card-errors" role="alert" style="color:red"></div>
             <p id="classcost">The total class cost is calculated by multiplying the total number of sessions by $10 per each session.  Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session. Teachers will email you with more class details (Zoom link, class expectations, required materials, etc.) within 1 week of the first class date.</p>
             <h4 id = "costDisplay">Cost: Please Choose a Class</h4>
+            <p id="couponCalculation" style="font-weight: bold;"></p>
             <p id="stripeprocess">This payment is secured and processed by Stripe.  Please wait for a confirmation page before closing the tab. Thank You.</p>
             <br>
             <h4><b>Join the Wechat group!</b></h4><br>

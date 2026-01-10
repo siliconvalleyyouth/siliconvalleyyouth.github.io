@@ -74,7 +74,6 @@ function renderSite(res) {
         $("#bio4").html(data["t4bio"]);
         $("#img4").attr("src", "../../../images/2025Headshots/fall/"+data["teacher4img"]+".jpg")
     }
-    getExif()
 }
 $(document).ready(function() {
     var id = getParam("id");

@@ -60,7 +60,6 @@ function renderSite(res) {
         $("#img3").css("image-orientation", "from-image")
         $("#bio3").text(ta[0]["bio"])
     }
-    getExif()
 }
 $(document).ready(function() {
     var id = getParam("id");

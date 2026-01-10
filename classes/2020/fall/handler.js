@@ -50,7 +50,6 @@ function renderSite(res) {
         $("#bio3").text(data["t3bio"]);
         $("#img3").attr("src", "../../../images/Fall2020Headshots/"+data["teacher3img"]+".jpg")
     }
-    getExif()
 }
 $(document).ready(function() {
     var id = getParam("id");
