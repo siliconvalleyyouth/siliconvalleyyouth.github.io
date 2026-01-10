@@ -55,7 +55,6 @@ function renderSite(res) {
         $("#bio3").text(data["t3bio"]);
         $("#img3").attr("src", "../../../images/2021Headshots/Spring/"+data["teacher3img"]+".jpg")
     }
-    getExif()
 }
 $(document).ready(function() {
     var id = getParam("id");

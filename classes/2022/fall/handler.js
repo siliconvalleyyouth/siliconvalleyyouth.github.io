@@ -59,7 +59,6 @@ function renderSite(res) {
         $("#bio3").html(data["t3bio"]);
         $("#img3").attr("src", "../../../images/2022Headshots/Fall/"+data["teacher3img"]+".jpg")
     }
-    getExif()
 }
 $(document).ready(function() {
     var id = getParam("id");
