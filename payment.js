@@ -2,14 +2,19 @@ var classArray = classArray;
 // var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
 var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
+var serverBaseUrl = "https://siliconvalleyyouth-current.herokuapp.com";
 var id;
 var data;
+var basePrice = 0;
+var appliedCouponValue = 0;
+var couponCheckTimeout;
 
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
     formHandler();
     id = getParam("id")
     getData(id)
+    bindCouponField()
 });
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -35,7 +40,7 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : "https://siliconvalleyyouth-current.herokuapp.com/class2026spring?id="+id,
+        url : serverBaseUrl + "/class2026spring?id="+id,
         // Don't forget to change url to match teaching semester ^
         // url : "http://localhost:3000/class2026spring?id="+id,
         dataType: "json",
@@ -57,7 +62,8 @@ function createForm(res) {
     var className = data["classname"]
     var numClasses = data["numberclasses"]
     console.log("createForm:+"+className+",numClasses="+numClasses)
-    $("#costDisplay").text("$"+numClasses*10)
+    basePrice = Number(numClasses) * 10;
+    updateCostDisplay();
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").setAttribute('value', className);
     //sendEmail()
@@ -113,6 +119,9 @@ function stripeTokenHandler(token) {
             if (response == "Failed") {
                 alert("Payment failed, please check your credit card credentials or try again later.")
             }
+            if (response == "CouponInvalid") {
+                alert("Coupon expired or invalid. Please try another coupon.")
+            }
         }
     });
     return false;
@@ -126,4 +135,93 @@ function writeThankYou() {
     $("#classname2").html(data["classname"]);
 }
 
+function updateCostDisplay() {
+    var finalPrice = Math.max(basePrice - appliedCouponValue, 0);
+    if (appliedCouponValue > 0) {
+        $("#costDisplay").text("Final Cost: $" + finalPrice);
+        $("#couponCalculation").text("Calculation: $" + basePrice + " - $" + appliedCouponValue + " = $" + finalPrice);
+    } else {
+        $("#costDisplay").text("Cost: $" + basePrice);
+        $("#couponCalculation").text("");
+    }
+}
 
+function setCouponStatus(message, isValid) {
+    var status = $("#couponStatus");
+    status.text(message);
+    if (message) {
+        status.css("color", isValid ? "green" : "red");
+    }
+}
+
+function checkCoupon(code) {
+    if (!code) {
+        appliedCouponValue = 0;
+        setCouponStatus("", false);
+        updateCostDisplay();
+        return;
+    }
+    var studentEmail = $("#studentEmail").val().trim();
+    $.ajax({
+        type: "GET",
+        contentType: 'application/json',
+        url : serverBaseUrl + "/checkCoupon?code=" + encodeURIComponent(code) + "&studentEmail=" + encodeURIComponent(studentEmail),
+        dataType: "json",
+        success: function(res) {
+            if (res && res.valid) {
+                appliedCouponValue = Number(res.value) || 0;
+                setCouponStatus("Coupon applied: -$" + appliedCouponValue, true);
+            } else {
+                appliedCouponValue = 0;
+                if (res && res.reason === "student_used") {
+                    setCouponStatus("This student already used a coupon.", false);
+                } else {
+                    setCouponStatus("Coupon expired or invalid.", false);
+                }
+            }
+            updateCostDisplay();
+        },
+        error: function(err) {
+            console.log(err);
+            appliedCouponValue = 0;
+            setCouponStatus("Unable to validate coupon right now.", false);
+            updateCostDisplay();
+        }
+    })
+}
+
+function bindCouponField() {
+    var couponInput = $("#couponCode");
+    var studentEmailInput = $("#studentEmail");
+    if (!couponInput.length) {
+        return;
+    }
+    couponInput.on("input", function () {
+        var code = $(this).val().trim();
+        if (couponCheckTimeout) {
+            clearTimeout(couponCheckTimeout);
+        }
+        if (!code) {
+            appliedCouponValue = 0;
+            setCouponStatus("", false);
+            updateCostDisplay();
+            return;
+        }
+        couponCheckTimeout = setTimeout(function () {
+            checkCoupon(code);
+        }, 400);
+    });
+    if (studentEmailInput.length) {
+        studentEmailInput.on("input", function () {
+            var code = couponInput.val().trim();
+            if (code) {
+                if (couponCheckTimeout) {
+                    clearTimeout(couponCheckTimeout);
+                }
+                couponCheckTimeout = setTimeout(function () {
+                    checkCoupon(code);
+                }, 400);
+            }
+        });
+    }
+}
