@@ -247,18 +247,26 @@ function sports() {
 }
 
 
-document.getElementById("all").onclick = all;
-document.getElementById("ghs").onclick = ghs;
-document.getElementById("sfs").onclick = sfs;
-document.getElementById("mms").onclick = mms;
-document.getElementById("omei").onclick = omei;
-document.getElementById("dilw").onclick = dilworth;
-document.getElementById("palo").onclick = palo;
-document.getElementById("sara").onclick = sara;
-document.getElementById("all2").onclick = all2;
-document.getElementById("humanities").onclick = humanities;
-document.getElementById("stem").onclick = stem;
-document.getElementById("sports").onclick = sports;
+function bindClick(id, handler) {
+    var el = document.getElementById(id);
+    if (!el) {
+        return;
+    }
+    el.onclick = handler;
+}
+
+bindClick("all", all);
+bindClick("ghs", ghs);
+bindClick("sfs", sfs);
+bindClick("mms", mms);
+bindClick("omei", omei);
+bindClick("dilw", dilworth);
+bindClick("palo", palo);
+bindClick("sara", sara);
+bindClick("all2", all2);
+bindClick("humanities", humanities);
+bindClick("stem", stem);
+bindClick("sports", sports);
 
 
 
