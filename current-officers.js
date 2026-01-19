@@ -26,6 +26,7 @@ var Officers20252026 = [
     ["Jason Kuo","VP of Finance",""],
     ["Bryan Han","Webmaster",""],
     ["Anthony Zhou","Webmaster",""],
+    ["Minglang Du","Webmaster",""],
     ["Crystal Zhu","Site Director",""],
     ["Yashnil Mohanty","VP of Science/CS",""],
 	["Saria Lum", "VP of Media",""]
