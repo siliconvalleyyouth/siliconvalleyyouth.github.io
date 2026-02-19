@@ -28,7 +28,6 @@ var Officers20252026 = [
     ["Anthony Zhou","Webmaster",""],
     ["Minglang Du","Webmaster",""],
     ["Crystal Zhu","Site Director",""],
-	["Saria Lum", "VP of Media",""]
 ];	
 
 var container;
