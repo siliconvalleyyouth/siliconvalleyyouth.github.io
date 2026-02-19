@@ -35,7 +35,6 @@ var Teachers2026 = [
     {"name": "Minglang Du", "imgurl": "MinglangDu.jpg"},
     {"name": "Redger Xu", "imgurl": "RedgerXu.jpg"},
     {"name": "Samuel Ma", "imgurl": "SamuelMa.jpg"},
-    {"name": "Saria Lum", "imgurl": "SariaLum.jpg"},
     {"name": "Sean Wu", "imgurl": "SeanWu.jpg"},
     {"name": "Seabert Mao", "imgurl": "SeabertMao.jpg"},
     {"name": "Siddhanth Venkatesan", "imgurl": "SiddhanthVenkatesan.jpg"},
