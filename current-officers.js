@@ -18,7 +18,6 @@ var Officers20252026 = [
     ["Seabert Mao","EVP of Operations",""],
     ["Gabrielle He", "co-EVP of Academics", ""],
     ["Angela Li", "co-EVP of Academics", ""],
-    ["Lucas Lum","VP of Math",""],
     ["Kurn Sundaram","VP of Public Speaking and Debate",""],
     ["Archer Jin","VP of Events",""],
     ["Elliot Seo","VP of Learning and Development",""],
