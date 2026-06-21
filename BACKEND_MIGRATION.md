@@ -28,36 +28,6 @@ POST /api/payment/:year/:term?id=:id
 GET  /api/check-coupon/:year/:term
 ```
 
-The current-semester class list reads from the same backend and Master Sheet source:
-
-```txt
-GET /api/classes/2026/spring/list
-```
-
-The Master Sheet `publish_status` column controls current-semester visibility:
-
-```txt
-published  visible and registration open
-closed     visible as Full, registration blocked
-draft      hidden
-failed     hidden after backend validation failure
-```
-
-Draft previews use the generic URL prefix:
-
-```txt
-/draft/:year/:term/
-/draft/:year/:term/main.html?id=:selector
-```
-
-Example:
-
-```txt
-/draft/2026/fall/
-```
-
-The draft preview includes draft and failed classes and highlights `publish_error` values for review.
-
 Backend details live in:
 
 ```txt
