@@ -217,6 +217,29 @@ function latestDescription(profile, classes) {
     return String(SVYProfiles.description(profile.id || profile.name, "") || "").trim();
 }
 
+function latestEmail(profile, classes) {
+    var candidates = [];
+    for (var i = 0; i < classes.length; i++) {
+        var email = String(classes[i].email || "").trim();
+        if (!email) {
+            continue;
+        }
+        candidates.push({
+            year: String(classes[i].year || ""),
+            term: String(classes[i].term || "").toLowerCase(),
+            priority: 1,
+            email: email
+        });
+    }
+    candidates = candidates.filter(function(item) {
+        return item.email && item.year && item.term;
+    }).sort(compareTimelineTime);
+    if (candidates.length > 0) {
+        return candidates[candidates.length - 1].email;
+    }
+    return String(SVYProfiles.email(profile.id || profile.name, "") || "").trim();
+}
+
 function latestPhotoPath(profile, classes) {
     var fallback = SVYProfiles.imagePath(profile.id || profile.name);
     var candidates = [];
@@ -266,10 +289,28 @@ function renderSummary(profile, timelineItems, classes) {
     $("#profile-summary").text(latestDescription(profile, classes || []) || journeySummary(profile, timelineItems));
 }
 
+function renderEmail(profile, classes) {
+    var email = latestEmail(profile, classes || []);
+    var container = $("#profile-email");
+    if (!email) {
+        container.empty().hide();
+        return;
+    }
+    container
+        .html('<a href="mailto:' + escapeHtml(email) + '">' + escapeHtml(email) + "</a>")
+        .show();
+}
+
 function renderPhoto(profile, classes) {
     var fallback = SVYProfiles.imagePath(profile.id || profile.name);
     $("#profile-photo")
         .attr("src", latestPhotoPath(profile, classes || []))
+        .css("cursor", "pointer")
+        .attr("title", "View " + profile.name + "'s profile")
+        .off("click.profile")
+        .on("click.profile", function() {
+            window.location.href = SVYProfiles.profileUrl(profile.profileId || profile.id || profile.name);
+        })
         .off("error")
         .on("error", function() {
             if ($(this).attr("src") !== fallback) {
@@ -283,6 +324,7 @@ $(document).ready(function() {
     var profile = SVYProfiles.get(profileRef);
     $("#profile-name").text(profile.name);
     renderPhoto(profile, []);
+    renderEmail(profile, []);
 
     var config = window.SVY_CONFIG || {};
     var backendBaseUrl = config.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
@@ -295,11 +337,13 @@ $(document).ready(function() {
             var timelineItems = renderTimeline(profile, classes);
             renderPhoto(profile, classes);
             renderSummary(profile, timelineItems, classes);
+            renderEmail(profile, classes);
         },
         error: function() {
             var timelineItems = renderTimeline(profile, []);
             renderPhoto(profile, []);
             renderSummary(profile, timelineItems, []);
+            renderEmail(profile, []);
         }
     });
 });

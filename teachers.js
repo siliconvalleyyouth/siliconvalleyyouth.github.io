@@ -29,6 +29,8 @@ function renderTeacherCard(profileId, year) {
 
     var basePath = year === "2026" ? "images/2026Headshots/spring/" : "images/teamphoto/";
     img.setAttribute("src", SVYProfiles.imagePath(profile.profileId || profile.id, { basePath: basePath }));
+    img.setAttribute("title", "View " + profile.name + "'s profile");
+    img.style.cursor = "pointer";
     h2.innerHTML = '<a class="profile-link" href="' + SVYProfiles.profileUrl(profile.profileId || profile.id) + '">' + profile.name + "</a>";
     card.onclick = function() {
         window.location.href = SVYProfiles.profileUrl(profile.profileId || profile.id);

@@ -37,6 +37,7 @@ function renderSite(res) {
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").text(data["t1bio"]);
     $("#img1").attr("src", "../../../images/Summer2020Headshots/"+data["teacher1img"]+".jpg")
+    linkProfileImageElement("#img1", data["teacher1"] || data["name"]);
     if(data["isfull"] == 'yes') {
         $("#classFullText").css('display', 'block')
     }else {
@@ -50,6 +51,7 @@ function renderSite(res) {
         $("#img2").css("image-orientation", "from-image")
         $("#bio2").text(data["t2bio"]);
         $("#img2").attr("src", "../../../images/Summer2020Headshots/"+data["teacher2img"]+".jpg")
+        linkProfileImageElement("#img2", data["teacher2"]);
     }
     if(data["teacher3"] != '') {
         $("#teacher3label").text(data["teacher3position"]);
@@ -59,6 +61,7 @@ function renderSite(res) {
         $("#img3").css("image-orientation", "from-image")
         $("#bio3").text(data["t3bio"]);
         $("#img3").attr("src", "../../../images/Summer2020Headshots/"+data["teacher3img"]+".jpg")
+        linkProfileImageElement("#img3", data["teacher3"]);
     }
 }
 $(document).ready(function() {

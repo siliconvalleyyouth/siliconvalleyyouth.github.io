@@ -29,6 +29,16 @@
     line-height: 1.6;
 }
 
+.profile-header .profile-email {
+    margin: 0 0 14px;
+    font-size: 16px;
+}
+
+.profile-email a {
+    color: #9d1c1c;
+    text-decoration: underline;
+}
+
 .profile-section {
     margin-top: 40px;
 }

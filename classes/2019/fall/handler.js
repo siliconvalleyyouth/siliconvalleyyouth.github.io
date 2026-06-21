@@ -25,6 +25,7 @@ function renderSite(res) {
     var photoId = data["photoid"] || "";
     if(photoId) {
         $("#img1").attr("src","../../../images/2019fall/"+photoId.substring(0,5)+".jpg");
+        linkProfileImageElement("#img1", data["name"]);
     }
     $("#title").text(data["classname"]);
     $("#class-name").text(data["classname"]);

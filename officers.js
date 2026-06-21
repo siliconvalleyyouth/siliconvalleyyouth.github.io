@@ -822,6 +822,7 @@ function renderOfficerCard(row, columnClass) {
     var profile = SVYProfiles.get(row.profileId);
     var column = document.createElement("div");
     var card = document.createElement("div");
+    var imageLink = document.createElement("a");
     var img = document.createElement("img");
     var div = document.createElement("div");
     var h2 = document.createElement("h2");
@@ -834,13 +835,20 @@ function renderOfficerCard(row, columnClass) {
     } else {
         div.className = "bio";
     }
+    imageLink.href = SVYProfiles.profileUrl(row.profileId);
+    imageLink.className = "profile-image-link";
+    imageLink.onclick = function(event) {
+        event.stopPropagation();
+    };
     img.setAttribute("src", SVYProfiles.imagePath(row.profileId));
+    img.setAttribute("title", "View " + profile.name + "'s profile");
     h2.innerHTML = '<a class="profile-link" href="' + SVYProfiles.profileUrl(row.profileId) + '">' + profile.name + '</a>';
     h4.innerHTML = row.role || "";
     div.appendChild(h2);
     div.appendChild(h4);
     card.onclick = makeOpenBioCallback(row.profileId, row.role || "", row.description || "");
-    card.appendChild(img);
+    imageLink.appendChild(img);
+    card.appendChild(imageLink);
     card.appendChild(div);
     column.appendChild(card);
     return column;
@@ -909,9 +917,15 @@ function hydrateStaticProfileCards() {
             return;
         }
         var profile = SVYProfiles.get(name);
-        card.find("img").first().attr("src", SVYProfiles.imagePath(profile.id || name));
-        card.find(".bio h2").first().html('<a class="profile-link" href="' + SVYProfiles.profileUrl(profile.id || name) + '">' + profile.name + '</a>');
-        card.off("click.profile").on("click.profile", makeOpenBioCallback(profile.id || name, position, ""));
+        var profileRef = profile.id || name;
+        card.find("img").first().attr("src", SVYProfiles.imagePath(profileRef)).css("cursor", "pointer").attr("title", "View " + profile.name + "'s profile");
+        card.find("img").first().off("click.profile").on("click.profile", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            window.location.href = SVYProfiles.profileUrl(profileRef);
+        });
+        card.find(".bio h2").first().html('<a class="profile-link" href="' + SVYProfiles.profileUrl(profileRef) + '">' + profile.name + '</a>');
+        card.off("click.profile").on("click.profile", makeOpenBioCallback(profileRef, position, ""));
     });
 }
 

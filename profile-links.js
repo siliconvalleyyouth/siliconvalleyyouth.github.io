@@ -21,3 +21,19 @@ function linkProfileElement(selector, name) {
     var link = $("<a></a>").attr("href", profileUrlForName(cleanName)).text(cleanName);
     $(selector).empty().append(link);
 }
+
+function linkProfileImageElement(selector, name) {
+    var cleanName = String(name || "").trim();
+    if (!cleanName || !$(selector).length) {
+        return;
+    }
+    $(selector)
+        .css("cursor", "pointer")
+        .attr("title", "View " + cleanName + "'s profile")
+        .off("click.profile")
+        .on("click.profile", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            window.location.href = profileUrlForName(cleanName);
+        });
+}
