@@ -246,6 +246,96 @@ function sports() {
     selectClass(loc, "sports");
 }
 
+var currentClassesApi = "https://siliconvalleyyouth.herokuapp.com/api/classes/2026/spring/list";
+
+function normalizeClassCategory(category) {
+    var value = (category || "Classes").toLowerCase();
+    if (value.indexOf("math") >= 0 || value.indexOf("science") >= 0 || value.indexOf("computer") >= 0 || value.indexOf("stem") >= 0 || value.indexOf("coding") >= 0) {
+        return "stem";
+    }
+    if (value.indexOf("sport") >= 0) {
+        return "sports";
+    }
+    if (value.indexOf("human") >= 0 || value.indexOf("history") >= 0 || value.indexOf("writing") >= 0 || value.indexOf("speech") >= 0 || value.indexOf("debate") >= 0) {
+        return "Humanities";
+    }
+    return "all";
+}
+
+function isClosedClass(classInfo) {
+    var publishStatus = (classInfo.publish_status || "").toLowerCase();
+    var status = (classInfo.status || "").toLowerCase();
+    return publishStatus === "closed" || status === "full" || status === "closed";
+}
+
+function escapeHtml(value) {
+    return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function renderCurrentClassList(res) {
+    var container = $("#spring26-class-list");
+    if (!container.length || !res || !res.classes) {
+        return;
+    }
+    var html = "";
+    html += "<p><i>Note: All times are Pacific Time</i></p>";
+    html += "<p><i>Note: All courses with * are in person classes. Location is listed on the course description page.</i></p>";
+
+    var grouped = {};
+    var order = [];
+    for (var i = 0; i < res.classes.length; i++) {
+        var classInfo = res.classes[i];
+        var category = classInfo.category || "Classes";
+        if (!grouped[category]) {
+            grouped[category] = [];
+            order.push(category);
+        }
+        grouped[category].push(classInfo);
+    }
+
+    for (var j = 0; j < order.length; j++) {
+        var groupName = order[j];
+        html += "<h3>" + escapeHtml(groupName) + ":</h3>";
+        for (var k = 0; k < grouped[groupName].length; k++) {
+            var item = grouped[groupName][k];
+            var id = item.selector + "-spring-2026";
+            html += "<li id=\"" + escapeHtml(id) + "\"><a href=\"" + escapeHtml(item.url) + "\">" + escapeHtml(item.title);
+            if (isClosedClass(item)) {
+                html += "<span class=\"full\">Full</span>";
+            }
+            html += "</a></li>";
+        }
+    }
+    container.html(html);
+
+    classes = classes.filter(function(classEntry) {
+        return !classEntry[3] || classEntry[3] !== "spring-2026";
+    });
+    for (var m = 0; m < res.classes.length; m++) {
+        classes.push(["all", normalizeClassCategory(res.classes[m].category), $("#" + res.classes[m].selector + "-spring-2026"), "spring-2026"]);
+    }
+}
+
+function loadCurrentClassList() {
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        url: currentClassesApi,
+        dataType: "json",
+        success: renderCurrentClassList,
+        error: function() {
+            $("#spring26-class-list").append("<p><i>Current class list is temporarily unavailable. Please refresh this page later.</i></p>");
+        }
+    });
+}
+
+$(document).ready(loadCurrentClassList);
+
 
 function bindClick(id, handler) {
     var el = document.getElementById(id);
