@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $(".navcontainer").empty()
   $(".navcontainer").load("/navbar.html", addDropdown)
+  updateCopyrightYear()
   slideAnim()
   $("#abt").on('click', function(){
         $("#dropdown").slideToggle(250)
@@ -11,6 +12,11 @@ $(document).ready(function() {
         return false
     })
 })
+
+updateCopyrightYear = () => {
+  const currentYear = new Date().getFullYear()
+  $("#copyright p").html("&#169; 2015-" + currentYear + ". Silicon Valley Youth")
+}
 
 addDropdown = () => {
   $("#abt").on('click', function(){
@@ -217,6 +223,5 @@ $("#mainnav").html("<li class=\"navig\"><a href=\"https://www.siliconvalleyyouth
 //getting rid of contact link
 
 $("#footerlinks").html("<a href=\"/team.html\">Our Team</a> <a href=\"/donate.html\">Donate</a> <a href=\"/mission.html\">Mission</a>");
-
 
 
