@@ -237,7 +237,10 @@ function latestEmail(profile, classes) {
     if (candidates.length > 0) {
         return candidates[candidates.length - 1].email;
     }
-    return String(SVYProfiles.email(profile.id || profile.name, "") || "").trim();
+    if (SVYProfiles.email) {
+        return String(SVYProfiles.email(profile.id || profile.name, "") || "").trim();
+    }
+    return String(profile.email || "").trim();
 }
 
 function latestPhotoPath(profile, classes) {
