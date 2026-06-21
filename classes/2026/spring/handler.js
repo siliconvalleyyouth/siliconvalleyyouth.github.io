@@ -33,10 +33,12 @@ function renderSite(res) {
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").html(data["t1bio"]);
     $("#img1").attr("src", "../../../images/2026Headshots/spring/"+data["teacher1img"]+".jpg")
-    if(data["status"] == 'closed') {
+    var publishStatus = (data["publish_status"] || "").toLowerCase();
+    var legacyStatus = (data["status"] || "").toLowerCase();
+    if(legacyStatus == 'closed') {
         $("#registrationEnd").css('display', 'block');
     }    
-    else if(data["status"] == 'full') {
+    else if(legacyStatus == 'full' || publishStatus == 'closed') {
         $("#classFullText").css('display', 'block');
         $("#waitlist").attr("href", waitlist);    
     }else {
