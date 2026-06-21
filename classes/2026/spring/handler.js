@@ -1,4 +1,13 @@
 var teachers;
+var svyConfig = window.SVY_CONFIG || {};
+var activeSemester = svyConfig.activeSemester || {
+    year: "2026",
+    term: "spring",
+    headshotPath: "images/2026Headshots/spring"
+};
+var backendBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
+var publicSiteBaseUrl = svyConfig.publicSiteBaseUrl || "https://www.siliconvalleyyouth.com";
+var headshotBasePath = "../../../" + activeSemester.headshotPath.replace(/^\/+/, "");
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results==null){
@@ -38,7 +47,7 @@ function renderSite(res) {
     $("#teacher1").text(data["teacher1"]);
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").html(data["t1bio"]);
-    $("#img1").attr("src", "../../../images/2026Headshots/spring/"+data["teacher1img"]+".jpg")
+    $("#img1").attr("src", headshotBasePath + "/" + data["teacher1img"] + ".jpg")
     var publishStatus = (data["publish_status"] || "").toLowerCase();
     var legacyStatus = (data["status"] || "").toLowerCase();
     if(legacyStatus == 'closed') {
@@ -49,7 +58,7 @@ function renderSite(res) {
         $("#waitlist").attr("href", waitlist);    
     }else {
 	$("#signupText").css('display', 'block')
-        $("#signup").attr("href", "https://www.siliconvalleyyouth.com/payment.html?year=2026&term=spring&id=" + getParam("id"));
+        $("#signup").attr("href", publicSiteBaseUrl + "/payment.html?year=" + activeSemester.year + "&term=" + activeSemester.term + "&id=" + getParam("id"));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
@@ -57,7 +66,7 @@ function renderSite(res) {
         $("#teacher2email").text(data['teacher2email'])
         $("#img2").css("image-orientation", "from-image")
         $("#bio2").html(data["t2bio"]);
-        $("#img2").attr("src", "../../../images/2026Headshots/spring/"+data["teacher2img"]+".jpg")
+        $("#img2").attr("src", headshotBasePath + "/" + data["teacher2img"] + ".jpg")
     }
     if(data["teacher3"] != '') {
         $("#teacher3label").text(data["teacher3position"]);
@@ -65,7 +74,7 @@ function renderSite(res) {
         $("#teacher3email").text(data['teacher3email'])	
         $("#img3").css("image-orientation", "from-image")
         $("#bio3").html(data["t3bio"]);
-        $("#img3").attr("src", "../../../images/2026Headshots/spring/"+data["teacher3img"]+".jpg")
+        $("#img3").attr("src", headshotBasePath + "/" + data["teacher3img"] + ".jpg")
     }
     if(data["teacher4"] != '') {
         $("#teacher4label").text(data["teacher4position"]);
@@ -73,7 +82,7 @@ function renderSite(res) {
         $("#teacher4email").text(data['teacher4email'])	
         $("#img4").css("image-orientation", "from-image")
         $("#bio4").html(data["t4bio"]);
-        $("#img4").attr("src", "../../../images/2026Headshots/spring/"+data["teacher4img"]+".jpg")
+        $("#img4").attr("src", headshotBasePath + "/" + data["teacher4img"] + ".jpg")
     }
 }
 $(document).ready(function() {
@@ -82,8 +91,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        // url : "http://localhost:3000/api/classes/2026/spring/"+id,
-        url : "https://siliconvalleyyouth.herokuapp.com/api/classes/2026/spring/"+id,
+        url : backendBaseUrl + "/api/classes/" + activeSemester.year + "/" + activeSemester.term + "/" + id,
         dataType: "json",
         success: function(res) {
             console.log("success")

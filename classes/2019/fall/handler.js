@@ -1,4 +1,14 @@
 var teachers;
+
+function disableArchivedRegistration() {
+    $("#signupText,#signupTextFree,#signupTextFree2").css('display', 'none');
+    $("#signup,#signuppaid,#signupfree,#signupLink").removeAttr("href").off("click.archived").on("click.archived", function(event) {
+        event.preventDefault();
+    });
+    if ($("#registrationEnd").length) {
+        $("#registrationEnd").css('display', 'block');
+    }
+}
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results==null){
@@ -15,7 +25,6 @@ function renderSite(res) {
         console.log("closed")
         $("#signupText").text("SIGNUPS ARE CLOSED")
     }else {
-        $("#signupLink").attr("href", "/payment.html?id=" + getParam("id"))
     }
     var raw_data = res["data"];
     console.log("renderSite: rawdata="+JSON.stringify(raw_data));
@@ -71,7 +80,8 @@ $(document).ready(function() {
         dataType: "json",
         success: function(res) {
             console.log("success")
-            renderSite(res)
+            renderSite(res);
+            disableArchivedRegistration()
         }
     })
 })

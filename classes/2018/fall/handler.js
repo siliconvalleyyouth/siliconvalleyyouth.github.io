@@ -1,3 +1,14 @@
+
+function disableArchivedRegistration() {
+    $("#signupText,#signupTextFree,#signupTextFree2").css('display', 'none');
+    $("#signup,#signuppaid,#signupfree,#signupLink").removeAttr("href").off("click.archived").on("click.archived", function(event) {
+        event.preventDefault();
+    });
+    if ($("#registrationEnd").length) {
+        $("#registrationEnd").css('display', 'block');
+    }
+}
+
 classes = mapClasses;
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);

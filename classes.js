@@ -1,5 +1,15 @@
 var loc = "all";
 var sub = "all";
+var svyConfig = window.SVY_CONFIG || {};
+var activeSemester = svyConfig.activeSemester || {
+    year: "2026",
+    term: "spring",
+    displayName: "Spring 2026",
+    tabId: "spring26-tab",
+    listContainerId: "spring26-class-list",
+    filterTag: "spring-2026"
+};
+var backendBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
 
 /*Data for class select function*/
 var classes = [
@@ -246,7 +256,7 @@ function sports() {
     selectClass(loc, "sports");
 }
 
-var currentClassesApi = "https://siliconvalleyyouth.herokuapp.com/api/classes/2026/spring/list";
+var currentClassesApi = backendBaseUrl + "/api/classes/" + activeSemester.year + "/" + activeSemester.term + "/list";
 
 function normalizeClassCategory(category) {
     var value = (category || "Classes").toLowerCase();
@@ -287,7 +297,7 @@ function escapeHtml(value) {
 }
 
 function renderCurrentClassList(res) {
-    var container = $("#spring26-class-list");
+    var container = $("#" + activeSemester.listContainerId);
     if (!container.length || !res || !res.classes) {
         return;
     }
@@ -311,7 +321,7 @@ function renderCurrentClassList(res) {
         html += "<h3>" + escapeHtml(groupName) + ":</h3>";
         for (var k = 0; k < grouped[groupName].length; k++) {
             var item = grouped[groupName][k];
-            var id = item.selector + "-spring-2026";
+            var id = item.selector + "-" + activeSemester.filterTag;
             html += "<li id=\"" + escapeHtml(id) + "\"><a href=\"" + escapeHtml(item.url) + "\">" + escapeHtml(displayClassTitle(item));
             if (isInPersonClass(item)) {
                 html += "<span class=\"inperson\">In Person</span>";
@@ -325,14 +335,17 @@ function renderCurrentClassList(res) {
     container.html(html);
 
     classes = classes.filter(function(classEntry) {
-        return !classEntry[3] || classEntry[3] !== "spring-2026";
+        return !classEntry[3] || classEntry[3] !== activeSemester.filterTag;
     });
     for (var m = 0; m < res.classes.length; m++) {
-        classes.push(["all", normalizeClassCategory(res.classes[m].category), $("#" + res.classes[m].selector + "-spring-2026"), "spring-2026"]);
+        classes.push(["all", normalizeClassCategory(res.classes[m].category), $("#" + res.classes[m].selector + "-" + activeSemester.filterTag), activeSemester.filterTag]);
     }
 }
 
 function loadCurrentClassList() {
+    if (activeSemester.tabId && activeSemester.displayName) {
+        $("#" + activeSemester.tabId).text(activeSemester.displayName);
+    }
     $.ajax({
         type: "GET",
         contentType: "application/json",
@@ -340,7 +353,7 @@ function loadCurrentClassList() {
         dataType: "json",
         success: renderCurrentClassList,
         error: function() {
-            $("#spring26-class-list").append("<p><i>Current class list is temporarily unavailable. Please refresh this page later.</i></p>");
+            $("#" + activeSemester.listContainerId).append("<p><i>Current class list is temporarily unavailable. Please refresh this page later.</i></p>");
         }
     });
 }
@@ -368,54 +381,3 @@ bindClick("all2", all2);
 bindClick("humanities", humanities);
 bindClick("stem", stem);
 bindClick("sports", sports);
-
-
-
-
-
-/*var notgunn = [$("#bus-spr-2017"), $("#ce-spr-2017"), $("#gram-spr-2017"), $("#ushist-spr-2017"), $("#ushist2-spr-2017"), $("#world-spr-2017"), $("#webd1-spr-2017"), $("#science-spr-2017"), $("#taichi-spr-2017"), $("#bball-spr-2017")];
-var notsfs = [$("#bus-spr-2017"), $("#deb-spr-2017"), $("#ce-spr-2017"), $("#gram-spr-2017"), $("#ushist-spr-2017"), $("#ushist2-spr-2017"), $("#world-spr-2017"), $("#taichi-spr-2017"), $("#bball-spr-2017"), $("#advmath-spr-2017"), $("#java-spr-2017"), $("#webd1-spr-2017"), $("#science-spr-2017"), $("#webd2-spr-2017")];
-
-
-var notstem = [$("#bus-spr-2017"), $("#deb-spr-2017"), $("#ce-spr-2017"), $("#gram-spr-2017"), $("#ushist-spr-2017"), $("#ushist2-spr-2017"), $("#world-spr-2017"), $("#taichi-spr-2017"), $("#bball-spr-2017")];
-var nothuman = [$("#advmath-spr-2017"), $("#java-spr-2017"), $("#webd1-spr-2017"), $("#science-spr-2017"), $("#webd2-spr-2017"), $("#taichi-spr-2017"), $("#bball-spr-2017")];
-var notsports = [$("#bus-spr-2017"), $("#deb-spr-2017"), $("#ce-spr-2017"), $("#gram-spr-2017"), $("#ushist-spr-2017"), $("#ushist2-spr-2017"), $("#world-spr-2017"), $("#advmath-spr-2017"), $("#java-spr-2017"), $("#webd1-spr-2017"), $("#science-spr-2017"), $("#webd2-spr-2017")];
-
-function sort() {
-    if(loc == "all") {
-        for(var i=0; i<classes.length; i++) {
-
-            }
-        sortByCat();
-    } else if(loc == "gunn") {
-        for(var i=0; i<notgunn.length; i++) {
-                notgunn[i].hide();
-            }
-        sortByCat();
-    } else if(loc == "saratoga") {
-        for(var i=0; i<notsfs.length; i++) {
-                notsfs[i].hide();
-            }
-        sortByCat();
-    }
-}
-
-function sortByCat() {
-        if(sub == "all") {
-            for(var i=0; i<classes.length; i++) {
-
-            }
-        } else if(sub == "humanities") {
-            for(var i=0; i<nothuman.length; i++) {
-                nothuman[i].hide();
-            }
-        } else if(sub == "stem") {
-            for(var i=0; i<notstem.length; i++) {
-                notstem[i].hide();
-            }
-        } else if(sub == "sports") {
-            for(var i=0; i<notsports.length; i++) {
-                notsports[i].hide();
-            }  
-        }
-}*/

@@ -12,7 +12,7 @@ Do not point frontend code to:
 https://siliconvalleyyouth-current.herokuapp.com
 ```
 
-The active semester is `2026 spring`.
+The active semester is configured in `site-config.js`. It is currently `2026 spring`.
 
 Class detail pages should include semester context when linking to payment:
 
@@ -28,7 +28,7 @@ POST /api/payment/:year/:term?id=:id
 GET  /api/check-coupon/:year/:term
 ```
 
-The current-semester class list reads from the same backend and Master Sheet source:
+The current-semester class list reads from the same backend and Master Sheet source. The exact year/term comes from `site-config.js`:
 
 ```txt
 GET /api/classes/2026/spring/list

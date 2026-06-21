@@ -2,7 +2,9 @@ var classArray = classArray;
 // var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
 var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
-var serverBaseUrl = "https://siliconvalleyyouth.herokuapp.com";
+var svyConfig = window.SVY_CONFIG || {};
+var activeSemester = svyConfig.activeSemester || { year: "2026", term: "spring", classPrice: 10 };
+var serverBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
 var id;
 var year;
 var term;
@@ -15,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
     formHandler();
     id = getParam("id");
-    year = getParam("year") || "2026";
-    term = (getParam("term") || "spring").toLowerCase();
+    year = getParam("year") || activeSemester.year;
+    term = (getParam("term") || activeSemester.term).toLowerCase();
     $("#payment-form").attr("action", serverBaseUrl + "/api/payment/" + year + "/" + term);
     getData(id);
     bindCouponField();
@@ -66,7 +68,7 @@ function createForm(res) {
     var className = data["classname"]
     var numClasses = data["numberclasses"]
     console.log("createForm:+"+className+",numClasses="+numClasses)
-    basePrice = Number(numClasses) * 10;
+    basePrice = Number(numClasses) * Number(activeSemester.classPrice || 10);
     updateCostDisplay();
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").attr('value', className);

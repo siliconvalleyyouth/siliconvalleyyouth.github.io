@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $(".navcontainer").empty()
   $(".navcontainer").load("/navbar.html", addDropdown)
+  updateCurrentClassesLink()
   updateCopyrightYear()
   slideAnim()
   $("#abt").on('click', function(){
@@ -16,6 +17,15 @@ $(document).ready(function() {
 updateCopyrightYear = () => {
   const currentYear = new Date().getFullYear()
   $("#copyright p").html("&#169; 2015-" + currentYear + ". Silicon Valley Youth")
+}
+
+updateCurrentClassesLink = () => {
+  const config = window.SVY_CONFIG || {}
+  const semester = config.activeSemester
+  if (!semester || !semester.displayName) {
+    return
+  }
+  $("#current-classes-link").html(semester.displayName + ' Classes <i class="fas fa-angle-double-right"></i>')
 }
 
 addDropdown = () => {
@@ -223,5 +233,4 @@ $("#mainnav").html("<li class=\"navig\"><a href=\"https://www.siliconvalleyyouth
 //getting rid of contact link
 
 $("#footerlinks").html("<a href=\"/team.html\">Our Team</a> <a href=\"/donate.html\">Donate</a> <a href=\"/mission.html\">Mission</a>");
-
 
