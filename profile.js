@@ -162,11 +162,12 @@ function renderTimeline(profile, classes) {
         return items;
     }
 
-    for (var i = 0; i < items.length; i++) {
-        var roles = items[i].officerRoles.concat(items[i].classRoles);
+    var displayItems = items.slice().reverse();
+    for (var i = 0; i < displayItems.length; i++) {
+        var roles = displayItems[i].officerRoles.concat(displayItems[i].classRoles);
         container.append(
             '<div class="timeline-item">' +
-                "<h3>" + timelineLabel(items[i].year, items[i].term) + "</h3>" +
+                "<h3>" + timelineLabel(displayItems[i].year, displayItems[i].term) + "</h3>" +
                 "<p>" + roles.join(" & ") + "</p>" +
             "</div>"
         );
