@@ -58,8 +58,8 @@ Example:
 
 The draft preview includes draft and failed classes and highlights `publish_error` values for review.
 
-Backend details live in:
+Backend details live in the canonical backend repository:
 
 ```txt
-../siliconvalleyyouth/MIGRATION.md
+siliconvalleyyouth / MIGRATION.md
 ```
