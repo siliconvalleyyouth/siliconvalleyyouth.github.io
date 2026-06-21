@@ -2,8 +2,10 @@ var classArray = classArray;
 // var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
 var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
-var serverBaseUrl = "https://siliconvalleyyouth-current.herokuapp.com";
+var serverBaseUrl = "https://siliconvalleyyouth.herokuapp.com";
 var id;
+var year;
+var term;
 var data;
 var basePrice = 0;
 var appliedCouponValue = 0;
@@ -12,9 +14,12 @@ var couponCheckTimeout;
 document.addEventListener("DOMContentLoaded", function (event) {
     createElements();
     formHandler();
-    id = getParam("id")
-    getData(id)
-    bindCouponField()
+    id = getParam("id");
+    year = getParam("year") || "2026";
+    term = (getParam("term") || "spring").toLowerCase();
+    $("#payment-form").attr("action", serverBaseUrl + "/api/payment/" + year + "/" + term);
+    getData(id);
+    bindCouponField();
 });
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -23,7 +28,7 @@ function getParam(name){
        return null;
     }
     else{
-        final_result = decodeURI(results[1]) || 0;
+        var final_result = decodeURI(results[1]) || 0;
         console.log("payment.getParam: final_result="+final_result);
         return final_result;
     }
@@ -40,9 +45,8 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : serverBaseUrl + "/class2026spring?id="+id,
-        // Don't forget to change url to match teaching semester ^
-        // url : "http://localhost:3000/class2026spring?id="+id,
+        url : serverBaseUrl + "/api/classes/" + year + "/" + term + "/" + id,
+        // url : "http://localhost:3000/api/classes/" + year + "/" + term + "/" + id,
         dataType: "json",
         success: function(res) {
             console.log("success")
@@ -57,7 +61,7 @@ function getData(id) {
 function createForm(res) {
     var raw_data = res["data"]
     // var data = raw_data[0]
-    var data = JSON.parse(raw_data);
+    data = JSON.parse(raw_data);
     console.log(data)
     var className = data["classname"]
     var numClasses = data["numberclasses"]
@@ -65,7 +69,7 @@ function createForm(res) {
     basePrice = Number(numClasses) * 10;
     updateCostDisplay();
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
-    $("#className").setAttribute('value', className);
+    $("#className").attr('value', className);
     //sendEmail()
 }
 
@@ -165,7 +169,7 @@ function checkCoupon(code) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : serverBaseUrl + "/checkCoupon?code=" + encodeURIComponent(code) + "&studentEmail=" + encodeURIComponent(studentEmail),
+        url : serverBaseUrl + "/api/check-coupon/" + year + "/" + term + "?code=" + encodeURIComponent(code) + "&studentEmail=" + encodeURIComponent(studentEmail),
         dataType: "json",
         success: function(res) {
             if (res && res.valid) {

@@ -35,7 +35,7 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : "https://siliconvalleyyouth-current.herokuapp.com/class2025fall?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/class2025fall?id="+id,
         // Don't forget to change url to match teaching semester ^
         // url : "http://localhost:3000/class2020spring?id="+id,
         dataType: "json",
@@ -59,7 +59,7 @@ function createForm(res) {
     console.log("createForm:+"+className+",numClasses="+numClasses)
     $("#costDisplay").text("$0")
     $("#classTitle").text("Registration for "+ className + " at " + data["location"] + " on " + data["time"])
-    $("#className").setAttribute('value', className);
+    $("#className").attr('value', className);
     //sendEmail()
 }
 

@@ -41,7 +41,7 @@ function renderSite(res) {
         $("#waitlist").attr("href", waitlist);    
     }else {
 	$("#signupText").css('display', 'block')
-        $("#signup").attr("href", "https://www.siliconvalleyyouth.com/payment.html?id=" + getParam("id"));
+        $("#signup").attr("href", "https://www.siliconvalleyyouth.com/payment.html?year=2026&term=spring&id=" + getParam("id"));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
@@ -74,8 +74,8 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        // url : "http://localhost:3000/class2026spring?id="+id,
-        url : "https://siliconvalleyyouth-current.herokuapp.com/class2026spring?id="+id,
+        // url : "http://localhost:3000/api/classes/2026/spring/"+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/api/classes/2026/spring/"+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
