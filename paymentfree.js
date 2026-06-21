@@ -3,12 +3,16 @@ var classArray = classArray;
 // var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 // var elements = stripe.elements();
 var id;
+var year;
+var term;
 var data;
 
 document.addEventListener("DOMContentLoaded", function (event) {
     // createElements();
     formHandler();
     id = getParam("id")
+    year = getParam("year") || "2025";
+    term = (getParam("term") || "fall").toLowerCase();
     getData(id)
 });
 function getParam(name){
@@ -35,9 +39,7 @@ function getData(id) {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        url : "https://siliconvalleyyouth.herokuapp.com/class2025fall?id="+id,
-        // Don't forget to change url to match teaching semester ^
-        // url : "http://localhost:3000/class2020spring?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/api/classes/"+year+"/"+term+"/"+id,
         dataType: "json",
         success: function(res) {
             console.log("success")

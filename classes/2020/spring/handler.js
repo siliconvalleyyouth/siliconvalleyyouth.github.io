@@ -65,8 +65,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        // url : "http://localhost:3000/class2020spring?id="+id,
-        url : "https://siliconvalleyyouth.herokuapp.com/class2020spring?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/api/classes/2020/spring/"+id,
         dataType: "json",
         success: function(res) {
             console.log("success")

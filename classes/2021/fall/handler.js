@@ -75,8 +75,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         contentType: 'application/json',
-        //url : "http://localhost:3000/class2021fall?id="+id,
-        url : "https://siliconvalleyyouth.herokuapp.com/class2021fall?id="+id,
+        url : "https://siliconvalleyyouth.herokuapp.com/api/classes/2021/fall/"+id,
         dataType: "json",
         success: function(res) {
             console.log("success")
