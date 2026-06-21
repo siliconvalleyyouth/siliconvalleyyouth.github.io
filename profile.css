@@ -57,31 +57,9 @@
     line-height: 1.5;
 }
 
-.profile-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 16px;
-}
-
-.profile-card {
-    border: 1px solid #ddd;
-    padding: 18px;
-    min-height: 160px;
-}
-
-.profile-card h3 {
-    margin: 0 0 8px;
-    font-size: 18px;
-}
-
-.profile-card p {
-    margin: 4px 0;
-    line-height: 1.4;
-}
-
-.profile-card a {
-    display: inline-block;
-    margin-top: 10px;
+.timeline-item a {
+    color: #9d1c1c;
+    text-decoration: underline;
 }
 
 @media (max-width: 700px) {
