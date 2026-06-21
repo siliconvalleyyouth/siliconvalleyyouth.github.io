@@ -27,7 +27,7 @@ function renderTeacherCard(profileId, year) {
     card.className = "officer slideanim pastofficer";
     div.className = "bio pastofficer";
 
-    var basePath = year === "2026" ? "images/2026Headshots/spring/" : "images/teamphoto/";
+    var basePath = year === "2026" ? "images/2026Headshots/spring/" : "images/team/";
     img.setAttribute("src", SVYProfiles.imagePath(profile.profileId || profile.id, { basePath: basePath }));
     img.setAttribute("title", "View " + profile.name + "'s profile");
     img.style.cursor = "pointer";
