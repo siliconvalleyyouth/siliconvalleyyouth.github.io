@@ -1,6 +1,87 @@
-var ACTIVE_OFFICER_TERM = "2025-2026";
+var ACTIVE_OFFICER_TERM = "2026-2027";
 
 var SVY_OFFICER_TERMS = [
+    {
+        "id": "2026-2027",
+        "label": "Officers 2026-2027",
+        "officers": [
+            {
+                "profileId": "seabert-mao",
+                "role": "Co-President",
+                "description": ""
+            },
+            {
+                "profileId": "gabrielle-he",
+                "role": "Co-President",
+                "description": ""
+            },
+            {
+                "profileId": "bryan-han",
+                "role": "EVP of Operations, VP of Finance",
+                "description": ""
+            },
+            {
+                "profileId": "jason-kuo",
+                "role": "EVP of Academics",
+                "description": ""
+            },
+            {
+                "profileId": "minglang-du",
+                "role": "VP of Technology",
+                "description": ""
+            },
+            {
+                "profileId": "anthony-zhou",
+                "role": "VP of Technology",
+                "description": ""
+            },
+            {
+                "profileId": "ambrose-wang",
+                "role": "VP of Teacher Development",
+                "description": ""
+            },
+            {
+                "profileId": "bhuvi-tawari",
+                "role": "VP of Outreach (Interim)",
+                "description": ""
+            },
+            {
+                "profileId": "maggie-dong",
+                "role": "VP of Media (Interim)",
+                "description": ""
+            },
+            {
+                "profileId": "hannah-hu",
+                "role": "VP of Events (Interim)",
+                "description": ""
+            },
+            {
+                "profileId": "aiden-lin",
+                "role": "Site Director",
+                "description": ""
+            },
+            {
+                "profileId": "emily-yang",
+                "role": "VP of Humanities (Interim)",
+                "description": ""
+            },
+            {
+                "profileId": "brandon-lin",
+                "role": "VP of STEM",
+                "description": ""
+            },
+            {
+                "profileId": "jason-rong",
+                "role": "VP of PSD (Interim)",
+                "description": ""
+            },
+            {
+                "profileId": "yutong-qiu",
+                "role": "VP of Math (Interim)",
+                "description": ""
+            }
+        ]
+    },
     {
         "id": "2025-2026",
         "label": "Officers 2025-2026",
