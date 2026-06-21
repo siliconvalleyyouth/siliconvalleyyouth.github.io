@@ -28,6 +28,12 @@ function renderSite(res) {
     $("#dates").html("<strong>Dates: </strong>"+data["dates"]);
     $("#time").html("<strong>Time: </strong>"+data["time"]);
 	$("#location").html("<strong>Location: </strong>"+data["location"]);
+    var classLocation = (data["location"] || "").toLowerCase();
+    if(classLocation !== "" && classLocation.indexOf("online") < 0) {
+        $("#inperson-detail").css('display', 'inline-block');
+    } else {
+        $("#inperson-detail").css('display', 'none');
+    }
 	$("#grades").html("<strong>Grades: </strong>" + data["graderange"]);
     $("#teacher1").text(data["teacher1"]);
     $("#teacher1email").text(data['teacher1email'])

@@ -268,6 +268,15 @@ function isClosedClass(classInfo) {
     return publishStatus === "closed" || status === "full" || status === "closed";
 }
 
+function isInPersonClass(classInfo) {
+    var location = (classInfo.location || "").toLowerCase();
+    return location !== "" && location.indexOf("online") < 0;
+}
+
+function displayClassTitle(classInfo) {
+    return String(classInfo.title || classInfo.classname || classInfo.selector || "").replace(/\s*\*+\s*$/, "");
+}
+
 function escapeHtml(value) {
     return String(value || "")
         .replace(/&/g, "&amp;")
@@ -284,7 +293,6 @@ function renderCurrentClassList(res) {
     }
     var html = "";
     html += "<p><i>Note: All times are Pacific Time</i></p>";
-    html += "<p><i>Note: All courses with * are in person classes. Location is listed on the course description page.</i></p>";
 
     var grouped = {};
     var order = [];
@@ -304,7 +312,10 @@ function renderCurrentClassList(res) {
         for (var k = 0; k < grouped[groupName].length; k++) {
             var item = grouped[groupName][k];
             var id = item.selector + "-spring-2026";
-            html += "<li id=\"" + escapeHtml(id) + "\"><a href=\"" + escapeHtml(item.url) + "\">" + escapeHtml(item.title);
+            html += "<li id=\"" + escapeHtml(id) + "\"><a href=\"" + escapeHtml(item.url) + "\">" + escapeHtml(displayClassTitle(item));
+            if (isInPersonClass(item)) {
+                html += "<span class=\"inperson\">In Person</span>";
+            }
             if (isClosedClass(item)) {
                 html += "<span class=\"full\">Full</span>";
             }
