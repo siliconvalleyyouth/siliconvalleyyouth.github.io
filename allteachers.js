@@ -553,6 +553,20 @@ var Teachers2016 = [
 ];
 var Teachers2015 = [
     {"name": "Bryan Owens", "imgurl": "BryanOwens.jpg"},];
+
+SVYProfiles.registerMany(Teachers2026);
+SVYProfiles.registerMany(Teachers2025);
+SVYProfiles.registerMany(Teachers2024);
+SVYProfiles.registerMany(Teachers2023);
+SVYProfiles.registerMany(Teachers2022);
+SVYProfiles.registerMany(Teachers2021);
+SVYProfiles.registerMany(Teachers2020);
+SVYProfiles.registerMany(Teachers2019);
+SVYProfiles.registerMany(Teachers2018);
+SVYProfiles.registerMany(Teachers2017);
+SVYProfiles.registerMany(Teachers2016);
+SVYProfiles.registerMany(Teachers2015);
+
 for (var m=0; m<12; m++) {
     var container;
     var Teachers;
@@ -593,6 +607,9 @@ for (var m=0; m<12; m++) {
         Teachers = Teachers2015;
         container = document.getElementById("2015")
     }
+    if (!container) {
+        continue;
+    }
     console.log(Teachers)
     console.log(container)
     for (var i = 0; i<Teachers.length; i++) {
@@ -603,7 +620,7 @@ for (var m=0; m<12; m++) {
             container.appendChild(row)
         }
     
-        imgurl = Teachers[i].imgurl
+        var teacherName = Teachers[i].name
         var column = document.createElement('div')
         column.className += " col-md-3"
     
@@ -617,9 +634,15 @@ for (var m=0; m<12; m++) {
         if (Teachers === Teachers2026) {
             basePath = 'images/2026Headshots/spring/'
         }
-        img.setAttribute('src', basePath + imgurl)
+        img.setAttribute('src', SVYProfiles.imagePath(teacherName, { basePath: basePath }))
         div.className += " bio pastofficer "
-        h2.innerHTML = Teachers[i].name
+        var profile = SVYProfiles.get(teacherName)
+        h2.innerHTML = '<a class="profile-link" href="' + SVYProfiles.profileUrl(profile.id || teacherName) + '">' + teacherName + '</a>'
+        card.onclick = function(profileRef) {
+            return function() {
+                window.location.href = SVYProfiles.profileUrl(profileRef);
+            }
+        }(profile.id || teacherName)
         
         div.appendChild(h2)
         card.appendChild(img)

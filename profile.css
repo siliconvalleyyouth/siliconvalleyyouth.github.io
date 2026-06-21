@@ -1,0 +1,95 @@
+.profile-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 72px;
+}
+
+.profile-header {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 32px;
+}
+
+.profile-header img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.profile-header h1 {
+    margin: 0 0 12px;
+    font-size: 42px;
+}
+
+.profile-header p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.profile-section {
+    margin-top: 40px;
+}
+
+.profile-section h2 {
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.timeline-list {
+    border-left: 3px solid #b32424;
+    padding-left: 22px;
+}
+
+.timeline-item {
+    margin-bottom: 22px;
+}
+
+.timeline-item h3 {
+    margin: 0 0 4px;
+    font-size: 19px;
+}
+
+.timeline-item p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.profile-card {
+    border: 1px solid #ddd;
+    padding: 18px;
+    min-height: 160px;
+}
+
+.profile-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.profile-card p {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.profile-card a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+    .profile-header {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-header h1 {
+        font-size: 34px;
+    }
+}

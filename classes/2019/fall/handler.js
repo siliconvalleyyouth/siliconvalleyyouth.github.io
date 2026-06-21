@@ -34,6 +34,7 @@ function renderSite(res) {
 	$("#location").html("<strong>Location: </strong>"+data["location"]);
 	$("#grades").html("<strong>Grades: </strong>" + data["grades"]);
     $("#teacher1").text(data["name"]);
+    linkProfileElement("#teacher1", data["name"]);
     $("#bio1").text(data["bio"]);
 }
 $(document).ready(function() {

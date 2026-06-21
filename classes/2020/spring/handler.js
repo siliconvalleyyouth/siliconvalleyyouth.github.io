@@ -34,6 +34,7 @@ function renderSite(res) {
 	$("#location").html("<strong>Location: </strong>"+data["location"]);
 	$("#grades").html("<strong>Grades: </strong>" + data["graderange"]);
     $("#teacher1").text(data["teacher1"]);
+    linkProfileElement("#teacher1", data["teacher1"]);
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").text(data["t1bio"]);
     $("#img1").attr("src", "../../../images/Spring2020Headshots/"+data["teacher1img"]+".jpg")
@@ -44,7 +45,8 @@ function renderSite(res) {
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
-        $("#teacher2").text(data["teacher2"]);	
+        $("#teacher2").text(data["teacher2"]);
+    linkProfileElement("#teacher2", data["teacher2"]);
         $("#teacher2email").text(data['teacher2email'])
         $("#img2").css("image-orientation", "from-image")
         $("#bio2").text(data["t2bio"]);
@@ -53,7 +55,8 @@ function renderSite(res) {
     if(data["teacher3"] != '') {
         $("#teacher3label").text(data["teacher3position"]);
         $("#teacher3").text(data["teacher3"]);
-        $("#teacher3email").text(data['teacher3email'])	
+    linkProfileElement("#teacher3", data["teacher3"]);
+        $("#teacher3email").text(data['teacher3email'])
         $("#img3").css("image-orientation", "from-image")
         $("#bio3").text(data["t3bio"]);
         $("#img3").attr("src", "../../../images/Spring2020Headshots/"+data["teacher3img"]+".jpg")

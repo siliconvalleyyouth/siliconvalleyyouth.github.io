@@ -1,48 +1,48 @@
 var Officers20202021 = [
-    ["Oliver Ye", "President"],
-    ["Cynthia Jia", "EVP of Human Resources"],
-    ["Leo Yang", "EVP of Operations"],
-    ["Michael Ma", "EVP of Marketing"],
-    ["Cayden Gu", "Co-VP of Technology <br> Los Altos Site Co-Director"],
-    ["Justin Gu", "Co-VP of Technology <br> Los Altos Site Co-Director"],
-    ["Sean Yang", "VP of Science and CS"],
-    ["Royce Ren", "VP of Debate"],
-    ["Andy Xu", "VP of Public Speaking"],
-    ["Samika Swamy","Assistant VP of Science and CS"],
-    ["Kevin Wang", "VP of Math"],
-    ["Max Zhang", "VP of Humanities <br> Miller Site Director"],
-    ["Michael Song", "Bandley Center Site Director"],
-    ["Charles Li", "Saratoga Site Director"],
+    ["oliver-ye", "President"],
+    ["cynthia-jia", "EVP of Human Resources"],
+    ["leo-yang", "EVP of Operations"],
+    ["michael-ma", "EVP of Marketing"],
+    ["cayden-gu", "Co-VP of Technology <br> Los Altos Site Co-Director"],
+    ["justin-gu", "Co-VP of Technology <br> Los Altos Site Co-Director"],
+    ["sean-yang", "VP of Science and CS"],
+    ["royce-ren", "VP of Debate"],
+    ["andy-xu", "VP of Public Speaking"],
+    ["samika-swamy","Assistant VP of Science and CS"],
+    ["kevin-wang", "VP of Math"],
+    ["max-zhang", "VP of Humanities <br> Miller Site Director"],
+    ["michael-song", "Bandley Center Site Director"],
+    ["charles-li", "Saratoga Site Director"],
 ];
 var Officers20192020 = [
-    ["Eric Yang", "Co-President"],
-    ["Oliver Ye", "Co-President"],
-    ["Cindy Xu", "Executive Vice-President"],
-    ["Arthur Ji", "Executive Vice-President"],
-    ["Tony Jiang", "VP of Technology and Web Development"],
-    ["Zachary Wang", "VP of Communications"],
-    ["Andy Li", "VP of Public Speaking"],
-    ["Anouk Yeh", "Assistant VP of Public Speaking"],
-    ["Royce Ren", "VP of Debate"],
-    ["Cynthia Jia", "VP of Science"],
-    ["Alex Wang", "VP of Math"],
-    ["Stefan Meier", "VP of Humanities and Social Sciences"],
-    ["Steven Long", "VP of Computer Science"],
-    ["Sean Yang", "Assistant VP of Computer Science"],
-    ["Ansh Chaurasia", "Secretary"],
-    ["Leo Yang", "Omei Business Operations Manager"],
-    ["Max Zhang", "Miller Business Operations Manager"],
-    ["Cindy Li", "Saratoga Business Operations Manager"],
+    ["eric-yang", "Co-President"],
+    ["oliver-ye", "Co-President"],
+    ["cindy-xu", "Executive Vice-President"],
+    ["arthur-ji", "Executive Vice-President"],
+    ["tony-jiang", "VP of Technology and Web Development"],
+    ["zachary-wang", "VP of Communications"],
+    ["andy-li", "VP of Public Speaking"],
+    ["anouk-yeh", "Assistant VP of Public Speaking"],
+    ["royce-ren", "VP of Debate"],
+    ["cynthia-jia", "VP of Science"],
+    ["alex-wang", "VP of Math"],
+    ["stefan-meier", "VP of Humanities and Social Sciences"],
+    ["steven-long", "VP of Computer Science"],
+    ["sean-yang", "Assistant VP of Computer Science"],
+    ["ansh-chaurasia", "Secretary"],
+    ["leo-yang", "Omei Business Operations Manager"],
+    ["max-zhang", "Miller Business Operations Manager"],
+    ["cindy-li", "Saratoga Business Operations Manager"],
 ];
 var Officers20172018 = [
-    ["Brandon Fu", "Co-President"],
-    ["Sam Yang", "Co-President"],
-    ["Oliver Ye", "VP of Science"],
-    ["Andrew Zhao", "VP of Math, VP of Computer Science"],
-    ["Arthur Ji", "Assistant VP of Computer Science"],
-    ["Ansh Chaurasia", "Secretary"],
-    ["Winnie Zhao", "Gunn Facility Coordinator"],
-    ["Leo Yang", "Miller Facility Coordinator"],
+    ["brandon-fu", "Co-President"],
+    ["sam-yang", "Co-President"],
+    ["oliver-ye", "VP of Science"],
+    ["andrew-zhao", "VP of Math, VP of Computer Science"],
+    ["arthur-ji", "Assistant VP of Computer Science"],
+    ["ansh-chaurasia", "Secretary"],
+    ["winnie-zhao", "Gunn Facility Coordinator"],
+    ["leo-yang", "Miller Facility Coordinator"],
 ];
 for (var m =0; m<3; m++) {
     var container;
@@ -65,12 +65,6 @@ for (var m =0; m<3; m++) {
         }
         var name = Officers[i][0];
         var position = Officers[i][1];
-        var imgurl = ""
-        for (var k = 0; k<teachers.length; k++){
-            if(teachers[k].name === name) {
-                imgurl = teachers[k].imgurl;
-            }
-        }
         var column = document.createElement('div')
         column.className += " col-md-4"
         var card = document.createElement('div')
@@ -79,7 +73,7 @@ for (var m =0; m<3; m++) {
         var h2 = document.createElement('h2')
         var h4 = document.createElement('h4')
         card.className += " officer slideanim"
-        img.setAttribute('src', 'images/team/' + imgurl)
+        img.setAttribute('src', SVYProfiles.imagePath(name))
         div.className += " bio"
         h2.innerHTML = name
         h4.innerHTML = position
