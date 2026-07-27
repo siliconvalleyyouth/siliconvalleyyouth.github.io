@@ -3,7 +3,7 @@ var classArray = classArray;
 var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var svyConfig = window.SVY_CONFIG || {};
-var activeSemester = svyConfig.activeSemester || { year: "2026", term: "spring", classPrice: 10 };
+var activeSemester = svyConfig.activeSemester || { year: "2026", term: "fall", classPrice: 10 };
 var serverBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
 var id;
 var year;

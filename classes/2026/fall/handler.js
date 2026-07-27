@@ -1,23 +1,13 @@
 var teachers;
-// Archived Spring 2026 — do not use active semester config from site-config.js
-var activeSemester = {
+var svyConfig = window.SVY_CONFIG || {};
+var activeSemester = svyConfig.activeSemester || {
     year: "2026",
-    term: "spring",
-    headshotPath: "images/2026Headshots/spring"
+    term: "fall",
+    headshotPath: "images/2026Headshots/fall"
 };
-var backendBaseUrl = "https://siliconvalleyyouth.herokuapp.com";
-var publicSiteBaseUrl = "https://www.siliconvalleyyouth.com";
+var backendBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
+var publicSiteBaseUrl = svyConfig.publicSiteBaseUrl || "https://www.siliconvalleyyouth.com";
 var headshotBasePath = "../../../" + activeSemester.headshotPath.replace(/^\/+/, "");
-
-function disableArchivedRegistration() {
-    $("#signupText,#signupTextFree,#signupTextFree2").css('display', 'none');
-    $("#signup,#signuppaid,#signupfree,#signupLink").removeAttr("href").off("click.archived").on("click.archived", function(event) {
-        event.preventDefault();
-    });
-    if ($("#registrationEnd").length) {
-        $("#registrationEnd").css('display', 'block');
-    }
-}
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results==null){
@@ -113,8 +103,7 @@ $(document).ready(function() {
         dataType: "json",
         success: function(res) {
             console.log("success")
-            renderSite(res);
-            disableArchivedRegistration();
+            renderSite(res)
         }
     })
 })

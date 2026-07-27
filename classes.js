@@ -3,11 +3,11 @@ var sub = "all";
 var svyConfig = window.SVY_CONFIG || {};
 var activeSemester = svyConfig.activeSemester || {
     year: "2026",
-    term: "spring",
-    displayName: "Spring 2026",
-    tabId: "spring26-tab",
-    listContainerId: "spring26-class-list",
-    filterTag: "spring-2026"
+    term: "fall",
+    displayName: "Fall 2026",
+    tabId: "fall26-tab",
+    listContainerId: "fall26-class-list",
+    filterTag: "fall-2026"
 };
 var backendBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
 
