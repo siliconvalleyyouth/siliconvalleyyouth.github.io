@@ -9,7 +9,7 @@ window.SVY_CONFIG = {
         listContainerId: "fall26-class-list",
         filterTag: "fall-2026",
         headshotPath: "images/2026Headshots/fall",
-        classPrice: 10
+        classPrice: 15
     },
     currentYear: new Date().getFullYear()
 };

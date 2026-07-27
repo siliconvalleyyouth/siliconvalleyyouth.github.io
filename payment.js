@@ -3,7 +3,7 @@ var classArray = classArray;
 var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var svyConfig = window.SVY_CONFIG || {};
-var activeSemester = svyConfig.activeSemester || { year: "2026", term: "fall", classPrice: 10 };
+var activeSemester = svyConfig.activeSemester || { year: "2026", term: "fall", classPrice: 15 };
 var serverBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
 var id;
 var year;
@@ -68,7 +68,7 @@ function createForm(res) {
     var className = data["classname"]
     var numClasses = data["numberclasses"]
     console.log("createForm:+"+className+",numClasses="+numClasses)
-    basePrice = Number(numClasses) * Number(activeSemester.classPrice || 10);
+    basePrice = Number(numClasses) * Number(activeSemester.classPrice || 15);
     updateCostDisplay();
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").attr('value', className);
