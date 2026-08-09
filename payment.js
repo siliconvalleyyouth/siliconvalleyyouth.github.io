@@ -3,7 +3,7 @@ var classArray = classArray;
 var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
 var elements = stripe.elements();
 var svyConfig = window.SVY_CONFIG || {};
-var activeSemester = svyConfig.activeSemester || { year: "2026", term: "spring", classPrice: 10 };
+var activeSemester = svyConfig.activeSemester || { year: "2026", term: "fall", classPrice: 15 };
 var serverBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
 var id;
 var year;
@@ -68,7 +68,7 @@ function createForm(res) {
     var className = data["classname"]
     var numClasses = data["numberclasses"]
     console.log("createForm:+"+className+",numClasses="+numClasses)
-    var classPrice = Number(res.classPrice || activeSemester.classPrice || 10);
+    var classPrice = Number(res.classPrice || activeSemester.classPrice || 15);
     basePrice = Number(numClasses) * classPrice;
     $("#classcost").text("The total class cost is calculated by multiplying the total number of sessions by $" + classPrice + " per session. Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session.");
     updateCostDisplay();

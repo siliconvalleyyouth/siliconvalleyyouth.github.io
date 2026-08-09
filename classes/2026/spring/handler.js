@@ -1,13 +1,23 @@
 var teachers;
-var svyConfig = window.SVY_CONFIG || {};
-var activeSemester = svyConfig.activeSemester || {
+// Archived Spring 2026 — do not use active semester config from site-config.js
+var activeSemester = {
     year: "2026",
     term: "spring",
     headshotPath: "images/2026Headshots/spring"
 };
-var backendBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
-var publicSiteBaseUrl = svyConfig.publicSiteBaseUrl || "https://www.siliconvalleyyouth.com";
+var backendBaseUrl = "https://siliconvalleyyouth.herokuapp.com";
+var publicSiteBaseUrl = "https://www.siliconvalleyyouth.com";
 var headshotBasePath = "../../../" + activeSemester.headshotPath.replace(/^\/+/, "");
+
+function disableArchivedRegistration() {
+    $("#signupText,#signupTextFree,#signupTextFree2").css('display', 'none');
+    $("#signup,#signuppaid,#signupfree,#signupLink").removeAttr("href").off("click.archived").on("click.archived", function(event) {
+        event.preventDefault();
+    });
+    if ($("#registrationEnd").length) {
+        $("#registrationEnd").css('display', 'block');
+    }
+}
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results==null){
@@ -49,6 +59,7 @@ function renderSite(res) {
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").html(data["t1bio"]);
     $("#img1").attr("src", headshotBasePath + "/" + data["teacher1img"] + ".jpg")
+    linkProfileImageElement("#img1", data["teacher1"] || data["name"]);
     var publishStatus = (data["publish_status"] || "").toLowerCase();
     var legacyStatus = (data["status"] || "").toLowerCase();
     if(legacyStatus == 'closed') {
@@ -69,6 +80,7 @@ function renderSite(res) {
         $("#img2").css("image-orientation", "from-image")
         $("#bio2").html(data["t2bio"]);
         $("#img2").attr("src", headshotBasePath + "/" + data["teacher2img"] + ".jpg")
+        linkProfileImageElement("#img2", data["teacher2"]);
     }
     if(data["teacher3"] != '') {
         $("#teacher3label").text(data["teacher3position"]);
@@ -78,6 +90,7 @@ function renderSite(res) {
         $("#img3").css("image-orientation", "from-image")
         $("#bio3").html(data["t3bio"]);
         $("#img3").attr("src", headshotBasePath + "/" + data["teacher3img"] + ".jpg")
+        linkProfileImageElement("#img3", data["teacher3"]);
     }
     if(data["teacher4"] != '') {
         $("#teacher4label").text(data["teacher4position"]);
@@ -87,6 +100,7 @@ function renderSite(res) {
         $("#img4").css("image-orientation", "from-image")
         $("#bio4").html(data["t4bio"]);
         $("#img4").attr("src", headshotBasePath + "/" + data["teacher4img"] + ".jpg")
+        linkProfileImageElement("#img4", data["teacher4"]);
     }
 }
 $(document).ready(function() {
@@ -99,7 +113,8 @@ $(document).ready(function() {
         dataType: "json",
         success: function(res) {
             console.log("success")
-            renderSite(res)
+            renderSite(res);
+            disableArchivedRegistration();
         }
     })
 })

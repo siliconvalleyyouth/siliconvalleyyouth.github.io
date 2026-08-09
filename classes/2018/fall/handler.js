@@ -21,6 +21,8 @@ function renderTeacher(index, name, image, bio, label) {
     }
     $("#teacher" + index).text(name);
     $("#img" + index).attr("src", image || "");
+    linkProfileElement("#teacher" + index, name);
+    linkProfileImageElement("#img" + index, name);
     $("#bio" + index).text(bio || "");
     if (index > 1) {
         $("#teacher" + index + "label").text(label || "Teacher");

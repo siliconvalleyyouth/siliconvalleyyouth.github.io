@@ -3,13 +3,13 @@ window.SVY_CONFIG = {
     publicSiteBaseUrl: "https://www.siliconvalleyyouth.com",
     activeSemester: {
         year: "2026",
-        term: "spring",
-        displayName: "Spring 2026",
-        tabId: "spring26-tab",
-        listContainerId: "spring26-class-list",
-        filterTag: "spring-2026",
-        headshotPath: "images/2026Headshots/spring",
-        classPrice: 10
+        term: "fall",
+        displayName: "Fall 2026",
+        tabId: "fall26-tab",
+        listContainerId: "fall26-class-list",
+        filterTag: "fall-2026",
+        headshotPath: "images/2026Headshots/fall",
+        classPrice: 15
     },
     currentYear: new Date().getFullYear()
 };
