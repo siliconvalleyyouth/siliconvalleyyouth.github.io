@@ -1,0 +1,163 @@
+:root {
+	--ink: #202735;
+	--muted: #697386;
+	--paper: #fffdf8;
+	--accent: #e94d4d;
+	--line: #e7e1d8;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: "Noto Sans SC", sans-serif;
+}
+
+header,
+footer,
+main {
+	width: min(960px, calc(100% - 40px));
+	margin: 0 auto;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	height: 88px;
+	border-bottom: 1px solid var(--line);
+}
+
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	color: inherit;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.brand img {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+main {
+	padding: 64px 0;
+}
+
+.event-card {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 280px;
+	gap: 56px;
+	align-items: start;
+}
+
+.label {
+	margin: 0 0 24px;
+	color: var(--accent);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.description {
+	font-size: 18px;
+	line-height: 1.8;
+	white-space: pre-wrap;
+}
+
+.description::first-line {
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.error {
+	color: var(--accent);
+}
+
+.classes-link {
+	display: inline-flex;
+	gap: 18px;
+	margin-top: 34px;
+	padding-bottom: 5px;
+	border-bottom: 2px solid var(--ink);
+	color: inherit;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.qr-panel {
+	padding: 24px;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	background: #fff;
+	text-align: center;
+}
+
+.qr-title {
+	margin: 0 0 18px;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.qr-panel a {
+	display: block;
+}
+
+.qr-panel img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: contain;
+}
+
+.qr-help {
+	margin: 16px 0 0;
+	color: var(--muted);
+	font-size: 13px;
+}
+
+footer {
+	padding: 28px 0;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
+	font-size: 12px;
+}
+
+footer p {
+	margin: 0;
+}
+
+@media (max-width: 720px) {
+	main {
+		padding: 42px 0;
+	}
+
+	.event-card {
+		grid-template-columns: 1fr;
+		gap: 42px;
+	}
+
+	.description {
+		font-size: 16px;
+	}
+
+	.description::first-line {
+		font-size: 24px;
+	}
+
+	.qr-panel {
+		width: min(100%, 320px);
+	}
+}

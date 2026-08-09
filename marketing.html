@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Silicon Valley Youth community event information.">
+	<title>Community Event | Silicon Valley Youth</title>
+	<link rel="icon" href="images/logo.jpg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="marketing.css">
+</head>
+<body>
+	<header>
+		<a class="brand" href="index.html">
+			<img src="images/logo.jpg" alt="Silicon Valley Youth logo">
+			<span>Silicon Valley Youth</span>
+		</a>
+	</header>
+
+	<main>
+		<section class="event-card">
+			<div class="event-copy">
+				<p class="label">SVY Community</p>
+				<div id="marketing-description" class="description" aria-live="polite">正在加载活动信息…</div>
+				<p id="marketing-error" class="error" hidden>活动信息暂时无法加载，请稍后再试。</p>
+				<a class="classes-link" href="https://www.siliconvalleyyouth.com/classes.html">查看 SVY 最新课程 <span aria-hidden="true">→</span></a>
+			</div>
+
+			<aside id="qr-panel" class="qr-panel" hidden>
+				<p class="qr-title">扫码加入线下群</p>
+				<a id="marketing-qr-link" href="#" target="_blank" rel="noopener noreferrer">
+					<img id="marketing-qr" src="" alt="加入活动线下群的二维码">
+				</a>
+				<p class="qr-help">长按或扫描二维码加入</p>
+			</aside>
+		</section>
+	</main>
+
+	<footer>
+		<p>Silicon Valley Youth · Student-led nonprofit</p>
+	</footer>
+
+	<script src="site-config.js"></script>
+	<script src="marketing.js"></script>
+</body>
+</html>
