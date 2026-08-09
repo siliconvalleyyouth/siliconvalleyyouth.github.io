@@ -54,10 +54,7 @@ main {
 }
 
 .event-card {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) 280px;
-	gap: 56px;
-	align-items: start;
+	display: block;
 }
 
 .label {
@@ -96,6 +93,13 @@ main {
 	text-decoration: none;
 }
 
+.qr-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 24px;
+	margin-top: 48px;
+}
+
 .qr-panel {
 	padding: 24px;
 	border: 1px solid var(--line);
@@ -116,8 +120,9 @@ main {
 
 .qr-panel img {
 	display: block;
-	width: 100%;
+	width: min(100%, 240px);
 	height: auto;
+	margin: 0 auto;
 	aspect-ratio: 1;
 	object-fit: contain;
 }
@@ -144,11 +149,6 @@ footer p {
 		padding: 42px 0;
 	}
 
-	.event-card {
-		grid-template-columns: 1fr;
-		gap: 42px;
-	}
-
 	.description {
 		font-size: 16px;
 	}
@@ -157,7 +157,8 @@ footer p {
 		font-size: 24px;
 	}
 
-	.qr-panel {
-		width: min(100%, 320px);
+	.qr-grid {
+		grid-template-columns: 1fr;
+		margin-top: 36px;
 	}
 }
