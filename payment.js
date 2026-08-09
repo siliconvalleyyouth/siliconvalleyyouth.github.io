@@ -68,7 +68,9 @@ function createForm(res) {
     var className = data["classname"]
     var numClasses = data["numberclasses"]
     console.log("createForm:+"+className+",numClasses="+numClasses)
-    basePrice = Number(numClasses) * Number(activeSemester.classPrice || 10);
+    var classPrice = Number(res.classPrice || activeSemester.classPrice || 10);
+    basePrice = Number(numClasses) * classPrice;
+    $("#classcost").text("The total class cost is calculated by multiplying the total number of sessions by $" + classPrice + " per session. Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session.");
     updateCostDisplay();
     $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
     $("#className").attr('value', className);
@@ -128,6 +130,13 @@ function stripeTokenHandler(token) {
             if (response == "CouponInvalid") {
                 alert("Coupon expired or invalid. Please try another coupon.")
             }
+        },
+        error: function (xhr) {
+            if (xhr && (xhr.responseText === "RegistrationUnavailable" || xhr.responseText === "CouponUnavailable")) {
+                alert("Registration or coupon processing is temporarily unavailable. Please try again later.");
+            } else {
+                alert("Payment failed before it could be processed. Please try again later.");
+            }
         }
     });
     return false;
@@ -160,6 +169,19 @@ function setCouponStatus(message, isValid) {
     }
 }
 
+function couponFailureMessage(reason) {
+    if (reason === "student_used") {
+        return "This student already used a coupon.";
+    }
+    if (reason === "not_configured") {
+        return "Coupons are not available for this semester yet.";
+    }
+    if (reason === "error") {
+        return "Unable to validate coupon right now.";
+    }
+    return "Coupon expired or invalid.";
+}
+
 function checkCoupon(code) {
     if (!code) {
         appliedCouponValue = 0;
@@ -179,18 +201,15 @@ function checkCoupon(code) {
                 setCouponStatus("Coupon applied: -$" + appliedCouponValue, true);
             } else {
                 appliedCouponValue = 0;
-                if (res && res.reason === "student_used") {
-                    setCouponStatus("This student already used a coupon.", false);
-                } else {
-                    setCouponStatus("Coupon expired or invalid.", false);
-                }
+                setCouponStatus(couponFailureMessage(res && res.reason), false);
             }
             updateCostDisplay();
         },
         error: function(err) {
             console.log(err);
             appliedCouponValue = 0;
-            setCouponStatus("Unable to validate coupon right now.", false);
+            var reason = err && err.responseJSON && err.responseJSON.reason;
+            setCouponStatus(couponFailureMessage(reason || "error"), false);
             updateCostDisplay();
         }
     })
