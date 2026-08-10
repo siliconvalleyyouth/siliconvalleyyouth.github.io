@@ -1,7 +1,4 @@
 var classArray = classArray;
-// var stripe = Stripe("pk_test_txUHW0roiaw7rDEneBF5IgCB");
-var stripe = Stripe('pk_live_IiyzcOmj7fIv5anZ0W1Ukyie');
-var elements = stripe.elements();
 var svyConfig = window.SVY_CONFIG || {};
 var activeSemester = svyConfig.activeSemester || { year: "2026", term: "fall", classPrice: 15 };
 var serverBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
@@ -12,138 +9,258 @@ var data;
 var basePrice = 0;
 var appliedCouponValue = 0;
 var couponCheckTimeout;
+var paypalButtons = null;
+var paypalReady = false;
 
-document.addEventListener("DOMContentLoaded", function (event) {
-    createElements();
-    formHandler();
+document.addEventListener("DOMContentLoaded", function () {
     id = getParam("id");
     year = getParam("year") || activeSemester.year;
     term = (getParam("term") || activeSemester.term).toLowerCase();
     $("#payment-form").attr("action", serverBaseUrl + "/api/payment/" + year + "/" + term);
+    bindFormSubmit();
     getData(id);
     bindCouponField();
+    loadPayPal();
 });
-function getParam(name){
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    console.log("payment.getParam: results="+results);
-    if (results==null){
-       return null;
+
+function getParam(name) {
+    var results = new RegExp("[\\?&]" + name + "=([^&#]*)").exec(window.location.href);
+    if (results == null) {
+        return null;
     }
-    else{
-        var final_result = decodeURI(results[1]) || 0;
-        console.log("payment.getParam: final_result="+final_result);
-        return final_result;
-    }
+    return decodeURI(results[1]) || 0;
 }
-// Custom styling can be passed to options when creating an Element.
-var style = {
-    base: {
-        // Add your base input styles here. For example:
-        fontSize: '16px',
-        color: "#32325d",
-    }
-};
-function getData(id) {
+
+function getData(classId) {
     $.ajax({
         type: "GET",
-        contentType: 'application/json',
-        url : serverBaseUrl + "/api/classes/" + year + "/" + term + "/" + id,
-        // url : "http://localhost:3000/api/classes/" + year + "/" + term + "/" + id,
+        contentType: "application/json",
+        url: serverBaseUrl + "/api/classes/" + year + "/" + term + "/" + classId,
         dataType: "json",
-        success: function(res) {
-            console.log("success")
+        success: function (res) {
             createForm(res);
         },
-        error: function(err) {
+        error: function (err) {
             console.log(err);
         }
-    })
-    //sendEmail()
+    });
 }
+
 function createForm(res) {
-    var raw_data = res["data"]
-    // var data = raw_data[0]
+    var raw_data = res["data"];
     data = JSON.parse(raw_data);
-    console.log(data)
-    var className = data["classname"]
-    var numClasses = data["numberclasses"]
-    console.log("createForm:+"+className+",numClasses="+numClasses)
+    var className = data["classname"];
+    var numClasses = data["numberclasses"];
     var classPrice = Number(res.classPrice || activeSemester.classPrice || 15);
     basePrice = Number(numClasses) * classPrice;
     $("#classcost").text("The total class cost is calculated by multiplying the total number of sessions by $" + classPrice + " per session. Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session.");
     updateCostDisplay();
-    $("#classTitle").text("Payment for "+ className + " at " + data["location"] + " on " + data["time"])
-    $("#className").attr('value', className);
-    //sendEmail()
+    $("#classTitle").text("Payment for " + className + " at " + data["location"] + " on " + data["time"]);
+    $("#className").attr("value", className);
+    renderPayPalButtons();
 }
 
-var card = elements.create('card', { style: style });
-card.addEventListener('change', function (event) {
-    var displayError = document.getElementById('card-errors');
-    if (event.error) {
-        displayError.textContent = event.error.message;
-    } else {
-        displayError.textContent = '';
+function getFormPayload() {
+    return {
+        parentName: $("#parentName").val(),
+        parentEmail: $("#parentEmail").val(),
+        parentWeChat: $("#parentWeChat").val(),
+        parentPhone: $("#parentPhone").val(),
+        studentName: $("#studentName").val(),
+        studentEmail: $("#studentEmail").val(),
+        studentGrade: $("#studentGrade").val(),
+        studentSchool: $("#studentSchool").val(),
+        hearFrom: $("#hearFrom").val(),
+        couponCode: ($("#couponCode").val() || "").trim(),
+        className: $("#className").val()
+    };
+}
+
+function validateRequiredFields() {
+    var form = document.getElementById("payment-form");
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return false;
     }
-});
-
-function formHandler() {
-    var form = document.getElementById('payment-form');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        stripe.createToken(card).then(function (result) {
-            if (result.error) {
-                var errorElement = document.getElementById('card-errors');
-                errorElement.textContent = result.error.message;
-            } else {
-                stripeTokenHandler(result.token);
-            }
-        });
-    });
-    //sendEmail()
+    return true;
 }
 
-function stripeTokenHandler(token) {
-    console.log("--- in github stripe");
-    console.log(token);
-    var form = document.getElementById('payment-form');
-    var hiddenInput = document.createElement('input');
-    hiddenInput.setAttribute('type', 'hidden');
-    hiddenInput.setAttribute('name', 'stripeToken');
-    hiddenInput.setAttribute('value', token.id);
-    form.appendChild(hiddenInput);
+function getFinalPrice() {
+    return Math.max(basePrice - appliedCouponValue, 0);
+}
+
+function bindFormSubmit() {
+    var form = document.getElementById("payment-form");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (!validateRequiredFields()) {
+            return;
+        }
+        if (getFinalPrice() > 0) {
+            alert("Please use the PayPal button to complete payment.");
+            return;
+        }
+        submitFreeRegistration();
+    });
+}
+
+function submitFreeRegistration() {
     $.ajax({
-        url: $('#payment-form').attr('action')+ "?id="+id,
-        // url: "http://localhost:3000/payment?id="+id,
-        type: 'POST',
-        data: $('#payment-form').serialize(),
+        url: $("#payment-form").attr("action") + "?id=" + id,
+        type: "POST",
+        data: $("#payment-form").serialize(),
         success: function (response) {
-            console.log("got response from server")
-            console.log(response);
             if (response === "Success") {
-                writeThankYou()
-                // sendEmail()
+                writeThankYou();
+                return;
             }
-            if (response == "Failed") {
-                alert("Payment failed, please check your credit card credentials or try again later.")
+            if (response === "CouponInvalid") {
+                alert("Coupon expired or invalid. Please try another coupon.");
+                return;
             }
-            if (response == "CouponInvalid") {
-                alert("Coupon expired or invalid. Please try another coupon.")
-            }
+            alert("Registration failed. Please try again later.");
         },
         error: function (xhr) {
-            if (xhr && (xhr.responseText === "RegistrationUnavailable" || xhr.responseText === "CouponUnavailable")) {
-                alert("Registration or coupon processing is temporarily unavailable. Please try again later.");
+            if (xhr && xhr.responseText === "RegistrationClosed") {
+                alert("Registration is currently closed for this semester.");
             } else {
-                alert("Payment failed before it could be processed. Please try again later.");
+                alert("Registration failed before it could be processed. Please try again later.");
             }
         }
     });
-    return false;
 }
-function createElements() {
-    card.mount('#card-element');
+
+function loadPayPal() {
+    $.ajax({
+        type: "GET",
+        url: serverBaseUrl + "/api/paypal/config",
+        dataType: "json",
+        success: function (config) {
+            if (!config || !config.configured || !config.clientId) {
+                $("#paypal-status").text("PayPal is not configured on the server yet.");
+                return;
+            }
+            var script = document.createElement("script");
+            script.src = "https://www.paypal.com/sdk/js?client-id=" + encodeURIComponent(config.clientId) + "&currency=USD&intent=capture";
+            script.onload = function () {
+                paypalReady = true;
+                renderPayPalButtons();
+            };
+            script.onerror = function () {
+                $("#paypal-status").text("Unable to load PayPal. Please refresh and try again.");
+            };
+            document.head.appendChild(script);
+        },
+        error: function () {
+            $("#paypal-status").text("Unable to load PayPal configuration.");
+        }
+    });
 }
+
+function renderPayPalButtons() {
+    if (!paypalReady || typeof paypal === "undefined" || !data) {
+        return;
+    }
+    var container = document.getElementById("paypal-button-container");
+    if (!container) {
+        return;
+    }
+    container.innerHTML = "";
+    if (getFinalPrice() <= 0) {
+        $("#paypal-button-container").hide();
+        $("#submitpayment").show();
+        $("#paypal-status").text("No payment due. Click Complete Registration.");
+        return;
+    }
+    $("#paypal-button-container").show();
+    $("#submitpayment").hide();
+    $("#paypal-status").text("");
+
+    if (paypalButtons && typeof paypalButtons.close === "function") {
+        paypalButtons.close();
+    }
+
+    paypalButtons = paypal.Buttons({
+        style: {
+            layout: "vertical",
+            color: "gold",
+            shape: "rect",
+            label: "pay"
+        },
+        onClick: function (data, actions) {
+            if (!validateRequiredFields()) {
+                return actions.reject();
+            }
+            return actions.resolve();
+        },
+        createOrder: function () {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: serverBaseUrl + "/api/paypal/create-order/" + year + "/" + term + "?id=" + encodeURIComponent(id),
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(getFormPayload())
+                }).done(function (res) {
+                    if (!res || !res.id) {
+                        reject(new Error("Missing PayPal order id"));
+                        return;
+                    }
+                    resolve(res.id);
+                }).fail(function (xhr) {
+                    var errorCode = xhr && xhr.responseJSON && xhr.responseJSON.error;
+                    if (errorCode === "CouponInvalid") {
+                        alert("Coupon expired or invalid. Please try another coupon.");
+                    } else if (errorCode === "RegistrationClosed" || (xhr && xhr.responseText === "RegistrationClosed")) {
+                        alert("Registration is currently closed for this semester.");
+                    } else if (errorCode === "PayPalNotConfigured") {
+                        alert("PayPal is not configured on the server yet.");
+                    } else {
+                        alert("Unable to start PayPal checkout. Please try again.");
+                    }
+                    reject(new Error(errorCode || "CreateOrderFailed"));
+                });
+            });
+        },
+        onApprove: function (data) {
+            return new Promise(function (resolve, reject) {
+                var payload = getFormPayload();
+                payload.orderID = data.orderID;
+                $.ajax({
+                    url: serverBaseUrl + "/api/paypal/capture-order/" + year + "/" + term + "?id=" + encodeURIComponent(id),
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(payload)
+                }).done(function (res) {
+                    if (res && res.status === "Success") {
+                        writeThankYou();
+                        resolve();
+                        return;
+                    }
+                    alert("Payment capture failed. Please contact svyouth1@gmail.com if you were charged.");
+                    reject(new Error((res && res.error) || "Capture failed"));
+                }).fail(function (xhr) {
+                    var errorCode = xhr && xhr.responseJSON && xhr.responseJSON.error;
+                    if (errorCode === "CouponInvalid") {
+                        alert("Coupon expired or invalid. Please try another coupon.");
+                    } else {
+                        alert("Payment capture failed. Please contact svyouth1@gmail.com if you were charged.");
+                    }
+                    reject(new Error(errorCode || "CaptureFailed"));
+                });
+            });
+        },
+        onError: function (err) {
+            console.log(err);
+            alert("PayPal payment failed. Please try again.");
+        }
+    });
+
+    paypalButtons.render("#paypal-button-container").catch(function (err) {
+        console.log(err);
+        $("#paypal-status").text("Unable to show PayPal buttons. Please refresh the page.");
+    });
+}
+
 function writeThankYou() {
     $("#thankyoubody").fadeIn();
     $("#paymentbody").hide();
@@ -151,7 +268,7 @@ function writeThankYou() {
 }
 
 function updateCostDisplay() {
-    var finalPrice = Math.max(basePrice - appliedCouponValue, 0);
+    var finalPrice = getFinalPrice();
     if (appliedCouponValue > 0) {
         $("#costDisplay").text("Final Cost: $" + finalPrice);
         $("#couponCalculation").text("Calculation: $" + basePrice + " - $" + appliedCouponValue + " = $" + finalPrice);
@@ -159,6 +276,7 @@ function updateCostDisplay() {
         $("#costDisplay").text("Cost: $" + basePrice);
         $("#couponCalculation").text("");
     }
+    renderPayPalButtons();
 }
 
 function setCouponStatus(message, isValid) {
@@ -192,10 +310,10 @@ function checkCoupon(code) {
     var studentEmail = $("#studentEmail").val().trim();
     $.ajax({
         type: "GET",
-        contentType: 'application/json',
-        url : serverBaseUrl + "/api/check-coupon/" + year + "/" + term + "?code=" + encodeURIComponent(code) + "&studentEmail=" + encodeURIComponent(studentEmail),
+        contentType: "application/json",
+        url: serverBaseUrl + "/api/check-coupon/" + year + "/" + term + "?code=" + encodeURIComponent(code) + "&studentEmail=" + encodeURIComponent(studentEmail),
         dataType: "json",
-        success: function(res) {
+        success: function (res) {
             if (res && res.valid) {
                 appliedCouponValue = Number(res.value) || 0;
                 setCouponStatus("Coupon applied: -$" + appliedCouponValue, true);
@@ -205,14 +323,14 @@ function checkCoupon(code) {
             }
             updateCostDisplay();
         },
-        error: function(err) {
+        error: function (err) {
             console.log(err);
             appliedCouponValue = 0;
             var reason = err && err.responseJSON && err.responseJSON.reason;
             setCouponStatus(couponFailureMessage(reason || "error"), false);
             updateCostDisplay();
         }
-    })
+    });
 }
 
 function bindCouponField() {
