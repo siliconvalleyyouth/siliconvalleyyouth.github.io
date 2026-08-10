@@ -159,20 +159,27 @@ function submitFreeRegistration() {
         url: $("#payment-form").attr("action") + "?id=" + id,
         type: "POST",
         data: $("#payment-form").serialize(),
+        dataType: "json",
         success: function (response) {
+            if (response && response.status === "Success") {
+                writeThankYou(response.siblingCoupon);
+                return;
+            }
             if (response === "Success") {
                 writeThankYou();
                 return;
             }
-            if (response === "CouponInvalid") {
+            if ((response && response.status === "CouponInvalid") || response === "CouponInvalid") {
                 alert("Coupon expired or invalid. Please try another coupon.");
                 return;
             }
             alert("Registration failed. Please try again later.");
         },
         error: function (xhr) {
-            if (xhr && xhr.responseText === "RegistrationClosed") {
+            if (xhr && (xhr.responseText === "RegistrationClosed" || (xhr.responseJSON && xhr.responseJSON.status === "RegistrationClosed"))) {
                 alert("Registration is currently closed for this semester.");
+            } else if (xhr && xhr.responseJSON && xhr.responseJSON.status === "CouponInvalid") {
+                alert("Coupon expired or invalid. Please try another coupon.");
             } else {
                 alert("Registration failed before it could be processed. Please try again later.");
             }
@@ -282,7 +289,7 @@ function renderPayPalButtons() {
                     data: JSON.stringify(payload)
                 }).done(function (res) {
                     if (res && res.status === "Success") {
-                        writeThankYou();
+                        writeThankYou(res.siblingCoupon);
                         resolve();
                         return;
                     }
@@ -311,10 +318,17 @@ function renderPayPalButtons() {
     });
 }
 
-function writeThankYou() {
+function writeThankYou(siblingCoupon) {
     $("#thankyoubody").fadeIn();
     $("#paymentbody").hide();
     $("#classname2").html(data["classname"]);
+    if (siblingCoupon && siblingCoupon.code) {
+        $("#siblingCouponCode").text(siblingCoupon.code);
+        $("#siblingCouponValue").text(siblingCoupon.value);
+        $("#siblingCouponBox").show();
+    } else {
+        $("#siblingCouponBox").hide();
+    }
 }
 
 function updateCostDisplay() {
@@ -341,6 +355,9 @@ function couponFailureMessage(reason) {
     if (reason === "student_used") {
         return "This student already used a coupon.";
     }
+    if (reason === "sibling_parent_mismatch") {
+        return "This sibling coupon only works with the same parent name used for the first registration.";
+    }
     if (reason === "not_configured") {
         return "Coupons are not available for this semester yet.";
     }
@@ -358,10 +375,14 @@ function checkCoupon(code) {
         return;
     }
     var studentEmail = $("#studentEmail").val().trim();
+    var parentName = $("#parentName").val().trim();
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        url: serverBaseUrl + "/api/check-coupon/" + year + "/" + term + "?code=" + encodeURIComponent(code) + "&studentEmail=" + encodeURIComponent(studentEmail),
+        url: serverBaseUrl + "/api/check-coupon/" + year + "/" + term +
+            "?code=" + encodeURIComponent(code) +
+            "&studentEmail=" + encodeURIComponent(studentEmail) +
+            "&parentName=" + encodeURIComponent(parentName),
         dataType: "json",
         success: function (res) {
             if (res && res.valid) {
@@ -404,17 +425,20 @@ function bindCouponField() {
             checkCoupon(code);
         }, 400);
     });
-    if (studentEmailInput.length) {
-        studentEmailInput.on("input", function () {
-            var code = couponInput.val().trim();
-            if (code) {
-                if (couponCheckTimeout) {
-                    clearTimeout(couponCheckTimeout);
-                }
-                couponCheckTimeout = setTimeout(function () {
-                    checkCoupon(code);
-                }, 400);
-            }
-        });
+    function recheckCouponFromRelatedField() {
+        var code = couponInput.val().trim();
+        if (!code) {
+            return;
+        }
+        if (couponCheckTimeout) {
+            clearTimeout(couponCheckTimeout);
+        }
+        couponCheckTimeout = setTimeout(function () {
+            checkCoupon(code);
+        }, 400);
     }
+    if (studentEmailInput.length) {
+        studentEmailInput.on("input", recheckCouponFromRelatedField);
+    }
+    $("#parentName").on("input", recheckCouponFromRelatedField);
 }
