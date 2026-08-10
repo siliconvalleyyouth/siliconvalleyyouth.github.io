@@ -324,7 +324,7 @@ function writeThankYou(siblingCoupon) {
     $("#classname2").html(data["classname"]);
     if (siblingCoupon && siblingCoupon.code) {
         $("#siblingCouponCode").text(siblingCoupon.code);
-        $("#siblingCouponValue").text(siblingCoupon.value);
+        $("#siblingCouponPercent").text(siblingCoupon.percentOff || 50);
         $("#siblingCouponBox").show();
     } else {
         $("#siblingCouponBox").hide();
@@ -382,12 +382,18 @@ function checkCoupon(code) {
         url: serverBaseUrl + "/api/check-coupon/" + year + "/" + term +
             "?code=" + encodeURIComponent(code) +
             "&studentEmail=" + encodeURIComponent(studentEmail) +
-            "&parentName=" + encodeURIComponent(parentName),
+            "&parentName=" + encodeURIComponent(parentName) +
+            "&price=" + encodeURIComponent(basePrice || 0),
         dataType: "json",
         success: function (res) {
             if (res && res.valid) {
-                appliedCouponValue = Number(res.value) || 0;
-                setCouponStatus("Coupon applied: -$" + appliedCouponValue, true);
+                if (res.percentOff) {
+                    appliedCouponValue = Math.round((basePrice || 0) * (Number(res.percentOff) / 100));
+                    setCouponStatus("Coupon applied: " + res.percentOff + "% off (-$" + appliedCouponValue + ")", true);
+                } else {
+                    appliedCouponValue = Number(res.value) || 0;
+                    setCouponStatus("Coupon applied: -$" + appliedCouponValue, true);
+                }
             } else {
                 appliedCouponValue = 0;
                 setCouponStatus(couponFailureMessage(res && res.reason), false);
