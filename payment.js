@@ -13,50 +13,100 @@ var paypalButtons = null;
 var paypalReady = false;
 
 document.addEventListener("DOMContentLoaded", function () {
-    id = getParam("id");
-    year = getParam("year") || activeSemester.year;
-    term = (getParam("term") || activeSemester.term).toLowerCase();
+    id = getParam("id") || getParamFromReferrer("id");
+    year = getParam("year") || getParamFromReferrer("year") || activeSemester.year;
+    term = (getParam("term") || getParamFromReferrer("term") || activeSemester.term || "").toLowerCase();
     $("#payment-form").attr("action", serverBaseUrl + "/api/payment/" + year + "/" + term);
     bindFormSubmit();
-    getData(id);
     bindCouponField();
     loadPayPal();
+    if (!id) {
+        $("#classTitle").text("You have not selected a class. Please open payment from a class page (the link must include ?id=...).");
+        return;
+    }
+    // Keep the selected class in the URL if we recovered it from the referrer.
+    if (!getParam("id")) {
+        try {
+            var nextUrl = new URL(window.location.href);
+            nextUrl.searchParams.set("year", year);
+            nextUrl.searchParams.set("term", term);
+            nextUrl.searchParams.set("id", id);
+            window.history.replaceState({}, "", nextUrl.toString());
+        } catch (error) {
+            // Ignore history API failures.
+        }
+    }
+    getData(id);
 });
 
 function getParam(name) {
+    try {
+        var params = new URLSearchParams(window.location.search);
+        var value = params.get(name);
+        if (value != null && value !== "") {
+            return value;
+        }
+    } catch (error) {
+        // Fallback for older browsers.
+    }
     var results = new RegExp("[\\?&]" + name + "=([^&#]*)").exec(window.location.href);
     if (results == null) {
         return null;
     }
-    return decodeURI(results[1]) || 0;
+    return decodeURIComponent(results[1].replace(/\+/g, " ")) || null;
+}
+
+function getParamFromReferrer(name) {
+    if (!document.referrer) {
+        return null;
+    }
+    try {
+        var referrerUrl = new URL(document.referrer);
+        var value = referrerUrl.searchParams.get(name);
+        if (value != null && value !== "") {
+            return value;
+        }
+    } catch (error) {
+        // Ignore malformed referrers.
+    }
+    var results = new RegExp("[\\?&]" + name + "=([^&#]*)").exec(document.referrer);
+    if (results == null) {
+        return null;
+    }
+    return decodeURIComponent(results[1].replace(/\+/g, " ")) || null;
 }
 
 function getData(classId) {
     $.ajax({
         type: "GET",
-        contentType: "application/json",
-        url: serverBaseUrl + "/api/classes/" + year + "/" + term + "/" + classId,
+        url: serverBaseUrl + "/api/classes/" + year + "/" + term + "/" + encodeURIComponent(classId),
         dataType: "json",
         success: function (res) {
-            createForm(res);
+            try {
+                createForm(res);
+            } catch (error) {
+                console.log(error);
+                $("#classTitle").text("Could not load class details for \"" + classId + "\". Please go back and try again.");
+            }
         },
         error: function (err) {
             console.log(err);
+            $("#classTitle").text("Could not load class \"" + classId + "\" for " + year + " " + term + ". Please go back to the class page and use the signup link again.");
         }
     });
 }
 
 function createForm(res) {
     var raw_data = res["data"];
-    data = JSON.parse(raw_data);
+    data = typeof raw_data === "string" ? JSON.parse(raw_data) : raw_data;
     var className = data["classname"];
     var numClasses = data["numberclasses"];
     var classPrice = Number(res.classPrice || activeSemester.classPrice || 15);
     basePrice = Number(numClasses) * classPrice;
-    $("#classcost").text("The total class cost is calculated by multiplying the total number of sessions by $" + classPrice + " per session. Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session.");
-    updateCostDisplay();
     $("#classTitle").text("Payment for " + className + " at " + data["location"] + " on " + data["time"]);
     $("#className").attr("value", className);
+    $("#classcost").text("The total class cost is calculated by multiplying the total number of sessions by $" + classPrice + " per session. Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session.");
+    updateCostDisplay();
     renderPayPalButtons();
 }
 

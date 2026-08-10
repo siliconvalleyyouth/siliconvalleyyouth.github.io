@@ -60,7 +60,7 @@ function renderSite(res) {
         $("#waitlist").attr("href", waitlist);
     }else {
 	$("#signupText").css('display', 'block')
-        $("#signup").attr("href", publicSiteBaseUrl + "/payment.html?year=" + activeSemester.year + "&term=" + activeSemester.term + "&id=" + getParam("id"));
+        $("#signup").attr("href", buildPaymentHref(getParam("id") || data["selector"]));
     }
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
@@ -93,13 +93,23 @@ function renderSite(res) {
         linkProfileImageElement("#img4", data["teacher4"]);
     }
 }
+function buildPaymentHref(classId) {
+    return "/payment.html?year=" + encodeURIComponent(activeSemester.year)
+        + "&term=" + encodeURIComponent(activeSemester.term)
+        + "&id=" + encodeURIComponent(classId || "");
+}
+
 $(document).ready(function() {
     var id = getParam("id");
     console.log("Getting info for "+id)
+    // Set signup link immediately so payment always receives year/term/id,
+    // even if the class detail request is slow or the user clicks early.
+    if (id) {
+        $("#signup").attr("href", buildPaymentHref(id));
+    }
     $.ajax({
         type: "GET",
-        contentType: 'application/json',
-        url : backendBaseUrl + "/api/classes/" + activeSemester.year + "/" + activeSemester.term + "/" + id,
+        url : backendBaseUrl + "/api/classes/" + activeSemester.year + "/" + activeSemester.term + "/" + encodeURIComponent(id || ""),
         dataType: "json",
         success: function(res) {
             console.log("success")
