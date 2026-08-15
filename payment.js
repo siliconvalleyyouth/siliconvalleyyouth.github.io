@@ -324,7 +324,7 @@ function writeThankYou(siblingCoupon) {
     $("#classname2").html(data["classname"]);
     if (siblingCoupon && siblingCoupon.code) {
         $("#siblingCouponCode").text(siblingCoupon.code);
-        $("#siblingCouponPercent").text(siblingCoupon.percentOff || 50);
+        $("#siblingCouponValue").text(siblingCoupon.value || 30);
         $("#siblingCouponBox").show();
     } else {
         $("#siblingCouponBox").hide();
@@ -387,13 +387,8 @@ function checkCoupon(code) {
         dataType: "json",
         success: function (res) {
             if (res && res.valid) {
-                if (res.percentOff) {
-                    appliedCouponValue = Math.round((basePrice || 0) * (Number(res.percentOff) / 100));
-                    setCouponStatus("Coupon applied: " + res.percentOff + "% off (-$" + appliedCouponValue + ")", true);
-                } else {
-                    appliedCouponValue = Number(res.value) || 0;
-                    setCouponStatus("Coupon applied: -$" + appliedCouponValue, true);
-                }
+                appliedCouponValue = Number(res.value) || 0;
+                setCouponStatus("Coupon applied: -$" + appliedCouponValue, true);
             } else {
                 appliedCouponValue = 0;
                 setCouponStatus(couponFailureMessage(res && res.reason), false);

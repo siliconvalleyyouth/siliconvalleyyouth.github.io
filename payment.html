@@ -60,7 +60,7 @@
 <div id="paymentbody">
     <h1>SVY Class Registration + Payment</h1>
     <h3>Please complete the form below, and submit payment to register for a SVY class.</h3>
-    <p><i>Sibling discount: after this registration, you’ll receive a one-time coupon for 50% off another student under the same parent name.</i></p>
+    <p><i>Sibling discount: after this registration, you’ll receive a one-time coupon for $30 off another student under the same parent name.</i></p>
     <hr />
     <form action="https://siliconvalleyyouth.herokuapp.com/api/payment/2026/fall" method="post" id="payment-form">
         <h3 id = "classTitle" style = "font-weight: bold">You have not selected a class. Please navigate to this payment page from the class you want to attend.</h3>
@@ -102,7 +102,7 @@
       </div>
         <div class="form-group">
             <label for="couponCode">Coupon Code</label>
-            <input type="text" class="form-control" name="couponCode" id="couponCode" placeholder="Enter coupon code (optional, including 50% sibling discount)">
+            <input type="text" class="form-control" name="couponCode" id="couponCode" placeholder="Enter coupon code (optional, including $30 sibling discount)">
             <p id="couponStatus" style="margin-top: 6px;"></p>
         </div>
         <div class="form-group">
@@ -139,7 +139,7 @@
     <div id="siblingCouponBox" style="display:none; margin-top: 24px; padding: 16px; border: 2px solid #2e7d32; background: #f1f8f2;">
         <h3 style="margin-top: 0;">Sibling discount coupon</h3>
         <p>Use this one-time code for another student under the same parent name:</p>
-        <p style="font-size: 1.4em; font-weight: bold; letter-spacing: 0.04em;"><span id="siblingCouponCode"></span> <span style="font-weight: normal;">(<span id="siblingCouponPercent">50</span>% off)</span></p>
+        <p style="font-size: 1.4em; font-weight: bold; letter-spacing: 0.04em;"><span id="siblingCouponCode"></span> <span style="font-weight: normal;">($<span id="siblingCouponValue">30</span> off)</span></p>
         <p style="margin-bottom: 0;">Enter it on the payment page for your next registration. It can only be used once.</p>
     </div>
 </div>
