@@ -283,17 +283,6 @@ function isInPersonClass(classInfo) {
     return location !== "" && location.indexOf("online") < 0;
 }
 
-function formatListLocation(classInfo) {
-    var location = String(classInfo.location || "").trim();
-    if (!location || location.toLowerCase().indexOf("online") >= 0) {
-        return "Online";
-    }
-    if (/^in[-\s]?person$/i.test(location)) {
-        return (window.SVY_CONFIG && window.SVY_CONFIG.inPersonLocation) || "10268 Bandley Dr. #105, Cupertino, CA";
-    }
-    return location;
-}
-
 function displayClassTitle(classInfo) {
     return String(classInfo.title || classInfo.classname || classInfo.selector || "").replace(/\s*\*+\s*$/, "");
 }
@@ -340,9 +329,7 @@ function renderCurrentClassList(res) {
             if (isClosedClass(item)) {
                 html += "<span class=\"full\">Full</span>";
             }
-            html += "</a>";
-            html += "<div class=\"class-location\"><strong>Location:</strong> " + escapeHtml(formatListLocation(item)) + "</div>";
-            html += "</li>";
+            html += "</a></li>";
         }
     }
     container.html(html);
