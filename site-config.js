@@ -1,6 +1,7 @@
 window.SVY_CONFIG = {
     backendBaseUrl: "https://siliconvalleyyouth.herokuapp.com",
     publicSiteBaseUrl: "https://www.siliconvalleyyouth.com",
+    inPersonLocation: "10268 Bandley Dr. #105, Cupertino, CA",
     activeSemester: {
         year: "2026",
         term: "fall",

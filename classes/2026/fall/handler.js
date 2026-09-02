@@ -7,6 +7,7 @@ var activeSemester = svyConfig.activeSemester || {
 };
 var backendBaseUrl = svyConfig.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
 var publicSiteBaseUrl = svyConfig.publicSiteBaseUrl || "https://www.siliconvalleyyouth.com";
+var inPersonLocation = svyConfig.inPersonLocation || "10268 Bandley Dr. #105, Cupertino, CA";
 var headshotBasePath = "../../../" + activeSemester.headshotPath.replace(/^\/+/, "");
 function getParam(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -16,6 +17,20 @@ function getParam(name){
     else{
        return decodeURI(results[1]) || 0;
     }
+}
+function isOnlineLocation(location) {
+    var value = String(location || "").trim().toLowerCase();
+    return !value || value.indexOf("online") >= 0;
+}
+function formatLocationDisplay(location) {
+    if (isOnlineLocation(location)) {
+        return "Online";
+    }
+    var value = String(location || "").trim();
+    if (/^in[-\s]?person$/i.test(value)) {
+        return inPersonLocation;
+    }
+    return value;
 }
 function renderSite(res) {
     var raw_data = res["data"];
@@ -36,9 +51,9 @@ function renderSite(res) {
     $("#prerequisites").html("Prerequisites: " + data["prerequisites"]);
     $("#dates").html("<strong>Dates: </strong>"+data["dates"]);
     $("#time").html("<strong>Time: </strong>"+data["time"]);
-	$("#location").html("<strong>Location: </strong>"+data["location"]);
-    var classLocation = (data["location"] || "").toLowerCase();
-    if(classLocation !== "" && classLocation.indexOf("online") < 0) {
+    var locationDisplay = formatLocationDisplay(data["location"]);
+    $("#location").html("<strong>Location: </strong>"+ locationDisplay);
+    if(!isOnlineLocation(data["location"])) {
         $("#inperson-detail").css('display', 'inline-block');
     } else {
         $("#inperson-detail").css('display', 'none');

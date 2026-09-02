@@ -103,7 +103,14 @@ function createForm(res) {
     var numClasses = data["numberclasses"];
     var classPrice = Number(res.classPrice || activeSemester.classPrice || 15);
     basePrice = Number(numClasses) * classPrice;
-    $("#classTitle").text("Payment for " + className + " at " + data["location"] + " on " + data["time"]);
+    var locationValue = String(data["location"] || "").trim();
+    var locationLower = locationValue.toLowerCase();
+    var locationDisplay = (!locationValue || locationLower.indexOf("online") >= 0)
+        ? "Online"
+        : (/^in[-\s]?person$/i.test(locationValue)
+            ? ((window.SVY_CONFIG && window.SVY_CONFIG.inPersonLocation) || "10268 Bandley Dr. #105, Cupertino, CA")
+            : locationValue);
+    $("#classTitle").text("Payment for " + className + " at " + locationDisplay + " on " + data["time"]);
     $("#className").attr("value", className);
     $("#classcost").text("The total class cost is calculated by multiplying the total number of sessions by $" + classPrice + " per session. Students are charged prior to the first session to secure their position. If you are in any way dissatisfied with the class, you can email svyfinance@gmail.com for a full refund within 3 days after the first session.");
     updateCostDisplay();

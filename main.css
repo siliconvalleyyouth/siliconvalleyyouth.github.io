@@ -773,6 +773,18 @@ h1 {
 	white-space: nowrap;
 }
 
+.class-location {
+	margin: 2px 0 10px;
+	font-size: 15px;
+	color: #888;
+}
+
+.class-location strong {
+	color: #555;
+	font-weight: bold;
+	margin-right: 4px;
+}
+
 #sorter {
 	margin: 20px 15%;
 }
