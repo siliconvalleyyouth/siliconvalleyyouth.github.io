@@ -13,6 +13,6 @@ window.SVY_CONFIG = {
         classPrice: 15
     },
     // Selectors hidden from the public Fall 2026 class list (cancelled).
-    hiddenClassSelectors: ["musictheorycomp", "worldhistory", "chemistry"],
+    hiddenClassSelectors: ["musictheorycomp", "creatwriting", "chemistry"],
     currentYear: new Date().getFullYear()
 };
