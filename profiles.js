@@ -246,6 +246,16 @@ function normalizeProfileName(name) {
     return String(name || "").replace(/\s+/g, " ").trim().toLowerCase();
 }
 
+function normalizeProfileEmail(email) {
+    return String(email || "").replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+function normalizeProfileImage(image) {
+    var value = String(image || "").replace(/\s+/g, " ").trim().toLowerCase();
+    value = value.replace(/^.*\//, "").replace(/\.jpg$/i, "");
+    return value;
+}
+
 function profileSlugFromName(name) {
     return normalizeProfileName(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
@@ -253,13 +263,27 @@ function profileSlugFromName(name) {
 var SVYProfiles = window.SVYProfiles || {
     profilesById: {},
     profilesByName: {},
+    profilesByEmail: {},
+    profilesByImage: {},
     normalizeName: normalizeProfileName,
+    normalizeEmail: normalizeProfileEmail,
+    normalizeImage: normalizeProfileImage,
     profileIdFromName: profileSlugFromName,
     normalizeProfile: function(profile) {
         var next = Object.assign({}, profile);
         next.profileId = next.profileId || next.id || this.profileIdFromName(next.name);
         next.id = next.id || next.profileId;
         return next;
+    },
+    indexProfileLookups: function(profile) {
+        var emailKey = this.normalizeEmail(profile.email);
+        if (emailKey) {
+            this.profilesByEmail[emailKey] = profile;
+        }
+        var imageKey = this.normalizeImage(profile.imgurl || profile.image);
+        if (imageKey && imageKey !== "noimage.png") {
+            this.profilesByImage[imageKey] = profile;
+        }
     },
     register: function(profile) {
         if (!profile || !profile.id || !profile.name) {
@@ -276,6 +300,7 @@ var SVYProfiles = window.SVYProfiles || {
         } else {
             this.profilesByName[key] = this.profilesById[profile.profileId];
         }
+        this.indexProfileLookups(this.profilesById[profile.profileId]);
         return this.profilesById[profile.profileId];
     },
     registerLegacy: function(profile) {
@@ -288,13 +313,25 @@ var SVYProfiles = window.SVYProfiles || {
             throw new Error("Duplicate SVY profile id: " + profile.profileId);
         }
         var existingByName = this.profilesByName[key];
+        var incomingEmail = this.normalizeEmail(profile.email);
+        var existingEmail = existingByName ? this.normalizeEmail(existingByName.email) : "";
+        // Don't merge two different people who share a name.
         if (existingByName && existingByName.profileId !== profile.profileId) {
-            profile.profileId = existingByName.profileId;
-            profile.id = existingByName.id || existingByName.profileId;
+            if (incomingEmail && existingEmail && incomingEmail !== existingEmail) {
+                this.profilesByName[key] = null;
+            } else if (!incomingEmail || !existingEmail || incomingEmail === existingEmail) {
+                profile.profileId = existingByName.profileId;
+                profile.id = existingByName.id || existingByName.profileId;
+            } else {
+                this.profilesByName[key] = null;
+            }
         }
         this.profilesById[profile.profileId] = Object.assign({}, this.profilesById[profile.profileId] || {}, profile);
-        this.profilesByName[key] = this.profilesById[profile.profileId];
-        return this.profilesByName[key];
+        if (this.profilesByName[key] !== null) {
+            this.profilesByName[key] = this.profilesById[profile.profileId];
+        }
+        this.indexProfileLookups(this.profilesById[profile.profileId]);
+        return this.profilesById[profile.profileId];
     },
     registerMany: function(profiles) {
         if (!profiles) {
@@ -304,9 +341,29 @@ var SVYProfiles = window.SVYProfiles || {
             this.registerLegacy(profiles[i]);
         }
     },
+    resolveTeacherProfile: function(name, options) {
+        var opts = options || {};
+        var emailKey = this.normalizeEmail(opts.email);
+        if (emailKey && this.profilesByEmail[emailKey]) {
+            return this.profilesByEmail[emailKey];
+        }
+        var imageKey = this.normalizeImage(opts.image || opts.imgurl);
+        if (imageKey && this.profilesByImage[imageKey]) {
+            return this.profilesByImage[imageKey];
+        }
+        return this.get(name);
+    },
     get: function(profileRef) {
         if (this.profilesById[profileRef]) {
             return this.profilesById[profileRef];
+        }
+        var emailKey = this.normalizeEmail(profileRef);
+        if (emailKey && this.profilesByEmail[emailKey]) {
+            return this.profilesByEmail[emailKey];
+        }
+        var imageKey = this.normalizeImage(profileRef);
+        if (imageKey && this.profilesByImage[imageKey]) {
+            return this.profilesByImage[imageKey];
         }
         var profile = this.profilesByName[this.normalizeName(profileRef)];
         if (profile === null) {
@@ -326,6 +383,14 @@ var SVYProfiles = window.SVYProfiles || {
     profileUrl: function(profileRef) {
         var profile = this.get(profileRef);
         return "/profile.html?id=" + encodeURIComponent(profile.profileId || profile.id || profileRef || profile.name);
+    },
+    profileUrlForTeacher: function(name, options) {
+        try {
+            var profile = this.resolveTeacherProfile(name, options);
+            return "/profile.html?id=" + encodeURIComponent(profile.profileId || profile.id || name);
+        } catch (error) {
+            return "/profile.html?id=" + encodeURIComponent(this.profileIdFromName(name));
+        }
     },
     description: function(profileRef, fallback) {
         var profile = this.get(profileRef);

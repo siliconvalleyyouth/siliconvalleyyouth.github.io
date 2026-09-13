@@ -331,12 +331,28 @@ $(document).ready(function() {
 
     var config = window.SVY_CONFIG || {};
     var backendBaseUrl = config.backendBaseUrl || "https://siliconvalleyyouth.herokuapp.com";
+    var timelineUrl = backendBaseUrl + "/api/profile-timeline?name=" + encodeURIComponent(profile.name);
+    if (profile.email) {
+        timelineUrl += "&email=" + encodeURIComponent(profile.email);
+    } else if (profile.imgurl) {
+        var imageKey = String(profile.imgurl).replace(/^.*\//, "").replace(/\.jpg$/i, "");
+        if (imageKey && imageKey !== "noimage.png") {
+            timelineUrl += "&image=" + encodeURIComponent(imageKey);
+        }
+    }
     $.ajax({
         type: "GET",
-        url: backendBaseUrl + "/api/profile-timeline?name=" + encodeURIComponent(profile.name),
+        url: timelineUrl,
         dataType: "json",
         success: function(res) {
             var classes = res.teaching || [];
+            // Extra client-side guard for shared names.
+            if (profile.email) {
+                var emailKey = String(profile.email).trim().toLowerCase();
+                classes = classes.filter(function(item) {
+                    return !item.email || String(item.email).trim().toLowerCase() === emailKey;
+                });
+            }
             var timelineItems = renderTimeline(profile, classes);
             renderPhoto(profile, classes);
             renderSummary(profile, timelineItems, classes);

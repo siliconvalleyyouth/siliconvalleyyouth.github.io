@@ -2,27 +2,36 @@ function profileSlugFromName(name) {
     return String(name || "").replace(/\s+/g, " ").trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
-function profileUrlForName(name) {
+function profileUrlForTeacher(name, options) {
+    var cleanName = String(name || "").trim();
+    var opts = options || {};
     if (window.SVYProfiles) {
         try {
-            return SVYProfiles.profileUrl(name);
+            if (SVYProfiles.profileUrlForTeacher) {
+                return SVYProfiles.profileUrlForTeacher(cleanName, opts);
+            }
+            return SVYProfiles.profileUrl(cleanName);
         } catch (error) {
             console.warn(error);
         }
     }
-    return "/profile.html?id=" + encodeURIComponent(profileSlugFromName(name));
+    return "/profile.html?id=" + encodeURIComponent(profileSlugFromName(cleanName));
 }
 
-function linkProfileElement(selector, name) {
+function profileUrlForName(name) {
+    return profileUrlForTeacher(name);
+}
+
+function linkProfileElement(selector, name, options) {
     var cleanName = String(name || "").trim();
     if (!cleanName || !$(selector).length) {
         return;
     }
-    var link = $("<a></a>").attr("href", profileUrlForName(cleanName)).text(cleanName);
+    var link = $("<a></a>").attr("href", profileUrlForTeacher(cleanName, options)).text(cleanName);
     $(selector).empty().append(link);
 }
 
-function linkProfileImageElement(selector, name) {
+function linkProfileImageElement(selector, name, options) {
     var cleanName = String(name || "").trim();
     if (!cleanName || !$(selector).length) {
         return;
@@ -34,6 +43,6 @@ function linkProfileImageElement(selector, name) {
         .on("click.profile", function(event) {
             event.preventDefault();
             event.stopPropagation();
-            window.location.href = profileUrlForName(cleanName);
+            window.location.href = profileUrlForTeacher(cleanName, options);
         });
 }

@@ -60,11 +60,11 @@ function renderSite(res) {
     }
 	$("#grades").html("<strong>Grades: </strong>" + data["graderange"]);
     $("#teacher1").text(data["teacher1"]);
-    linkProfileElement("#teacher1", data["teacher1"]);
+    linkProfileElement("#teacher1", data["teacher1"], { email: data["teacher1email"], image: data["teacher1img"] });
     $("#teacher1email").text(data['teacher1email'])
     $("#bio1").html(data["t1bio"]);
     $("#img1").attr("src", headshotBasePath + "/" + data["teacher1img"] + ".jpg")
-    linkProfileImageElement("#img1", data["teacher1"] || data["name"]);
+    linkProfileImageElement("#img1", data["teacher1"] || data["name"], { email: data["teacher1email"], image: data["teacher1img"] });
     var publishStatus = (data["publish_status"] || "").toLowerCase();
     var legacyStatus = (data["status"] || "").toLowerCase();
     if(legacyStatus == 'closed') {
@@ -80,32 +80,32 @@ function renderSite(res) {
     if(data["teacher2"] != '') {
         $("#teacher2label").text(data["teacher2position"]);
         $("#teacher2").text(data["teacher2"]);
-    linkProfileElement("#teacher2", data["teacher2"]);
+    linkProfileElement("#teacher2", data["teacher2"], { email: data["teacher2email"], image: data["teacher2img"] });
         $("#teacher2email").text(data['teacher2email'])
         $("#img2").css("image-orientation", "from-image")
         $("#bio2").html(data["t2bio"]);
         $("#img2").attr("src", headshotBasePath + "/" + data["teacher2img"] + ".jpg")
-        linkProfileImageElement("#img2", data["teacher2"]);
+        linkProfileImageElement("#img2", data["teacher2"], { email: data["teacher2email"], image: data["teacher2img"] });
     }
     if(data["teacher3"] != '') {
         $("#teacher3label").text(data["teacher3position"]);
         $("#teacher3").text(data["teacher3"]);
-    linkProfileElement("#teacher3", data["teacher3"]);
+    linkProfileElement("#teacher3", data["teacher3"], { email: data["teacher3email"], image: data["teacher3img"] });
         $("#teacher3email").text(data['teacher3email'])
         $("#img3").css("image-orientation", "from-image")
         $("#bio3").html(data["t3bio"]);
         $("#img3").attr("src", headshotBasePath + "/" + data["teacher3img"] + ".jpg")
-        linkProfileImageElement("#img3", data["teacher3"]);
+        linkProfileImageElement("#img3", data["teacher3"], { email: data["teacher3email"], image: data["teacher3img"] });
     }
     if(data["teacher4"] != '') {
         $("#teacher4label").text(data["teacher4position"]);
         $("#teacher4").text(data["teacher4"]);
-    linkProfileElement("#teacher4", data["teacher4"]);
+    linkProfileElement("#teacher4", data["teacher4"], { email: data["teacher4email"], image: data["teacher4img"] });
         $("#teacher4email").text(data['teacher4email'])
         $("#img4").css("image-orientation", "from-image")
         $("#bio4").html(data["t4bio"]);
         $("#img4").attr("src", headshotBasePath + "/" + data["teacher4img"] + ".jpg")
-        linkProfileImageElement("#img4", data["teacher4"]);
+        linkProfileImageElement("#img4", data["teacher4"], { email: data["teacher4email"], image: data["teacher4img"] });
     }
 }
 function buildPaymentHref(classId) {
