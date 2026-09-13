@@ -160,6 +160,16 @@ var SVY_OFFICER_TERMS = [
                 "profileId": "crystal-zhu",
                 "role": "Site Director",
                 "description": ""
+            },
+            {
+                "profileId": "saria-lum",
+                "role": "VP of Media",
+                "description": ""
+            },
+            {
+                "profileId": "lucas-lum",
+                "role": "VP of Math",
+                "description": ""
             }
         ]
     },

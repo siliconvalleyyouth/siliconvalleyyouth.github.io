@@ -301,13 +301,21 @@ function renderCurrentClassList(res) {
     if (!container.length || !res || !res.classes) {
         return;
     }
+    var hiddenSelectors = {};
+    var hiddenList = (svyConfig.hiddenClassSelectors || []);
+    for (var h = 0; h < hiddenList.length; h++) {
+        hiddenSelectors[String(hiddenList[h] || "").toLowerCase()] = true;
+    }
+    var visibleClasses = res.classes.filter(function(classInfo) {
+        return !hiddenSelectors[String(classInfo.selector || "").toLowerCase()];
+    });
     var html = "";
     html += "<p><i>Note: All times are Pacific Time</i></p>";
 
     var grouped = {};
     var order = [];
-    for (var i = 0; i < res.classes.length; i++) {
-        var classInfo = res.classes[i];
+    for (var i = 0; i < visibleClasses.length; i++) {
+        var classInfo = visibleClasses[i];
         var category = classInfo.category || "Classes";
         if (!grouped[category]) {
             grouped[category] = [];
@@ -337,8 +345,8 @@ function renderCurrentClassList(res) {
     classes = classes.filter(function(classEntry) {
         return !classEntry[3] || classEntry[3] !== activeSemester.filterTag;
     });
-    for (var m = 0; m < res.classes.length; m++) {
-        classes.push(["all", normalizeClassCategory(res.classes[m].category), $("#" + res.classes[m].selector + "-" + activeSemester.filterTag), activeSemester.filterTag]);
+    for (var m = 0; m < visibleClasses.length; m++) {
+        classes.push(["all", normalizeClassCategory(visibleClasses[m].category), $("#" + visibleClasses[m].selector + "-" + activeSemester.filterTag), activeSemester.filterTag]);
     }
 }
 

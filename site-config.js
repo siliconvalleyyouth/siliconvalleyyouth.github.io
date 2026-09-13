@@ -12,5 +12,7 @@ window.SVY_CONFIG = {
         headshotPath: "images/2026Headshots/fall",
         classPrice: 15
     },
+    // Selectors hidden from the public Fall 2026 class list (cancelled).
+    hiddenClassSelectors: ["musictheorycomp", "worldhistory", "chemistry"],
     currentYear: new Date().getFullYear()
 };
